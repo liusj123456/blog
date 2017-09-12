@@ -1,9 +1,9 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-	/* 'TMPL_PARSE_STRING'=>array(
-		'__PUBLIC__'=>__ROOT__.'/static',
-	), */	
+	'TMPL_PARSE_STRING'=>array(
+		'__STATIC__'=>__ROOT__.'/static',
+	),	
 	'DB_DSN'=>'mysql://root:@localhost:3306/test',
 	'DB_PREFIX'=>'blg_',
 	'DB_TYPE'=>'mysql',

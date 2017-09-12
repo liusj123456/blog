@@ -23,6 +23,7 @@
 		<script src="__PUBLIC__/assets/js/html5shiv.min.js"></script>
 		<script src="__PUBLIC__/assets/js/respond.min.js"></script>
 		<![endif]-->
+		<script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
 	</head>
 
 	<body class="no-skin">
