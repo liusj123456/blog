@@ -3,8 +3,7 @@ class AdminAction extends CommonAction {
     public function index(){
 		//echo '12';
 		//echo C('codelen');
-		$con=array('id'=>session('uid'));
-		$this->info=M('user')->where($con)->find();
+		
 		$this->display();
     }
 	public function user(){
