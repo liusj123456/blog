@@ -1,0 +1,23 @@
+<!-- <include file="Admin:top"/>
+<include file="Admin:left"/>
+<include file="Admin:main"/>
+<include file="Admin:foot"/> -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>blog后台管理主页面</title>
+<script type="text/javascript" src="http://wx.baifudata.com:8080/static/js/jquery-1.8.2.min.js"/>
+</head>
+<frameset rows="45,*" cols="*" frameborder="no" border="0" framespacing="0" name="frame" id="frame">
+
+  <frame src="__URL__/top" name="topFrame" id="topFrame" scrolling="no" noresize="noresize">	
+		<frameset cols="190,*" frameborder="no" border="0" framespacing="0">
+			<frame src="__URL__/left" name="leftFrame" id="leftFrame" scrolling="no"  noresize="noresize">
+			<frame src="__URL__/main" name="mainFrame" id="mainFrame" noresize="noresize">
+		</frameset>
+	
+  </frameset>
+
+</html>
+
