@@ -263,7 +263,7 @@ window.onload = function ()
   <!--r_box end --> 
 </article>
 <footer>
-  <p class="ft-copyright">兔小白博客 Design by DanceSmile 蜀ICP备11002373号-1</p>
+  <p class="ft-copyright"></p>
   <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
 </footer>
 </body>

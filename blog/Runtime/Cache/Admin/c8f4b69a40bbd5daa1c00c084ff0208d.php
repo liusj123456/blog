@@ -224,7 +224,7 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li class="">
+					<li class="open">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 系统管理 </span>
@@ -234,7 +234,7 @@
 
 						<b class="arrow"></b>
 
-						<ul class="submenu">
+						<ul class="submenu" style="display: block;">
 
 								<li class="">
 									<a href="menu.html">
@@ -255,7 +255,7 @@
 								</li>
 						</ul>
 					</li>
-					<li class="">
+					<li class="open">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>
@@ -265,7 +265,7 @@
 
 						<b class="arrow"></b>
 
-						<ul class="submenu">
+						<ul class="submenu" style="display: block;">
 
 								<li class="">
 									<a href="menu.html">

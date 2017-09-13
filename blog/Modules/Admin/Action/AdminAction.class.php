@@ -9,6 +9,7 @@ class AdminAction extends CommonAction {
 	public function user(){
 		$this->display();
 	}
+	//验证码配置修改
 	public function form(){
 		if(IS_POST){	
 			unset($_POST['__RequestVerificationToken']);
