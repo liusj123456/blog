@@ -4,7 +4,7 @@ return array(
 	'TMPL_PARSE_STRING'=>array(
 		'__STATIC__'=>__ROOT__.'/static',
 	),	
-	'DB_DSN'=>'mysql://root:@localhost:3306/test',
+	'DB_DSN'=>'mysql://root:@localhost:3306/blog',
 	'DB_PREFIX'=>'blg_',
 	'DB_TYPE'=>'mysql',
 	'URL_MODE'=>'1',//pathinfo模式
@@ -14,5 +14,6 @@ return array(
 	'DEFAULT_GROUP'=>'Index',
 	'NOT_AUTH_MODULE'=>'Index',
 	'LOAD_EXT_CONFIG'=>'verify',
+	'SHOW_PAGE_TRACE' =>true,
 );
 ?>

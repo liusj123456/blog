@@ -264,7 +264,19 @@ window.onload = function ()
 </article>
 <footer>
   <p class="ft-copyright"></p>
-  <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+  <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:0},200);" style='display:none;'></a> </div>
 </footer>
+<script>
+$(window).scroll(function(){
+	$("#tbox").css("height",'120px');
+	if($(window).scrollTop() > 50){
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeIn();
+	}else{
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeOut();
+	}
+});
+</script>
 </body>
 </html>

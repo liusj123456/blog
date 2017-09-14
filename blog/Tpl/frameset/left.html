@@ -27,15 +27,15 @@
 
 	<body class="no-skin">
 		<!-- /section:basics/navbar.layout -->
-<div class="main-container" id="main-container">
+
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar responsive">
+			<div id="sidebar" class="sidebar ">
 
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="http://www.baidu.com" target="mainFrame">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 总控制台 </span>
 						</a>
@@ -411,7 +411,27 @@
 					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
 				</div>
 
-			</div></div>
-
+			</div>
+<!--[if !IE]> -->
+			<script type="text/javascript">
+				window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+			</script>
+		<!-- <![endif]-->
+		<!--[if IE]>
+			<script type="text/javascript">
+			 window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+			</script>
+		<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
 	</body>
 </html>

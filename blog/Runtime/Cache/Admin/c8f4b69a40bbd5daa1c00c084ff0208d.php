@@ -27,7 +27,7 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
+		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
@@ -211,7 +211,7 @@
 <div class="main-container" id="main-container">
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar responsive">
+			<div id="sidebar" class="sidebar responsive" style="position:fixed;top:45px;left:0;z-index:1;height:100%;">
 
 
 				<ul class="nav nav-list">
@@ -255,7 +255,7 @@
 								</li>
 						</ul>
 					</li>
-					<li class="open">
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>
@@ -265,7 +265,7 @@
 
 						<b class="arrow"></b>
 
-						<ul class="submenu" style="display: block;">
+						<ul class="submenu" style="">
 
 								<li class="">
 									<a href="menu.html">

@@ -27,7 +27,7 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
+		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
@@ -211,7 +211,7 @@
 <div class="main-container" id="main-container">
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar responsive">
+			<div id="sidebar" class="sidebar responsive" style="position:fixed;top:45px;left:0;z-index:1;height:100%;">
 
 
 				<ul class="nav nav-list">
@@ -296,17 +296,17 @@
 			</div>
 			<!-- /section:basics/sidebar -->
 			<div class="main-content">
-				<div class="breadcrumbs" id="breadcrumbs">
+				<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
 					<ul class="breadcrumb">
 						<li>
 							<i class="ace-icon fa fa-home home-icon"></i>
-							<a href="index.html">UI库首页</a>
+							<a href="index.html">首页</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)">表格</a>
+							<a href="javascript:void(0)">标题1</a>
 						</li>
 						<li>
-							<a href="elements.html">简单通用表格</a>
+							<a href="elements.html">标题2</a>
 						</li>
 					</ul><!-- /.breadcrumb -->
 
@@ -330,224 +330,6 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
 									<div class="col-xs-12">
-										<table id="sample-table-1" class="table table-striped table-bordered table-hover">
-											<thead>
-												<tr>
-													<th class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</th>
-													<th>航班类型</th>
-													<th>客舱级别</th>
-													<th class="hidden-480">行李数量上限</th>
-													<th>
-														
-														每件尺寸限制
-													</th>
-													<th class="hidden-480">
-														<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-														每件重量上限</th>
-													<th class="hidden-480">操作</th>
-												</tr>
-											</thead>
-
-											<tbody>
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-warning">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-success">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-inverse arrowed-in">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-warning arrowed-right">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												
-											</tbody>
-										</table>
-									</div><!-- /.span -->
-								</div><!-- /.row -->
-
-								<div class="hr hr-18 dotted hr-double"></div>
-
-								<h4 class="pink">
-									<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-									<a href="#modal-table" role="button" class="blue" data-toggle="modal">点击弹出层表格</a>
-								</h4>
-
-								<div class="hr hr-18 dotted hr-double"></div>
-
-								<div class="row">
-									<div class="col-xs-12">
-
-										<div class="table-header">
-											差旅单管理
-										</div>
-
 										<table width="100%" class="CSSearchTbl" cellpadding="0" cellspacing="0">
 			                                <tr>
 			                                    <td class="left">提交部门：</td>
@@ -596,19 +378,20 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>部门</th>
-				                                        <th>差旅单号</th>
-				                                        <th>名称</th>
-				                                        <th>关联订单号</th>
-				                                        <th>差旅单状态</th>
-				                                        <th>创建人</th>
-				                                        <th>创建日期</th>
+														<th>名称</th>
+				                                        <th>地址</th>
+				                                        <th>层级</th>
+				                                        <th>显示</th>
+				                                        <th>排序</th>
+				                                        <th>添加人</th>
+				                                        <th>添加日期</th>
 														<th>操作</th>
 													</tr>
 												</thead>
 
 												<tbody>
 													<tr>
+													<volist name="menu" id='vo'>
 														<td class="center">
 															<label class="position-relative">
 																<input type="checkbox" class="ace" />
@@ -616,207 +399,7 @@
 															</label>
 														</td>
 
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
+														<td><?php echo ($vo[""]); ?></td>
 				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
 				                                        <td class="hidden-480">C1234567891234</td>
 				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>

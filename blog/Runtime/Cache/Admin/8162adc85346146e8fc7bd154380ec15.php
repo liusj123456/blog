@@ -27,7 +27,7 @@
 	</head>
 
 	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default">
+		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
@@ -211,7 +211,7 @@
 <div class="main-container" id="main-container">
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar responsive">
+			<div id="sidebar" class="sidebar responsive" style="position:fixed;top:45px;left:0;z-index:1;height:100%;">
 
 
 				<ul class="nav nav-list">
@@ -295,17 +295,17 @@
 
 			</div>
 			<div class="main-content">
-				<div class="breadcrumbs" id="breadcrumbs">
+				<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
 					<ul class="breadcrumb">
 						<li>
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="index.html">首页</a>
 						</li>
 						<li>
-							<a href="javascript:void(0)">表单</a>
+							<a href="javascript:void(0)">标题1</a>
 						</li>
 						<li>
-							<a href="elements.html">表单元素</a>
+							<a href="elements.html">标题2</a>
 						</li>
 					</ul><!-- /.breadcrumb -->
 
@@ -331,18 +331,18 @@
 								<form class="form-horizontal" role="form">
 									<!-- #section:elements.form -->
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 提交部门：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单名称：</label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="输入部门名称" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">差旅单名称： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">菜单地址： </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" placeholder="输入差旅单名称" class=" col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
@@ -350,106 +350,23 @@
 									<div class="space-4"></div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">查询密码： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">菜单排序： </label>
 
 										<div class="col-sm-9">
-											<input type="password" id="form-field-2" placeholder="输入查询密码" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 
-									<div class="space-4"></div>
+									<div class="space-4"></div>							
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly">用户名(只读)： </label>
-
-										<div class="col-sm-9">
-											<input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="这里是只读表单，不允许你修改，哇咔咔！" />
-										</div>
-									</div>
-
-									<div class="space-4"></div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">带图标的输入框</label>
-
-										<div class="col-sm-9">
-											<!-- #section:elements.form.input-icon -->
-											<span class="input-icon">
-												<input type="text" id="form-field-icon-1" />
-												<i class="ace-icon fa fa-leaf blue"></i>
-											</span>
-
-											<span class="input-icon input-icon-right">
-												<input type="text" id="form-field-icon-2" />
-												<i class="ace-icon fa fa-leaf green"></i>
-											</span>
-
-											<!-- /section:elements.form.input-icon -->
-										</div>
-									</div>
-
-									<div class="space-4"></div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-6">带提示框和提示按钮的输入框:</label>
-
-										<div class="col-sm-9">
-											<input data-rel="tooltip" type="text" id="form-field-6" placeholder="" title="我是提示信息" data-placement="bottom" />
-											<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="这里也是提示信息" title="我是提示信息">?</span>
-										</div>
-									</div>
-
-									<div class="space-4"></div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">标签式的输入框：</label>
-
-										<div class="col-sm-9">
-											<div class="inline">
-												<input type="text" name="tags" id="form-field-tags" value="我是标签一" placeholder="这里输入标签，然后按确认 ..." />
-											</div>
-
-											<!-- /section:plugins/input.tag-input -->
-										</div>
-									</div>
-
-									<div class="space-4"></div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="typeahead">自动完成输入框(基于Typeahead.js)：</label>
-
-										<div class="col-sm-9">
-											<!-- #section:plugins/bootstrap.typeahead-js -->
-											<div class="pos-rel">
-												<input class="typeahead scrollable" type="text" id="typeahead" placeholder="随便输入一个字母试试" />
-											</div>
-
-											<!-- /section:plugins/bootstrap.typeahead-js -->
-										</div>
-									</div>
-
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="limited">带输入统计功能和自动变大的输入框：</label>
-										<div class="col-sm-9">
-											<div class="pos-rel">
-												<textarea class="form-control limited autosize-transition" id="limited" maxlength="50"></textarea>
-											</div>
-										</div>
-									</div>
-
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">差旅单状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" id="form-field-select-1">
-																<option value="">请选择状态</option>
-																<option value="AL">未提交</option>
-																<option value="AK">已提交</option>
-																<option value="AZ">待审核</option>
-																<option value="AR">审核通过</option>
-															</select>
+																<option value="1" selected>显示</option>
+																<option value="0">不显示</option>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -457,7 +374,7 @@
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="button">
+											<button class="btn btn-info" type="submit">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												立即提交
 											</button>
@@ -469,198 +386,7 @@
 											</button>
 										</div>
 									</div>
-
-									<div class="hr hr-24"></div>
-
-									<h3 class="header smaller lighter grey">
-										单选框和多选框
-									</h3>
-
-									<div class="row">
-										<div class="col-xs-12 col-sm-3">
-											<div class="control-group">
-												<label class="control-label bolder blue">多选框</label>
-
-												<!-- #section:custom/checkbox -->
-												<div class="checkbox">
-													<label>
-														<input name="form-field-checkbox" type="checkbox" class="ace" />
-														<span class="lbl"> 经济舱</span>
-													</label>
-												</div>
-
-												<div class="checkbox">
-													<label>
-														<input name="form-field-checkbox" type="checkbox" class="ace" />
-														<span class="lbl"> 公务舱</span>
-													</label>
-												</div>
-
-												<div class="checkbox">
-													<label>
-														<input name="form-field-checkbox" class="ace ace-checkbox-2" type="checkbox" />
-														<span class="lbl"> 高端经济舱</span>
-													</label>
-												</div>
-
-												<div class="checkbox">
-													<label class="block">
-														<input name="form-field-checkbox" disabled="" type="checkbox" class="ace" />
-														<span class="lbl"> 头等舱</span>
-													</label>
-												</div>
-
-												<!-- /section:custom/checkbox -->
-											</div>
-										</div>
-
-										<div class="col-xs-12 col-sm-3">
-											<div class="control-group">
-												<label class="control-label bolder blue"> 单选框</label>
-
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> 经济舱</span>
-													</label>
-												</div>
-
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> 公务舱</span>
-													</label>
-												</div>
-
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> 高端经济舱</span>
-													</label>
-												</div>
-
-												<div class="radio">
-													<label>
-														<input disabled="" name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> 头等舱</span>
-													</label>
-												</div>
-											</div>
-										</div>
-
-
-										<div class="controls col-xs-12 col-sm-6">
-											<!-- #section:custom/checkbox.switch -->
-											<label class="control-label bolder blue"> 开关形式的单选框</label>
-											<br /><br />
-											<div class="row">
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch" type="checkbox" />
-														<span class="lbl" data-lbl="开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关"></span>
-													</label>
-												</div>
-
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-3" type="checkbox" />
-														<span class="lbl" data-lbl="开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关"></span>
-													</label>
-												</div>
-
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-7" type="checkbox" />
-														<span class="lbl" data-lbl="开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关"></span>
-													</label>
-												</div>
-
-											</div>
-
-
-											<!-- /section:custom/checkbox.switch -->
-										</div>
-									</div><!-- /.row -->
-
-
-									<div class="hr hr-24"></div>
-
-									<h3 class="header smaller lighter grey">
-										日期表单
-									</h3>
-
-									<div class="row">
-										<div class="col-xs-12 col-sm-3">
-											<label for="id-date-picker-1">日期表单</label>
-											<div class="input-group">
-												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
-												<span class="input-group-addon">
-													<i class="fa fa-calendar bigger-110"></i>
-												</span>
-											</div>
-										</div>
-
-										<div class="col-xs-12 col-sm-3">
-											<label for="id-date-picker-1">双天日期表单</label>
-											<div class="input-daterange input-group">
-												<input type="text" class=" form-control" name="start" />
-												<span class="input-group-addon">
-													<i class="fa fa-exchange"></i>
-												</span>
-
-												<input type="text" class=" form-control" name="end" />
-											</div>
-										</div>
-
-										<div class="col-xs-12 col-sm-3">
-											<label for="id-date-picker-1">时间段选择日期表单</label>
-											<div class="input-group">
-												<span class="input-group-addon">
-													<i class="fa fa-calendar bigger-110"></i>
-												</span>
-												<input class="form-control" type="text" name="date-range-picker" id="id-date-range-picker-1" />
-											</div>
-										</div>
-
-										<div class="col-xs-12 col-sm-3">
-											<label for="id-date-picker-1">含时间的日期表单</label>
-											<div class="input-group">
-												<input id="date-timepicker1" type="text" class="form-control" />
-												<span class="input-group-addon">
-													<i class="fa fa-clock-o bigger-110"></i>
-												</span>
-											</div>
-										</div>
-
-									</div>
-
-								</form>
-
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content-area -->
-				</div><!-- /.page-content -->
-			</div><!-- /.main-content -->
-
-			<div class="footer">
-				<div class="footer-inner">
-					<!-- #section:basics/footer -->
-					<div class="footer-content">
-						<span class="bigger-120">
-							 统一开发平台-UI库 &copy; 2014  更多模板：<a href="http://www.aspku.com/" target="_blank">源码之家</a>
-						</span>
-					</div>
-
-					<!-- /section:basics/footer -->
-				</div>
-			</div>
+							
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
