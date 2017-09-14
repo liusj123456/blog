@@ -237,7 +237,7 @@
 						<ul class="submenu" style="display: block;">
 
 								<li class="">
-									<a href="menu.html">
+									<a href="<?php echo U(GROUP_NAME.'/System/menu');?>">
 										<i class="menu-icon fa fa-caret-right"></i>
 										菜单列表
 									</a>
@@ -246,7 +246,7 @@
 								</li>
 
 								<li class="">
-									<a href="menu_add.html">
+									<a href="<?php echo U(GROUP_NAME.'/System/menuAdd');?>">
 										<i class="menu-icon fa fa-caret-right"></i>
 										添加菜单
 									</a>
@@ -328,13 +328,15 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form">
+								<form class="form-horizontal" role="form" name='menuAdd' id='menuAdd' action="<?php echo U(GROUP_NAME.'/System/menuEdit');?>" method='post'>
 									<!-- #section:elements.form -->
+									
+									<input name='id' type='hidden' value='<?php echo ($vo["id"]); ?>'>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称：</label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
+											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value='<?php echo ($vo["name"]); ?>'/>
 										</div>
 									</div>
 
@@ -342,7 +344,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">地址： </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($vo["url"]); ?>'/>
 										</div>
 									</div>
 
@@ -353,7 +355,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">排序： </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
+											<input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" value='<?php echo ($vo["sort"]); ?>'/>
 										</div>
 									</div>
 
@@ -363,9 +365,9 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
-												<select class="form-control" id="form-field-select-1">
-																<option value="1" selected>显示</option>
-																<option value="0">不显示</option>
+												<select class="form-control" name='display' id="form-field-select-1">
+																<option <?php if($vo["display"] == "1"): ?>selected<?php endif; ?> value="1" >显示</option>
+																<option <?php if($vo["display"] == "2"): ?>selected<?php endif; ?> value="2">不显示</option>
 												</select>
 											</div>
 										</div>

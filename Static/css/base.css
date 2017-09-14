@@ -16,11 +16,13 @@ a:hover { text-decoration: none; }
 .r_box { width: 300px; }
 /* 头部信息 */
 header { width: 1000px; margin: 20px auto; overflow: hidden; clear: both; }
-#topnav { width: 60%; background: #48AE15; height: 46px; line-height: 46px; text-align: center; border-radius: 46px; }
+#topnav { width: 60%; background: #48AE15; height: 46px; line-height: 46px; text-align: center; border-radius: 46px 0;margin-left:10px;float:left; }
 #topnav a { display: inline-block; font-size: 18px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; padding: 0 20px; }
 #topnav a:hover { background: #fff; color: #000; }
 #topnav a { color: #FFF }
 #topnav_current { background: #F3FF41; }/* 高亮选中颜色 */
+#topnav1 { width: 20%; background: #48AE15; height: 46px; line-height: 46px; text-align: center; border-radius:0 46px;float:left; }
+#topnav1 a { display: inline-block; font-size: 18px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; padding: 0 20px; }
 a#topnav_current { color: #000 }
 article { width: 1000px; margin: 20px auto; }
 /*footer*/

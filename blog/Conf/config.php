@@ -14,6 +14,6 @@ return array(
 	'DEFAULT_GROUP'=>'Index',
 	'NOT_AUTH_MODULE'=>'Index',
 	'LOAD_EXT_CONFIG'=>'verify',
-	'SHOW_PAGE_TRACE' =>true,
+	//'SHOW_PAGE_TRACE' =>true,
 );
 ?>

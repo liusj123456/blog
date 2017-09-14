@@ -32,7 +32,7 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<span class="white">crazy</span>
+									<span class="white"><a href="<?php echo U('Index/Index/index');?>" style="color:white;text-decoration:none;">crazy</a></span>
 								</h1>
 							</div>
 
