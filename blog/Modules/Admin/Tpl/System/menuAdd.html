@@ -13,8 +13,8 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<form class="form-horizontal" role="form" name='menuAdd' id='menuAdd' action="{:U(GROUP_NAME.'/System/menuAdd')}" method='post'>
 									<!-- #section:elements.form -->
-									<input name='pid' type='hidden' value='0'>
-									<input name='level' type='hidden' value='1'>
+									<input name='pid' type='hidden' value='{$pid}'>
+									<input name='level' type='hidden' value='{$level}'>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称：</label>
 

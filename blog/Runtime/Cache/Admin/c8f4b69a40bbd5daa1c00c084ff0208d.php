@@ -216,46 +216,36 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="<?php echo U(GROUP_NAME.'/Admin/index');?>">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 总控制台 </span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
+					<?php if(is_array($menu)): foreach($menu as $key=>$vo): ?><li class="open">
+							<a href="#" class="dropdown-toggle">
+								<i class="menu-icon fa fa-desktop"></i>
+								<span class="menu-text"> <?php echo ($vo["name"]); ?> </span>
 
-					<li class="open">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text"> 系统管理 </span>
+								<b class="arrow fa fa-angle-down"></b>
+							</a>
 
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
+							<b class="arrow"></b>
+								
+									<ul class="submenu" style="display: block;">
+											<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><li class="">
+												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>">
+													<i class="menu-icon fa fa-caret-right"></i>
+													<?php echo ($vi["name"]); ?>
+												</a>
 
-						<b class="arrow"></b>
-
-						<ul class="submenu" style="display: block;">
-
-								<li class="">
-									<a href="menu.html">
-										<i class="menu-icon fa fa-caret-right"></i>
-										菜单列表
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-
-								<li class="">
-									<a href="menu_add.html">
-										<i class="menu-icon fa fa-caret-right"></i>
-										添加菜单
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-						</ul>
-					</li>
-					<li class="">
+												<b class="arrow"></b>
+											</li><?php endforeach; endif; ?>
+									</ul>
+								
+							</li><?php endforeach; endif; ?>
+					<!-- <li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>
@@ -285,7 +275,7 @@
 									<b class="arrow"></b>
 								</li>
 						</ul>
-					</li>
+					</li>  -->
 				</ul>
 					<!-- /.nav-list -->
 				<!-- #section:basics/sidebar.layout.minimize -->

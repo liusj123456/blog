@@ -73,8 +73,8 @@
 							</thead>
 
 							<tbody>
+							<volist name="menu" id='vo'>
 								<tr>
-								<volist name="menu" id='vo'>
 									<td class="center">
 										<label class="position-relative">
 											<input type="checkbox" class="ace" />
@@ -99,16 +99,91 @@
 												<i class="ace-icon fa fa-pencil bigger-120"></i>
 											</button>
 
-											<button class="btn btn-xs btn-danger" title="删除">
+											<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="{:U(GROUP_NAME.'/System/menuDel',array('id'=>$vo['id']))}";'>
 												<i class="ace-icon fa fa-trash-o bigger-120"></i>
 											</button>
 
-											<button class="btn btn-xs btn-success" title="添加">
+											<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/menuAdd',array('id'=>$vo['id'],'level'=>$vo['level']))}";'>
 												<i class="ace-icon fa fa-check bigger-120"></i>
 											</button>
 										</div>
 									</td>
-								</tr></volist>
+								</tr>
+								<foreach name='vo.son' item='vi'>
+									<tr>
+										<td class="center">
+											<label class="position-relative">
+												<input type="checkbox" class="ace" />
+												<span class="lbl"></span>
+											</label>
+										</td>
+
+										<td>{$vi.name}</td>
+										<td>{$vi.url}</td>
+										<td>{$vi.level}</td>
+										<td><if condition='$vi.display eq 1'>显示<else/>不显示</if></td>
+										<td>{$vi.sort}</td>
+										<td>{$vi.addUser}</td>
+										<td>{$vi.addTime|date='Y-m-d H:i:s',###}</td>
+										<td>
+											<div class="hidden-sm hidden-xs btn-group">
+	<!-- 																<button class="btn btn-xs btn-success" title="查看">
+													<i class="ace-icon fa fa-search-plus bigger-120"></i>
+												</button>
+	-->
+												<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/menuEdit',array('id'=>$vi['id']))}";'>
+													<i class="ace-icon fa fa-pencil bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="{:U(GROUP_NAME.'/System/menuDel',array('id'=>$vi['id']))}";'>
+													<i class="ace-icon fa fa-trash-o bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/menuAdd',array('id'=>$vi['id'],'level'=>$vi['level']))}";'>
+													<i class="ace-icon fa fa-check bigger-120"></i>
+												</button>
+											</div>
+										</td>
+									</tr>
+									<foreach name='vi.son' item='vii'>
+									<tr>
+										<td class="center">
+											<label class="position-relative">
+												<input type="checkbox" class="ace" />
+												<span class="lbl"></span>
+											</label>
+										</td>
+
+										<td>{$vii.name}</td>
+										<td>{$vii.url}</td>
+										<td>{$vii.level}</td>
+										<td><if condition='$vii.display eq 1'>显示<else/>不显示</if></td>
+										<td>{$vii.sort}</td>
+										<td>{$vii.addUser}</td>
+										<td>{$vii.addTime|date='Y-m-d H:i:s',###}</td>
+										<td>
+											<div class="hidden-sm hidden-xs btn-group">
+	<!-- 																<button class="btn btn-xs btn-success" title="查看">
+													<i class="ace-icon fa fa-search-plus bigger-120"></i>
+												</button>
+	-->
+												<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/menuEdit',array('id'=>$vii['id']))}";'>
+													<i class="ace-icon fa fa-pencil bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="{:U(GROUP_NAME.'/System/menuDel',array('id'=>$vii['id']))}";'>
+													<i class="ace-icon fa fa-trash-o bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/menuAdd',array('id'=>$vi['vii'],'level'=>$vii['level']))}";'>
+													<i class="ace-icon fa fa-check bigger-120"></i>
+												</button>
+											</div>
+										</td>
+									</tr>
+								</foreach>
+								</foreach>
+								</volist>
 							</tbody>
 						</table>
 

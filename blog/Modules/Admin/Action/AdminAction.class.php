@@ -1,9 +1,6 @@
 <?php
 class AdminAction extends CommonAction {
     public function index(){
-		//echo '12';
-		//echo C('codelen');
-		
 		$this->display();
     }
 	public function user(){
@@ -29,5 +26,23 @@ class AdminAction extends CommonAction {
 			$this->display();
 		}
 		
+	}
+  public function left(){
+		/* $list = M('menu')->order('sort asc')->select();
+		$parents = M('menu')->where('pid = 0')->order('sort asc')->select();
+		$menu =array();
+		foreach($parents as $key=>$val){			
+			$child = M('menu')->where(array('pid'=>$val['id']))->order('sort asc')->select();
+			foreach($child as $k=>$v){
+				$children = M('menu')->where(array('pid'=>$v['id']))->order('sort asc')->select();
+					foreach($children as $kk=>$vv){
+					}
+				$child[$k]['son'] = $children;
+			} 
+			$parents[$key]['son'] = $child;
+		}
+		$this->assign('menu',$parents);
+		//$this->assign('menus','111111'); */
+		$this->display();
 	}
 }

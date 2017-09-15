@@ -216,46 +216,36 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="<?php echo U(GROUP_NAME.'/Admin/index');?>">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 总控制台 </span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
+					<?php if(is_array($menu)): foreach($menu as $key=>$vo): ?><li class="open">
+							<a href="#" class="dropdown-toggle">
+								<i class="menu-icon fa fa-desktop"></i>
+								<span class="menu-text"> <?php echo ($vo["name"]); ?> </span>
 
-					<li class="open">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text"> 系统管理 </span>
+								<b class="arrow fa fa-angle-down"></b>
+							</a>
 
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
+							<b class="arrow"></b>
+								
+									<ul class="submenu" style="display: block;">
+											<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><li class="">
+												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>">
+													<i class="menu-icon fa fa-caret-right"></i>
+													<?php echo ($vi["name"]); ?>
+												</a>
 
-						<b class="arrow"></b>
-
-						<ul class="submenu" style="display: block;">
-
-								<li class="">
-									<a href="<?php echo U(GROUP_NAME.'/System/menu');?>">
-										<i class="menu-icon fa fa-caret-right"></i>
-										菜单列表
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-
-								<li class="">
-									<a href="<?php echo U(GROUP_NAME.'/System/menuAdd');?>">
-										<i class="menu-icon fa fa-caret-right"></i>
-										添加菜单
-									</a>
-
-									<b class="arrow"></b>
-								</li>
-						</ul>
-					</li>
-					<li class="">
+												<b class="arrow"></b>
+											</li><?php endforeach; endif; ?>
+									</ul>
+								
+							</li><?php endforeach; endif; ?>
+					<!-- <li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>
@@ -285,7 +275,7 @@
 									<b class="arrow"></b>
 								</li>
 						</ul>
-					</li>
+					</li>  -->
 				</ul>
 					<!-- /.nav-list -->
 				<!-- #section:basics/sidebar.layout.minimize -->
@@ -390,8 +380,8 @@
 							</thead>
 
 							<tbody>
-								<tr>
-								<?php if(is_array($menu)): $i = 0; $__LIST__ = $menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><td class="center">
+							<?php if(is_array($menu)): $i = 0; $__LIST__ = $menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+									<td class="center">
 										<label class="position-relative">
 											<input type="checkbox" class="ace" />
 											<span class="lbl"></span>
@@ -415,16 +405,86 @@
 												<i class="ace-icon fa fa-pencil bigger-120"></i>
 											</button>
 
-											<button class="btn btn-xs btn-danger" title="删除">
+											<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="<?php echo U(GROUP_NAME.'/System/menuDel',array('id'=>$vo['id']));?>";'>
 												<i class="ace-icon fa fa-trash-o bigger-120"></i>
 											</button>
 
-											<button class="btn btn-xs btn-success" title="添加">
+											<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/menuAdd',array('id'=>$vo['id'],'level'=>$vo['level']));?>";'>
 												<i class="ace-icon fa fa-check bigger-120"></i>
 											</button>
 										</div>
 									</td>
-								</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+								</tr>
+								<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><tr>
+										<td class="center">
+											<label class="position-relative">
+												<input type="checkbox" class="ace" />
+												<span class="lbl"></span>
+											</label>
+										</td>
+
+										<td><?php echo ($vi["name"]); ?></td>
+										<td><?php echo ($vi["url"]); ?></td>
+										<td><?php echo ($vi["level"]); ?></td>
+										<td><?php if($vi["display"] == 1): ?>显示<?php else: ?>不显示<?php endif; ?></td>
+										<td><?php echo ($vi["sort"]); ?></td>
+										<td><?php echo ($vi["addUser"]); ?></td>
+										<td><?php echo (date('Y-m-d H:i:s',$vi["addTime"])); ?></td>
+										<td>
+											<div class="hidden-sm hidden-xs btn-group">
+	<!-- 																<button class="btn btn-xs btn-success" title="查看">
+													<i class="ace-icon fa fa-search-plus bigger-120"></i>
+												</button>
+	-->
+												<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/menuEdit',array('id'=>$vi['id']));?>";'>
+													<i class="ace-icon fa fa-pencil bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="<?php echo U(GROUP_NAME.'/System/menuDel',array('id'=>$vi['id']));?>";'>
+													<i class="ace-icon fa fa-trash-o bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/menuAdd',array('id'=>$vi['id'],'level'=>$vi['level']));?>";'>
+													<i class="ace-icon fa fa-check bigger-120"></i>
+												</button>
+											</div>
+										</td>
+									</tr>
+									<?php if(is_array($vi["son"])): foreach($vi["son"] as $key=>$vii): ?><tr>
+										<td class="center">
+											<label class="position-relative">
+												<input type="checkbox" class="ace" />
+												<span class="lbl"></span>
+											</label>
+										</td>
+
+										<td><?php echo ($vii["name"]); ?></td>
+										<td><?php echo ($vii["url"]); ?></td>
+										<td><?php echo ($vii["level"]); ?></td>
+										<td><?php if($vii["display"] == 1): ?>显示<?php else: ?>不显示<?php endif; ?></td>
+										<td><?php echo ($vii["sort"]); ?></td>
+										<td><?php echo ($vii["addUser"]); ?></td>
+										<td><?php echo (date('Y-m-d H:i:s',$vii["addTime"])); ?></td>
+										<td>
+											<div class="hidden-sm hidden-xs btn-group">
+	<!-- 																<button class="btn btn-xs btn-success" title="查看">
+													<i class="ace-icon fa fa-search-plus bigger-120"></i>
+												</button>
+	-->
+												<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/menuEdit',array('id'=>$vii['id']));?>";'>
+													<i class="ace-icon fa fa-pencil bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="<?php echo U(GROUP_NAME.'/System/menuDel',array('id'=>$vii['id']));?>";'>
+													<i class="ace-icon fa fa-trash-o bigger-120"></i>
+												</button>
+
+												<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/menuAdd',array('id'=>$vi['vii'],'level'=>$vii['level']));?>";'>
+													<i class="ace-icon fa fa-check bigger-120"></i>
+												</button>
+											</div>
+										</td>
+									</tr><?php endforeach; endif; endforeach; endif; endforeach; endif; else: echo "" ;endif; ?>
 							</tbody>
 						</table>
 
