@@ -6,14 +6,14 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="<?php echo U(GROUP_NAME.'/Admin/index');?>">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 总控制台 </span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
-					<?php if(is_array($menu)): foreach($menu as $key=>$vo): ?><li class="open">
+					<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li class="open">
 							<a href="#" class="dropdown-toggle">
 								<i class="menu-icon fa fa-desktop"></i>
 								<span class="menu-text"> <?php echo ($vo["name"]); ?> </span>
@@ -22,17 +22,18 @@
 							</a>
 
 							<b class="arrow"></b>
-								<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><ul class="submenu" style="display: block;">
-
-											<li class="">
+								
+									<ul class="submenu" style="display: block;">
+											<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><li class="">
 												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>">
 													<i class="menu-icon fa fa-caret-right"></i>
 													<?php echo ($vi["name"]); ?>
 												</a>
 
 												<b class="arrow"></b>
-											</li>
-									</ul><?php endforeach; endif; ?>
+											</li><?php endforeach; endif; ?>
+									</ul>
+								
 							</li><?php endforeach; endif; ?>
 					<!-- <li class="">
 						<a href="#" class="dropdown-toggle">

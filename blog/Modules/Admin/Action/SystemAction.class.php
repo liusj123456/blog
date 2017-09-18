@@ -1,6 +1,6 @@
 <?php
 class SystemAction extends CommonAction {
-    public function menu(){
+     public function menu(){
 		if(ACTION_NAME=='menu'){
 			$list = M('menu')->order('sort asc')->select();
 			$parents = M('menu')->where('pid = 0')->order('sort asc')->select();
@@ -10,10 +10,6 @@ class SystemAction extends CommonAction {
 			//var_dump($list);die;
 			foreach($parents as $key=>$val){			
 				$child = M('menu')->where(array('pid'=>$val['id']))->order('sort asc')->select();
-				/* foreach($child as $kk=>$vv){
-					$parents[$key][] = $child;
-				} */
-				
 				foreach($child as $k=>$v){//二级
 					$child[$k]['name'] = '----'.$v['name'];
 					$children = M('menu')->where(array('pid'=>$v['id']))->order('sort asc')->select();
@@ -25,10 +21,28 @@ class SystemAction extends CommonAction {
 				$parents[$key]['son'] = $child;
 			}
 			//echo "<pre>".print_r($parents,true)."<pre>";die;
-			$this->assign('menu',$parents);
+			$this->assign('menus',$parents);
 		}
 		$this->display();
-    }
+    } 
+	public function menus(){
+		$list = M('menu')->order('sort asc')->select();
+		$this->menus = $this->unlimit($list);
+		//p($menus);die;+
+		
+		$this->display();
+	}
+	public function unlimit($list,$pid=0,$html='----'){
+		$arr = array();
+		foreach($list as $val){
+			if($val['pid']==$pid){
+				$val['html']=str_repeat($html,$val['level']-1);
+				$arr[]=$val;
+				$arr = array_merge($arr,$this->unlimit($list,$val['id'],$html));
+			}
+		}
+		return $arr;
+	}
 	public function menuDel(){
 		$info=M('menu')->where(array('id'=>$_GET['id']))->delete();
 		if($info){
@@ -71,6 +85,10 @@ class SystemAction extends CommonAction {
 		}else{
 			$level = !empty($_GET['level'])?($_GET['level']+1):1;
 			$pid = !empty($_GET['id'])?$_GET['id']:0;
+			if($pid!=0){
+				$name = M('menu')->where(array('id'=>$pid))->getField('name');
+				$this->assign('parents',$name);
+			}
 			$this->assign('level',$level);
 			$this->assign('pid',$pid);
 			$this->display();
@@ -108,7 +126,8 @@ class SystemAction extends CommonAction {
 			}
 		}else{
 			$info=M('menu')->where(array('id'=>$id))->find();
-			$this->assign('vo',$info);
+			//p($info);
+			$this->assign('v',$info);
 			$this->display();
 		}
     }

@@ -13,42 +13,7 @@
 			<!-- PAGE CONTENT BEGINS -->
 			<div class="row">
 				<div class="col-xs-12">
-					<table width="100%" class="CSSearchTbl" cellpadding="0" cellspacing="0">
-						<tr>
-							<td class="left">提交部门：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单名称：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单号：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单状态：</td>
-							<td class="right">
-								<select>
-									<option>未提交</option>
-									<option>审核中</option>
-									<option>审核通过</option>
-									<option>审核未通过</option>
-									<option>撤回</option>
-									<option>作废</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							
-							<td class="left">提交人姓名：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单创建时间：</td>
-							<td class="right"><input type="text" size="16" class="datePicker"  /> 至 <input type="text" size="16" class="datePicker"  /></td>
-							<td class="left">差旅时间范围：</td>
-							<td class="right"><input type="text" size="16" class="datePicker"  /> 至 <input type="text" size="16" class="datePicker"  /></td>
-							<td class="right" colspan="2">
-								<button class="btn btn-primary pull-left col-sm-12 tbl-search" data-dismiss="modal">
-									开始搜索 
-									<i class="ace-icon fa fa-search"></i>
-								</button>
-							</td>
-						</tr>
-					</table> 
+					 
 
 					<div class="table-responsive">
 						
@@ -73,7 +38,7 @@
 							</thead>
 
 							<tbody>
-							<volist name="menu" id='vo'>
+							<volist name="menus" id='vo'>
 								<tr>
 									<td class="center">
 										<label class="position-relative">

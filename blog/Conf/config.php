@@ -2,7 +2,8 @@
 return array(
 	//'配置项'=>'配置值'
 	'TMPL_PARSE_STRING'=>array(
-		'__STATIC__'=>__ROOT__.'/static',
+		'__STATIC__'=>__ROOT__.'/Static',
+		'__Ueditor__'=>__ROOT__.'/Ueditor',
 	),	
 	'DB_DSN'=>'mysql://root:@localhost:3306/blog',
 	'DB_PREFIX'=>'blg_',

@@ -14,6 +14,7 @@ class LoginAction extends Action {
 			$this->error('账号或密码错误');
 		}
 		if(session('verify')!==md5(I('verify','','strtolower'))){
+			session('verify',null);
 			$this->error('验证码错误');
 		}		
 		session('uid',$user['id']);

@@ -1,1335 +1,202 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		<title>简单通用表格 - 表格 - 统一开发平台 - UI库</title>
-		<meta name="description" content="Restyling jQuery UI Widgets and Elements" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
-		<link rel="stylesheet" href="assets/css/ace.min.css" id="main-ace-style" />
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
-		<![endif]-->
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-		<script src="assets/js/ace-extra.min.js"></script>
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-		<style type="text/css">
-			.CSSearchTbl{ border:1px #008CD4 solid;}
-			.CSSearchTbl thead{}
-			.CSSearchTbl thead tr{}
-			.CSSearchTbl thead tr th{  text-align:left; padding-left:10px;}
-			.CSSearchTbl tbody{}
-			.CSSearchTbl tbody tr{}
-			.CSSearchTbl tbody tr td{  padding: 10px;}
-			.CSSearchTbl tbody tr td.right{ text-align: left;}
-			.CSSearchTbl tbody tr td.left{ text-align: right;}
-			.table-responsive{ display: none;}
-		</style>
-	</head>
-
-	<body class="no-skin">
-		<!-- #section:basics/navbar.layout -->
-		<div id="navbar" class="navbar navbar-default">
-
-			<div class="navbar-container" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
-				<div class="navbar-header pull-left">
-					<!-- #section:basics/navbar.layout.brand -->
-					<a href="index.html" class="navbar-brand">
-						<small>
-							<img src="assets/avatars/logo.png" alt="" />
-						</small>
-					</a>
-				</div>
-
-				<!-- #section:basics/navbar.dropdown -->
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-
-						<li class="green">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-								<span class="badge badge-success">5</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-envelope-o"></i>
-									13条未读信息
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar">
-										<li>
-											<a href="#">
-												<img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">B2C:</span>
-														系统产生20个错误，12个警告...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>2014-12-15 18:00:00</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">积分商城:</span>
-														系统产生20个错误，12个警告...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>2014-12-15 18:00:00</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">政府机票采购:</span>
-														系统产生20个错误，12个警告...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>2014-12-15 18:00:00</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<img src="assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">B2B:</span>
-														系统产生20个错误，12个警告...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>2014-12-15 18:00:00</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#">
-												<img src="assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">货运系统:</span>
-														系统产生20个错误，12个警告...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>2014-12-15 18:00:00</span>
-													</span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="inbox.html">
-										查看全部消息
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<!-- #section:basics/navbar.user_menu -->
-						<li class="light-blue">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
-								<span class="user-info">
-									欢迎您<br />
-									陈子昂
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
-
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-cog"></i>
-										系统设置
-									</a>
-								</li>
-
-								<li>
-									<a href="profile.html">
-										<i class="ace-icon fa fa-user"></i>
-										个人信息设置
-									</a>
-								</li>
-
-								<li class="divider"></li>
-
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-power-off"></i>
-										登出
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<!-- /section:basics/navbar.user_menu -->
-					</ul>
-				</div>
-
-				<!-- /section:basics/navbar.dropdown -->
-			</div><!-- /.navbar-container -->
-		</div>
-
-		<!-- /section:basics/navbar.layout -->
-		<div class="main-container" id="main-container">
-
-			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar responsive">
-
-				<ul class="nav nav-list">
-					<li class="active">
-						<a href="index.html">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> 总控制台 </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text"> UI &amp; 元素 </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-
-							<li class="">
-								<a href="typography.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									排版
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="elements.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									UI元素
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="buttons.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									按钮 &amp; 图标
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="treeview.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									树状结构
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jquery-ui.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									jQuery UI
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="nestable-list.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									可拖拽列表
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="#" class="dropdown-toggle">
-									<i class="menu-icon fa fa-caret-right"></i>
-									三级菜单
-									<b class="arrow fa fa-angle-down"></b>
-								</a>
-
-								<b class="arrow"></b>
-
-								<ul class="submenu">
-									<li class="">
-										<a href="#">
-											<i class="menu-icon fa fa-leaf green"></i>
-											第一级
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="#" class="dropdown-toggle">
-											<i class="menu-icon fa fa-pencil orange"></i>
-
-											第四级
-											<b class="arrow fa fa-angle-down"></b>
-										</a>
-
-										<b class="arrow"></b>
-
-										<ul class="submenu">
-											<li class="">
-												<a href="#">
-													<i class="menu-icon fa fa-plus purple"></i>
-													添加商品
-												</a>
-
-												<b class="arrow"></b>
-											</li>
-
-											<li class="">
-												<a href="#">
-													<i class="menu-icon fa fa-eye pink"></i>
-													查看商品
-												</a>
-
-												<b class="arrow"></b>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-
-					<li class="active open">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> 表格 </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="active">
-								<a href="tables.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									简单通用表格
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jqgrid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									jqGrid插件表格
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text"> 表单 </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="form-elements.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									表单组件
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="form-wizard.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									向导提示 &amp; 验证
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="wysiwyg.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									编辑器
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="dropzone.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									文件上传
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="widgets.html">
-							<i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text"> 插件 </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="calendar.html">
-							<i class="menu-icon fa fa-calendar"></i>
-
-							<span class="menu-text">
-								日历
-
-								<!-- #section:basics/sidebar.layout.badge -->
-								<span class="badge badge-transparent tooltip-error" title="有2件重要事件">
-									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-								</span>
-
-								<!-- /section:basics/sidebar.layout.badge -->
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="gallery.html">
-							<i class="menu-icon fa fa-picture-o"></i>
-							<span class="menu-text"> 相册 </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-tag"></i>
-							<span class="menu-text"> 更多页面 </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="profile.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									用户信息
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="pricing.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									售价单
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="invoice.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									购物车
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="timeline.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									时间轴
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="login.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									登录注册
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
-
-							<span class="menu-text">
-								其他页面
-
-								<!-- #section:basics/sidebar.layout.badge -->
-								<span class="badge badge-primary">5</span>
-
-								<!-- /section:basics/sidebar.layout.badge -->
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="faq.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									帮助页面
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="error-404.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									404错误页面
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="error-500.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									500错误页面
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="grid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									网格
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="blank.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									空白页面
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-				</ul><!-- /.nav-list -->
-
-
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
-
-			</div>
-
-
-			<!-- /section:basics/sidebar -->
+<include file='Admin:top'/>
+<include file='Admin:left'/>
 			<div class="main-content">
-				<div class="breadcrumbs" id="breadcrumbs">
-					<ul class="breadcrumb">
-						<li>
-							<i class="ace-icon fa fa-home home-icon"></i>
-							<a href="index.html">UI库首页</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">表格</a>
-						</li>
-						<li>
-							<a href="elements.html">简单通用表格</a>
-						</li>
-					</ul><!-- /.breadcrumb -->
-
-					<!-- #section:basics/content.searchbox -->
-					<div class="nav-search" id="nav-search">
-						<form class="form-search">
-							<span class="input-icon">
-								<input type="text" placeholder="请输入关键字 ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-								<i class="ace-icon fa fa-search nav-search-icon"></i>
-							</span>
-						</form>
-					</div><!-- /.nav-search -->
-				</div>
+				<include file='Admin:mainTop'/>
+				<script type="text/javascript">
+					window.UEDITOR_HOME_URL = '__Ueditor__/';
+					/*window.onload = function(){
+						 UE.getEditor('edit',{
+						//这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
+						toolbars:[
+							['fullscreen', 'source', '|', 'undo', 'redo', '|',
+								'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch','autotypeset','blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist','selectall', 'cleardoc', '|',
+								'rowspacingtop', 'rowspacingbottom','lineheight','|',
+								'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+								'directionalityltr', 'directionalityrtl', 'indent', '|',
+								'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|','touppercase','tolowercase','|',
+								'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright','imagecenter', '|',
+								'insertimage', 'emotion','scrawl', 'insertvideo','music','attachment', 'map', 'gmap', 'insertframe','highlightcode','webapp','pagebreak','template','background', '|',
+								'horizontal', 'date', 'time', 'spechars','snapscreen', 'wordimage', '|',
+								'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
+								'print', 'preview', 'searchreplace','help']
+						],
+							//focus时自动清空初始化时的内容
+							autoClearinitialContent:true,
+							//关闭字数统计
+							wordCount:false,
+							//关闭elementPath
+							elementPathEnabled:false
+							//更多其他参数，请参考editor_config.js中的配置项
+						}) 
+					}*/
+					window.onload = function(){
+						//window.UEDITOR_CONFIG.initialFrameWidth=1200;
+						//window.UEDITOR_CONFIG.initialFrameHeight=600;
+						//window.UEDITOR_CONFIG.imageUrl='';
+						//window.UEDITOR_CONFIG.imagePath='';
+						 UE.getEditor('edit');
+					}
+		$(function(){
+			var obj =["buslincese"];    
+	   //下面使用each进行遍历  
+	   	$.each(obj,function(n,idx) {
+			var Ifout=0;
+			$("#"+idx).uploadify({
+	            'height'        : 20,
+	            'width'         : 30, 
+	            'buttonText'    : '上传',
+	            'swf'           : '/Static/js/uploadify/uploadify.swf',
+	            'uploader' 	 	: "{:U('Admin/Login/upload_image')}",
+	            'auto'          : true,
+	            'multi'         : true,
+	            'cancelImg'     : '/Static/js/uploadify/uploadify-cancel.png',
+	            'fileTypeExts'  : '*.jpg',
+	            'fileSizeLimit' : '1MB',
+	            'removeCompleted':true,
+	            'onFallback'		:function(){
+					alert ('上传图片需要用到flash,请先安装flash');
+					Ifout=1;
+					
+		         },
+	            'onUploadStart'	:	function(file){
+		        	var fileCount = $("#file_"+idx).val();
+		        	
+	            	if(fileCount>=10){
+	            		alert ('无法继续上传图片，图片数量限制为10');
+	            		$('#'+idx).uploadify('cancel',"*");
+		            }
+	            },
+	            'onUploadSuccess':function(file,data,response){
+	                pic_url=jQuery.parseJSON(data);
+					imgstr = '<a href="'+pic_url+'" target="_blank"><img src="'+pic_url+'" width="25" height="29" /></a>';
+					pic_hidden = '<input type="hidden" name="pics['+idx+'][]" value="'+pic_url+'">'; 
+	
+	 				//这个地方可能由于ajax的原因实际会被调用两次，所以加判断	
+	 				if (pic_url!=null){
+	 					var fileCount = $("#file_"+idx).val();
+	 				     
+	 				    if(fileCount != ''){
+	 				       fileCount = parseInt(fileCount) + 1;
+	 				    }else{
+	 				       fileCount = "1";
+	 				    }
+	 				    $("#file_"+idx).val(fileCount);
+						// 插入<div>元素及其子元素
+	 				    var fileHtml = '';
+	 				    fileHtml += '<div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">';
+	 				    fileHtml += imgstr+pic_hidden;
+	 				   	fileHtml +='<a href="javascript:;" onclick="$(this).parent().remove();subfileCount('+"'"+idx+"'"+');">取消</a> &nbsp;&nbsp;'+'  </div>';
+	 				  
+	 				    var fileElement = document.getElementById("files_preview_"+idx);
+	 				    fileElement.innerHTML = fileElement.innerHTML + fileHtml;    
+	 				    
+	              
+	 				}
+	            },
+	            //加上此句会重写onSelectError方法【需要重写的事件】
+	            'overrideEvents': ['onSelectError', 'onDialogClose'],
+	            //返回一个错误，选择文件的时候触发
+	            'onSelectError':function(file, errorCode, errorMsg){
+	                switch(errorCode) {
+	                    case -110:
+	                        alert("文件 ["+file.name+"] 大小超出系统限制的(1M=1024kb)大小！");
+	                        break;
+	                    case -120:
+	                        alert("文件 ["+file.name+"] 大小异常！");
+	                        break;
+	                    case -130:
+	                        alert("文件 ["+file.name+"] 类型不正确！");
+	                        break;
+	                }
+	            }
+	        });
+			if(Ifout==1){
+				return false;
+			}
+	   	});
+					});
+				</script>
+				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.config.js"></script>
+				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.all.min.js"> </script>
+				<link rel="stylesheet" type="text/css" href="__STATIC__/js/uploadify/uploadify.css">
+				<script type="text/javascript" src="__STATIC__/js/uploadify/jquery.uploadify.min.js"></script>
+				<script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>
+				<!-- /section:basics/content.breadcrumbs -->
+				
+				
 				<div class="page-content">
 
-					<!-- /section:settings.box -->
 					<div class="page-content-area">
 
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<div class="row">
-									<div class="col-xs-12">
-										<table id="sample-table-1" class="table table-striped table-bordered table-hover">
-											<thead>
-												<tr>
-													<th class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</th>
-													<th>航班类型</th>
-													<th>客舱级别</th>
-													<th class="hidden-480">行李数量上限</th>
-													<th>
-														
-														每件尺寸限制
-													</th>
-													<th class="hidden-480">
-														<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-														每件重量上限</th>
-													<th class="hidden-480">操作</th>
-												</tr>
-											</thead>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/Blog/blogAdd')}" method='post'>
+									<!-- #section:elements.form -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章图片： </label>
 
-											<tbody>
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-warning">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-success">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-inverse arrowed-in">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td class="center">
-														<label class="position-relative">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</td>
-
-													<td>
-														<a href="#">国内航班</a>
-													</td>
-													<td>头等舱</td>
-													<td class="hidden-480">2件</td>
-													<td>A+B+C<145cm</td>
-
-													<td class="hidden-480">
-														<span class="label label-sm label-warning arrowed-right">5千克</span>
-													</td>
-													<td>
-														<div class="hidden-sm hidden-xs btn-group">
-															<button class="btn btn-xs btn-success" title="">
-																<i class="ace-icon fa fa-search-plus bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-info">
-																<i class="ace-icon fa fa-pencil bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-danger">
-																<i class="ace-icon fa fa-trash-o bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-warning">
-																<i class="ace-icon fa fa-flag bigger-120"></i>
-															</button>
-
-															<button class="btn btn-xs btn-success">
-																<i class="ace-icon fa fa-check bigger-120"></i>
-															</button>
-														</div>
-													</td>
-												</tr>
-
-												
-											</tbody>
-										</table>
-									</div><!-- /.span -->
-								</div><!-- /.row -->
-
-								<div class="hr hr-18 dotted hr-double"></div>
-
-								<h4 class="pink">
-									<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-									<a href="#modal-table" role="button" class="blue" data-toggle="modal">点击弹出层表格</a>
-								</h4>
-
-								<div class="hr hr-18 dotted hr-double"></div>
-
-								<div class="row">
-									<div class="col-xs-12">
-
-										<div class="table-header">
-											差旅单管理
+										<div class="col-sm-9">
+											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
+										<span id="files_legal">
+										  <input id="legal" name="legal" type="file">
+									   </span>&nbsp;&nbsp;
+									   
+									   <div id="files_preview_legal" style="width:auto;height:auto; overflow :auto"></div>
+									   <input id="file_legal" value="" type="hidden">
 										</div>
-
-										<table width="100%" class="CSSearchTbl" cellpadding="0" cellspacing="0">
-			                                <tr>
-			                                    <td class="left">提交部门：</td>
-			                                    <td class="right"><input type="text" size="16"  /></td>
-			                                    <td class="left">差旅单名称：</td>
-			                                    <td class="right"><input type="text" size="16"  /></td>
-			                                    <td class="left">差旅单号：</td>
-			                                    <td class="right"><input type="text" size="16"  /></td>
-			                                    <td class="left">差旅单状态：</td>
-			                                    <td class="right">
-			                                    	<select>
-			                                            <option>未提交</option>
-			                                            <option>审核中</option>
-			                                            <option>审核通过</option>
-			                                            <option>审核未通过</option>
-			                                            <option>撤回</option>
-			                                            <option>作废</option>
-			                                        </select>
-			                                    </td>
-			                                </tr>
-			                                <tr>
-			                                	
-			                                    <td class="left">提交人姓名：</td>
-			                                    <td class="right"><input type="text" size="16"  /></td>
-			                                    <td class="left">差旅单创建时间：</td>
-			                                    <td class="right"><input type="text" size="16" class="datePicker"  /> 至 <input type="text" size="16" class="datePicker"  /></td>
-			                                    <td class="left">差旅时间范围：</td>
-			                                    <td class="right"><input type="text" size="16" class="datePicker"  /> 至 <input type="text" size="16" class="datePicker"  /></td>
-			                                    <td class="right" colspan="2">
-			                                    	<button class="btn btn-primary pull-left col-sm-12 tbl-search" data-dismiss="modal">
-														开始搜索 
-														<i class="ace-icon fa fa-search"></i>
-													</button>
-												</td>
-			                                </tr>
-			                            </table> 
-
-										<div class="table-responsive">
-
-											<table id="sample-table-2" class="table table-striped table-bordered table-hover">
-												<thead>
-													<tr>
-														<th class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</th>
-														<th>部门</th>
-				                                        <th>差旅单号</th>
-				                                        <th>名称</th>
-				                                        <th>关联订单号</th>
-				                                        <th>差旅单状态</th>
-				                                        <th>创建人</th>
-				                                        <th>创建日期</th>
-														<th>操作</th>
-													</tr>
-												</thead>
-
-												<tbody>
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-
-													<tr>
-														<td class="center">
-															<label class="position-relative">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
-
-														<td>商务研发部</td>
-				                                        <td><a href="#"  class="yuangongBtn" rel="#yuangong">CL1234567891234567</a></td>
-				                                        <td class="hidden-480">C1234567891234</td>
-				                                        <td class="hidden-480"><span class="label label-sm label-warning">广州北京0801</span></td>
-				                                        <td>未提交</td>
-				                                        <td>张国立</td>
-				                                        <td>2012-08-01</td>
-														<td>
-															<div class="hidden-sm hidden-xs btn-group">
-																<button class="btn btn-xs btn-success" title="">
-																	<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-info">
-																	<i class="ace-icon fa fa-pencil bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-danger">
-																	<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-warning">
-																	<i class="ace-icon fa fa-flag bigger-120"></i>
-																</button>
-
-																<button class="btn btn-xs btn-success">
-																	<i class="ace-icon fa fa-check bigger-120"></i>
-																</button>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-
-											<div class="modal-footer no-margin-top">
-
-												<ul class="pagination pull-right no-margin">
-													<li class="prev disabled">
-														<a href="#">
-															<i class="ace-icon fa fa-angle-double-left"></i>
-														</a>
-													</li>
-
-													<li class="active">
-														<a href="#">1</a>
-													</li>
-
-													<li>
-														<a href="#">2</a>
-													</li>
-
-													<li>
-														<a href="#">3</a>
-													</li>
-
-													<li class="next">
-														<a href="#">
-															<i class="ace-icon fa fa-angle-double-right"></i>
-														</a>
-													</li>
-												</ul>
-											</div>
-
-										</div>
-
-										
-
-
 									</div>
-								</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文章标题：</label>
 
-								<div id="modal-table" class="modal fade" tabindex="-1">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header no-padding">
-												<div class="table-header">
-													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-														<span class="white">&times;</span>
-													</button>
-													客票行李规定
-												</div>
-											</div>
+										<div class="col-sm-9">
+											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
 
-											<div class="modal-body no-padding">
-												<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
-													<thead>
-														<tr>
-															<th>航班类型</th>
-															<th>客舱级别</th>
-															<th>行李数量上限</th>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
 
-															<th>
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																每件重量上限
-															</th>
-														</tr>
-													</thead>
+										<div class="col-sm-9">
+											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+										</div>
+									</div>
 
-													<tbody>
-														<tr>
-															<td>
-																<a href="#">国内航班</a>
-															</td>
-															<td>头等舱</td>
-															<td>2件</td>
-															<td>5千克</td>
-														</tr>
+									<!-- /section:elements.form -->
+									<!-- <div class="space-4"></div>
 
-														<tr>
-															<td>
-																<a href="#">国内航班</a>
-															</td>
-															<td>头等舱</td>
-															<td>2件</td>
-															<td>5千克</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">国内航班</a>
-															</td>
-															<td>头等舱</td>
-															<td>2件</td>
-															<td>5千克</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">国内航班</a>
-															</td>
-															<td>头等舱</td>
-															<td>2件</td>
-															<td>5千克</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">国内航班</a>
-															</td>
-															<td>头等舱</td>
-															<td>2件</td>
-															<td>5千克</td>
-														</tr>
-														<tr>
-															<td>
-																<a href="#">国内航班</a>
-															</td>
-															<td>头等舱</td>
-															<td>2件</td>
-															<td>5千克</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章摘要： </label>
 
-											<div class="modal-footer no-margin-top">
-												<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
-													<i class="ace-icon fa fa-times"></i>
-													关闭
-												</button>
+										<div class="col-sm-9">
+											<input type="text" name='intro' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div> -->
 
-												<ul class="pagination pull-right no-margin">
-													<li class="prev disabled">
-														<a href="#">
-															<i class="ace-icon fa fa-angle-double-left"></i>
-														</a>
-													</li>
+									<div class="space-4"></div>							
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章正文： </label>
 
-													<li class="active">
-														<a href="#">1</a>
-													</li>
+										<div class="col-sm-9">
+											<textarea name='content' id='edit'></textarea>
+										</div>
+									</div>
 
-													<li>
-														<a href="#">2</a>
-													</li>
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<button class="btn btn-info" type="submit">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												立即提交
+											</button>
 
-													<li>
-														<a href="#">3</a>
-													</li>
-
-													<li class="next">
-														<a href="#">
-															<i class="ace-icon fa fa-angle-double-right"></i>
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div><!-- /.modal-content -->
-									</div><!-- /.modal-dialog -->
-								</div><!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content-area -->
-				</div><!-- /.page-content -->
-			</div><!-- /.main-content -->
-
-			<div class="footer">
-				<div class="footer-inner">
-					<!-- #section:basics/footer -->
-					<div class="footer-content">
-						<span class="bigger-120">
-							 统一开发平台-UI库 &copy; 2014  更多模板：<a href="http://www.aspku.com/" target="_blank">源码之家</a>
-						</span>
-					</div>
-
-					<!-- /section:basics/footer -->
-				</div>
-			</div>
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												重置
+											</button>
+										</div>
+									</div>
+							
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
@@ -1337,7 +204,21 @@
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
+		<script language="javascript">
 
+		  function subfileCount(idx)  // 删除当前文件的<div>和<input type=”file”/>元素
+		  {
+			  var fileCount = $("#file_"+idx).val();
+			  if(fileCount != ''){
+				  fileCount = parseInt(fileCount) - 1;
+			  }else{
+				 fileCount = "0";
+			  }
+			  $("#file_"+idx).val(fileCount);
+			  
+		  }
+		  
+		  </script>	
 		<!--[if !IE]> -->
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
@@ -1346,62 +227,442 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-		<script type="text/javascript">
-		 window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
-		</script>
-		<![endif]-->
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
 		<script src="assets/js/bootstrap.min.js"></script>
 
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+		<!-- page specific plugin scripts -->
+
+		<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/chosen.jquery.min.js"></script>
+		<script src="assets/js/fuelux/fuelux.spinner.min.js"></script>
+		<script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+		<script src="assets/js/date-time/bootstrap-timepicker.min.js"></script>
+		<script src="assets/js/date-time/moment.min.js"></script>
+		<script src="assets/js/date-time/daterangepicker.min.js"></script>
+		<script src="assets/js/date-time/bootstrap-datetimepicker.min.js"></script>
+		<script src="assets/js/bootstrap-colorpicker.min.js"></script>
+		<script src="assets/js/jquery.knob.min.js"></script>
+		<script src="assets/js/jquery.autosize.min.js"></script>
+		<script src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+		<script src="assets/js/jquery.maskedinput.min.js"></script>
+		<script src="assets/js/bootstrap-tag.min.js"></script>
+		<script src="assets/js/typeahead.jquery.min.js"></script>
 
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 
+		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			jQuery(function($) {
 
-				$(".tbl-search").click(function(){
-					$(".table-responsive").slideDown("fast");
-				})
-
-				var oTable1 = 
-				$('#sample-table-2')
-				.dataTable( {
-					bAutoWidth: false,
-					bInfo:flase,
-					"aoColumns": [
-					  { "bSortable": false },
-					  null, 
-					  null,
-					  null,
-					  null, 
-					  null,
-					  { "bSortable": false },
-					  null,
-					  { "bSortable": false }
-					],
-					"aaSorting": [],
-			    } );
 			
-				$(document).on('click', 'th input:checkbox' , function(){
-					var that = this;
-					$(this).closest('table').find('tr > td:first-child input:checkbox')
-					.each(function(){
-						this.checked = that.checked;
-						$(this).closest('tr').toggleClass('selected');
+			
+				$('.chosen-select').chosen({allow_single_deselect:true}); 
+			
+				$(window)
+				.off('resize.chosen')
+				.on('resize.chosen', function() {
+					$('.chosen-select').each(function() {
+						 var $this = $(this);
+						 $this.next().css({'width': $this.parent().width()});
+					})
+				}).trigger('resize.chosen');
+			
+			
+				$('#chosen-multiple-style').on('click', function(e){
+					var target = $(e.target).find('input[type=radio]');
+					var which = parseInt(target.val());
+					if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+					 else $('#form-field-select-4').removeClass('tag-input-style');
+				});
+			
+			
+				$('[data-rel=tooltip]').tooltip({container:'body'});
+				$('[data-rel=popover]').popover({container:'body'});
+				
+				$('textarea[class*=autosize]').autosize({append: "\n"});
+				$('textarea.limited').inputlimiter({
+					remText: ' 还能再输入%n个字...',
+					limitText: '最多只能输入 : %n 个字.'
+				});
+			
+				$.mask.definitions['~']='[+-]';
+				$('.input-mask-date').mask('99/99/9999');
+				$('.input-mask-phone').mask('(999) 999-9999');
+				$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
+				$(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
+			
+			
+			
+				$( "#input-size-slider" ).css('width','200px').slider({
+					value:1,
+					range: "min",
+					min: 1,
+					max: 8,
+					step: 1,
+					slide: function( event, ui ) {
+						var sizing = ['', 'input-sm', 'input-lg', 'input-mini', 'input-small', 'input-medium', 'input-large', 'input-xlarge', 'input-xxlarge'];
+						var val = parseInt(ui.value);
+						$('#form-field-4').attr('class', sizing[val]).val('.'+sizing[val]);
+					}
+				});
+			
+				$( "#input-span-slider" ).slider({
+					value:1,
+					range: "min",
+					min: 1,
+					max: 12,
+					step: 1,
+					slide: function( event, ui ) {
+						var val = parseInt(ui.value);
+						$('#form-field-5').attr('class', 'col-xs-'+val).val('.col-xs-'+val);
+					}
+				});
+			
+			
+				
+				//"jQuery UI Slider"
+				//range slider tooltip example
+				$( "#slider-range" ).css('height','200px').slider({
+					orientation: "vertical",
+					range: true,
+					min: 0,
+					max: 100,
+					values: [ 17, 67 ],
+					slide: function( event, ui ) {
+						var val = ui.values[$(ui.handle).index()-1] + "";
+			
+						if( !ui.handle.firstChild ) {
+							$("<div class='tooltip right in' style='display:none;left:16px;top:-6px;'><div class='tooltip-arrow'></div><div class='tooltip-inner'></div></div>")
+							.prependTo(ui.handle);
+						}
+						$(ui.handle.firstChild).show().children().eq(1).text(val);
+					}
+				}).find('a').on('blur', function(){
+					$(this.firstChild).hide();
+				});
+				
+				
+				$( "#slider-range-max" ).slider({
+					range: "max",
+					min: 1,
+					max: 10,
+					value: 2
+				});
+				
+				$( "#slider-eq > span" ).css({width:'90%', 'float':'left', margin:'15px'}).each(function() {
+					// read initial values from markup and remove that
+					var value = parseInt( $( this ).text(), 10 );
+					$( this ).empty().slider({
+						value: value,
+						range: "min",
+						animate: true
+						
 					});
 				});
-
-
+				
+				$("#slider-eq > span.ui-slider-purple").slider('disable');//disable third item
+			
+				
+				$('#id-input-file-1 , #id-input-file-2').ace_file_input({
+					no_file:'No File ...',
+					btn_choose:'Choose',
+					btn_change:'Change',
+					droppable:false,
+					onchange:null,
+					thumbnail:false //| true | large
+					//whitelist:'gif|png|jpg|jpeg'
+					//blacklist:'exe|php'
+					//onchange:''
+					//
+				});
+				//pre-show a file name, for example a previously selected file
+				//$('#id-input-file-1').ace_file_input('show_file_list', ['myfile.txt'])
+			
+			
+				$('#id-input-file-3').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+			
+				}).on('change', function(){
+					//console.log($(this).data('ace_input_files'));
+					//console.log($(this).data('ace_input_method'));
+				});
 				
 			
-			})
-
+				//dynamically change allowed formats by changing allowExt && allowMime function
+				$('#id-file-format').removeAttr('checked').on('change', function() {
+					var whitelist_ext, whitelist_mime;
+					var btn_choose
+					var no_icon
+					if(this.checked) {
+						btn_choose = "Drop images here or click to choose";
+						no_icon = "ace-icon fa fa-picture-o";
+			
+						whitelist_ext = ["jpeg", "jpg", "png", "gif" , "bmp"];
+						whitelist_mime = ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/bmp"];
+					}
+					else {
+						btn_choose = "Drop files here or click to choose";
+						no_icon = "ace-icon fa fa-cloud-upload";
+						
+						whitelist_ext = null;//all extensions are acceptable
+						whitelist_mime = null;//all mimes are acceptable
+					}
+					var file_input = $('#id-input-file-3');
+					file_input
+					.ace_file_input('update_settings',
+					{
+						'btn_choose': btn_choose,
+						'no_icon': no_icon,
+						'allowExt': whitelist_ext,
+						'allowMime': whitelist_mime
+					})
+					file_input.ace_file_input('reset_input');
+					
+					file_input
+					.off('file.error.ace')
+					.on('file.error.ace', function(e, info) {
+						//console.log(info.file_count);//number of selected files
+						//console.log(info.invalid_count);//number of invalid files
+						//console.log(info.error_list);//a list of errors in the following format
+						
+						//info.error_count['ext']
+						//info.error_count['mime']
+						//info.error_count['size']
+						
+						//info.error_list['ext']  = [list of file names with invalid extension]
+						//info.error_list['mime'] = [list of file names with invalid mimetype]
+						//info.error_list['size'] = [list of file names with invalid size]
+						
+						
+						/**
+						if( !info.dropped ) {
+							//perhapse reset file field if files have been selected, and there are invalid files among them
+							//when files are dropped, only valid files will be added to our file array
+							e.preventDefault();//it will rest input
+						}
+						*/
+						
+						
+						//if files have been selected (not dropped), you can choose to reset input
+						//because browser keeps all selected files anyway and this cannot be changed
+						//we can only reset file field to become empty again
+						//on any case you still should check files with your server side script
+						//because any arbitrary file can be uploaded by user and it's not safe to rely on browser-side measures
+					});
+				
+				});
+			
+				$('#spinner1').ace_spinner({value:0,min:0,max:200,step:10, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+				.on('change', function(){
+					//alert(this.value)
+				});
+				$('#spinner2').ace_spinner({value:0,min:0,max:10000,step:100, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up', icon_down:'ace-icon fa fa-caret-down'});
+				$('#spinner3').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus smaller-75', icon_down:'ace-icon fa fa-minus smaller-75', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
+				//$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
+				//or
+				//$('#spinner1').closest('.ace-spinner').spinner('disable').spinner('enable').spinner('value', 11);//disable, enable or change value
+				//$('#spinner1').closest('.ace-spinner').spinner('value', 0);//reset to 0
+			
+			
+				//datepicker plugin
+				//link
+				$('.date-picker').datepicker({
+					autoclose: true,
+					todayHighlight: true
+				})
+				//show datepicker when clicking on the icon
+				.next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+			
+				//or change it into a date range picker
+				$('.input-daterange').datepicker({autoclose:true});
+			
+			
+				//to translate the daterange picker, please copy the "examples/daterange-fr.js" contents here before initialization
+				$('input[name=date-range-picker]').daterangepicker({
+					'applyClass' : 'btn-sm btn-success',
+					'cancelClass' : 'btn-sm btn-default',
+					locale: {
+						applyLabel: 'Apply',
+						cancelLabel: 'Cancel',
+					}
+				})
+				.prev().on(ace.click_event, function(){
+					$(this).next().focus();
+				});
+			
+			
+				$('#timepicker1').timepicker({
+					minuteStep: 1,
+					showSeconds: true,
+					showMeridian: false
+				}).next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+				
+				$('#date-timepicker1').datetimepicker().next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+				
+			
+				$('#colorpicker1').colorpicker();
+			
+				$('#simple-colorpicker-1').ace_colorpicker();
+				//$('#simple-colorpicker-1').ace_colorpicker('pick', 2);//select 2nd color
+				//$('#simple-colorpicker-1').ace_colorpicker('pick', '#fbe983');//select #fbe983 color
+				//var picker = $('#simple-colorpicker-1').data('ace_colorpicker')
+				//picker.pick('red', true);//insert the color if it doesn't exist
+			
+			
+				$(".knob").knob();
+				
+				
+				var tag_input = $('#form-field-tags');
+				try{
+					tag_input.tag(
+					  {
+						placeholder:tag_input.attr('placeholder'),
+						//enable typeahead by specifying the source array
+						source: ace.vars['US_STATES'],//defined in ace.js >> ace.enable_search_ahead
+						/**
+						//or fetch data from database, fetch those that match "query"
+						source: function(query, process) {
+						  $.ajax({url: 'remote_source.php?q='+encodeURIComponent(query)})
+						  .done(function(result_items){
+							process(result_items);
+						  });
+						}
+						*/
+					  }
+					)
+			
+					var $tag_obj = $('#form-field-tags').data('tag');
+					$tag_obj.add('我是标签二');
+				}
+				catch(e) {
+					//display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+					tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+					//$('#form-field-tags').autosize({append: "\n"});
+				}
+				
+				
+				//////////
+				
+				//typeahead.js
+				//example taken from plugin's page at: https://twitter.github.io/typeahead.js/examples/
+				var substringMatcher = function(strs) {
+					return function findMatches(q, cb) {
+						var matches, substringRegex;
+					 
+						// an array that will be populated with substring matches
+						matches = [];
+					 
+						// regex used to determine if a string contains the substring `q`
+						substrRegex = new RegExp(q, 'i');
+					 
+						// iterate through the pool of strings and for any string that
+						// contains the substring `q`, add it to the `matches` array
+						$.each(strs, function(i, str) {
+							if (substrRegex.test(str)) {
+								// the typeahead jQuery plugin expects suggestions to a
+								// JavaScript object, refer to typeahead docs for more info
+								matches.push({ value: str });
+							}
+						});
+			
+						cb(matches);
+					}
+				 }
+			
+				 $('input.typeahead').typeahead({
+					hint: true,
+					highlight: true,
+					minLength: 1
+				 }, {
+					name: 'states',
+					displayKey: 'value',
+					source: substringMatcher(ace.vars['US_STATES'])
+				 });
+					
+			
+			
+				/////////
+				$('#modal-form input[type=file]').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'ace-icon fa fa-cloud-upload',
+					droppable:true,
+					thumbnail:'large'
+				})
+				
+				//chosen plugin inside a modal will have a zero width because the select element is originally hidden
+				//and its width cannot be determined.
+				//so we set the width after modal is show
+				$('#modal-form').on('shown.bs.modal', function () {
+					$(this).find('.chosen-container').each(function(){
+						$(this).find('a:first-child').css('width' , '210px');
+						$(this).find('.chosen-drop').css('width' , '210px');
+						$(this).find('.chosen-search input').css('width' , '200px');
+					});
+				})
+				/**
+				//or you can activate the chosen plugin after modal is shown
+				//this way select element becomes visible with dimensions and chosen works as expected
+				$('#modal-form').on('shown', function () {
+					$(this).find('.modal-chosen').chosen();
+				})
+				*/
+			
+			});
 		</script>
-	</body>
-</html>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="assets/css/ace.onpage-help.css" />
+		<link rel="stylesheet" href="../docs/assets/js/themes/sunburst.css" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="assets/js/ace/elements.onpage-help.js"></script>
+		<script src="assets/js/ace/ace.onpage-help.js"></script>
+		<script src="../docs/assets/js/rainbow.js"></script>
+		<script src="../docs/assets/js/language/generic.js"></script>
+		<script src="../docs/assets/js/language/html.js"></script>
+		<script src="../docs/assets/js/language/css.js"></script>
+		<script src="../docs/assets/js/language/javascript.js"></script>
+		<include file="Admin:foot"/>

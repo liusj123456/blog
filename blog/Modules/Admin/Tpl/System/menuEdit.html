@@ -14,12 +14,12 @@
 								<form class="form-horizontal" role="form" name='menuAdd' id='menuAdd' action="{:U(GROUP_NAME.'/System/menuEdit')}" method='post'>
 									<!-- #section:elements.form -->
 									
-									<input name='id' type='hidden' value='{$vo.id}'>
+									<input name='id' type='hidden' value='{$v.id}'>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称11：</label>
 
 										<div class="col-sm-9">
-											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value='{$vo.name}'/>
+											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value='{$v.name}'/>
 										</div>
 									</div>
 
@@ -27,7 +27,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">地址： </label>
 
 										<div class="col-sm-9">
-											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='{$vo.url}'/>
+											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='{$v.url}'/>
 										</div>
 									</div>
 
@@ -38,7 +38,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">排序： </label>
 
 										<div class="col-sm-9">
-											<input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" value='{$vo.sort}'/>
+											<input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" value='{$v.sort}'/>
 										</div>
 									</div>
 
@@ -49,8 +49,8 @@
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
-																<option <if condition='$vo.display eq "1"'>selected</if> value="1" >显示</option>
-																<option <if condition='$vo.display eq "2"'>selected</if> value="2">不显示</option>
+																<option <if condition='$v.display eq "1"'>selected</if> value="1" >显示</option>
+																<option <if condition='$v.display eq "2"'>selected</if> value="2">不显示</option>
 												</select>
 											</div>
 										</div>

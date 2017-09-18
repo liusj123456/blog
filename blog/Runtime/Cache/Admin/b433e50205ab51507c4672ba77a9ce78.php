@@ -223,7 +223,7 @@
 
 						<b class="arrow"></b>
 					</li>
-					<?php if(is_array($menu)): foreach($menu as $key=>$vo): ?><li class="open">
+					<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li class="open">
 							<a href="#" class="dropdown-toggle">
 								<i class="menu-icon fa fa-desktop"></i>
 								<span class="menu-text"> <?php echo ($vo["name"]); ?> </span>
@@ -241,11 +241,70 @@
 												</a>
 
 												<b class="arrow"></b>
+												<?php if(is_array($vi["son"])): foreach($vi["son"] as $key=>$vii): ?><ul class="submenu">
+														<li class="">
+															<a href="<?php echo U(GROUP_NAME.'/'.$vii['url'].'');?>">
+																<i class="menu-icon fa fa-caret-right"></i>
+																<?php echo ($vii["name"]); ?>
+															</a>
+														</li>
+													</ul><?php endforeach; endif; ?>
 											</li><?php endforeach; endif; ?>
 									</ul>
 								
 							</li><?php endforeach; endif; ?>
-					<!-- <li class="">
+					<!-- <li class="hsub open">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									三级菜单
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu nav-show" style="display: block;">
+									<li class="">
+										<a href="#">
+											<i class="menu-icon fa fa-leaf green"></i>
+											第一级
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="hsub">
+										<a href="#" class="dropdown-toggle">
+											<i class="menu-icon fa fa-pencil orange"></i>
+
+											第四级
+											<b class="arrow fa fa-angle-down"></b>
+										</a>
+
+										<b class="arrow"></b>
+
+										<ul class="submenu">
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-plus purple"></i>
+													添加商品
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-eye pink"></i>
+													查看商品
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>
@@ -320,42 +379,7 @@
 			<!-- PAGE CONTENT BEGINS -->
 			<div class="row">
 				<div class="col-xs-12">
-					<table width="100%" class="CSSearchTbl" cellpadding="0" cellspacing="0">
-						<tr>
-							<td class="left">提交部门：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单名称：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单号：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单状态：</td>
-							<td class="right">
-								<select>
-									<option>未提交</option>
-									<option>审核中</option>
-									<option>审核通过</option>
-									<option>审核未通过</option>
-									<option>撤回</option>
-									<option>作废</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							
-							<td class="left">提交人姓名：</td>
-							<td class="right"><input type="text" size="16"  /></td>
-							<td class="left">差旅单创建时间：</td>
-							<td class="right"><input type="text" size="16" class="datePicker"  /> 至 <input type="text" size="16" class="datePicker"  /></td>
-							<td class="left">差旅时间范围：</td>
-							<td class="right"><input type="text" size="16" class="datePicker"  /> 至 <input type="text" size="16" class="datePicker"  /></td>
-							<td class="right" colspan="2">
-								<button class="btn btn-primary pull-left col-sm-12 tbl-search" data-dismiss="modal">
-									开始搜索 
-									<i class="ace-icon fa fa-search"></i>
-								</button>
-							</td>
-						</tr>
-					</table> 
+					 
 
 					<div class="table-responsive">
 						
@@ -380,7 +404,7 @@
 							</thead>
 
 							<tbody>
-							<?php if(is_array($menu)): $i = 0; $__LIST__ = $menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+							<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 									<td class="center">
 										<label class="position-relative">
 											<input type="checkbox" class="ace" />

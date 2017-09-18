@@ -223,7 +223,7 @@
 
 						<b class="arrow"></b>
 					</li>
-					<?php if(is_array($menu)): foreach($menu as $key=>$vo): ?><li class="open">
+					<?php if(is_array($menu_list)): foreach($menu_list as $key=>$vo): ?><li class="open">
 							<a href="#" class="dropdown-toggle">
 								<i class="menu-icon fa fa-desktop"></i>
 								<span class="menu-text"> <?php echo ($vo["name"]); ?> </span>
@@ -235,17 +235,79 @@
 								
 									<ul class="submenu" style="display: block;">
 											<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><li class="">
-												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>">
+												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>" >
 													<i class="menu-icon fa fa-caret-right"></i>
 													<?php echo ($vi["name"]); ?>
+													
 												</a>
 
 												<b class="arrow"></b>
+												
+													<ul class="submenu">
+														<?php if(is_array($vi["son"])): foreach($vi["son"] as $key=>$vii): ?><li class="">
+															<a href="<?php echo U(GROUP_NAME.'/'.$vii['url'].'');?>">
+																<i class="menu-icon fa fa-caret-right"></i>
+																<?php echo ($vii["name"]); ?>
+															</a>
+														</li><?php endforeach; endif; ?>
+													</ul>
+												
 											</li><?php endforeach; endif; ?>
 									</ul>
 								
 							</li><?php endforeach; endif; ?>
-					<!-- <li class="">
+					<!-- <li class="hsub open">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									三级菜单
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu nav-show" style="display: block;">
+									<li class="">
+										<a href="#">
+											<i class="menu-icon fa fa-leaf green"></i>
+											第一级
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="hsub">
+										<a href="#" class="dropdown-toggle">
+											<i class="menu-icon fa fa-pencil orange"></i>
+
+											第四级
+											<b class="arrow fa fa-angle-down"></b>
+										</a>
+
+										<b class="arrow"></b>
+
+										<ul class="submenu">
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-plus purple"></i>
+													添加商品
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-eye pink"></i>
+													查看商品
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>
@@ -322,6 +384,13 @@
 									<!-- #section:elements.form -->
 									<input name='pid' type='hidden' value='<?php echo ($pid); ?>'>
 									<input name='level' type='hidden' value='<?php echo ($level); ?>'>
+									<?php if($pid != 0): ?><div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 上级：</label>
+
+										<div class="col-sm-9">
+											<?php echo ($parents); ?>
+										</div>
+									</div><?php endif; ?>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称：</label>
 
@@ -329,15 +398,13 @@
 											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
-
-									<div class="form-group">
+									<?php if($pid != 0): ?><div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">地址： </label>
 
 										<div class="col-sm-9">
 											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
 										</div>
-									</div>
-
+									</div><?php endif; ?>
 									<!-- /section:elements.form -->
 									<div class="space-4"></div>
 
