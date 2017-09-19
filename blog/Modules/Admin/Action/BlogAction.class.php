@@ -14,9 +14,9 @@ class BlogAction extends CommonAction {
 		$res = ($vo==1)? 0: 1;
 		$info = M('blogs')->where(array('id'=>$_GET['id']))->setField('display',$res);
 		if($info){
-				$this->success('成功');
+				$this->success('变更显示成功');
 			}else{
-				$this->error('失败');
+				$this->error('变更显示失败');
 			}
     }
 	public function blogAdd(){
@@ -46,6 +46,7 @@ class BlogAction extends CommonAction {
 		$id=$_GET['id'];
 		if(IS_POST){		
 			$data = array(
+				'id'=>I('id'),
 				'pic'=>serialize(I('pic')),
 				'title'=>I('title'),
 				'type'=>I('type'),
@@ -61,6 +62,7 @@ class BlogAction extends CommonAction {
 				$this->error('类型或内容不为空');
 			}
 			$info=M('blogs')->save($data);
+			//echo M('blogs')->getLastSql();die();
 			if($info){
 				$this->success('修改成功',U(GROUP_NAME.'/Blog/blogList'));
 			}else{

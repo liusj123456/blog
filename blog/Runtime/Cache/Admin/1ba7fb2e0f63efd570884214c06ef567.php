@@ -501,21 +501,25 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/Blog/blogEdit');?>" method='post'>
 									<!-- #section:elements.form -->
+									<input name='id' type='hidden' value='<?php echo ($be["id"]); ?>'>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章图片： </label>
 									
 										<div class="col-sm-9">
 											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
 										 <span id="files_pic">
-											  <input id="pic" name="pic"  type="file">
-										   </span>&nbsp;&nbsp; 
-										  <div id="files_preview_one" style="width:auto;height:auto; overflow :auto">
-										  <div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">
-										  <a href="<?php echo ($be["pic"]); ?>" target="_blank"><img src="<?php echo ($be["pic"]); ?>" width="25" height="29" /></a>
-										  <input type="hidden" name="pic" value="<?php echo ($be["pic"]); ?>">
-										  <a href="javascript:;" onclick="$(this).parent().remove();subfileCount('pic');">取消</a> &nbsp;&nbsp;</div>
-										   </div>
-										<input type="hidden" id="file_pic" value=""><input type="hidden" id="counts" value="">
+											  <input id="pic" name="pic" type="file">
+										   </span>&nbsp;&nbsp;
+										  <?php if($be["pic"] != ""): ?><div id="files_preview_pic" style="width:auto;height:auto; overflow :auto">
+											  <div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">
+											  <a href="<?php echo ($be["pic"]); ?>" target="_blank"><img src="<?php echo ($be["pic"]); ?>" width="25" height="29" /></a>
+											  <input type="hidden" name="pic" value="<?php echo ($be["pic"]); ?>">
+											  <a href="javascript:;" onclick="$(this).parent().remove();subfileCount('pic');">取消</a> &nbsp;&nbsp;</div>
+											   </div>
+											  <input type="hidden" id="file_pic" value=""><input type="hidden" id="counts" value="">
+										<?php else: ?>
+											<div id="files_preview_pic" style="width:auto;height:auto; overflow :auto"></div>
+											<input id="file_pic" value="" type="hidden"><?php endif; ?>
 										</div>
 									</div>
 									<div class="form-group">

@@ -25981,3 +25981,2685 @@ ERR: 非法操作:index
 NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
 NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
 
+[ 2017-09-19T16:50:43+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001433s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001632s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002412s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006255s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000824s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005813s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001138s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006725s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000731s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040512s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001713s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001236s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000804s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005355s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001133s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001270s ]
+
+[ 2017-09-19T16:50:46+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/3.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002018s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002314s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002467s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005658s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006635s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000854s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006382s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000763s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028590s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028776s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001221s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001030s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000805s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004609s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001080s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001290s ]
+
+[ 2017-09-19T16:50:49+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001278s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001502s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000994s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006173s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005833s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000759s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000735s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.025999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026188s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000930s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000791s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000540s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000832s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003563s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000877s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001038s ]
+
+[ 2017-09-19T16:50:50+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001640s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001924s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001683s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009730s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000835s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009656s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001145s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.002035s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008909s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.001002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.076548s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076819s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001701s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001290s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000774s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002011s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006432s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.004306s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004535s ]
+
+[ 2017-09-19T16:51:11+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001242s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001422s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005778s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001272s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006459s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000837s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006402s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000708s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.036600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036778s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000891s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000733s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000514s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000821s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003352s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000877s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001015s ]
+
+[ 2017-09-19T16:51:14+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/3.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001517s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001794s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001073s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006279s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006357s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000837s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006665s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000698s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029303s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001003s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000729s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000563s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003722s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000905s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001088s ]
+
+[ 2017-09-19T16:54:25+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002034s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002328s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002103s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006201s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006307s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000859s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006323s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000714s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034324s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001065s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000836s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000619s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000959s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003906s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001144s ]
+
+[ 2017-09-19T16:54:26+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/3.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001390s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001608s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001298s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006351s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006350s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000916s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001102s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006433s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000736s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027150s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027343s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000972s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000850s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000659s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000937s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003911s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001010s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001162s ]
+
+[ 2017-09-19T16:54:28+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001688s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001975s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001729s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008101s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001593s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008590s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000933s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000892s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.010343s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000979s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 525 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 533 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 553 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.038853s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039184s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001503s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000947s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000678s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001295s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005120s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001385s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001636s ]
+
+[ 2017-09-19T16:54:30+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001785s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002070s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001756s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007886s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006468s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000825s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000939s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027475s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027711s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000920s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000736s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000530s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001183s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003815s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000988s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001145s ]
+
+[ 2017-09-19T16:54:32+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001441s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001619s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001623s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009177s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010263s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001231s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001111s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T16:54:32+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001139s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001326s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001021s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005918s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006414s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000824s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006253s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000692s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034287s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034459s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000912s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000801s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000536s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000844s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003476s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000893s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001028s ]
+
+[ 2017-09-19T16:54:34+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001561s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001824s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001631s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006104s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001562s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006643s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000784s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006660s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000704s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027264s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027448s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000881s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000917s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000724s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004501s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001348s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001595s ]
+
+[ 2017-09-19T16:54:35+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001490s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001721s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001591s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007554s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008448s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001158s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001061s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.009567s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000850s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 525 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 533 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 553 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.036456s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036725s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001126s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000771s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000522s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000866s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003751s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000952s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001110s ]
+
+[ 2017-09-19T16:54:40+08:00 ] 127.0.0.1 /index.php/Admin/Login/upload_image.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002342s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002630s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003164s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003462s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 106 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 262 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 264 行.
+NOTIC: [2] imagecreatetruecolor() expects parameter 1 to be long, string given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 274 行.
+NOTIC: [2] imagecopyresampled() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 280 行.
+NOTIC: [2] imageinterlace() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 292 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 296 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 297 行.
+NOTIC: [8] Use of undefined constant savepath - assumed 'savepath' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 117 行.
+
+[ 2017-09-19T16:54:43+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001677s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001961s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002023s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009091s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008090s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000749s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.002553s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007469s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015433s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000805s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000720s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000527s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003325s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000948s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2017-09-19T16:54:48+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001627s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001906s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001657s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008387s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010061s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001435s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001501s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.010883s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000641s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 525 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 533 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 553 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.036669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036891s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001114s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000734s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000580s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000886s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003774s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001074s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001266s ]
+
+[ 2017-09-19T16:56:55+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001761s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001945s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001173s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006152s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000851s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006264s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000823s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006004s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000770s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.032020s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032184s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001004s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000908s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000698s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000930s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003944s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001136s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001286s ]
+
+[ 2017-09-19T16:56:57+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001162s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001324s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001414s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006600s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005774s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000792s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006505s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000978s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant be - assumed 'be' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+NOTIC: [8] Use of undefined constant pic - assumed 'pic' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.026626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026843s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000970s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000705s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000504s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003496s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000885s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001021s ]
+
+[ 2017-09-19T16:56:58+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001108s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001284s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001051s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007828s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006724s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000821s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000897s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007977s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000645s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant be - assumed 'be' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+NOTIC: [8] Use of undefined constant pic - assumed 'pic' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 528 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 536 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 556 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.035682s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035890s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001445s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001163s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000779s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005476s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001382s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001619s ]
+
+[ 2017-09-19T16:57:05+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001916s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002178s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001814s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006797s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006125s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000826s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000821s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029389s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001179s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001045s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001020s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005141s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001134s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001312s ]
+
+[ 2017-09-19T16:57:06+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001744s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002043s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001600s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009259s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008878s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001308s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.003123s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.016158s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.001704s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.048103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048374s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001577s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000862s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000532s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004560s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001384s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001612s ]
+
+[ 2017-09-19T16:57:09+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001392s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001628s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001304s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007445s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006918s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000818s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000984s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008427s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000869s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant be - assumed 'be' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+NOTIC: [8] Use of undefined constant pic - assumed 'pic' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033061s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033304s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001359s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000974s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000909s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005102s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000975s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001168s ]
+
+[ 2017-09-19T16:57:10+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001409s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001644s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008006s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008704s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001104s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001077s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005940s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000757s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant be - assumed 'be' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+NOTIC: [8] Use of undefined constant pic - assumed 'pic' D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 512 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 528 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 536 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 556 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.036678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036933s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001188s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000704s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000507s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000949s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003848s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000940s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001133s ]
+
+[ 2017-09-19T16:57:11+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001075s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001256s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005920s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008712s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001858s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000931s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034874s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035057s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001149s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000925s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000549s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001074s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004216s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000997s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001150s ]
+
+[ 2017-09-19T16:57:13+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002293s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002732s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001579s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009271s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009552s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001312s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001134s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T16:57:22+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001499s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001686s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007689s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007722s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000809s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001415s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029786s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001296s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000886s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000514s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000924s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004239s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000887s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2017-09-19T16:57:24+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001696s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001720s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009322s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010210s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001106s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001104s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008131s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000963s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.046483s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046762s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001739s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001141s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000643s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005457s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001593s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001825s ]
+
+[ 2017-09-19T16:57:26+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001088s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001275s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.010916s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006373s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001908s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006078s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000687s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029464s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001037s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000728s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000522s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000833s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003549s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000889s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001047s ]
+
+[ 2017-09-19T16:57:27+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001854s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002168s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001792s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008051s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007169s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001423s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001017s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007120s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 528 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 536 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 556 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031944s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001016s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000753s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000544s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000833s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003603s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001270s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001512s ]
+
+[ 2017-09-19T16:59:03+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001145s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001346s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001046s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007497s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006158s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000799s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000819s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027308s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001060s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000790s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000715s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000968s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004046s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001039s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001195s ]
+
+[ 2017-09-19T16:59:05+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001624s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001864s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001323s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007036s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007172s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000974s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001098s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T16:59:08+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001262s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001441s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006618s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006790s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000934s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008517s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000792s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034849s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035077s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001114s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000837s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000643s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003956s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001013s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001150s ]
+
+[ 2017-09-19T16:59:11+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001095s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001282s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006986s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007185s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000821s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001017s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006180s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000896s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: v D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028983s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029164s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001130s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000725s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000519s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000880s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003667s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001187s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001384s ]
+
+[ 2017-09-19T16:59:12+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001851s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002156s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002481s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009220s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010044s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001023s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001184s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.009979s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000977s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: v D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.041820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042042s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002235s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001646s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000806s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006509s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001055s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001309s ]
+
+[ 2017-09-19T16:59:14+08:00 ] 127.0.0.1 /index.php/Admin/Login/upload_image.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003473s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003715s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001789s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 106 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 262 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 264 行.
+NOTIC: [2] imagecreatetruecolor() expects parameter 1 to be long, string given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 274 行.
+NOTIC: [2] imagecopyresampled() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 280 行.
+NOTIC: [2] imageinterlace() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 292 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 296 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 297 行.
+NOTIC: [8] Use of undefined constant savepath - assumed 'savepath' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 117 行.
+
+[ 2017-09-19T16:59:19+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001800s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002110s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001694s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.012270s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009095s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000844s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001999s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006800s ]
+SQL: UPDATE `blg_blogs` SET `pic`='s:33:\"/Public/Uploads/59c0dc62a7084.jpg\";',`title`='测试文章比套题',`type`='测试',`content`='&lt;p&gt;&lt;img src=&quot;/personal/uploads/image/20170919/1505809055561822.jpg&quot; title=&quot;1505809055561822.jpg&quot; alt=&quot;header.jpg&quot;/&gt;美图秀秀&lt;/p&gt;' WHERE ( `id` = 0 ) [ RunTime:0.000500s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011270s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011460s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000823s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000696s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000491s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000845s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003256s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000948s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001091s ]
+
+[ 2017-09-19T16:59:22+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001585s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001857s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007015s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007416s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000792s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000726s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006786s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000588s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: v D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.041703s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041880s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001231s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000774s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000542s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004194s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001245s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001483s ]
+
+[ 2017-09-19T17:00:05+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001971s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002249s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002002s ]
+
+[ 2017-09-19T17:00:09+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001276s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001449s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+
+[ 2017-09-19T17:00:22+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001790s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002194s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001602s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009075s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006629s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001749s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001148s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007584s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000741s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033552s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001126s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000764s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000523s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003999s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000995s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001165s ]
+
+[ 2017-09-19T17:00:24+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001391s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001595s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009562s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005940s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000812s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000830s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007069s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000722s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: v D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029898s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030072s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001099s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000838s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000624s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000968s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003961s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000986s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001142s ]
+
+[ 2017-09-19T17:00:25+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002058s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002411s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002326s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.010216s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008677s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001214s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001448s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007406s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.001033s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: v D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.036489s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036712s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001325s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000822s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000605s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001242s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004623s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001153s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2017-09-19T17:00:28+08:00 ] 127.0.0.1 /index.php/Admin/Login/upload_image.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003167s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003474s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004102s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 106 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 262 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 264 行.
+NOTIC: [2] imagecreatetruecolor() expects parameter 1 to be long, string given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 274 行.
+NOTIC: [2] imagecopyresampled() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 280 行.
+NOTIC: [2] imageinterlace() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 292 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 296 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 297 行.
+NOTIC: [8] Use of undefined constant savepath - assumed 'savepath' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 117 行.
+
+[ 2017-09-19T17:00:30+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001535s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001774s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001932s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008081s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006111s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001652s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000959s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007280s ]
+SQL: UPDATE `blg_blogs` SET `pic`='s:33:\"/Public/Uploads/59c0dcac0c2e9.jpg\";',`title`='测试文章比套题',`type`='测试',`content`='&lt;p&gt;&lt;img src=&quot;/personal/uploads/image/20170919/1505809055561822.jpg&quot; title=&quot;1505809055561822.jpg&quot; alt=&quot;header.jpg&quot;/&gt;美图秀秀&lt;/p&gt;' WHERE ( `id` = 0 ) [ RunTime:0.000691s ]
+
+[ 2017-09-19T17:00:54+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001583s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001896s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001690s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008552s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007014s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000825s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000743s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006862s ]
+SQL: UPDATE `blg_blogs` SET `pic`='s:33:\"/Public/Uploads/59c0dcac0c2e9.jpg\";',`title`='测试文章比套题',`type`='测试',`content`='&lt;p&gt;&lt;img src=&quot;/personal/uploads/image/20170919/1505809055561822.jpg&quot; title=&quot;1505809055561822.jpg&quot; alt=&quot;header.jpg&quot;/&gt;美图秀秀&lt;/p&gt;' WHERE ( `id` = 0 ) [ RunTime:0.000548s ]
+
+[ 2017-09-19T17:00:58+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001799s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002043s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008645s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000843s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009614s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001168s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001199s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.009754s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000954s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035044s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001356s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000804s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000516s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000828s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004060s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001313s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001476s ]
+
+[ 2017-09-19T17:01:00+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001148s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001573s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006760s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007641s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001235s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001947s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006592s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.001267s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040858s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001285s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001114s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000983s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005664s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001382s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001638s ]
+
+[ 2017-09-19T17:01:01+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001237s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001421s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008825s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006959s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001290s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008106s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.001331s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.035046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035291s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001268s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000902s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000679s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001021s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004327s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001057s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001207s ]
+
+[ 2017-09-19T17:01:03+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001956s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002245s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002356s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008228s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009300s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001501s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000940s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008431s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.001092s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.046989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047246s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001585s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001084s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000761s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001311s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005472s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001704s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001974s ]
+
+[ 2017-09-19T17:01:07+08:00 ] 127.0.0.1 /index.php/Admin/Login/upload_image.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001558s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001745s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001437s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 106 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 262 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 264 行.
+NOTIC: [2] imagecreatetruecolor() expects parameter 1 to be long, string given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 274 行.
+NOTIC: [2] imagecopyresampled() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 280 行.
+NOTIC: [2] imageinterlace() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 292 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 296 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 297 行.
+NOTIC: [8] Use of undefined constant savepath - assumed 'savepath' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 117 行.
+
+[ 2017-09-19T17:01:10+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001872s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002163s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001699s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008507s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010428s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001097s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000997s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006620s ]
+SQL: UPDATE `blg_blogs` SET `pic`='s:33:\"/Public/Uploads/59c0dcd37ba2f.jpg\";',`title`='测试文章比套题',`type`='测试',`content`='&lt;p&gt;&lt;img src=&quot;/personal/uploads/image/20170919/1505809055561822.jpg&quot; title=&quot;1505809055561822.jpg&quot; alt=&quot;header.jpg&quot;/&gt;美图秀秀&lt;/p&gt;' WHERE ( `id` = 4 ) [ RunTime:0.101702s ]
+
+[ 2017-09-19T17:01:20+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001636s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001927s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001663s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.013324s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.003002s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.012504s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.006689s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008579s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.002763s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.050885s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051262s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001532s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.005214s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001070s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010487s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001771s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002190s ]
+
+[ 2017-09-19T17:01:21+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001303s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001510s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008014s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006662s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000786s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000868s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006292s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000618s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.030820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031033s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001502s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001132s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000834s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001406s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005550s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001211s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001373s ]
+
+[ 2017-09-19T17:01:27+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001248s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001419s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007097s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006219s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000863s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006247s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000705s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033375s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001102s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000810s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000595s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000895s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003802s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000948s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001083s ]
+
+[ 2017-09-19T17:01:30+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/4.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001534s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001774s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002617s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005973s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005876s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000985s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000812s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006036s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 4 ) LIMIT 1   [ RunTime:0.000676s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027802s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027990s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001247s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000894s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000684s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000929s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004242s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000969s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001137s ]
+
+[ 2017-09-19T17:01:32+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit/id/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001754s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002027s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001703s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009065s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000853s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007524s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001098s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000916s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007744s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = null ) LIMIT 1   [ RunTime:0.000876s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 504 行.
+NOTIC: [8] Undefined index: title D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 529 行.
+NOTIC: [8] Undefined index: type D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 537 行.
+NOTIC: [8] Undefined index: content D:\wamp\www\personal\blog\Runtime\Cache\Admin\1ba7fb2e0f63efd570884214c06ef567.php 第 557 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034598s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001572s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001017s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000739s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005326s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001394s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001626s ]
+
+[ 2017-09-19T17:01:36+08:00 ] 127.0.0.1 /index.php/Admin/Login/upload_image.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001552s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001866s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001830s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 106 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 262 行.
+NOTIC: [2] Division by zero D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 264 行.
+NOTIC: [2] imagecreatetruecolor() expects parameter 1 to be long, string given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 274 行.
+NOTIC: [2] imagecopyresampled() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 280 行.
+NOTIC: [2] imageinterlace() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 292 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 296 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, null given D:\wamp\www\personal\ThinkPHP\Extend\Library\ORG\Util\Image.class.php 第 297 行.
+NOTIC: [8] Use of undefined constant savepath - assumed 'savepath' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 117 行.
+
+[ 2017-09-19T17:01:41+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogEdit.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001737s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002030s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001813s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005859s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008659s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000828s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000760s ]
+NOTIC: [8] Undefined index: id D:\wamp\www\personal\blog\Modules\Admin\Action\BlogAction.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008343s ]
+SQL: UPDATE `blg_blogs` SET `pic`='s:33:\"/Public/Uploads/59c0dcf08ba3a.jpg\";',`title`='测试文章比套题',`type`='测试',`content`='&lt;p&gt;&lt;img src=&quot;/personal/uploads/image/20170919/1505809055561822.jpg&quot; title=&quot;1505809055561822.jpg&quot; alt=&quot;header.jpg&quot;/&gt;美图秀秀&lt;/p&gt;' WHERE ( `id` = 4 ) [ RunTime:0.151925s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015443s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001111s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000977s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000966s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004750s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001192s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001369s ]
+
+[ 2017-09-19T17:01:42+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001779s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002009s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008998s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006430s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001365s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001089s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007391s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000703s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033897s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001013s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000766s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000522s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003513s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000874s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001088s ]
+
+[ 2017-09-19T17:01:46+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002205s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002517s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002300s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007034s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007470s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000932s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000827s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028071s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028297s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001053s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000699s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000505s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000823s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003504s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000885s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001195s ]
+
+[ 2017-09-19T17:01:46+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001800s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002138s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001689s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008675s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009570s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.006257s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001387s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.009330s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.010978s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.051094s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051358s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001533s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001025s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000579s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000908s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004581s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000923s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001061s ]
+
+[ 2017-09-19T17:01:48+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001661s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001932s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001279s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006041s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006317s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000746s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000762s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.025808s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026101s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001040s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000695s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003455s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000996s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001149s ]
+
+[ 2017-09-19T17:01:49+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001564s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001822s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009500s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000978s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009936s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001328s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001326s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.009272s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.001633s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.049295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049570s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001623s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001128s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000794s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005528s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001414s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001682s ]
+
+[ 2017-09-19T17:01:50+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002138s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002413s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001555s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009119s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001025s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009043s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001522s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001323s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033295s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001051s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000730s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000519s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000928s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003705s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001306s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001548s ]
+
+[ 2017-09-19T17:01:51+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001642s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001909s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001627s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008081s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008840s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001255s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001186s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.009400s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.001042s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.055732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056011s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001311s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001104s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000733s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005009s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001497s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001724s ]
+
+[ 2017-09-19T17:01:52+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001779s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002054s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002071s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008947s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007090s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000829s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000995s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.008648s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.037877s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038159s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001372s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001202s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000742s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005258s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001286s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001527s ]
+
+[ 2017-09-19T17:01:53+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001072s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005928s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005644s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001165s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.010998s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000995s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.045083s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045381s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001760s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001141s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000794s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005607s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001388s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001610s ]
+
+[ 2017-09-19T17:01:56+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001062s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001232s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006414s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005973s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000879s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.006508s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.026930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027111s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001008s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000773s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000526s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000907s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003646s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000995s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2017-09-19T17:01:56+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001690s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001978s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001863s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006248s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007970s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000899s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000913s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.007469s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000904s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040793s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001129s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000960s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000742s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000840s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004126s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000926s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001063s ]
+
+[ 2017-09-19T17:01:57+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001724s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002020s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001525s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.010063s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010408s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000923s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000909s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.045715s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046008s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.003381s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002275s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000813s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008643s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002136s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002399s ]
+
+[ 2017-09-19T17:01:58+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001680s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001973s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001641s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.010222s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001197s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.011736s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001476s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001479s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.011434s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.001566s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.052653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053107s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001605s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001125s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000787s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006034s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001532s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001769s ]
+
+[ 2017-09-19T17:01:59+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001641s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001909s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001582s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009427s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000741s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008055s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000961s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000915s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.008146s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000892s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042488s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001691s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001154s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000840s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005780s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001522s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001707s ]
+
+[ 2017-09-19T17:02:00+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002069s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002332s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001618s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.011312s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.001346s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.014254s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001440s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001540s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.010587s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.034578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034866s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001420s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000727s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000598s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001338s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004787s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000997s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001159s ]
+
+[ 2017-09-19T17:02:00+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001053s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001222s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005469s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000718s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006714s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001015s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.007333s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000716s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047484s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047714s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002453s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001137s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000796s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006747s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001708s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001974s ]
+
+[ 2017-09-19T17:02:02+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001622s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001890s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008702s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000999s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007349s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000861s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.008088s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.001108s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040800s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001134s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001199s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000655s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000827s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004239s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000919s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001056s ]
+
+[ 2017-09-19T17:02:12+08:00 ] 127.0.0.1 /index.php/Admin/System/inbox.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003266s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003603s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003191s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006826s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007216s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000965s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000857s ]
+ERR: 非法操作:inbox
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T17:02:13+08:00 ] 127.0.0.1 /index.php/Admin/System/inbox.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002527s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002825s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002444s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008457s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006101s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000878s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001059s ]
+ERR: 非法操作:inbox
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T17:02:16+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002334s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002617s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001679s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006504s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006106s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000845s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000801s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005817s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029994s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001071s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000972s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000870s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001666s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005067s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001259s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001488s ]
+
+[ 2017-09-19T17:02:17+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001838s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002090s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001751s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007647s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006775s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001298s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001233s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.007797s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000895s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042507s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042700s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000935s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000717s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001026s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004295s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001123s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001261s ]
+
+[ 2017-09-19T17:02:18+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001893s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002151s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001869s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007265s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006248s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000970s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.006980s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031582s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001054s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000912s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000714s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001018s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004126s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001079s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001232s ]
+
+[ 2017-09-19T17:02:19+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002046s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002331s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001593s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006367s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006259s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001130s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000959s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.006994s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000685s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047823s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048066s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001946s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001787s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001340s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001668s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007509s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001734s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001967s ]
+
+[ 2017-09-19T17:02:20+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001822s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002048s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001889s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007610s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009321s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001173s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001349s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.009077s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.043482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043823s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001449s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001033s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000754s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004795s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001116s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001280s ]
+
+[ 2017-09-19T17:02:21+08:00 ] 127.0.0.1 /index.php/Admin/System/IndexList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002616s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002894s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001817s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007249s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008519s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001226s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001150s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.008689s ]
+SQL: SELECT * FROM `blg_index`  [ RunTime:0.000688s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048051s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001601s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001185s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001141s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005696s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001359s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001535s ]
+
+[ 2017-09-19T17:02:21+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002225s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002509s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003070s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008814s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009598s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001878s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001402s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047972s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048313s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002790s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001542s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000895s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007129s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001419s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001606s ]
+
+[ 2017-09-19T17:02:22+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002030s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002310s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002034s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008704s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.002351s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009141s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000869s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006831s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.048631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048822s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001146s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001282s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000952s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005462s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001163s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001346s ]
+
+[ 2017-09-19T17:02:24+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001241s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001418s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001063s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001233s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006032s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005837s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000859s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000880s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.029825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030010s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001070s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000883s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000689s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001002s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004065s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001054s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001202s ]
+
+[ 2017-09-19T17:02:25+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001793s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002050s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001819s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.009955s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.011139s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001264s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.010326s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000994s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.052722s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052994s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001611s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001277s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001337s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007331s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001614s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001830s ]
+
+[ 2017-09-19T17:02:26+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002019s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002307s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001868s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006518s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007633s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000782s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000868s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.032507s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032695s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001085s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001066s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000905s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005095s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001301s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001500s ]
+
+[ 2017-09-19T17:02:27+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001298s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001525s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001911s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007686s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007809s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001124s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001069s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T17:02:29+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001968s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002288s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001971s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006433s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000684s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006316s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000887s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001063s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006267s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000754s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.035071s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035245s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001079s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000887s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000722s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001021s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004149s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001785s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001959s ]
+
+[ 2017-09-19T17:03:18+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001477s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001693s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001329s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006116s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.006136s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000946s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000863s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028339s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001290s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001151s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000720s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001003s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004667s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001048s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001197s ]
+
+[ 2017-09-19T17:03:19+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001972s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002262s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001816s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008044s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000846s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009062s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001116s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001074s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008745s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000958s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047716s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047984s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001681s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001925s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001227s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007120s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001891s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002430s ]
+
+[ 2017-09-19T17:03:19+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.004005s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004282s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002004s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.018862s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008271s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001063s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.002731s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T17:03:20+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001243s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001421s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001188s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006734s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.005730s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000773s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000739s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028361s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001100s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000940s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000869s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001432s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004790s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001085s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001244s ]
+
+[ 2017-09-19T17:03:22+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001875s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002142s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001781s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.008431s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008828s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001279s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001362s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.009890s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.001480s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.053180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053442s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001665s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001399s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001073s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001714s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006490s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001592s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001813s ]
+
+[ 2017-09-19T17:03:22+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001126s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001365s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001481s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006824s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007331s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001369s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001162s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T17:03:24+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogAdd.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001962s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002244s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001327s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.006630s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007374s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001010s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000784s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.027614s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027854s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001233s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001078s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000710s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000993s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004458s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001043s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001195s ]
+
+[ 2017-09-19T17:03:25+08:00 ] 127.0.0.1 /index.php/Admin/Blog/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001246s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001433s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001975s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007449s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.007625s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001128s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001245s ]
+ERR: 非法操作:index
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Filename cannot be empty D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening '' for inclusion (include_path='.;C:\php\pear;D:\wamp\www\personal\ThinkPHP/Extend/Vendor/') D:\wamp\www\personal\ThinkPHP\Common\functions.php 第 52 行.
+
+[ 2017-09-19T17:03:25+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001269s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001452s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001261s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.007991s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.008519s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000837s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006336s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000710s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040843s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001612s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000930s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000736s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001014s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004767s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001066s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001204s ]
+
+[ 2017-09-19T17:04:34+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogDel/id/3.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002301s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002611s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002527s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005925s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000903s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.009542s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.000880s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007796s ]
+SQL: SELECT `display` FROM `blg_blogs` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000681s ]
+SQL: UPDATE `blg_blogs` SET `display`=0 WHERE ( `id` = 3 ) [ RunTime:0.107015s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012616s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012795s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001056s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000997s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000801s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004408s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001308s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001495s ]
+
+[ 2017-09-19T17:04:35+08:00 ] 127.0.0.1 /index.php/Admin/Blog/blogList.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001273s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001454s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+SQL: SHOW COLUMNS FROM `blg_user` [ RunTime:0.005847s ]
+SQL: SELECT * FROM `blg_user` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `blg_menu` [ RunTime:0.010192s ]
+SQL: SELECT * FROM `blg_menu` ORDER BY sort asc  [ RunTime:0.001063s ]
+SQL: SELECT * FROM `blg_menu` WHERE ( display = 1 ) ORDER BY sort asc  [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006346s ]
+SQL: SELECT * FROM `blg_blogs`  [ RunTime:0.000842s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\55f915ec6c0d11d2e9cf087740bdf63e.php 第 171 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.037379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037556s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001135s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000936s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001013s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001849s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005491s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001499s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001738s ]
+
+[ 2017-09-19T17:05:08+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003342s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.010275s ]
+SQL: SELECT * FROM `blg_index` ORDER BY sort asc  [ RunTime:0.001163s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.041311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041612s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002409s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002575s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001963s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.006290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014047s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002174s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002436s ]
+
+[ 2017-09-19T17:05:17+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001591s ]
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.008175s ]
+SQL: SELECT * FROM `blg_index` ORDER BY sort asc  [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023790s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024024s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001333s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000816s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000613s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004124s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000988s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001166s ]
+
+[ 2017-09-19T17:05:30+08:00 ] 127.0.0.1 /index.php/Admin/Login/logout.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001906s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002081s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001356s ]
+
+[ 2017-09-19T17:05:30+08:00 ] 127.0.0.1 /index.php/Admin/Login/login.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001177s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001402s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+NOTIC: [8] Undefined index: rg D:\wamp\www\personal\blog\Modules\Admin\Action\LoginAction.class.php 第 4 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: rg D:\wamp\www\personal\blog\Runtime\Cache\Admin\4eae932c2f4eeff6fc8a9f3dc1baccc9.php 第 42 行.
+NOTIC: [8] Undefined index: username D:\wamp\www\personal\blog\Runtime\Cache\Admin\4eae932c2f4eeff6fc8a9f3dc1baccc9.php 第 56 行.
+NOTIC: [8] Undefined index: rg D:\wamp\www\personal\blog\Runtime\Cache\Admin\4eae932c2f4eeff6fc8a9f3dc1baccc9.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.017413s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017583s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001043s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000920s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000733s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001010s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004131s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001063s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001212s ]
+
+[ 2017-09-19T17:05:30+08:00 ] 127.0.0.1 /index.php/Admin/Login/verify
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001621s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001905s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001817s ]
+
+[ 2017-09-19T17:05:30+08:00 ] 127.0.0.1 /index.php/Admin/Login/verify/0.6893543405458331
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001669s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001960s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001590s ]
+
