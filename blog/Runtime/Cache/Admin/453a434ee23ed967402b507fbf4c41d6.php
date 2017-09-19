@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
+<?php if (!defined('THINK_PATH')) exit();?><html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -235,17 +234,79 @@
 								
 									<ul class="submenu" style="display: block;">
 											<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><li class="">
-												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>">
+												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>" >
 													<i class="menu-icon fa fa-caret-right"></i>
 													<?php echo ($vi["name"]); ?>
+													
 												</a>
 
 												<b class="arrow"></b>
+												
+													<ul class="submenu">
+														<?php if(is_array($vi["son"])): foreach($vi["son"] as $key=>$vii): ?><li class="">
+															<a href="<?php echo U(GROUP_NAME.'/'.$vii['url'].'');?>">
+																<i class="menu-icon fa fa-caret-right"></i>
+																<?php echo ($vii["name"]); ?>
+															</a>
+														</li><?php endforeach; endif; ?>
+													</ul>
+												
 											</li><?php endforeach; endif; ?>
 									</ul>
 								
 							</li><?php endforeach; endif; ?>
-					<!-- <li class="">
+					<!-- <li class="hsub open">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									三级菜单
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu nav-show" style="display: block;">
+									<li class="">
+										<a href="#">
+											<i class="menu-icon fa fa-leaf green"></i>
+											第一级
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="hsub">
+										<a href="#" class="dropdown-toggle">
+											<i class="menu-icon fa fa-pencil orange"></i>
+
+											第四级
+											<b class="arrow fa fa-angle-down"></b>
+										</a>
+
+										<b class="arrow"></b>
+
+										<ul class="submenu">
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-plus purple"></i>
+													添加商品
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+
+											<li class="">
+												<a href="#">
+													<i class="menu-icon fa fa-eye pink"></i>
+													查看商品
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> 博客管理 </span>

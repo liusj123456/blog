@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
+<?php if (!defined('THINK_PATH')) exit();?><html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -235,20 +234,23 @@
 								
 									<ul class="submenu" style="display: block;">
 											<?php if(is_array($vo["son"])): foreach($vo["son"] as $key=>$vi): ?><li class="">
-												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>">
+												<a href="<?php echo U(GROUP_NAME.'/'.$vi['url'].'');?>" >
 													<i class="menu-icon fa fa-caret-right"></i>
 													<?php echo ($vi["name"]); ?>
+													
 												</a>
 
 												<b class="arrow"></b>
-												<?php if(is_array($vi["son"])): foreach($vi["son"] as $key=>$vii): ?><ul class="submenu">
-														<li class="">
+												
+													<ul class="submenu">
+														<?php if(is_array($vi["son"])): foreach($vi["son"] as $key=>$vii): ?><li class="">
 															<a href="<?php echo U(GROUP_NAME.'/'.$vii['url'].'');?>">
 																<i class="menu-icon fa fa-caret-right"></i>
 																<?php echo ($vii["name"]); ?>
 															</a>
-														</li>
-													</ul><?php endforeach; endif; ?>
+														</li><?php endforeach; endif; ?>
+													</ul>
+												
 											</li><?php endforeach; endif; ?>
 									</ul>
 								

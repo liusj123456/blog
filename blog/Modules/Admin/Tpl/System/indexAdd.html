@@ -1,0 +1,86 @@
+<include file='Admin:top'/>
+<include file='Admin:left'/>
+			<div class="main-content">
+				<include file='Admin:mainTop'/>
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+
+					<div class="page-content-area">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<form class="form-horizontal" role="form" name='menuAdd' id='menuAdd' action="{:U(GROUP_NAME.'/System/indexAdd')}" method='post'>
+									<!-- #section:elements.form -->
+									<input name='pid' type='hidden' value='{$pid}'>
+									<input name='level' type='hidden' value='{$level}'>
+									<if condition='$pid neq 0'>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 标题上级：</label>
+
+										<div class="col-sm-9">
+											{$parents}
+										</div>
+									</div></if>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 标题名称：</label>
+
+										<div class="col-sm-9">
+											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>				
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">跳转地址： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									<!-- /section:elements.form -->
+									<div class="space-4"></div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">标题排序： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
+
+									<div class="space-4"></div>							
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台菜单标题显示状态：</label>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='display' id="form-field-select-1">
+																<option value="1" selected>显示</option>
+																<option value="0">不显示</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<button class="btn btn-info" type="submit">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												立即提交
+											</button>
+
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												重置
+											</button>
+										</div>
+									</div>
+							
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+		<include file="Admin:foot"/>

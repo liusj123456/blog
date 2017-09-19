@@ -16,5 +16,7 @@ return array(
 	'NOT_AUTH_MODULE'=>'Index',
 	'LOAD_EXT_CONFIG'=>'verify',
 	//'SHOW_PAGE_TRACE' =>true,
+	//'TMPL_ACTION_SUCCESS'=>'Public:dispatch_jump',
+	//'TMPL_ACTION_ERROR'=>'Public:dispatch_jump',
 );
 ?>

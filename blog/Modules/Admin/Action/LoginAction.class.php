@@ -9,6 +9,8 @@ class LoginAction extends Action {
     }
 	public function checkLogin(){
 		//if(!IS_POST) halt('页面不存在');
+		echo md5(I('verify','','strtolower')).'<br>';
+		echo session('verify');//die;
 		$user = M('user')->where(array('username'=>I('username')))->find();
 		if(!user || ($user['password']!==I('password','','md5'))){
 			$this->error('账号或密码错误');
@@ -16,7 +18,8 @@ class LoginAction extends Action {
 		if(session('verify')!==md5(I('verify','','strtolower'))){
 			session('verify',null);
 			$this->error('验证码错误');
-		}		
+		}
+		
 		session('uid',$user['id']);
 		session('username',$user['username']);
 		$this->redirect('/Admin/Admin/index');
@@ -33,8 +36,11 @@ class LoginAction extends Action {
 	}
 	public function logout(){
 		//session(null);
-		session_destroy();
-		session_unset();
+		session('verify',null);
+		session('uid',null);
+		session('username',null);
+		//session_destroy();
+		//session_unset();
 		$this->redirect('/Admin/Login/login');
 	}
 	public function register(){
@@ -75,5 +81,43 @@ class LoginAction extends Action {
 		}else{
 			$this->error('注册失败',U(GROUP_NAME.'/Login/login',array('rg'=>'1')));
 		}	
+	}
+	//文件上传
+	public function upload_image() {
+		set_time_limit(0);
+	//保存附件
+		import("ORG.Net.UploadFile");
+		//导入上传类
+		$upload = new UploadFile();
+		//设置上传文件大小
+		$upload->maxSize = 3292200;
+		//设置上传文件类型
+		$upload->allowExts = explode(',', 'jpg,gif,png,jpeg');
+		//设置附件上传目录
+		/*$date = date("Ymd",time());
+		 $upload->savePath = './Public/Uploads/' . $date . '/'; */
+		$upload->savePath = './Public/Uploads/';
+		//设置需要生成缩略图，仅对图像文件有效
+		$upload->thumb = true;
+		// 设置引用图片类库包路径
+		$upload->imageClassPath = 'ORG.Util.Image';
+		//设置需要生成缩略图的文件后缀
+
+		$upload->saveRule = uniqid;
+		//删除原图
+		//$upload->thumbRemoveOrigin = true;
+		if (!$upload->upload()) {
+			//捕获上传异常
+			$this->error($upload->getErrorMsg());
+		} else {
+			$uploadList = $upload->getUploadFileInfo();
+			
+			$fileurl=str_replace(".","",$uploadList[0][savepath]);
+			
+			$return=$fileurl.$uploadList[0][savename];
+ 
+			print_r (json_encode($return));
+			exit;
+		}
 	}
 }

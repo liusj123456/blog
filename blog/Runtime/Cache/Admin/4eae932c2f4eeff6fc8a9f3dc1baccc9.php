@@ -272,7 +272,6 @@
 			});
 			window.onload=function(){
 				document.getElementById('verify').src='<?php echo U(GROUP_NAME.'/Login/verify','','');?>/'+Math.random();
-				document.getElementById('verify1').src='<?php echo U(GROUP_NAME.'/Login/verify','','');?>/'+Math.random();
 			}
 			function change(obj){
 					document.getElementById('verify').src=obj+'/'+Math.random();

@@ -1,0 +1,226 @@
+<include file='Admin:top'/>
+<include file='Admin:left'/>
+<script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>	
+<link rel="stylesheet" type="text/css" href="__STATIC__/js/uploadify/uploadify.css">
+<script type="text/javascript" src="__STATIC__/js/uploadify/jquery.uploadify.min.js"></script>
+			<div class="main-content">
+				<include file='Admin:mainTop'/>
+				<script type="text/javascript">
+					window.UEDITOR_HOME_URL = '__Ueditor__/';
+					/*window.onload = function(){
+						 UE.getEditor('edit',{
+						//这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
+						toolbars:[
+							['fullscreen', 'source', '|', 'undo', 'redo', '|',
+								'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch','autotypeset','blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist','selectall', 'cleardoc', '|',
+								'rowspacingtop', 'rowspacingbottom','lineheight','|',
+								'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+								'directionalityltr', 'directionalityrtl', 'indent', '|',
+								'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|','touppercase','tolowercase','|',
+								'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright','imagecenter', '|',
+								'insertimage', 'emotion','scrawl', 'insertvideo','music','attachment', 'map', 'gmap', 'insertframe','highlightcode','webapp','pagebreak','template','background', '|',
+								'horizontal', 'date', 'time', 'spechars','snapscreen', 'wordimage', '|',
+								'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
+								'print', 'preview', 'searchreplace','help']
+						],
+							//focus时自动清空初始化时的内容
+							autoClearinitialContent:true,
+							//关闭字数统计
+							wordCount:false,
+							//关闭elementPath
+							elementPathEnabled:false
+							//更多其他参数，请参考editor_config.js中的配置项
+						}) 
+					}*/
+					window.onload = function(){
+						//window.UEDITOR_CONFIG.initialFrameWidth=1200;
+						//window.UEDITOR_CONFIG.initialFrameHeight=600;
+						//window.UEDITOR_CONFIG.imageUrl='';
+						//window.UEDITOR_CONFIG.imagePath='';
+						 UE.getEditor('edit');
+					}
+		$(document).ready(function(){
+					var obj =["pic"];    
+					   //下面使用each进行遍历  
+						$.each(obj,function(n,idx) {
+							var Ifout=0;
+							$("#"+idx).uploadify({
+								'height'        : 30,
+								'width'         : 30, 
+								'buttonText'    : '上传',
+								'swf'           : '__STATIC__/js/uploadify/uploadify.swf',
+								'uploader' 	 	: "{:U('Admin/Login/upload_image')}",
+								'auto'          : true,
+								'multi'         : true,
+								'cancelImg'     : '__STATIC__/js/uploadify/uploadify-cancel.png',
+								'fileTypeExts'  : '*.jpg',
+								'fileSizeLimit' : '1MB',
+								'removeCompleted':true,
+								'onFallback'		:function(){
+									alert ('上传图片需要用到flash,请先安装flash');
+									Ifout=1;
+									
+								 },
+								'onUploadStart'	:	function(file){
+									var fileCount = $("#file_"+idx).val();
+									
+									if(fileCount>=10){
+										alert ('无法继续上传图片，图片数量限制为10');
+										$('#'+idx).uploadify('cancel',"*");
+									}
+								},
+								'onUploadSuccess':function(file,data,response){
+									pic_url=jQuery.parseJSON(data);
+									imgstr = '<a href="__ROOT__'+pic_url+'" target="_blank"><img src="__ROOT__'+pic_url+'" width="25" height="29" /></a>';
+									pic_hidden = '<input type="hidden" name="pic" value="'+pic_url+'">'; 
+									//pic_hidden = '<input type="hidden" name="pics['+idx+'][]" value="'+pic_url+'">'; 
+									//这个地方可能由于ajax的原因实际会被调用两次，所以加判断	
+									if (pic_url!=null){
+										var fileCount = $("#file_"+idx).val();
+										 
+										if(fileCount != ''){
+										   fileCount = parseInt(fileCount) + 1;
+										}else{
+										   fileCount = "1";
+										}
+										$("#file_"+idx).val(fileCount);
+										// 插入<div>元素及其子元素
+										var fileHtml = '';
+										fileHtml += '<div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">';
+										fileHtml += imgstr+pic_hidden;
+										fileHtml +='<a href="javascript:;" onclick="$(this).parent().remove();subfileCount('+"'"+idx+"'"+');">取消</a> &nbsp;&nbsp;'+'  </div>';
+									  
+										var fileElement = document.getElementById("files_preview_"+idx);
+										fileElement.innerHTML = fileElement.innerHTML + fileHtml;    
+										
+								  
+									}
+								},
+								//加上此句会重写onSelectError方法【需要重写的事件】
+								'overrideEvents': ['onSelectError', 'onDialogClose'],
+								//返回一个错误，选择文件的时候触发
+								'onSelectError':function(file, errorCode, errorMsg){
+									switch(errorCode) {
+										case -110:
+											alert("文件 ["+file.name+"] 大小超出系统限制的(1M=1024kb)大小！");
+											break;
+										case -120:
+											alert("文件 ["+file.name+"] 大小异常！");
+											break;
+										case -130:
+											alert("文件 ["+file.name+"] 类型不正确！");
+											break;
+									}
+								}
+							});
+							if(Ifout==1){
+								return false;
+							}
+						});
+					});
+				</script>
+				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.config.js"></script>
+				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.all.min.js"> </script>
+				<!-- /section:basics/content.breadcrumbs -->
+				
+				
+				<div class="page-content">
+
+					<div class="page-content-area">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/Blog/blogEdit')}" method='post'>
+									<!-- #section:elements.form -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章图片： </label>
+									
+										<div class="col-sm-9">
+											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
+										 <span id="files_pic">
+											  <input id="one" name="pic"  type="file">
+										   </span>&nbsp;&nbsp; 
+										  <div id="files_preview_one" style="width:auto;height:auto; overflow :auto">
+										  <div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">
+										  <a href="{$be.pic}" target="_blank"><img src="{$be.pic}" width="25" height="29" /></a>
+										  <input type="hidden" name="pic" value="{$be.pic}">
+										  <a href="javascript:;" onclick="$(this).parent().remove();subfileCount('one');">取消</a> &nbsp;&nbsp;</div>
+										   </div>
+										<input type="hidden" id="file_one" value=""><input type="hidden" id="counts" value="">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文章标题：</label>
+
+										<div class="col-sm-9">
+											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="{$be['title']}"/>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='type' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='{$be.type}'/>
+										</div>
+									</div>
+
+									<!-- /section:elements.form -->
+									<!-- <div class="space-4"></div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章摘要： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='intro' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div> -->
+
+									<div class="space-4"></div>							
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章正文： </label>
+
+										<div class="col-sm-9">
+											<textarea name='content' id='edit'>{$be.content}</textarea>
+										</div>
+									</div>
+
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<button class="btn btn-info" type="submit">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												立即提交
+											</button>
+
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												重置
+											</button>
+										</div>
+									</div>
+							
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+		<script language="javascript">
+
+		  function subfileCount(idx)  // 删除当前文件的<div>和<input type=”file”/>元素
+		  {
+			  var fileCount = $("#file_"+idx).val();
+			  if(fileCount != ''){
+				  fileCount = parseInt(fileCount) - 1;
+			  }else{
+				 fileCount = "0";
+			  }
+			  $("#file_"+idx).val(fileCount);
+			  
+		  }
+		  
+		  </script>	
+		<include file="Admin:foot"/>

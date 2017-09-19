@@ -22,7 +22,7 @@
   <div class="logo f_l"> <a href="/"><img src="__STATIC__/images/logo1.png"></a> </div>
   <nav id="topnav" class="f_r">
     <ul>
-      <a href="index.html" target="_blank">首页</a> <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a>
+	<?php if(is_array($menus)): foreach($menus as $key=>$vo): ?><a href="<?php echo U(GROUP_NAME.'/'.$vo['url'].'');?>" target="_blank"><?php echo ($vo["name"]); ?></a><?php endforeach; endif; ?><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
     </ul>
     <script src="__STATIC__/js/nav.js"></script> 
   </nav>
@@ -265,15 +265,31 @@ window.onload = function ()
       </ul>
     </div>
   </div>
+  <!--高速版-->
+<div id="SOHUCS" sid="test"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cytdKBBn2',
+conf: 'prod_90ade4411b1bf73ffde8e72219233576'
+});
+</script>
+
   <!--r_box end --> 
 </article>
 <footer>
   <p class="ft-copyright"></p>
   <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:0},200);" style='display:none;'></a> </div>
 </footer>
+<style>
+.did{
+display:none;
+}
+</style>
 <script>
 $(window).scroll(function(){
 	$("#tbox").css("height",'120px');
+	$("div[node-type='is-icp']").hide();
 	if($(window).scrollTop() > 50){
 		//$("tbox").css("height",'100px');
 		$("#gotop").fadeIn();
@@ -282,6 +298,16 @@ $(window).scroll(function(){
 		$("#gotop").fadeOut();
 	}
 });
+$(function(){
+	//alert('123');
+	//node-type=is-icp
+	//$("div#SOHUCS").firstChild.addClass('did');
+	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
+	
+});
+window.onload = function(){
+	//$("div[node-type='is-icp']").hide();
+}
 </script>
 </body>
 </html>

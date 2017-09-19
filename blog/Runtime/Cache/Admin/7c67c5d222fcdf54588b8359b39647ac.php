@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="en">
+<?php if (!defined('THINK_PATH')) exit();?><html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
