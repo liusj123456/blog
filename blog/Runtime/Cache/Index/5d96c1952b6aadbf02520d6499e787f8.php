@@ -21,62 +21,22 @@
 </head>
 <body>
 <header>
-<?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); ?>
+
   <div class="logo f_l"> <a href="/"><img src="__STATIC__/images/logo1.png"></a> </div>
-  <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
+  <nav id="topnav" class="f_r">
     <ul>
-	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>"><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><a href="<?php echo U('Admin/Login/login');?>" >登录</a><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
+	<?php if(is_array($menus)): foreach($menus as $key=>$vo): ?><a href="<?php echo U(GROUP_NAME.'/'.$vo['url'].'','','');?>" target="_blank"><?php echo ($vo["name"]); ?></a><?php endforeach; endif; ?><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
     </ul>
     <script src="__STATIC__/js/nav.js"></script> 
   </nav>
- <!--  <nav id="topnav1" class="f_r">
+  <nav id="topnav1" class="f_r">
     <ul>
       <a href="<?php echo U('Admin/Login/login');?>" id="topnav_current">登录</a>
     </ul>
-  </nav> -->
+  </nav>
 </header>
 <article>
   <div class="l_box f_l">
-    <div class="banner">
-      <div id="slide-holder">
-        <div id="slide-runner"> <a href="/" target="_blank"><img id="slide-img-1" src="__STATIC__/images/a1.jpg"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-2" src="__STATIC__/images/a2.jpg"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-3" src="__STATIC__/images/a3.jpg"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-4" src="__STATIC__/images/a4.jpg"  alt="" /></a>
-          <div id="slide-controls">
-            <p id="slide-client" class="text"><strong></strong><span></span></p>
-            <p id="slide-desc" class="text"></p>
-            <p id="slide-nav"></p>
-          </div>
-        </div>
-      </div>
-      <script>
-	  if(!window.slider) {
-		var slider={};
-	}
-
-	slider.data= [
-    {
-        "id":"slide-img-1", // 与slide-runner中的img标签id对应
-        "client":"标题1",
-        "desc":"这里修改描述 这里修改描述 这里修改描述" //这里修改描述
-    },
-    {
-        "id":"slide-img-2",
-        "client":"标题2",
-        "desc":"add your description here"
-    },
-    {
-        "id":"slide-img-3",
-        "client":"标题3",
-        "desc":"add your description here"
-    },
-    {
-        "id":"slide-img-4",
-        "client":"标题4",
-        "desc":"add your description here"
-    } 
-	];
-
-	  </script> 
-    </div>
     <!-- banner代码 结束 -->
     <div class="topnews">
       <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
@@ -268,6 +228,14 @@ window.onload = function ()
     </div>
   </div>
   <!--高速版-->
+	<div id="SOHUCS" sid="test"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cytdKBBn2',
+conf: 'prod_90ade4411b1bf73ffde8e72219233576'
+});
+</script>
   <!--r_box end --> 
 </article>
 <footer>

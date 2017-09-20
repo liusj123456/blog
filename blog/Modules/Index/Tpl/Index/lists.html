@@ -1,0 +1,61 @@
+<include file='top'/>
+<article>
+  <div class="l_box f_l">
+    <!-- banner代码 结束 -->
+    <div class="topnews">
+      <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
+      <foreach name='blog_list' item='blog'>
+	  <div class="blogs">
+        <figure><img src="{$blog['pic']}"></figure>
+        <ul>
+          <h3><a href="{:U(GROUP_NAME.'/Index/content/id/'.$blog['id'].'')}">{$blog['title']}</a></h3>
+          <p>{$blog['content']|htmlspecialchars_decode}</p>
+          <p class="autor"><span class="lm f_l"><a href="/">个人博客</a></span><span class="dtime f_l">{$blog['addTime']|date='Y-m-d',###}</span><span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+        </ul>
+      </div>
+	  </foreach>
+    </div>
+  </div>
+  <div class="r_box f_r">
+    <include file='Index:guanzhu'/>
+    <!--tit01 end-->
+	<include file='Index:guanzhuad'/>	
+    <include file='Index:wenzhanglist'/>
+    <!--切换卡 moreSelect end -->  
+    <include file='Index:biaoqian'/>
+  </div>
+  <!--高速版-->
+
+  <!--r_box end --> 
+</article>
+<include file='Index:footer'/>
+<style>
+.did{
+display:none;
+}
+</style>
+<script>
+$(window).scroll(function(){
+	$("#tbox").css("height",'180px');
+	$("div[node-type='is-icp']").hide();
+	if($(window).scrollTop() > 50){
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeIn();
+	}else{
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeOut();
+	}
+});
+$(function(){
+	//alert('123');
+	//node-type=is-icp
+	//$("div#SOHUCS").firstChild.addClass('did');
+	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
+	
+});
+window.onload = function(){
+	//$("div[node-type='is-icp']").hide();
+}
+</script>
+</body>
+</html>
