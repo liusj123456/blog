@@ -20,7 +20,7 @@ header { width: 1000px; margin: 20px auto; overflow: hidden; clear: both; }
 #topnav a { display: inline-block; font-size: 18px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; padding: 0 20px; }
 #topnav a:hover { background: #fff; color: #000; }
 #topnav a { color: #FFF }
-#topnav_current { background: #F3FF41; }/* 高亮选中颜色 */
+#topnav_current { background: #fff; }/* 高亮选中颜色 */
 #topnav1 { width: 20%; background: #48AE15; height: 46px; line-height: 46px; text-align: center; border-radius:0 46px;float:left; }
 #topnav1 a { display: inline-block; font-size: 18px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; padding: 0 20px; }
 a#topnav_current { color: #000 }
@@ -65,3 +65,25 @@ _margin-bottom: 15px; }/*解决IE6下不兼容 position:fixed 的问题*/
 .bd-news ul li a { display: block; }
 .bd-news ul li a:hover { color: #000; }
 .bd-news ul li:hover { border-bottom: #000 1px solid; }/* 鼠标放上去的效果 */
+/*点赞*/
+.label_bottom{ padding-left: 0;}
+.label_bottom .yz_zan{padding-left:20px;color:#999999;font-size:12px;background:url(../images/list_icon.png) no-repeat -47px -297px;}
+.label_bottom .yz_zan:hover{color:#406ca9;background-position:-47px -327px; text-decoration:none;}
+.label_bottom em{left:0;top:-15px;font-family:Arial, Helvetica, sans-serif;color:#ff9300;}
+
+
+/*内容页*/
+.news_title { font-size: 24px; font-weight: 400; padding: 20px 0 10px 0; color: #38485A; }
+.news_author { width: 100%; color: #999999;  line-height: 18px;  }
+.news_author span { margin-right: 20px; padding-left: 20px }
+.au01 { background: url(../images/author2.png) no-repeat left center }
+.au02 { background: url(../images/date.png) no-repeat left center }
+.au03 b { color: #333; padding: 0 5px }
+.au04{  font-weight: normal;  }
+.news_content { line-height: 24px ;font-size: 14px;}
+.news_content p {
+    line-height: 28px;
+    margin: 10px 0;
+    text-indent: 2em;
+} 
+.news_content p img {border:0; display: block;/*width: 600px;height: 390px;*/}

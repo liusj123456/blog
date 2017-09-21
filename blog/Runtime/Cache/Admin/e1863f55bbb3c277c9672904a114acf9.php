@@ -374,39 +374,7 @@
 					</div><!-- /.nav-search -->
 				</div>
 				<script type="text/javascript">
-					window.UEDITOR_HOME_URL = '__Ueditor__/';
-					/*window.onload = function(){
-						 UE.getEditor('edit',{
-						//这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
-						toolbars:[
-							['fullscreen', 'source', '|', 'undo', 'redo', '|',
-								'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch','autotypeset','blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist','selectall', 'cleardoc', '|',
-								'rowspacingtop', 'rowspacingbottom','lineheight','|',
-								'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-								'directionalityltr', 'directionalityrtl', 'indent', '|',
-								'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|','touppercase','tolowercase','|',
-								'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright','imagecenter', '|',
-								'insertimage', 'emotion','scrawl', 'insertvideo','music','attachment', 'map', 'gmap', 'insertframe','highlightcode','webapp','pagebreak','template','background', '|',
-								'horizontal', 'date', 'time', 'spechars','snapscreen', 'wordimage', '|',
-								'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
-								'print', 'preview', 'searchreplace','help']
-						],
-							//focus时自动清空初始化时的内容
-							autoClearinitialContent:true,
-							//关闭字数统计
-							wordCount:false,
-							//关闭elementPath
-							elementPathEnabled:false
-							//更多其他参数，请参考editor_config.js中的配置项
-						}) 
-					}*/
-					window.onload = function(){
-						//window.UEDITOR_CONFIG.initialFrameWidth=1200;
-						//window.UEDITOR_CONFIG.initialFrameHeight=600;
-						//window.UEDITOR_CONFIG.imageUrl='';
-						//window.UEDITOR_CONFIG.imagePath='';
-						 UE.getEditor('edit');
-					}
+
 		$(document).ready(function(){
 					var obj =["pic"];    
 					   //下面使用each进行遍历  
@@ -487,8 +455,7 @@
 						});
 					});
 				</script>
-				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.config.js"></script>
-				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.all.min.js"> </script>
+
 				<!-- /section:basics/content.breadcrumbs -->
 				
 				
@@ -499,10 +466,10 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/Blog/blogAdd');?>" method='post'>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/System/bannerAdd');?>" method='post'>
 									<!-- #section:elements.form -->
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章图片： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">banner图片： </label>
 									
 										<div class="col-sm-9">
 											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
@@ -515,22 +482,28 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文章标题：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> banner标题：</label>
 
 										<div class="col-sm-9">
 											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
-
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">标题简介： </label>
 
 										<div class="col-sm-9">
-											<input type="text" name='type' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+											<textarea name='desc' id='' style="margin: 0px; width: 580px; height: 89px;"/></textarea>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台菜单标题显示状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">banner排序： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='sort' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台banner显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
@@ -540,33 +513,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章简介： </label>
-
-										<div class="col-sm-9">
-											<textarea name='intro' id='' style="margin: 0px; width: 580px; height: 89px;"/></textarea>
-										</div>
-									</div>
-									<!-- /section:elements.form -->
-									<!-- <div class="space-4"></div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章摘要： </label>
-
-										<div class="col-sm-9">
-											<input type="text" name='intro' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
-										</div>
-									</div> -->
-
-									<div class="space-4"></div>							
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">文章正文： </label>
-
-										<div class="col-sm-9">
-											<textarea name='content' id='edit'></textarea>
-										</div>
-									</div>
-
+										
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info" type="submit">

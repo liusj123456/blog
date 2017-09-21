@@ -1,14 +1,14 @@
 <?php
 class BlogAction extends CommonAction {
     public function blogList(){
-		$list = M('blogs')->select();
+		$list = M('blogs')->order('id desc')->select();
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
 		}
 		$this->assign('info',$list);
 		$this->display();
     }
-	public function blogDel(){
+	public function blogDelL(){
 		$vo = M('blogs')->where(array('id'=>$_GET['id']))->getField('display');
 		//echo $vo;die;
 		$res = ($vo==1)? 0: 1;
@@ -19,6 +19,17 @@ class BlogAction extends CommonAction {
 				$this->error('变更显示失败');
 			}
     }
+	public function blogDel(){
+		//$vo = M('blogs')->where(array('id'=>$_GET['id']))->getField('display');
+		//echo $vo;die;
+		//$res = ($vo==1)? 0: 1;
+		$info = M('blogs')->where(array('id'=>$_GET['id']))->delete();
+		if($info){
+				$this->success('删除博客成功');
+			}else{
+				$this->error('删除博客失败');
+			}
+    }
 	public function blogAdd(){
 		if(IS_POST){
 			//p($_POST);die;
@@ -26,6 +37,8 @@ class BlogAction extends CommonAction {
 				'pic'=>serialize(I('pic')),
 				'title'=>I('title'),
 				'type'=>I('type'),
+				'intro'=>I('intro'),
+				'display'=>I('display'),
 				'content'=>I('content'),
 				'addUser'=>session('username'),
 				'addTime'=>time()
@@ -44,19 +57,22 @@ class BlogAction extends CommonAction {
     }
 	public function blogEdit(){
 		$id=$_GET['id'];
-		if(IS_POST){		
+		if(IS_POST){
+			//p($_POST);die;
 			$data = array(
 				'id'=>I('id'),
 				'pic'=>serialize(I('pic')),
 				'title'=>I('title'),
+				'display'=>I('display'),
 				'type'=>I('type'),
+				'intro'=>I('intro'),
 				'content'=>I('content')
 			);
 			if(empty($data['pic'])){
-				$this->error('名称不为空');
+				$this->error('图片不为空');
 			}
 			if(empty($data['title'])){
-				$this->error('排序不为空');
+				$this->error('标题不为空');
 			}
 			if(empty($data['type']) && empty($data['content'])){
 				$this->error('类型或内容不为空');

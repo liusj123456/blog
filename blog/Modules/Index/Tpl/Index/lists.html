@@ -8,9 +8,15 @@
 	  <div class="blogs">
         <figure><img src="{$blog['pic']}"></figure>
         <ul>
-          <h3><a href="{:U(GROUP_NAME.'/Index/content/id/'.$blog['id'].'')}">{$blog['title']}</a></h3>
-          <p>{$blog['content']|htmlspecialchars_decode}</p>
-          <p class="autor"><span class="lm f_l"><a href="/">个人博客</a></span><span class="dtime f_l">{$blog['addTime']|date='Y-m-d',###}</span><span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+          <!-- <h3><a href="__URL__/Index/content/id/{$blog['id']}">{$blog['title']}</a></h3> -->
+		  <h3><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']))}">{$blog['title']}</a></h3>
+          <p>{$blog['intro']|htmlspecialchars_decode}<a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']))}" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
+          <p class="autor"><span class="lm f_l"><a href="/">{$blog['type']}</a></span><span class="dtime f_l">{$blog['addTime']|date='Y-m-d',###}</span>
+			<input class="zan_cookie" type="hidden" value="2">
+			<input class="zan_newsid" type="hidden" value="442">
+			<span class="label_bottom f_r" style="padding-left: 0;">
+				<a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">2</a>
+			</span><span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
         </ul>
       </div>
 	  </foreach>

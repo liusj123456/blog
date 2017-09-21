@@ -46,9 +46,9 @@ class SystemAction extends CommonAction {
 	public function menuDel(){
 		$info=M('menu')->where(array('id'=>$_GET['id']))->delete();
 		if($info){
-			$this->success('删除成功',U(MODULE_NAME.'/menu'));
+			$this->success('删除成功',U(MODULE_NAME.'/menus'));
 		}else{
-			$this->error('删除失败',U(MODULE_NAME.'/menu'));		
+			$this->error('删除失败',U(MODULE_NAME.'/menus'));		
 		}
     }
 	public function menuAdd(){
@@ -120,7 +120,7 @@ class SystemAction extends CommonAction {
 			$info=M('menu')->save($data);
 			//echo M('menu')->getLastSql();die;
 			if($info){
-				$this->success('修改成功',U(GROUP_NAME.'/System/menu'));
+				$this->success('修改成功',U(GROUP_NAME.'/System/menus'));
 			}else{
 				$this->error('修改失败');		
 			}
@@ -233,6 +233,80 @@ class SystemAction extends CommonAction {
 			$info=M('index')->where(array('id'=>$id))->find();
 			//p($info);
 			$this->assign('v',$info);
+			$this->display();
+		}
+    }
+	//banner
+	public function bannerList(){
+		$list = M('banner')->order('id desc')->select();
+		foreach($list as $key=>$val){
+			$list[$key]['pic']=unserialize($val['pic']);
+		}
+		$this->assign('banner',$list);
+		$this->display();
+    }
+	public function bannerDel(){
+		$info = M('banner')->where(array('id'=>$_GET['id']))->delete();
+		if($info){
+				$this->success('删除banner成功');
+			}else{
+				$this->error('删除banner失败');
+			}
+    }
+	public function bannerAdd(){
+		if(IS_POST){
+			//p($_POST);die;
+			$data = array(
+				'pic'=>serialize(I('pic')),
+				'title'=>I('title'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+				'desc'=>I('desc'),
+				'addUser'=>session('username'),
+				'addTime'=>time()
+			);
+			$info = M('banner')->add($data);
+			if($info){
+				$this->success('添加banner成功');
+			}else{
+				$this->error('添加banner失败');
+			}
+		}else{
+			$this->display();
+		}
+		
+		
+    }
+	public function bannerEdit(){
+		$id=$_GET['id'];
+		if(IS_POST){
+			//p($_POST);die;
+			$data = array(
+				'id'=>I('id'),
+				'pic'=>serialize(I('pic')),
+				'title'=>I('title'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+				'desc'=>I('desc')
+			);
+			if(empty($data['pic'])){
+				$this->error('图片不为空');
+			}
+			if(empty($data['title'])){
+				$this->error('标题不为空');
+			}
+			$info=M('banner')->save($data);
+			//echo M('banner')->getLastSql();die();
+			if($info){
+				$this->success('修改成功',U(GROUP_NAME.'/System/bannerList'));
+			}else{
+				$this->error('修改失败');		
+			}
+		}else{
+			$info=M('banner')->where(array('id'=>$id))->find();
+			$info['pic']=unserialize($info['pic']);
+			//p($info);die;
+			$this->assign('be',$info);
 			$this->display();
 		}
     }

@@ -2,7 +2,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>首页</title>
+		<title>Blog后台管理首页</title>
 
 		<meta name="description" content="This is page-header (.page-header &gt; h1)" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -384,21 +384,21 @@
 									<input name='pid' type='hidden' value='<?php echo ($pid); ?>'>
 									<input name='level' type='hidden' value='<?php echo ($level); ?>'>
 									<?php if($pid != 0): ?><div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 前台菜单上级：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 标题上级：</label>
 
 										<div class="col-sm-9">
 											<?php echo ($parents); ?>
 										</div>
 									</div><?php endif; ?>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 前台菜单名称：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 标题名称：</label>
 
 										<div class="col-sm-9">
 											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>				
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">前台菜单地址： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">跳转地址： </label>
 
 										<div class="col-sm-9">
 											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
@@ -408,7 +408,7 @@
 									<div class="space-4"></div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">前台菜单排序： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">标题排序： </label>
 
 										<div class="col-sm-9">
 											<input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
@@ -418,7 +418,7 @@
 									<div class="space-4"></div>							
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台菜单显示状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台菜单标题显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
@@ -441,6 +441,10 @@
 											<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												重置
+											</button>
+											<button class="btn" type="" onclick='javascript:history.go(-1);'>
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												返回
 											</button>
 										</div>
 									</div>

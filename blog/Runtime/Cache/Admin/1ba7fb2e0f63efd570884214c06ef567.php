@@ -537,7 +537,24 @@
 											<input type="text" name='type' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["type"]); ?>'/>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='display' id="form-field-select-1">
+																<option <?php if($be["display"] == "1"): ?>selected<?php endif; ?> value="0" >显示</option>
+																<option <?php if($be["display"] == "2"): ?>selected<?php endif; ?> value="1">不显示</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章简介： </label>
 
+										<div class="col-sm-9">
+											<textarea name='intro' id='' style="margin: 0px; width: 580px; height: 89px;"/><?php echo ($be["intro"]); ?></textarea>
+										</div>
+									</div>
 									<!-- /section:elements.form -->
 									<!-- <div class="space-4"></div>
 

@@ -444,7 +444,7 @@
 						</table>
 
 						<div class="modal-footer no-margin-top">
-
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexAdd');?>";'>添加顶级菜单</button>
 							<ul class="pagination pull-right no-margin">
 								<li class="prev disabled">
 									<a href="#">

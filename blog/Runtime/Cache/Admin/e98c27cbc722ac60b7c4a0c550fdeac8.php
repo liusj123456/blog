@@ -442,6 +442,10 @@
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												重置
 											</button>
+											<button class="btn" type="" onclick='javascript:history.go(-1);'>
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												返回
+											</button>
 										</div>
 									</div>
 							
