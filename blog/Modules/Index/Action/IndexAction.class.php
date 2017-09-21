@@ -38,4 +38,10 @@ class IndexAction extends Action {
 		$this->assign('blog_info',$info);
 		$this->display();
     }
+	public function youlian(){
+		$info = M('friends')->order('sort asc,id desc')->select();
+		//p($info);die;
+		$this->assign('info',$info);
+		$this->display();
+    }
 }

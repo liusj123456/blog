@@ -135,13 +135,8 @@ window.onload = function ()
 	 <div class="links">
       <h3><span>[<a href="/">申请友情链接</a>]</span>友情链接</h3>
       <ul>
-        <li><a href="/">个人博客</a></li>
-        <li><a href="/">web开发</a></li>
-        <li><a href="/">前端设计</a></li>
-        <li><a href="/">Html</a></li>
-        <li><a href="/">CSS3</a></li>
-        <li><a href="/">Html5+css3</a></li>
-        <li><a href="/">百度</a></li>
+	  <?php $info = M('friends')->order('sort asc,id desc')->select(); ?>
+		<?php if(is_array($info)): foreach($info as $key=>$friends): ?><li><a href="<?php echo ($friends["url"]); ?>" target='_blanket'><?php echo ($friends["title"]); ?></a></li><?php endforeach; endif; ?>
       </ul>
     </div>
   </div>
@@ -153,6 +148,19 @@ window.onload = function ()
   <p class="ft-copyright"></p>
   <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:0},200);" style='display:none;'></a> </div>
 </footer>
+<script>
+$(window).scroll(function(){
+	$("#tbox").css("height",'180px');
+	//$("div[node-type='is-icp']").hide();
+	if($(window).scrollTop() > 50){
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeIn();
+	}else{
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeOut();
+	}
+});
+</script>
 <style>
 .did{
 display:none;

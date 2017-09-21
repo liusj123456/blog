@@ -7,7 +7,7 @@
       <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
       <foreach name='blog_list' item='indexlist'>
 	  <div class="blogs">
-        <figure><img src="__STATIC__/images/01.jpg"></figure>
+        <figure><img src="{$indexlist.pic}"></figure>
         <ul>
           <h3><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']))}">{$indexlist.title}</a></h3>
           <p>{$indexlist.intro|htmlspecialchars_decode} ...<a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']))}" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
@@ -38,15 +38,10 @@
   <!--r_box end --> 
 </article>
 <include file='Index:footer'/>
-<style>
-.did{
-display:none;
-}
-</style>
 <script>
 $(window).scroll(function(){
 	$("#tbox").css("height",'180px');
-	$("div[node-type='is-icp']").hide();
+	//$("div[node-type='is-icp']").hide();
 	if($(window).scrollTop() > 50){
 		//$("tbox").css("height",'100px');
 		$("#gotop").fadeIn();
@@ -55,16 +50,6 @@ $(window).scroll(function(){
 		$("#gotop").fadeOut();
 	}
 });
-$(function(){
-	//alert('123');
-	//node-type=is-icp
-	//$("div#SOHUCS").firstChild.addClass('did');
-	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
-	
-});
-window.onload = function(){
-	//$("div[node-type='is-icp']").hide();
-}
 </script>
 </body>
 </html>

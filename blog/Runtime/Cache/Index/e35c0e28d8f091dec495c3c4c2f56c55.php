@@ -85,7 +85,7 @@
     <div class="topnews">
       <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
       <?php if(is_array($blog_list)): foreach($blog_list as $key=>$indexlist): ?><div class="blogs">
-        <figure><img src="__STATIC__/images/01.jpg"></figure>
+        <figure><img src="<?php echo ($indexlist["pic"]); ?>"></figure>
         <ul>
           <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["title"]); ?></a></h3>
           <p><?php echo (htmlspecialchars_decode($indexlist["intro"])); ?> ...<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
@@ -219,7 +219,8 @@ window.onload = function ()
 	 <div class="links">
       <h3><span>[<a href="/">申请友情链接</a>]</span>友情链接</h3>
       <ul>
-		<?php if(is_array($friends)): foreach($friends as $key=>$friends): ?><li><a href="<?php echo ($friends["url"]); ?>"><?php echo ($friends["title"]); ?></a></li><?php endforeach; endif; ?>
+	  <?php $info = M('friends')->order('sort asc,id desc')->select(); ?>
+		<?php if(is_array($info)): foreach($info as $key=>$friends): ?><li><a href="<?php echo ($friends["url"]); ?>" target='_blanket'><?php echo ($friends["title"]); ?></a></li><?php endforeach; endif; ?>
       </ul>
     </div>
   </div>
@@ -230,15 +231,10 @@ window.onload = function ()
   <p class="ft-copyright"></p>
   <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:0},200);" style='display:none;'></a> </div>
 </footer>
-<style>
-.did{
-display:none;
-}
-</style>
 <script>
 $(window).scroll(function(){
 	$("#tbox").css("height",'180px');
-	$("div[node-type='is-icp']").hide();
+	//$("div[node-type='is-icp']").hide();
 	if($(window).scrollTop() > 50){
 		//$("tbox").css("height",'100px');
 		$("#gotop").fadeIn();
@@ -247,16 +243,19 @@ $(window).scroll(function(){
 		$("#gotop").fadeOut();
 	}
 });
-$(function(){
-	//alert('123');
-	//node-type=is-icp
-	//$("div#SOHUCS").firstChild.addClass('did');
-	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
-	
-});
-window.onload = function(){
+</script>
+<script>
+$(window).scroll(function(){
+	$("#tbox").css("height",'180px');
 	//$("div[node-type='is-icp']").hide();
-}
+	if($(window).scrollTop() > 50){
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeIn();
+	}else{
+		//$("tbox").css("height",'100px');
+		$("#gotop").fadeOut();
+	}
+});
 </script>
 </body>
 </html>

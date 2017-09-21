@@ -310,4 +310,74 @@ class SystemAction extends CommonAction {
 			$this->display();
 		}
     }
+	//友链
+	public function friendList(){
+		$list = M('friends')->order('id desc')->select();
+		$this->assign('friend',$list);
+		$this->display();
+    }
+	public function friendDel(){
+		$info = M('friends')->where(array('id'=>$_GET['id']))->delete();
+		if($info){
+				$this->success('删除成功');
+			}else{
+				$this->error('删除失败');
+			}
+    }
+	public function friendAdd(){
+		if(IS_POST){
+			//p($_POST);die;
+			$data = array(
+				'title'=>I('title'),
+				'url'=>I('url'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+				'beian'=>I('beian'),
+				'addUser'=>session('username'),
+				'addTime'=>time()
+			);
+			$info = M('friends')->add($data);
+			if($info){
+				$this->success('添加banner成功');
+			}else{
+				$this->error('添加banner失败');
+			}
+		}else{
+			$this->display();
+		}
+		
+		
+    }
+	public function friendEdit(){
+		$id=$_GET['id'];
+		if(IS_POST){
+			//p($_POST);die;
+			$data = array(
+				'id'=>I('id'),
+				'title'=>I('title'),
+				'url'=>I('url'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+				'beian'=>I('beian')
+			);
+			/* if(empty($data['pic'])){
+				$this->error('图片不为空');
+			}
+			if(empty($data['title'])){
+				$this->error('标题不为空');
+			} */
+			$info=M('friends')->save($data);
+			//echo M('friends')->getLastSql();die();
+			if($info){
+				$this->success('修改成功',U(GROUP_NAME.'/System/friendList'));
+			}else{
+				$this->error('修改失败');		
+			}
+		}else{
+			$info=M('friends')->where(array('id'=>$id))->find();
+			//p($info);die;
+			$this->assign('friend',$info);
+			$this->display();
+		}
+    }
 }

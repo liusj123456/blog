@@ -1,8 +1,12 @@
  <div class="links">
       <h3><span>[<a href="/">申请友情链接</a>]</span>友情链接</h3>
       <ul>
-		<foreach name='friends' item='friends'>
-        <li><a href="{$friends.url}">{$friends.title}</a></li>
+	  <php>
+	  $info = M('friends')->order('sort asc,id desc')->select();
+	 // p($info);
+	  </php>
+		<foreach name='info' item='friends'>
+        <li><a href="{$friends.url}" target='_blanket'>{$friends.title}</a></li>
         </foreach>
       </ul>
     </div>
