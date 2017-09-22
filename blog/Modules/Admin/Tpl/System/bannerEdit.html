@@ -93,11 +93,11 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/System/bannerEdit')}" method='post'>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/System/bannerEdit',array('type'=>$tupian))}" method='post'>
 									<!-- #section:elements.form -->
-									<input name='id' type='hidden' value='{$be.id}'>
+									<input name='id' type='hidden' value='{$be.id}'><input name='type' type='hidden' value='{$tupian}'>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">banner图片： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">{$tupian}图片： </label>
 									
 										<div class="col-sm-9">
 											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
@@ -119,33 +119,40 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> banner标题：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> {$tupian}标题：</label>
 
 										<div class="col-sm-9">
 											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="{$be['title']}"/>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">标题简介： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">{$tupian}标题简介： </label>
 
 										<div class="col-sm-9">
 											<textarea name='desc' id='' style="margin: 0px; width: 580px; height: 89px;"/>{$be['desc']}</textarea>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">banner排序： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">{$tupian}排序： </label>
 
 										<div class="col-sm-9">
 											<input type="text" name='sort' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='{$be.sort}'/>
 										</div>
 									</div>
+										<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">{$tupian}链接： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='{$be.url}'/>
+										</div>
+									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">{$tupian}显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
-																<option <if condition='$be.display eq "1"'>selected</if> value="0" >显示</option>
-																<option <if condition='$be.display eq "2"'>selected</if> value="1">不显示</option>
+																<option <if condition='$be.display eq "0"'>selected</if> value="0" >显示</option>
+																<option <if condition='$be.display eq "1"'>selected</if> value="1">不显示</option>
 												</select>
 											</div>
 										</div>

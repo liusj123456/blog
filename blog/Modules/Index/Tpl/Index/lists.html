@@ -3,7 +3,7 @@
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
     <div class="topnews">
-      <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
+      <h2><span><foreach name='type' item='type'><a href="{:U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']))}">{$type.name}</a></foreach></span><b>文章</b>列表</h2>
       <foreach name='blog_list' item='blog'>
 	  <div class="blogs">
         <figure><img src="{$blog['pic']}"></figure>

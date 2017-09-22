@@ -466,10 +466,11 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/System/bannerAdd');?>" method='post'>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/System/bannerAdd',array('type'=>$tupian));?>" method='post'>
+								<input name='type' type='hidden' value='<?php echo ($tupian); ?>'>
 									<!-- #section:elements.form -->
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">banner图片： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><?php echo ($tupian); ?>图片： </label>
 									
 										<div class="col-sm-9">
 											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
@@ -482,28 +483,35 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> banner标题：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo ($tupian); ?>标题：</label>
 
 										<div class="col-sm-9">
 											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">标题简介： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>标题简介： </label>
 
 										<div class="col-sm-9">
 											<textarea name='desc' id='' style="margin: 0px; width: 580px; height: 89px;"/></textarea>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">banner排序： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>排序： </label>
 
 										<div class="col-sm-9">
 											<input type="text" name='sort' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台banner显示状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>链接： </label>
+
+										<div class="col-sm-9">
+											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags"><?php echo ($tupian); ?>显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">

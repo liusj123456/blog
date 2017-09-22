@@ -1,6 +1,6 @@
 <div class="banner">
 <php>
-$bannerss = M('banner')->order('sort asc,id desc')->where('display=0')->select();
+$bannerss = M('banner')->order('sort asc,id desc')->where('display=0 and type="banner"')->select();
 foreach($bannerss as $key=>$val){
 			$bannerss[$key]['pic']=unserialize($val['pic']);
 		}

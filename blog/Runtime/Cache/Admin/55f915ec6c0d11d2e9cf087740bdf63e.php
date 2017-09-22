@@ -400,6 +400,7 @@
 									<th>类型</th>
 									<th>显示</th>
 									<th>排序</th>
+									<th>推荐</th>
 									<th>添加人</th>
 									<th>添加日期</th>
 									<th>操作</th>
@@ -420,6 +421,7 @@
 									<td><?php echo ($vo["type"]); ?></td>
 									<td><?php if($vo["display"] == 0): ?>显示<?php else: ?>不显示<?php endif; ?></td>
 									<td><?php echo ($vo["sort"]); ?></td>
+									<td><?php if($vo["adup"] == 0): ?>否<?php else: ?>是<?php endif; ?></td>
 									<td><?php echo ($vo["addUser"]); ?></td>
 									<td><?php echo (date('Y-m-d H:i:s',$vo["addTime"])); ?></td>
 									<td>

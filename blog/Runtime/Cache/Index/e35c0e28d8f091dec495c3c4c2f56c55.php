@@ -23,8 +23,8 @@
 </head>
 <body>
 <header>
-<?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); ?>
-  <div class="logo f_l"> <a href="/"><img src="__STATIC__/images/logo1.png"></a> </div>
+<?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); $logo = M('logo')->order('id desc')->getField('pic'); $logo = unserialize($logo); ?>
+  <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>
   <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
     <ul>
 	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><a href="<?php echo U('Admin/Login/login');?>" target='_blank'>登录</a><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
@@ -40,7 +40,7 @@
 <article>
   <div class="l_box f_l">
     <div class="banner">
-<?php $bannerss = M('banner')->order('sort asc,id desc')->where('display=0')->select(); foreach($bannerss as $key=>$val){ $bannerss[$key]['pic']=unserialize($val['pic']); } ?>
+<?php $bannerss = M('banner')->order('sort asc,id desc')->where('display=0 and type="banner"')->select(); foreach($bannerss as $key=>$val){ $bannerss[$key]['pic']=unserialize($val['pic']); } ?>
       <div id="slide-holder">
         <div id="slide-runner"> 
 		<?php if(is_array($bannerss)): foreach($bannerss as $key=>$banners): ?><a href="/" target="_blank"><img id="slide-img-<?php echo ($banners["id"]); ?>" src="<?php echo ($banners["pic"]); ?>"  alt="" /></a><?php endforeach; endif; ?>
@@ -83,13 +83,13 @@
     </div>
     <!-- banner代码 结束 -->
     <div class="topnews">
-      <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
+      <h2><span><?php if(is_array($type)): foreach($type as $key=>$type): ?><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']));?>"><?php echo ($type["name"]); ?></a><?php endforeach; endif; ?></span><b>文章</b>推荐</h2>
       <?php if(is_array($blog_list)): foreach($blog_list as $key=>$indexlist): ?><div class="blogs">
         <figure><img src="<?php echo ($indexlist["pic"]); ?>"></figure>
         <ul>
           <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["title"]); ?></a></h3>
           <p><?php echo (htmlspecialchars_decode($indexlist["intro"])); ?> ...<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
-          <p class="autor"><span class="lm f_l"><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["type"]); ?></a></span><span class="dtime f_l"><?php echo (date($indexlist["addTime"],'Y-m-d')); ?></span>
+          <p class="autor"><span class="lm f_l"><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["type"]); ?></a></span><span class="dtime f_l"><?php echo (date('Y-m-d',$indexlist["addTime"])); ?></span>
 		  <input class="zan_cookie" type="hidden" value="2">
 			<input class="zan_newsid" type="hidden" value="442">
 			<span class="label_bottom f_r" style="padding-left: 0;">
@@ -195,27 +195,58 @@ window.onload = function ()
         <li><a href="/">百度</a></li>
       </ul>
     </div>
-	 <div class="tuwen">
+	<div class="tuwen">
       <h3>图文推荐</h3>
       <ul>
-        <li><a href="/"><img src="__STATIC__/images/01.jpg"><b>住在手机里的朋友</b></a>
-          <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
-        </li>
-        <li><a href="/"><img src="__STATIC__/images/02.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
-          <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
-        </li>
-        <li><a href="/" title="手机的16个惊人小秘密，据说99.999%的人都不知"><img src="__STATIC__/images/03.jpg"><b>手机的16个惊人小秘密，据说...</b></a>
-          <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
-        </li>
-        <li><a href="/"><img src="__STATIC__/images/06.jpg"><b>住在手机里的朋友</b></a>
-          <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
-        </li>
-        <li><a href="/"><img src="__STATIC__/images/04.jpg"><b>教你怎样用欠费手机拨打电话</b></a>
-          <p><span class="tulanmu"><a href="/">手机配件</a></span><span class="tutime">2015-02-15</span></p>
-        </li>
+	  <?php if(is_array($adup)): foreach($adup as $key=>$adups): ?><li><a href="/"><img src="<?php echo ($adups["pic"]); ?>"><b><?php echo (htmlspecialchars_decode($adups["intro"])); ?></b></a>
+          <p><span class="tulanmu"><a href="/"><?php echo ($adups["type"]); ?></a></span><span class="tutime"><?php echo (date('Y-m-d',$adups["addTime"])); ?></span></p>
+        </li><?php endforeach; endif; ?>
       </ul>
     </div>
-    <div class="ad"> <img src="__STATIC__/images/03.jpg"> </div>
+    <?php $list_ad = M('banner')->order('id desc')->where('type="tuwenad" and display=0')->select(); foreach($list_ad as $key=>$val){ $list_ad[$key]['pic']=unserialize($val['pic']); } ?>
+<div class="ad"> <?php if(is_array($list_ad)): foreach($list_ad as $key=>$ad): ?><a href='<?php echo ($ad["url"]); ?>'><img src="<?php echo ($ad["pic"]); ?>"></a><?php endforeach; endif; ?></div>
+
+<!-- <div class="banner" style="width:300px;height:200px;">
+      <div id="slide-holder">
+        <div id="slide-runner" style="width:300px;height:200px;"> 
+		<?php if(is_array($list_ad)): foreach($list_ad as $key=>$ad): ?><a href="/" target="_blank"><img id="slide-img-<?php echo ($ad["id"]); ?>" src="<?php echo ($ad["pic"]); ?>"  alt="" /></a><?php endforeach; endif; ?>
+          <div id="slide-controls">
+            <p id="slide-client" class="text"><strong></strong><span></span></p>
+            <p id="slide-desc" class="text"></p>
+            <p id="slide-nav"></p>
+          </div>
+        </div>
+      </div>
+<script>
+	if(!window.slider) {
+		var slider={};
+	}
+
+	slider.data= [
+   <?php if(is_array($list_ad)): foreach($list_ad as $key=>$ad): ?>{
+        "id":"slide-img-<?php echo ($ad["id"]); ?>", // 与slide-runner中的img标签id对应
+        "client":"<?php echo ($ad["title"]); ?>",
+        "desc":"<?php echo ($ad["desc"]); ?>" //这里修改描述
+    },<?php endforeach; endif; ?>
+   /*  {
+        "id":"slide-img-2",
+        "client":"标题2",
+        "desc":"add your description here"
+    },
+   {
+        "id":"slide-img-3",
+        "client":"标题3",
+        "desc":"add your description here"
+    },
+    {
+        "id":"slide-img-4",
+        "client":"标题4",
+        "desc":"add your description here"
+    } */
+	];
+
+	  </script> 
+    </div> -->
 	 <div class="links">
       <h3><span>[<a href="/">申请友情链接</a>]</span>友情链接</h3>
       <ul>
@@ -227,7 +258,7 @@ window.onload = function ()
   <!--高速版-->
   <!--r_box end --> 
 </article>
-<footer>
+<footer style=''>
   <p class="ft-copyright"></p>
   <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:0},200);" style='display:none;'></a> </div>
 </footer>
@@ -244,6 +275,7 @@ $(window).scroll(function(){
 	}
 });
 </script>
+
 <script>
 $(window).scroll(function(){
 	$("#tbox").css("height",'180px');

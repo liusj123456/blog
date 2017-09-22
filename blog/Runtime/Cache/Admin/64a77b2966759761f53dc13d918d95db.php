@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><html lang="en">
+<?php if (!defined('THINK_PATH')) exit();?>﻿<html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -345,11 +345,9 @@
 				</div>
 
 			</div>
-<script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>	
-<link rel="stylesheet" type="text/css" href="__STATIC__/js/uploadify/uploadify.css">
-<script type="text/javascript" src="__STATIC__/js/uploadify/jquery.uploadify.min.js"></script>
-			<div class="main-content">
-				<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
+<!-- /section:basics/sidebar -->
+<div class="main-content">
+<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
 					<ul class="breadcrumb">
 						<li>
 							<i class="ace-icon fa fa-home home-icon"></i>
@@ -373,199 +371,234 @@
 						</form>
 					</div><!-- /.nav-search -->
 				</div>
-				<script type="text/javascript">
-		$(document).ready(function(){
-					var obj =["pic"];    
-					   //下面使用each进行遍历  
-						$.each(obj,function(n,idx) {
-							var Ifout=0;
-							$("#"+idx).uploadify({
-								'height'        : 30,
-								'width'         : 30, 
-								'buttonText'    : '上传',
-								'swf'           : '__STATIC__/js/uploadify/uploadify.swf',
-								'uploader' 	 	: "<?php echo U('Admin/Login/upload_image');?>",
-								'auto'          : true,
-								'multi'         : true,
-								'cancelImg'     : '__STATIC__/js/uploadify/uploadify-cancel.png',
-								'fileTypeExts'  : '*.jpg',
-								'fileSizeLimit' : '1MB',
-								'removeCompleted':true,
-								'onFallback'		:function(){
-									alert ('上传图片需要用到flash,请先安装flash');
-									Ifout=1;
+<div class="page-content">
+
+<!-- /section:settings.box -->
+<div class="page-content-area">
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+			<div class="row">
+				<div class="col-xs-12">
+					 
+
+					<div class="table-responsive">
+						
+						<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="center">
+										<label class="position-relative">
+											<input type="checkbox" class="ace" />
+											<span class="lbl"></span>
+										</label>
+									</th>
 									
-								 },
-								'onUploadStart'	:	function(file){
-									var fileCount = $("#file_"+idx).val();
+									<th>图片</th>
+									<th>链接</th>
+									<th>显示</th>
+									<th>排序</th>
+									<th>添加人</th>
+									<th>添加日期</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+
+							<tbody>
+							<?php if(is_array($tuwenad)): $i = 0; $__LIST__ = $tuwenad;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$banner): $mod = ($i % 2 );++$i;?><tr>
+									<td class="center">
+										<label class="position-relative">
+											<input type="checkbox" class="ace" />
+											<span class="lbl"></span>
+										</label>
+									</td>
 									
-									if(fileCount>=10){
-										alert ('无法继续上传图片，图片数量限制为10');
-										$('#'+idx).uploadify('cancel',"*");
-									}
-								},
-								'onUploadSuccess':function(file,data,response){
-									pic_url=jQuery.parseJSON(data);
-									imgstr = '<a href="__ROOT__'+pic_url+'" target="_blank"><img src="__ROOT__'+pic_url+'" width="25" height="29" /></a>';
-									pic_hidden = '<input type="hidden" name="pic" value="'+pic_url+'">'; 
-									//pic_hidden = '<input type="hidden" name="pics['+idx+'][]" value="'+pic_url+'">'; 
-									//这个地方可能由于ajax的原因实际会被调用两次，所以加判断	
-									if (pic_url!=null){
-										var fileCount = $("#file_"+idx).val();
-										 
-										if(fileCount != ''){
-										   fileCount = parseInt(fileCount) + 1;
-										}else{
-										   fileCount = "1";
-										}
-										$("#file_"+idx).val(fileCount);
-										// 插入<div>元素及其子元素
-										var fileHtml = '';
-										fileHtml += '<div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">';
-										fileHtml += imgstr+pic_hidden;
-										fileHtml +='<a href="javascript:;" onclick="$(this).parent().remove();subfileCount('+"'"+idx+"'"+');">取消</a> &nbsp;&nbsp;'+'  </div>';
-									  
-										var fileElement = document.getElementById("files_preview_"+idx);
-										fileElement.innerHTML = fileElement.innerHTML + fileHtml;    
-										
-								  
-									}
-								},
-								//加上此句会重写onSelectError方法【需要重写的事件】
-								'overrideEvents': ['onSelectError', 'onDialogClose'],
-								//返回一个错误，选择文件的时候触发
-								'onSelectError':function(file, errorCode, errorMsg){
-									switch(errorCode) {
-										case -110:
-											alert("文件 ["+file.name+"] 大小超出系统限制的(1M=1024kb)大小！");
-											break;
-										case -120:
-											alert("文件 ["+file.name+"] 大小异常！");
-											break;
-										case -130:
-											alert("文件 ["+file.name+"] 类型不正确！");
-											break;
-									}
-								}
-							});
-							if(Ifout==1){
-								return false;
-							}
-						});
-					});
-				</script>		
-				<div class="page-content">
+									<td><img src="<?php echo ($banner['pic']); ?>" width="120" height="30"></td>
+									<td><?php echo ($banner["url"]); ?></td>
+									<td><?php if($banner["display"] == 0): ?>显示<?php else: ?>不显示<?php endif; ?></td>
+									<td><?php echo ($banner["sort"]); ?></td>
+									<td><?php echo ($banner["addUser"]); ?></td>
+									<td><?php echo (date('Y-m-d H:i:s',$banner["addTime"])); ?></td>
+									<td>
+										<div class="hidden-sm hidden-xs btn-group">
+<!-- 																<button class="btn btn-xs btn-success" title="查看">
+												<i class="ace-icon fa fa-search-plus bigger-120"></i>
+											</button>
+-->
+											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bannerEdit',array('id'=>$banner['id'],'type'=>$tupian));?>";'>
+												<i class="ace-icon fa fa-pencil bigger-120"></i>
+											</button>
 
-					<div class="page-content-area">
+											<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="<?php echo U(GROUP_NAME.'/System/bannerDel',array('id'=>$banner['id'],'type'=>$tupian));?>";'>
+												<i class="ace-icon fa fa-trash-o bigger-120"></i>
+											</button>
+										</div>
+									</td>
+								</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+							</tbody>
+						</table>
 
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/System/bannerEdit',array('type'=>$tupian));?>" method='post'>
-									<!-- #section:elements.form -->
-									<input name='id' type='hidden' value='<?php echo ($be["id"]); ?>'><input name='type' type='hidden' value='<?php echo ($tupian); ?>'>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><?php echo ($tupian); ?>图片： </label>
-									
-										<div class="col-sm-9">
-											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
-										 <span id="files_pic">
-											  <input id="pic" name="pic" type="file">
-										   </span>&nbsp;&nbsp;
-										  <?php if($be["pic"] != ""): ?><div id="files_preview_pic" style="width:auto;height:auto; overflow :auto">
-											  <div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">
-											  <a href="<?php echo ($be["pic"]); ?>" target="_blank"><img src="<?php echo ($be["pic"]); ?>" width="25" height="29" /></a>
-											  <input type="hidden" name="pic" value="<?php echo ($be["pic"]); ?>">
-											  <a href="javascript:;" onclick="$(this).parent().remove();subfileCount('pic');">取消</a> &nbsp;&nbsp;</div>
-											   </div>
-											  <input type="hidden" id="file_pic" value=""><input type="hidden" id="counts" value="">
-										<?php else: ?>
-											<div id="files_preview_pic" style="width:auto;height:auto; overflow :auto"></div>
-											<input id="file_pic" value="" type="hidden"><?php endif; ?>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo ($tupian); ?>标题：</label>
+						<div class="modal-footer no-margin-top">
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bannerAdd',array('type'=>$tupian));?>";'>添加<?php echo ($tupian); ?></button>
+							<ul class="pagination pull-right no-margin">
+								<li class="prev disabled">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-left"></i>
+									</a>
+								</li>
 
-										<div class="col-sm-9">
-											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="<?php echo ($be['title']); ?>"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>标题简介： </label>
+								<li class="active">
+									<a href="#">1</a>
+								</li>
 
-										<div class="col-sm-9">
-											<textarea name='desc' id='' style="margin: 0px; width: 580px; height: 89px;"/><?php echo ($be['desc']); ?></textarea>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>排序： </label>
+								<li>
+									<a href="#">2</a>
+								</li>
 
-										<div class="col-sm-9">
-											<input type="text" name='sort' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["sort"]); ?>'/>
-										</div>
-									</div>
-										<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>链接： </label>
+								<li>
+									<a href="#">3</a>
+								</li>
 
-										<div class="col-sm-9">
-											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["url"]); ?>'/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags"><?php echo ($tupian); ?>显示状态：</label>
-										<div class="col-sm-2">
-											<div class="pos-rel">
-												<select class="form-control" name='display' id="form-field-select-1">
-																<option <?php if($be["display"] == "0"): ?>selected<?php endif; ?> value="0" >显示</option>
-																<option <?php if($be["display"] == "1"): ?>selected<?php endif; ?> value="1">不显示</option>
-												</select>
-											</div>
-										</div>
-									</div>
+								<li class="next">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-right"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
 					
-									<div class="clearfix form-actions">
-										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												立即提交
-											</button>
 
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset">
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												重置
-											</button>
-											<button class="btn" type="" onclick='javascript:history.go(-1);'>
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												返回
-											</button>
-										</div>
-									</div>
-							
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
+				</div>
+			</div>
 
-		<!-- basic scripts -->
-		<script language="javascript">
+			<div id="modal-table" class="modal fade" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header no-padding">
+							<div class="table-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									<span class="white">&times;</span>
+								</button>
+								客票行李规定
+							</div>
+						</div>
 
-		  function subfileCount(idx)  // 删除当前文件的<div>和<input type=”file”/>元素
-		  {
-			  var fileCount = $("#file_"+idx).val();
-			  if(fileCount != ''){
-				  fileCount = parseInt(fileCount) - 1;
-			  }else{
-				 fileCount = "0";
-			  }
-			  $("#file_"+idx).val(fileCount);
-			  
-		  }
-		  
-		  </script>	
-		<!--[if !IE]> -->
+						<div class="modal-body no-padding">
+							<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
+								<thead>
+									<tr>
+										<th>航班类型</th>
+										<th>客舱级别</th>
+										<th>行李数量上限</th>
+
+										<th>
+											<i class="ace-icon fa fa-clock-o bigger-110"></i>
+											每件重量上限
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="modal-footer no-margin-top">
+							<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+								<i class="ace-icon fa fa-times"></i>
+								关闭
+							</button>
+
+							<ul class="pagination pull-right no-margin">
+								<li class="prev disabled">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-left"></i>
+									</a>
+								</li>
+
+								<li class="active">
+									<a href="#">1</a>
+								</li>
+
+								<li>
+									<a href="#">2</a>
+								</li>
+
+								<li>
+									<a href="#">3</a>
+								</li>
+
+								<li class="next">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-right"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- PAGE CONTENT ENDS -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</div><!-- /.page-content-area -->
+</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+
+<!--[if !IE]> -->
 			<script type="text/javascript">
 				window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery.min.js'>"+"<"+"/script>");
 			</script>

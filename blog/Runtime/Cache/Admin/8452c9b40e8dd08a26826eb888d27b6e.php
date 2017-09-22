@@ -396,6 +396,7 @@
 									</th>
 									<th>ID</th>
 									<th>图片</th>
+									<th>链接</th>
 									<th>标题</th>
 									<th>描述</th>
 									<th>显示</th>
@@ -416,6 +417,7 @@
 									</td>
 									<td><?php echo ($banner["id"]); ?></td>
 									<td><img src="<?php echo ($banner['pic']); ?>" width="120" height="30"></td>
+									<td><?php echo ($banner["url"]); ?></td>
 									<td><?php echo ($banner["title"]); ?></td>
 									<td><?php echo ($banner["desc"]); ?></td>
 									<td><?php if($banner["display"] == 0): ?>显示<?php else: ?>不显示<?php endif; ?></td>
@@ -428,7 +430,7 @@
 												<i class="ace-icon fa fa-search-plus bigger-120"></i>
 											</button>
 -->
-											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bannerEdit',array('id'=>$banner['id']));?>";'>
+											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bannerEdit',array('id'=>$banner['id'],'type'=>$tupian));?>";'>
 												<i class="ace-icon fa fa-pencil bigger-120"></i>
 											</button>
 
@@ -442,7 +444,7 @@
 						</table>
 
 						<div class="modal-footer no-margin-top">
-							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bannerAdd');?>";'>添加banner</button>
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bannerAdd',array('type'=>$tupian));?>";'>添加<?php echo ($tupian); ?></button>
 							<ul class="pagination pull-right no-margin">
 								<li class="prev disabled">
 									<a href="#">

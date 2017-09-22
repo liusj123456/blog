@@ -345,9 +345,6 @@
 				</div>
 
 			</div>
-<script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>	
-<link rel="stylesheet" type="text/css" href="__STATIC__/js/uploadify/uploadify.css">
-<script type="text/javascript" src="__STATIC__/js/uploadify/jquery.uploadify.min.js"></script>
 			<div class="main-content">
 				<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
 					<ul class="breadcrumb">
@@ -373,87 +370,8 @@
 						</form>
 					</div><!-- /.nav-search -->
 				</div>
-				<script type="text/javascript">
-		$(document).ready(function(){
-					var obj =["pic"];    
-					   //下面使用each进行遍历  
-						$.each(obj,function(n,idx) {
-							var Ifout=0;
-							$("#"+idx).uploadify({
-								'height'        : 30,
-								'width'         : 30, 
-								'buttonText'    : '上传',
-								'swf'           : '__STATIC__/js/uploadify/uploadify.swf',
-								'uploader' 	 	: "<?php echo U('Admin/Login/upload_image');?>",
-								'auto'          : true,
-								'multi'         : true,
-								'cancelImg'     : '__STATIC__/js/uploadify/uploadify-cancel.png',
-								'fileTypeExts'  : '*.jpg',
-								'fileSizeLimit' : '1MB',
-								'removeCompleted':true,
-								'onFallback'		:function(){
-									alert ('上传图片需要用到flash,请先安装flash');
-									Ifout=1;
-									
-								 },
-								'onUploadStart'	:	function(file){
-									var fileCount = $("#file_"+idx).val();
-									
-									if(fileCount>=10){
-										alert ('无法继续上传图片，图片数量限制为10');
-										$('#'+idx).uploadify('cancel',"*");
-									}
-								},
-								'onUploadSuccess':function(file,data,response){
-									pic_url=jQuery.parseJSON(data);
-									imgstr = '<a href="__ROOT__'+pic_url+'" target="_blank"><img src="__ROOT__'+pic_url+'" width="25" height="29" /></a>';
-									pic_hidden = '<input type="hidden" name="pic" value="'+pic_url+'">'; 
-									//pic_hidden = '<input type="hidden" name="pics['+idx+'][]" value="'+pic_url+'">'; 
-									//这个地方可能由于ajax的原因实际会被调用两次，所以加判断	
-									if (pic_url!=null){
-										var fileCount = $("#file_"+idx).val();
-										 
-										if(fileCount != ''){
-										   fileCount = parseInt(fileCount) + 1;
-										}else{
-										   fileCount = "1";
-										}
-										$("#file_"+idx).val(fileCount);
-										// 插入<div>元素及其子元素
-										var fileHtml = '';
-										fileHtml += '<div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">';
-										fileHtml += imgstr+pic_hidden;
-										fileHtml +='<a href="javascript:;" onclick="$(this).parent().remove();subfileCount('+"'"+idx+"'"+');">取消</a> &nbsp;&nbsp;'+'  </div>';
-									  
-										var fileElement = document.getElementById("files_preview_"+idx);
-										fileElement.innerHTML = fileElement.innerHTML + fileHtml;    
-										
-								  
-									}
-								},
-								//加上此句会重写onSelectError方法【需要重写的事件】
-								'overrideEvents': ['onSelectError', 'onDialogClose'],
-								//返回一个错误，选择文件的时候触发
-								'onSelectError':function(file, errorCode, errorMsg){
-									switch(errorCode) {
-										case -110:
-											alert("文件 ["+file.name+"] 大小超出系统限制的(1M=1024kb)大小！");
-											break;
-										case -120:
-											alert("文件 ["+file.name+"] 大小异常！");
-											break;
-										case -130:
-											alert("文件 ["+file.name+"] 类型不正确！");
-											break;
-									}
-								}
-							});
-							if(Ifout==1){
-								return false;
-							}
-						});
-					});
-				</script>		
+
+				<!-- /section:basics/content.breadcrumbs -->
 				<div class="page-content">
 
 					<div class="page-content-area">
@@ -461,69 +379,58 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/System/bannerEdit',array('type'=>$tupian));?>" method='post'>
+								<form class="form-horizontal" role="form" name='menuAdd' id='menuAdd' action="<?php echo U(GROUP_NAME.'/Blog/blogTypeAdd');?>" method='post'>
 									<!-- #section:elements.form -->
-									<input name='id' type='hidden' value='<?php echo ($be["id"]); ?>'><input name='type' type='hidden' value='<?php echo ($tupian); ?>'>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><?php echo ($tupian); ?>图片： </label>
-									
-										<div class="col-sm-9">
-											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
-										 <span id="files_pic">
-											  <input id="pic" name="pic" type="file">
-										   </span>&nbsp;&nbsp;
-										  <?php if($be["pic"] != ""): ?><div id="files_preview_pic" style="width:auto;height:auto; overflow :auto">
-											  <div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">
-											  <a href="<?php echo ($be["pic"]); ?>" target="_blank"><img src="<?php echo ($be["pic"]); ?>" width="25" height="29" /></a>
-											  <input type="hidden" name="pic" value="<?php echo ($be["pic"]); ?>">
-											  <a href="javascript:;" onclick="$(this).parent().remove();subfileCount('pic');">取消</a> &nbsp;&nbsp;</div>
-											   </div>
-											  <input type="hidden" id="file_pic" value=""><input type="hidden" id="counts" value="">
-										<?php else: ?>
-											<div id="files_preview_pic" style="width:auto;height:auto; overflow :auto"></div>
-											<input id="file_pic" value="" type="hidden"><?php endif; ?>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo ($tupian); ?>标题：</label>
+									<input name='pid' type='hidden' value='<?php echo ($pid); ?>'>
+									<?php if($pid != 0): ?><div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 上级：</label>
 
 										<div class="col-sm-9">
-											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="<?php echo ($be['title']); ?>"/>
+											<?php echo ($parents); ?>
 										</div>
-									</div>
+									</div><?php endif; ?>
+									<div class="space-4"></div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>标题简介： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称：</label>
 
 										<div class="col-sm-9">
-											<textarea name='desc' id='' style="margin: 0px; width: 580px; height: 89px;"/><?php echo ($be['desc']); ?></textarea>
+											<input type="text" name='name' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
+									<div class="space-4"></div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>排序： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地址：</label>
 
 										<div class="col-sm-9">
-											<input type="text" name='sort' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["sort"]); ?>'/>
+											<input type="text" name='url' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
-										<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>链接： </label>
+									<!-- /section:elements.form -->
+									<div class="space-4"></div>
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">排序： </label>
 
 										<div class="col-sm-9">
-											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["url"]); ?>'/>
+											<input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
+
+									<div class="space-4"></div>							
+
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags"><?php echo ($tupian); ?>显示状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
-																<option <?php if($be["display"] == "0"): ?>selected<?php endif; ?> value="0" >显示</option>
-																<option <?php if($be["display"] == "1"): ?>selected<?php endif; ?> value="1">不显示</option>
+																<option value="0" selected>显示</option>
+																<option value="1">不显示</option>
 												</select>
 											</div>
 										</div>
 									</div>
-					
+
+
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info" type="submit">
@@ -548,23 +455,6 @@
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
-
-		<!-- basic scripts -->
-		<script language="javascript">
-
-		  function subfileCount(idx)  // 删除当前文件的<div>和<input type=”file”/>元素
-		  {
-			  var fileCount = $("#file_"+idx).val();
-			  if(fileCount != ''){
-				  fileCount = parseInt(fileCount) - 1;
-			  }else{
-				 fileCount = "0";
-			  }
-			  $("#file_"+idx).val(fileCount);
-			  
-		  }
-		  
-		  </script>	
 		<!--[if !IE]> -->
 			<script type="text/javascript">
 				window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery.min.js'>"+"<"+"/script>");

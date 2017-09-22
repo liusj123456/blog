@@ -153,16 +153,35 @@
 											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
 										</div>
 									</div>
-
+									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
 
-										<div class="col-sm-9">
-											<input type="text" name='type' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" />
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='type' id="form-field-select-1">
+																<option value="">====请选择====</option>
+																<foreach name='type' item='type'>
+																<option value="{$type.id}">{$type.name}</option>
+																</foreach>
+												</select>
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">前台菜单标题显示状态：</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">是否推荐： </label>
+
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='adup' id="form-field-select-1">
+																<option value="0" selected>否</option>
+																<option value="1">是</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">

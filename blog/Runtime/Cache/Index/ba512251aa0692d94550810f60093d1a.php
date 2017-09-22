@@ -23,8 +23,8 @@
 </head>
 <body>
 <header>
-<?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); ?>
-  <div class="logo f_l"> <a href="/"><img src="__STATIC__/images/logo1.png"></a> </div>
+<?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); $logo = M('logo')->order('id desc')->getField('pic'); $logo = unserialize($logo); ?>
+  <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>
   <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
     <ul>
 	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><a href="<?php echo U('Admin/Login/login');?>" target='_blank'>登录</a><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
@@ -41,7 +41,7 @@
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
     <div class="topnews">
-      <h2><span><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a><a href="/" target="_blank">栏目标题</a></span><b>文章</b>推荐</h2>
+      <h2><span><?php if(is_array($type)): foreach($type as $key=>$type): ?><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']));?>"><?php echo ($type["name"]); ?></a><?php endforeach; endif; ?></span><b>文章</b>列表</h2>
       <?php if(is_array($blog_list)): foreach($blog_list as $key=>$blog): ?><div class="blogs">
         <figure><img src="<?php echo ($blog['pic']); ?>"></figure>
         <ul>
@@ -158,7 +158,7 @@ window.onload = function ()
 
   <!--r_box end --> 
 </article>
-<footer>
+<footer style=''>
   <p class="ft-copyright"></p>
   <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:0},200);" style='display:none;'></a> </div>
 </footer>
@@ -175,6 +175,7 @@ $(window).scroll(function(){
 	}
 });
 </script>
+
 <style>
 .did{
 display:none;

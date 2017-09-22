@@ -167,8 +167,26 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
 
-										<div class="col-sm-9">
-											<input type="text" name='type' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='{$be.type}'/>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='type' id="form-field-select-1">
+																<option value="">====请选择====</option>
+																<foreach name='type' item='type'>
+																	<option <if condition="$be['type'] eq $type['id']">selected</if> value="{$type.id}">{$type.name}</option>
+																</foreach>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">是否推荐：</label>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='adup' id="form-field-select-1">
+																<option <if condition='$be.adup eq "0"'>selected</if> value="0" >否</option>
+																<option <if condition='$be.adup eq "1"'>selected</if> value="1">是</option>
+												</select>
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
@@ -176,8 +194,8 @@
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
-																<option <if condition='$be.display eq "1"'>selected</if> value="0" >显示</option>
-																<option <if condition='$be.display eq "2"'>selected</if> value="1">不显示</option>
+																<option <if condition='$be.display eq "0"'>selected</if> value="0" >显示</option>
+																<option <if condition='$be.display eq "1"'>selected</if> value="1">不显示</option>
 												</select>
 											</div>
 										</div>

@@ -25,8 +25,10 @@
 <header>
 <php>
 $menus = M('index')->where(array('display'=>1))->order('sort asc')->select();
+$logo = M('logo')->order('id desc')->getField('pic');
+$logo = unserialize($logo);
 </php>
-  <div class="logo f_l"> <a href="/"><img src="__STATIC__/images/logo1.png"></a> </div>
+  <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="{$logo}"></a> </div>
   <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
     <ul>
 	<foreach name='menus' item='menu'>

@@ -453,7 +453,12 @@
 							}
 						});
 					});
-				</script>		
+				</script>
+				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.config.js"></script>
+				<script type="text/javascript" charset="utf-8" src="__Ueditor__/ueditor.all.min.js"> </script>
+				<!-- /section:basics/content.breadcrumbs -->
+				
+				
 				<div class="page-content">
 
 					<div class="page-content-area">
@@ -461,69 +466,20 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/System/bannerEdit',array('type'=>$tupian));?>" method='post'>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/Admin/mainEdit');?>" method='post'>
 									<!-- #section:elements.form -->
-									<input name='id' type='hidden' value='<?php echo ($be["id"]); ?>'><input name='type' type='hidden' value='<?php echo ($tupian); ?>'>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><?php echo ($tupian); ?>图片： </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">首页logo： </label>
 									
 										<div class="col-sm-9">
-											<!-- <input type="text" name='sort' id="form-field-2" placeholder="" class="col-xs-10 col-sm-5" /> -->
-										 <span id="files_pic">
-											  <input id="pic" name="pic" type="file">
-										   </span>&nbsp;&nbsp;
-										  <?php if($be["pic"] != ""): ?><div id="files_preview_pic" style="width:auto;height:auto; overflow :auto">
-											  <div class="div_img" style ="border-bottom: 1px solid #CCC;font-size:12px;float:left;">
-											  <a href="<?php echo ($be["pic"]); ?>" target="_blank"><img src="<?php echo ($be["pic"]); ?>" width="25" height="29" /></a>
-											  <input type="hidden" name="pic" value="<?php echo ($be["pic"]); ?>">
-											  <a href="javascript:;" onclick="$(this).parent().remove();subfileCount('pic');">取消</a> &nbsp;&nbsp;</div>
-											   </div>
-											  <input type="hidden" id="file_pic" value=""><input type="hidden" id="counts" value="">
-										<?php else: ?>
-											<div id="files_preview_pic" style="width:auto;height:auto; overflow :auto"></div>
-											<input id="file_pic" value="" type="hidden"><?php endif; ?>
+										<span id="files_pic">
+										  <input id="pic" name="pic" type="file">
+									   </span>&nbsp;&nbsp;
+									   
+									   <div id="files_preview_pic" style="width:auto;height:auto; overflow :auto"></div>
+									   <input id="file_pic" value="" type="hidden">
 										</div>
 									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <?php echo ($tupian); ?>标题：</label>
-
-										<div class="col-sm-9">
-											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="<?php echo ($be['title']); ?>"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>标题简介： </label>
-
-										<div class="col-sm-9">
-											<textarea name='desc' id='' style="margin: 0px; width: 580px; height: 89px;"/><?php echo ($be['desc']); ?></textarea>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>排序： </label>
-
-										<div class="col-sm-9">
-											<input type="text" name='sort' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["sort"]); ?>'/>
-										</div>
-									</div>
-										<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><?php echo ($tupian); ?>链接： </label>
-
-										<div class="col-sm-9">
-											<input type="text" name='url' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["url"]); ?>'/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags"><?php echo ($tupian); ?>显示状态：</label>
-										<div class="col-sm-2">
-											<div class="pos-rel">
-												<select class="form-control" name='display' id="form-field-select-1">
-																<option <?php if($be["display"] == "0"): ?>selected<?php endif; ?> value="0" >显示</option>
-																<option <?php if($be["display"] == "1"): ?>selected<?php endif; ?> value="1">不显示</option>
-												</select>
-											</div>
-										</div>
-									</div>
-					
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info" type="submit">

@@ -26,13 +26,11 @@
 											<span class="lbl"></span>
 										</label>
 									</th>
-									<th>ID</th>
+									
 									<th>图片</th>
-									<th>标题</th>
-									<th>类型</th>
+									<th>链接</th>
 									<th>显示</th>
 									<th>排序</th>
-									<th>推荐</th>
 									<th>添加人</th>
 									<th>添加日期</th>
 									<th>操作</th>
@@ -40,7 +38,7 @@
 							</thead>
 
 							<tbody>
-							<volist name="info" id='vo'>
+							<volist name="tuwenad" id='banner'>
 								<tr>
 									<td class="center">
 										<label class="position-relative">
@@ -48,26 +46,24 @@
 											<span class="lbl"></span>
 										</label>
 									</td>
-									<td>{$vo.id}</td>
-									<td><img src="{$vo['pic']}" width="25" height="29"></td>
-									<td>{$vo.title}</td>
-									<td>{$vo.type}</td>
-									<td><if condition='$vo.display eq 0'>显示<else/>不显示</if></td>
-									<td>{$vo.sort}</td>
-									<td><if condition='$vo.adup eq 0'>否<else/>是</if></td>
-									<td>{$vo.addUser}</td>
-									<td>{$vo.addTime|date='Y-m-d H:i:s',###}</td>
+									
+									<td><img src="{$banner['pic']}" width="120" height="30"></td>
+									<td>{$banner.url}</td>
+									<td><if condition='$banner.display eq 0'>显示<else/>不显示</if></td>
+									<td>{$banner.sort}</td>
+									<td>{$banner.addUser}</td>
+									<td>{$banner.addTime|date='Y-m-d H:i:s',###}</td>
 									<td>
 										<div class="hidden-sm hidden-xs btn-group">
 <!-- 																<button class="btn btn-xs btn-success" title="查看">
 												<i class="ace-icon fa fa-search-plus bigger-120"></i>
 											</button>
 -->
-											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="{:U(GROUP_NAME.'/Blog/blogEdit',array('id'=>$vo['id']))}";'>
+											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/bannerEdit',array('id'=>$banner['id'],'type'=>$tupian))}";'>
 												<i class="ace-icon fa fa-pencil bigger-120"></i>
 											</button>
 
-											<button class="btn btn-xs btn-danger" title="显示设置" onclick='javascript:if(confirm("确定更改吗？")) location.href="{:U(GROUP_NAME.'/Blog/blogDel',array('id'=>$vo['id']))}";'>
+											<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="{:U(GROUP_NAME.'/System/bannerDel',array('id'=>$banner['id'],'type'=>$tupian))}";'>
 												<i class="ace-icon fa fa-trash-o bigger-120"></i>
 											</button>
 										</div>
@@ -78,7 +74,7 @@
 						</table>
 
 						<div class="modal-footer no-margin-top">
-							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="{:U(GROUP_NAME.'/Blog/blogAdd')}";'>添加博客</button>
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/bannerAdd',array('type'=>$tupian))}";'>添加{$tupian}</button>
 							<ul class="pagination pull-right no-margin">
 								<li class="prev disabled">
 									<a href="#">

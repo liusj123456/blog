@@ -13,9 +13,15 @@ class IndexAction extends Action {
 		//echo dirname(APP_PATH);
 		//die;
 		$list = M('blogs')->where(array('display'=>0))->order('id desc')->limit('8')->select();
+		
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
+			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
+			$list[$key]['type']=$types;
 		}
+		$type = M('blogs_type')->where('pid=0 and display=0')->select();//标题类型
+		
+		$this->assign('type',$type);
 		$this->assign('blog_list',$list);
 		$this->display();
     }
@@ -25,11 +31,23 @@ class IndexAction extends Action {
 		$this->display();
     }
 	public function lists(){
-		$list = M('blogs')->where(array('display'=>0))->order('id desc')->select();
+		$id = empty($_GET['id'])?'':$_GET['id'];
+		if(!empty($id)){
+			$condition['type']=$id;
+		}
+		$condition['display']=0;
+		$list = M('blogs')->where($condition)->order('id desc')->select();
+		$types='';
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
+			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
+			$list[$key]['type']=$types;
 		}
+		$type = M('blogs_type')->where('pid=0 and display=0')->select();//标题类型
+		
+		$this->assign('type',$type);
 		$this->assign('blog_list',$list);
+		$this->assign('action','Index/lists');
 		$this->display();
     }
 	public function content(){

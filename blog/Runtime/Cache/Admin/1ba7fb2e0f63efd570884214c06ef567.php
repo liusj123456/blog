@@ -533,8 +533,24 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
 
-										<div class="col-sm-9">
-											<input type="text" name='type' id="form-field-1-1" placeholder="" class=" col-xs-10 col-sm-5" value='<?php echo ($be["type"]); ?>'/>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='type' id="form-field-select-1">
+																<option value="">====请选择====</option>
+																<?php if(is_array($type)): foreach($type as $key=>$type): ?><option <?php if($be['type'] == $type['id']): ?>selected<?php endif; ?> value="<?php echo ($type["id"]); ?>"><?php echo ($type["name"]); ?></option><?php endforeach; endif; ?>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">是否推荐：</label>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='adup' id="form-field-select-1">
+																<option <?php if($be["adup"] == "0"): ?>selected<?php endif; ?> value="0" >否</option>
+																<option <?php if($be["adup"] == "1"): ?>selected<?php endif; ?> value="1">是</option>
+												</select>
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
@@ -542,8 +558,8 @@
 										<div class="col-sm-2">
 											<div class="pos-rel">
 												<select class="form-control" name='display' id="form-field-select-1">
-																<option <?php if($be["display"] == "1"): ?>selected<?php endif; ?> value="0" >显示</option>
-																<option <?php if($be["display"] == "2"): ?>selected<?php endif; ?> value="1">不显示</option>
+																<option <?php if($be["display"] == "0"): ?>selected<?php endif; ?> value="0" >显示</option>
+																<option <?php if($be["display"] == "1"): ?>selected<?php endif; ?> value="1">不显示</option>
 												</select>
 											</div>
 										</div>
@@ -586,6 +602,10 @@
 											<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												重置
+											</button>
+											<button class="btn" type="" onclick='javascript:history.go(-1);'>
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												返回
 											</button>
 										</div>
 									</div>

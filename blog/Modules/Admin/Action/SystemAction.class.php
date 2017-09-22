@@ -78,7 +78,7 @@ class SystemAction extends CommonAction {
 			}
 			$info=M('menu')->add($data);
 			if($info){
-				$this->success('添加成功',U(GROUP_NAME.'/System/menu'));
+				$this->success('添加成功',U(GROUP_NAME.'/System/menus'));
 			}else{
 				$this->error('添加失败');		
 			}
@@ -236,13 +236,25 @@ class SystemAction extends CommonAction {
 			$this->display();
 		}
     }
-	//banner
+	//前台banner
 	public function bannerList(){
-		$list = M('banner')->order('id desc')->select();
+		$list = M('banner')->order('id desc')->where('type= "banner"')->select();
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
 		}
+		//p($list);die;
+		$this->assign('tupian','banner');
 		$this->assign('banner',$list);
+		$this->display();
+    }
+	//前台图文ad图片
+	public function adList(){
+		$list = M('banner')->order('id desc')->where('type = "tuwenad"')->select();
+		foreach($list as $key=>$val){
+			$list[$key]['pic']=unserialize($val['pic']);
+		}
+		$this->assign('tupian','tuwenad');
+		$this->assign('tuwenad',$list);
 		$this->display();
     }
 	public function bannerDel(){
@@ -262,6 +274,8 @@ class SystemAction extends CommonAction {
 				'display'=>I('display'),
 				'sort'=>I('sort'),
 				'desc'=>I('desc'),
+				'url'=>I('url'),
+				'type'=>I('type'),
 				'addUser'=>session('username'),
 				'addTime'=>time()
 			);
@@ -272,6 +286,7 @@ class SystemAction extends CommonAction {
 				$this->error('添加banner失败');
 			}
 		}else{
+			$this->assign('tupian',$_GET['type']);
 			$this->display();
 		}
 		
@@ -280,25 +295,29 @@ class SystemAction extends CommonAction {
 	public function bannerEdit(){
 		$id=$_GET['id'];
 		if(IS_POST){
-			//p($_POST);die;
+			
 			$data = array(
 				'id'=>I('id'),
 				'pic'=>serialize(I('pic')),
 				'title'=>I('title'),
 				'display'=>I('display'),
+				'type'=>I('type'),
+				'url'=>I('url'),
 				'sort'=>I('sort'),
 				'desc'=>I('desc')
 			);
+			//p($data);die;
 			if(empty($data['pic'])){
 				$this->error('图片不为空');
 			}
-			if(empty($data['title'])){
+			if(empty($data['title']) and ($data['title']=='banner')){
 				$this->error('标题不为空');
 			}
 			$info=M('banner')->save($data);
 			//echo M('banner')->getLastSql();die();
+			$lianjie=($data['type']=='banner')?'bannerList':'adList';//跳转链接
 			if($info){
-				$this->success('修改成功',U(GROUP_NAME.'/System/bannerList'));
+				$this->success('修改成功',U(GROUP_NAME.'/System/'.$lianjie));
 			}else{
 				$this->error('修改失败');		
 			}
@@ -306,6 +325,7 @@ class SystemAction extends CommonAction {
 			$info=M('banner')->where(array('id'=>$id))->find();
 			$info['pic']=unserialize($info['pic']);
 			//p($info);die;
+			$this->assign('tupian',$_GET['type']);
 			$this->assign('be',$info);
 			$this->display();
 		}
@@ -380,4 +400,5 @@ class SystemAction extends CommonAction {
 			$this->display();
 		}
     }
+	
 }

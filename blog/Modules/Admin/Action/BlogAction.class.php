@@ -2,9 +2,13 @@
 class BlogAction extends CommonAction {
     public function blogList(){
 		$list = M('blogs')->order('id desc')->select();
+		$types='';
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
+			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
+			$list[$key]['type']=$types;
 		}
+		//p($list);die;
 		$this->assign('info',$list);
 		$this->display();
     }
@@ -39,6 +43,7 @@ class BlogAction extends CommonAction {
 				'type'=>I('type'),
 				'intro'=>I('intro'),
 				'display'=>I('display'),
+				'adup'=>I('adup'),
 				'content'=>I('content'),
 				'addUser'=>session('username'),
 				'addTime'=>time()
@@ -50,6 +55,7 @@ class BlogAction extends CommonAction {
 				$this->error('发布失败');
 			}
 		}else{
+			$this->type = M('blogs_type')->where('display=0')->order('id asc')->select();
 			$this->display();
 		}
 		
@@ -65,6 +71,7 @@ class BlogAction extends CommonAction {
 				'title'=>I('title'),
 				'display'=>I('display'),
 				'type'=>I('type'),
+				'adup'=>I('adup'),
 				'intro'=>I('intro'),
 				'content'=>I('content')
 			);
@@ -88,7 +95,102 @@ class BlogAction extends CommonAction {
 			$info=M('blogs')->where(array('id'=>$id))->find();
 			$info['pic']=unserialize($info['pic']);
 			//p($info);die;
+			$this->type = M('blogs_type')->where('display=0')->order('id asc')->select();
 			$this->assign('be',$info);
+			$this->display();
+		}
+    }
+	//文章类型
+	public function blogTypeList(){
+		$type = M('blogs_type')->order('id desc')->select();
+		$this->type = $this->unlimit($type);
+		//p($this->type);die;
+		$this->display();
+	}
+	public function unlimit($list,$pid=0,$html='----',$level=1){
+		$arr = array();
+		foreach($list as $val){
+			if($val['pid']==$pid){
+				$val['html']=str_repeat($html,$level-1);
+				$val['level']=$level+1;
+				$arr[]=$val;
+				$arr = array_merge($arr,$this->unlimit($list,$val['id'],$html,$val['level']));
+			}
+		}
+		return $arr;
+	}
+	public function blogTypeDel(){
+		$info=M('blogs_type')->where(array('id'=>$_GET['id']))->delete();
+		if($info){
+			$this->success('删除成功',U(GROUP_NAME.'/Blog/blogTypeList'));
+		}else{
+			$this->error('删除失败',U(GROUP_NAME.'/Blog/blogTypeList'));		
+		}
+    }
+	public function blogTypeAdd(){
+		
+		if(IS_POST){
+			$data = array(
+				'pid'=>I('pid'),
+				'name'=>I('name'),
+				'url'=>I('url'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+				'addUser'=>session('username'),
+				'addTime'=>time()
+			);
+			if(empty($data['name'])){
+				$this->error('名称不为空');
+			}
+			if(empty($data['sort'])){
+				$this->error('排序不为空');
+			}
+			if(M('blogs_type')->where(array('name'=>$data['name']))->find()){
+				$this->error('名称已存在');
+			}
+			$info=M('blogs_type')->add($data);
+			if($info){
+				$this->success('添加成功',U(GROUP_NAME.'/Blog/blogTypeList'));
+			}else{
+				$this->error('添加失败');		
+			}
+		}else{
+			$pid = !empty($_GET['id'])?$_GET['id']:0;
+			if($pid!=0){
+				$name = M('blogs_type')->where(array('id'=>$pid))->getField('name');
+				$this->assign('parents',$name);
+			}
+			$this->assign('pid',$pid);
+			$this->display();
+		}
+    }
+	public function blogTypeEdit(){
+		$id=$_GET['id'];
+		if(IS_POST){
+			
+			$data = array(
+				'id'=>I('id'),
+				'name'=>I('name'),
+				'url'=>I('url'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+			);
+			if(empty($data['name'])){
+				$this->error('名称不为空');
+			}
+			if(empty($data['sort'])){
+				$this->error('排序不为空');
+			}
+			$info=M('blogs_type')->save($data);
+			//echo M('blogs_type')->getLastSql();die;
+			if($info){
+				$this->success('修改成功',U(GROUP_NAME.'/Blog/blogTypeList'));
+			}else{
+				$this->error('修改失败');		
+			}
+		}else{
+			$info=M('blogs_type')->where(array('id'=>$id))->find();
+			$this->assign('t',$info);
 			$this->display();
 		}
     }

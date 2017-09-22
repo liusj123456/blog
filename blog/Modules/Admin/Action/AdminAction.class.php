@@ -1,7 +1,40 @@
 <?php
 class AdminAction extends CommonAction {
     public function index(){
+		$logo = M('logo')->order('id desc')->getField('pic');
+		$this->logo = unserialize($logo);
+		//p($this->logo);die;
 		$this->display();
+    }
+	public function main(){
+		$this->display();
+    }
+	public function mainEdit(){
+		if(IS_POST){
+			$data = array(
+				'id'=>I('id'),
+				'pic'=>serialize(I('pic')),
+				'addUser'=>session('username'),
+				'addTime'=>time()
+			);
+			if(empty($data['pic'])){
+				$this->error('图片不为空');
+			}
+			$id=M('logo')->where(array('id'=>1))->getField('id');
+			if(!$id){
+				$info=M('logo')->add($data);
+			}else{
+				$info=M('logo')->where(array('id'=>1))->save($data);
+			}
+			
+			if($info){
+				$this->success('首页logo变更成功',U(GROUP_NAME.'/Admin/index'));
+			}else{
+				$this->error('首页logo变更失败');		
+			}
+		}else{
+			$this->display();
+		}
     }
 	public function user(){
 		$this->display();

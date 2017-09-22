@@ -346,7 +346,31 @@
 
 			</div>
 <!-- /section:basics/sidebar -->
-			<div class="main-content">
+			<div class="main-content" style="min-height:0;">
+			<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
+					<ul class="breadcrumb">
+						<li>
+							<i class="ace-icon fa fa-home home-icon"></i>
+							<a href="index.html">首页</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">标题1</a>
+						</li>
+						<li>
+							<a href="elements.html">标题2</a>
+						</li>
+					</ul><!-- /.breadcrumb -->
+
+					<!-- #section:basics/content.searchbox -->
+					<div class="nav-search" id="nav-search">
+						<form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="请输入关键字 ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+								<i class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+						</form>
+					</div><!-- /.nav-search -->
+				</div>
 				<!-- #section:basics/content.breadcrumbs -->
 				<div class="breadcrumbs" id="breadcrumbs">
 					<ul class="breadcrumb">
@@ -383,13 +407,12 @@
 
 									<i class="ace-icon fa fa-check green"></i>
 
-									<strong class="green">最新公告：</strong>
-									南航开通华中首条直达美国航线，广州-武汉-旧金山首航，为中部崛起注入创新活力
+									<strong class="green">基本信息：</strong>
+									<span><img src="<?php echo ($logo); ?>" /></span>
+									<button class="btn btn-xs btn-info" title="首页logo变更" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/Admin/mainEdit',array('id'=>1));?>";'>
+										<i class="ace-icon fa fa-pencil bigger-120">首页logo变更</i>
+									</button>
 								</div>
-								<div class="row center">
-									<!-- <img src="__PUBLIC__/assets/avatars/logo_2.png" /> -->
-								</div><!-- /.row -->
-
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
@@ -402,7 +425,7 @@
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							 开发平台-UI库 &copy; 2014  更多模板：<a href="http://www.aspku.com/" target="_blank">源码之家</a>
+							 crazy-x &copy; 2017  博客后台管理：<a href="http://www.crazy.com/" target="_blank">crazy</a>
 						</span>
 					</div>
 

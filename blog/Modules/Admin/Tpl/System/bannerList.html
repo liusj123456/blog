@@ -28,6 +28,7 @@
 									</th>
 									<th>ID</th>
 									<th>图片</th>
+									<th>链接</th>
 									<th>标题</th>
 									<th>描述</th>
 									<th>显示</th>
@@ -49,6 +50,7 @@
 									</td>
 									<td>{$banner.id}</td>
 									<td><img src="{$banner['pic']}" width="120" height="30"></td>
+									<td>{$banner.url}</td>
 									<td>{$banner.title}</td>
 									<td>{$banner.desc}</td>
 									<td><if condition='$banner.display eq 0'>显示<else/>不显示</if></td>
@@ -61,7 +63,7 @@
 												<i class="ace-icon fa fa-search-plus bigger-120"></i>
 											</button>
 -->
-											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/bannerEdit',array('id'=>$banner['id']))}";'>
+											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/bannerEdit',array('id'=>$banner['id'],'type'=>$tupian))}";'>
 												<i class="ace-icon fa fa-pencil bigger-120"></i>
 											</button>
 
@@ -76,7 +78,7 @@
 						</table>
 
 						<div class="modal-footer no-margin-top">
-							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/bannerAdd')}";'>添加banner</button>
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="{:U(GROUP_NAME.'/System/bannerAdd',array('type'=>$tupian))}";'>添加{$tupian}</button>
 							<ul class="pagination pull-right no-margin">
 								<li class="prev disabled">
 									<a href="#">
