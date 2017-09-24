@@ -1,6 +1,6 @@
 /*导航当前页高亮*/
 if(action==''){
-	//alert(action);
+
 	var obj=null;
 	var As=document.getElementById('topnav').getElementsByTagName('a');
 	obj = As[0];

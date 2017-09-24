@@ -1,30 +1,33 @@
 <?php
 class AdminAction extends CommonAction {
     public function index(){
-		$logo = M('logo')->order('id desc')->getField('pic');
-		$this->logo = unserialize($logo);
-		//p($this->logo);die;
+		$logo = M('logo')->order('id desc')->find();
+		$logo['pic'] = unserialize($logo['pic']);
+		//p($logo);die;
+		$this->assign('logo',$logo);
 		$this->display();
     }
 	public function main(){
 		$this->display();
     }
 	public function mainEdit(){
+		$id = $_GET['id'];
 		if(IS_POST){
 			$data = array(
-				'id'=>I('id'),
+				'id'=>$id,
 				'pic'=>serialize(I('pic')),
 				'addUser'=>session('username'),
 				'addTime'=>time()
 			);
+			//p($data);die;
 			if(empty($data['pic'])){
 				$this->error('图片不为空');
 			}
-			$id=M('logo')->where(array('id'=>1))->getField('id');
+			//$id=M('logo')->where(array('id'=>1))->getField('id');
 			if(!$id){
 				$info=M('logo')->add($data);
 			}else{
-				$info=M('logo')->where(array('id'=>1))->save($data);
+				$info=M('logo')->where(array('id'=>$id))->save($data);
 			}
 			
 			if($info){
@@ -33,6 +36,7 @@ class AdminAction extends CommonAction {
 				$this->error('首页logo变更失败');		
 			}
 		}else{
+			
 			$this->display();
 		}
     }

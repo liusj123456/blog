@@ -1,0 +1,94 @@
+<include file='Admin:top'/>
+<include file='Admin:left'/>
+<script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>	
+<link rel="stylesheet" type="text/css" href="__STATIC__/js/uploadify/uploadify.css">
+<script type="text/javascript" src="__STATIC__/js/uploadify/jquery.uploadify.min.js"></script>
+			<div class="main-content">
+				<include file='Admin:mainTop'/>
+				
+				<!-- /section:basics/content.breadcrumbs -->
+				
+				
+				<div class="page-content">
+
+					<div class="page-content-area">
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/User/userAdd')}" method='post'>
+									<!-- #section:elements.form -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 用户名：</label>
+
+										<div class="col-sm-9">
+											<input type="text" name='username' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 密码：</label>
+
+										<div class="col-sm-9">
+											<input type="password" name='password' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 确认密码：</label>
+
+										<div class="col-sm-9">
+											<input type="password" name='repassword' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">显示状态：</label>
+										<div class="col-sm-2">
+											<div class="pos-rel">
+												<select class="form-control" name='status' id="form-field-select-1">
+																<option value="0" selected>可用</option>
+																<option value="1">不可用</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<button class="btn btn-info" type="submit">
+												<i class="ace-icon fa fa-check bigger-110"></i>
+												立即提交
+											</button>
+
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn" type="reset">
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												重置
+											</button>
+											<button class="btn" type="" onclick='javascript:history.go(-1);'>
+												<i class="ace-icon fa fa-undo bigger-110"></i>
+												返回
+											</button>
+										</div>
+									</div>
+							
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+		<script language="javascript">
+
+		  function subfileCount(idx)  // 删除当前文件的<div>和<input type=”file”/>元素
+		  {
+			  var fileCount = $("#file_"+idx).val();
+			  if(fileCount != ''){
+				  fileCount = parseInt(fileCount) - 1;
+			  }else{
+				 fileCount = "0";
+			  }
+			  $("#file_"+idx).val(fileCount);
+			  
+		  }
+		  
+		  </script>	
+		<include file="Admin:foot"/>

@@ -168,7 +168,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									欢迎您<br />
-									<?php echo ($info['username']); ?>
+									<?php echo ($index['username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -408,8 +408,8 @@
 									<i class="ace-icon fa fa-check green"></i>
 
 									<strong class="green">基本信息：</strong>
-									<span><img src="<?php echo ($logo); ?>" /></span>
-									<button class="btn btn-xs btn-info" title="首页logo变更" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/Admin/mainEdit',array('id'=>1));?>";'>
+									<span><img src="<?php echo ($logo['pic']); ?>" /></span>
+									<button class="btn btn-xs btn-info" title="首页logo变更" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/Admin/mainEdit',array('id'=>$logo['id']));?>";'>
 										<i class="ace-icon fa fa-pencil bigger-120">首页logo变更</i>
 									</button>
 								</div>

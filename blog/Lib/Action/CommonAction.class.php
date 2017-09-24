@@ -10,7 +10,8 @@ class CommonAction extends Action {
 		if(!empty($info)){
 			//echo "<script>alert('请重新登录成功');</script>";
 		}
-		$this->assign('info',$info);
+		//p($info);die;
+		$this->assign('index',$info);
 		
 		$list = M('menu')->order('sort asc')->select();
 		$parents = M('menu')->where('display = 1')->order('sort asc')->select();
@@ -44,5 +45,13 @@ class CommonAction extends Action {
 			}
 		}
 		return $arr;
+	}
+	public function loginlog($data){
+		$data = array(
+			'loginuser'=>$data['loginuser'],
+			'logintime'=>time(),
+			'loginip'=>get_client_ip(),
+		);
+		M('loginlog')->add($data);
 	}
 }

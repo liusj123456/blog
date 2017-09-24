@@ -168,7 +168,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									欢迎您<br />
-									<?php echo ($info['username']); ?>
+									<?php echo ($index['username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -466,7 +466,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/Admin/mainEdit');?>" method='post'>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="<?php echo U(GROUP_NAME.'/Admin/mainEdit',array('id'=>$_GET['id']));?>" method='post'>
 									<!-- #section:elements.form -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">首页logo： </label>

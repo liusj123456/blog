@@ -32,7 +32,7 @@ class SystemAction extends CommonAction {
 		
 		$this->display();
 	}
-	public function unlimit($list,$pid=0,$html='----'){
+	public function unlimit($list,$pid=0,$html='&nbsp;&nbsp;&nbsp;&nbsp;'){
 		$arr = array();
 		foreach($list as $val){
 			if($val['pid']==$pid){
@@ -181,7 +181,7 @@ class SystemAction extends CommonAction {
 		//p($menu);die;
 		$this->display();
     } 
-	public function indexUnlimited($list,$pid=0,$html='----'){
+	public function indexUnlimited($list,$pid=0,$html='&nbsp;&nbsp;&nbsp;&nbsp;'){
 		$arr = array();
 		foreach($list as $val){
 			if($val['pid']==$pid){
@@ -257,6 +257,16 @@ class SystemAction extends CommonAction {
 		$this->assign('tuwenad',$list);
 		$this->display();
     }
+	//前台关注ad图片
+	public function gzadList(){
+		$list = M('banner')->order('id desc')->where('type = "gzad"')->select();
+		foreach($list as $key=>$val){
+			$list[$key]['pic']=unserialize($val['pic']);
+		}
+		$this->assign('tupian','gzad');
+		$this->assign('gzad',$list);
+		$this->display();
+    }
 	public function bannerDel(){
 		$info = M('banner')->where(array('id'=>$_GET['id']))->delete();
 		if($info){
@@ -315,7 +325,14 @@ class SystemAction extends CommonAction {
 			}
 			$info=M('banner')->save($data);
 			//echo M('banner')->getLastSql();die();
-			$lianjie=($data['type']=='banner')?'bannerList':'adList';//跳转链接
+			//$lianjie=($data['type']=='banner')?'bannerList':'adList';//跳转链接
+			if($data['type']=='banner'){
+				$lianjie = 'bannerList';
+			}elseif($data['type']=='tuwenad'){
+				$lianjie = 'adList';
+			}else{
+				$lianjie = 'gzadList';
+			}
 			if($info){
 				$this->success('修改成功',U(GROUP_NAME.'/System/'.$lianjie));
 			}else{
@@ -400,5 +417,72 @@ class SystemAction extends CommonAction {
 			$this->display();
 		}
     }
-	
+	//标签
+	public function tagList(){
+		$list = M('tags')->order('id desc')->select();
+		$this->assign('tag',$list);
+		$this->display();
+    }
+	public function tagDel(){
+		$info = M('tags')->where(array('id'=>$_GET['id']))->delete();
+		if($info){
+				$this->success('删除成功');
+			}else{
+				$this->error('删除失败');
+			}
+    }
+	public function tagAdd(){
+		if(IS_POST){
+			//p($_POST);die;
+			$data = array(
+				'title'=>I('title'),
+				'url'=>I('url'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+				'addUser'=>session('username'),
+				'addTime'=>time()
+			);
+			$info = M('tags')->add($data);
+			if($info){
+				$this->success('添加成功');
+			}else{
+				$this->error('添加失败');
+			}
+		}else{
+			$this->display();
+		}
+		
+		
+    }
+	public function tagEdit(){
+		$id=$_GET['id'];
+		if(IS_POST){
+			//p($_POST);die;
+			$data = array(
+				'id'=>I('id'),
+				'title'=>I('title'),
+				'url'=>I('url'),
+				'display'=>I('display'),
+				'sort'=>I('sort'),
+			);
+			/* if(empty($data['pic'])){
+				$this->error('图片不为空');
+			}
+			if(empty($data['title'])){
+				$this->error('标题不为空');
+			} */
+			$info=M('tags')->save($data);
+			//echo M('tags')->getLastSql();die();
+			if($info){
+				$this->success('修改成功',U(GROUP_NAME.'/System/tagList'));
+			}else{
+				$this->error('修改失败');		
+			}
+		}else{
+			$info=M('tags')->where(array('id'=>$id))->find();
+			//p($info);die;
+			$this->assign('friend',$info);
+			$this->display();
+		}
+    }
 }

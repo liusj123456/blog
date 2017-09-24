@@ -1,8 +1,19 @@
+<php>
+$upad = M('blogs')->where('display=0 and adup=1')->order('sort asc,id desc')->select();
+
+//$types=implode('-',array_values($type));
+foreach($upad as $key=>$val){
+	$upad[$key]['pic']= unserialize($val['pic']);
+	$types= M('blogs_type')->where('display=0 and id='.$val['type'])->getfield('name');
+	$upad[$key]['type']=$types;
+}
+//p($types);
+</php>
 <div class="tuwen">
       <h3>图文推荐</h3>
       <ul>
-	  <foreach name='adup' item='adups'>
-        <li><a href="/"><img src="{$adups.pic}"><b>{$adups.intro|htmlspecialchars_decode}</b></a>
+	  <foreach name='upad' item='adups'>
+        <li><a href="/"><img src="{$adups.pic}"><b><!-- {$adups.intro|htmlspecialchars_decode} --><php> echo mb_substr(htmlspecialchars_decode($adups['title']),0,10,'utf-8');</php>...</b></a>
           <p><span class="tulanmu"><a href="/">{$adups.type}</a></span><span class="tutime">{$adups.addTime|date='Y-m-d',###}</span></p>
         </li>
 		</foreach>

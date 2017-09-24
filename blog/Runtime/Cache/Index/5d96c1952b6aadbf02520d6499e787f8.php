@@ -42,10 +42,10 @@
     <!-- banner -->
     <div class="topnews weizhi">
        <h2>您现在的位置是：
-          <a href="/index/index">首页</a>&nbsp;&gt;&nbsp;
-          <a href="/book/index">书屋</a>&nbsp;&gt;&nbsp;
+          <a href="<?php echo U(GROUP_NAME.'/Index/lists');?>">文章</a>&nbsp;&gt;&nbsp;
+          <a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$blog_info['type']));?>"><?php echo ($blog_info['types']); ?></a>&nbsp;&gt;&nbsp;
         </h2>
-        <div class="news_title">《解忧杂货店》书评</div>
+        <div class="news_title"><?php echo ($blog_info['title']); ?></div>
 	  	<div class="news_author">
 	  		<span class="au01"><?php echo ($blog_info['addUser']); ?></span>
 	  		<span class="au02"><?php echo (date('Y-m-d',$blog_info['addTime'])); ?></span>
@@ -56,10 +56,10 @@
 	  	</div>
 		<!--nextpage-->
 		<div class="nextpage">
-				<p><b>上一篇:</b> <a href="/index/titleinfo/id/439">关于叶子书屋</a></p>
-				<p><b>下一篇:</b> <a href="/index/titleinfo/id/438">《中国少了一味药》书评</a></p>
+				<?php if(!empty($blog_info['before'])): ?><p><b>上一篇:</b> <a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['before']['id']));?>"><?php echo ($blog_info['before'][title]); ?></a></p><?php endif; ?>
+				<?php if(!empty($blog_info['after'])): ?><p><b>下一篇:</b> <a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['after']['id']));?>"><?php echo ($blog_info['after'][title]); ?></a></p><?php endif; ?>
 		</div>
-		<div id="SOHUCS" sid="<?php echo ($blog_info['id']); ?>"></div>
+		<div id="SOHUCS" sid="<?php echo ($talkId); ?>"></div>
 <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
 window.changyan.api.config({
@@ -71,9 +71,36 @@ conf: 'prod_90ade4411b1bf73ffde8e72219233576'
  </div>
   
   <div class="r_box f_r">	
-    <div class="moreSelect" id="lp_right_select"> 
-      <script>
-window.onload = function ()
+    <?php $clicks = M('blogs')->where('display=0')->limit('6')->select(); $news = M('blogs')->where('display=0')->order('id desc')->limit('6')->select(); $ups = M('blogs')->where('display=0 and adup=1')->order('id desc')->limit('6')->select(); ?>
+<div class="moreSelect" id="lp_right_select"> 
+      <div class="ms-top">
+        <ul class="hd" id="tab">
+          <li class="cur"><a href="/">点击排行</a></li>
+          <li><a href="<?php echo U(GROUP_NAME.'/Index/lists');?>">最新文章</a></li>
+          <li><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('adup'=>1));?>">站长推荐</a></li>
+        </ul>
+      </div>
+      <div class="ms-main" id="ms-main">
+        <div style="display: block;" class="bd bd-news" >
+          <ul>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+          </ul>
+        </div>
+        <div  class="bd bd-news">
+          <ul>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+          </ul>
+        </div>
+        <div class="bd bd-news">
+          <ul>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+          </ul>
+        </div>
+      </div>
+      <!--ms-main end --> 
+    </div>
+<script>
+$(function ()
 {
 	var oLi = document.getElementById("tab").getElementsByTagName("li");
 	var oUl = document.getElementById("ms-main").getElementsByTagName("div");
@@ -89,49 +116,8 @@ window.onload = function ()
 			oUl[this.index].style.display = "block"
 		}	
 	}
-}
+});
 </script>
-      <div class="ms-top">
-        <ul class="hd" id="tab">
-          <li class="cur"><a href="/">点击排行</a></li>
-          <li><a href="/">最新文章</a></li>
-          <li><a href="/">站长推荐</a></li>
-        </ul>
-      </div>
-      <div class="ms-main" id="ms-main">
-        <div style="display: block;" class="bd bd-news" >
-          <ul>
-            <li><a href="/" target="_blank">住在手机里的朋友</a></li>
-            <li><a href="/" target="_blank">教你怎样用欠费手机拨打电话</a></li>
-            <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
-            <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
-            <li><a href="/" target="_blank">你面对的是生活而不是手机</a></li>
-            <li><a href="/" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
-          </ul>
-        </div>
-        <div  class="bd bd-news">
-          <ul>
-            <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
-            <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
-            <li><a href="/" target="_blank">住在手机里的朋友</a></li>
-            <li><a href="/" target="_blank">教你怎样用欠费手机拨打电话</a></li>
-            <li><a href="/" target="_blank">你面对的是生活而不是手机</a></li>
-            <li><a href="/" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
-          </ul>
-        </div>
-        <div class="bd bd-news">
-          <ul>
-            <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
-            <li><a href="/" target="_blank">你面对的是生活而不是手机</a></li>
-            <li><a href="/" target="_blank">住在手机里的朋友</a></li>
-            <li><a href="/" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
-            <li><a href="/" target="_blank">教你怎样用欠费手机拨打电话</a></li>
-            <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--ms-main end --> 
-    </div>
 	 <div class="links">
       <h3><span>[<a href="/">申请友情链接</a>]</span>友情链接</h3>
       <ul>
@@ -162,33 +148,5 @@ $(window).scroll(function(){
 });
 </script>
 
-<style>
-.did{
-display:none;
-}
-</style>
-<!-- <script>
-$(window).scroll(function(){
-	$("#tbox").css("height",'180px');
-	$("div[node-type='is-icp']").hide();
-	if($(window).scrollTop() > 50){
-		//$("tbox").css("height",'100px');
-		$("#gotop").fadeIn();
-	}else{
-		//$("tbox").css("height",'100px');
-		$("#gotop").fadeOut();
-	}
-});
-$(function(){
-	//alert('123');
-	//node-type=is-icp
-	//$("div#SOHUCS").firstChild.addClass('did');
-	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
-	
-});
-window.onload = function(){
-	//$("div[node-type='is-icp']").hide();
-} -->
-</script>
 </body>
 </html>

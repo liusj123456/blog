@@ -113,10 +113,38 @@
       </div>
     </div>
     <!--tit01 end-->
-	    <div class="ad300x100"> <img src="__STATIC__/images/ad300x100.jpg"> </div>	
-    <div class="moreSelect" id="lp_right_select"> 
-      <script>
-window.onload = function ()
+	<?php $gzad = M('banner')->order('id desc')->where('type="gzad" and display=0')->select(); foreach($gzad as $key=>$val){ $gzad[$key]['pic']=unserialize($val['pic']); } ?>  
+<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><img src="<?php echo ($gzad["pic"]); ?>"><?php endforeach; endif; ?></div>	
+    <?php $clicks = M('blogs')->where('display=0')->limit('6')->select(); $news = M('blogs')->where('display=0')->order('id desc')->limit('6')->select(); $ups = M('blogs')->where('display=0 and adup=1')->order('id desc')->limit('6')->select(); ?>
+<div class="moreSelect" id="lp_right_select"> 
+      <div class="ms-top">
+        <ul class="hd" id="tab">
+          <li class="cur"><a href="/">点击排行</a></li>
+          <li><a href="<?php echo U(GROUP_NAME.'/Index/lists');?>">最新文章</a></li>
+          <li><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('adup'=>1));?>">站长推荐</a></li>
+        </ul>
+      </div>
+      <div class="ms-main" id="ms-main">
+        <div style="display: block;" class="bd bd-news" >
+          <ul>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+          </ul>
+        </div>
+        <div  class="bd bd-news">
+          <ul>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+          </ul>
+        </div>
+        <div class="bd bd-news">
+          <ul>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+          </ul>
+        </div>
+      </div>
+      <!--ms-main end --> 
+    </div>
+<script>
+$(function ()
 {
 	var oLi = document.getElementById("tab").getElementsByTagName("li");
 	var oUl = document.getElementById("ms-main").getElementsByTagName("div");
@@ -132,73 +160,21 @@ window.onload = function ()
 			oUl[this.index].style.display = "block"
 		}	
 	}
-}
+});
 </script>
-      <div class="ms-top">
-        <ul class="hd" id="tab">
-          <li class="cur"><a href="/">点击排行</a></li>
-          <li><a href="/">最新文章</a></li>
-          <li><a href="/">站长推荐</a></li>
-        </ul>
-      </div>
-      <div class="ms-main" id="ms-main">
-        <div style="display: block;" class="bd bd-news" >
-          <ul>
-            <li><a href="/" target="_blank">住在手机里的朋友</a></li>
-            <li><a href="/" target="_blank">教你怎样用欠费手机拨打电话</a></li>
-            <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
-            <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
-            <li><a href="/" target="_blank">你面对的是生活而不是手机</a></li>
-            <li><a href="/" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
-          </ul>
-        </div>
-        <div  class="bd bd-news">
-          <ul>
-            <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
-            <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
-            <li><a href="/" target="_blank">住在手机里的朋友</a></li>
-            <li><a href="/" target="_blank">教你怎样用欠费手机拨打电话</a></li>
-            <li><a href="/" target="_blank">你面对的是生活而不是手机</a></li>
-            <li><a href="/" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
-          </ul>
-        </div>
-        <div class="bd bd-news">
-          <ul>
-            <li><a href="/" target="_blank">手机的16个惊人小秘密，据说99.999%的人都不知</a></li>
-            <li><a href="/" target="_blank">你面对的是生活而不是手机</a></li>
-            <li><a href="/" target="_blank">住在手机里的朋友</a></li>
-            <li><a href="/" target="_blank">豪雅手机正式发布! 在法国全手工打造的奢侈品</a></li>
-            <li><a href="/" target="_blank">教你怎样用欠费手机拨打电话</a></li>
-            <li><a href="/" target="_blank">原来以为，一个人的勇敢是，删掉他的手机号码...</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--ms-main end --> 
-    </div>
     <!--切换卡 moreSelect end -->  
-    <div class="cloud">
+    <?php $tag = M('tags')->where('display=0')->order('sort asc')->select(); ?>
+<div class="cloud">
       <h3>标签云</h3>
       <ul>
-        <li><a href="/">个人博客</a></li>
-        <li><a href="/">web开发</a></li>
-        <li><a href="/">前端设计</a></li>
-        <li><a href="/">Html</a></li>
-        <li><a href="/">CSS3</a></li>
-        <li><a href="/">Html5+css3</a></li>
-        <li><a href="/">百度</a></li>
-        <li><a href="/">Javasript</a></li>
-        <li><a href="/">web开发</a></li>
-        <li><a href="/">前端设计</a></li>
-        <li><a href="/">Html</a></li>
-        <li><a href="/">CSS3</a></li>
-        <li><a href="/">Html5+css3</a></li>
-        <li><a href="/">百度</a></li>
+	  <?php if(is_array($tag)): foreach($tag as $key=>$tag): ?><li><a href="<?php echo ($tag["url"]); ?>"><?php echo ($tag["title"]); ?></a></li><?php endforeach; endif; ?>
       </ul>
     </div>
-	<div class="tuwen">
+	<?php $upad = M('blogs')->where('display=0 and adup=1')->order('sort asc,id desc')->select(); foreach($upad as $key=>$val){ $upad[$key]['pic']= unserialize($val['pic']); $types= M('blogs_type')->where('display=0 and id='.$val['type'])->getfield('name'); $upad[$key]['type']=$types; } ?>
+<div class="tuwen">
       <h3>图文推荐</h3>
       <ul>
-	  <?php if(is_array($adup)): foreach($adup as $key=>$adups): ?><li><a href="/"><img src="<?php echo ($adups["pic"]); ?>"><b><?php echo (htmlspecialchars_decode($adups["intro"])); ?></b></a>
+	  <?php if(is_array($upad)): foreach($upad as $key=>$adups): ?><li><a href="/"><img src="<?php echo ($adups["pic"]); ?>"><b><!-- <?php echo (htmlspecialchars_decode($adups["intro"])); ?> --><?php echo mb_substr(htmlspecialchars_decode($adups['title']),0,10,'utf-8'); ?>...</b></a>
           <p><span class="tulanmu"><a href="/"><?php echo ($adups["type"]); ?></a></span><span class="tutime"><?php echo (date('Y-m-d',$adups["addTime"])); ?></span></p>
         </li><?php endforeach; endif; ?>
       </ul>
@@ -276,18 +252,5 @@ $(window).scroll(function(){
 });
 </script>
 
-<script>
-$(window).scroll(function(){
-	$("#tbox").css("height",'180px');
-	//$("div[node-type='is-icp']").hide();
-	if($(window).scrollTop() > 50){
-		//$("tbox").css("height",'100px');
-		$("#gotop").fadeIn();
-	}else{
-		//$("tbox").css("height",'100px');
-		$("#gotop").fadeOut();
-	}
-});
-</script>
 </body>
 </html>

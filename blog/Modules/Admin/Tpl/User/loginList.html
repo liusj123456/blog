@@ -1,0 +1,214 @@
+﻿<include file='Admin:top'/>
+<include file='Admin:left'/>
+<!-- /section:basics/sidebar -->
+<div class="main-content">
+<include file='Admin:mainTop'/>
+<div class="page-content">
+
+<!-- /section:settings.box -->
+<div class="page-content-area">
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+			<div class="row">
+				<div class="col-xs-12">
+					 
+
+					<div class="table-responsive">
+						
+						<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="center">
+										<label class="position-relative">
+											<input type="checkbox" class="ace" />
+											<span class="lbl"></span>
+										</label>
+									</th>
+									<th>用户名</th>
+									<th>状态</th>
+									<th>登录时间</th>
+									<th>登录ip</th>
+								</tr>
+							</thead>
+
+							<tbody>
+							<volist name="loginlog" id='vo'>
+								<tr>
+									<td class="center">
+										<label class="position-relative">
+											<input type="checkbox" class="ace" />
+											<span class="lbl"></span>
+										</label>
+									</td>
+									<td>{$vo.loginuser}</td>
+									<td></td>
+									
+									<td>{$vo.logintime|date='Y-m-d H:i:s',###}</td>
+									<td>{$vo.loginip}</td>
+								</tr>
+								</volist>
+							</tbody>
+						</table>
+
+						<div class="modal-footer no-margin-top">
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="{:U(GROUP_NAME.'/User/userAdd')}";'>添加用户</button>
+							<ul class="pagination pull-right no-margin">
+								<li class="prev disabled">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-left"></i>
+									</a>
+								</li>
+
+								<li class="active">
+									<a href="#">1</a>
+								</li>
+
+								<li>
+									<a href="#">2</a>
+								</li>
+
+								<li>
+									<a href="#">3</a>
+								</li>
+
+								<li class="next">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-right"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					
+
+
+				</div>
+			</div>
+
+			<div id="modal-table" class="modal fade" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header no-padding">
+							<div class="table-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									<span class="white">&times;</span>
+								</button>
+								客票行李规定
+							</div>
+						</div>
+
+						<div class="modal-body no-padding">
+							<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
+								<thead>
+									<tr>
+										<th>航班类型</th>
+										<th>客舱级别</th>
+										<th>行李数量上限</th>
+
+										<th>
+											<i class="ace-icon fa fa-clock-o bigger-110"></i>
+											每件重量上限
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">国内航班</a>
+										</td>
+										<td>头等舱</td>
+										<td>2件</td>
+										<td>5千克</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="modal-footer no-margin-top">
+							<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+								<i class="ace-icon fa fa-times"></i>
+								关闭
+							</button>
+
+							<ul class="pagination pull-right no-margin">
+								<li class="prev disabled">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-left"></i>
+									</a>
+								</li>
+
+								<li class="active">
+									<a href="#">1</a>
+								</li>
+
+								<li>
+									<a href="#">2</a>
+								</li>
+
+								<li>
+									<a href="#">3</a>
+								</li>
+
+								<li class="next">
+									<a href="#">
+										<i class="ace-icon fa fa-angle-double-right"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- PAGE CONTENT ENDS -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</div><!-- /.page-content-area -->
+</div><!-- /.page-content -->
+</div><!-- /.main-content -->
+
+<include file="Admin:foot"/>

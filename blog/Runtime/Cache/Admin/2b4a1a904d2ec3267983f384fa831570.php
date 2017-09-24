@@ -168,7 +168,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									欢迎您<br />
-									<?php echo ($info['username']); ?>
+									<?php echo ($index['username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>

@@ -4,10 +4,10 @@
     <!-- banner -->
     <div class="topnews weizhi">
        <h2>您现在的位置是：
-          <a href="/index/index">首页</a>&nbsp;&gt;&nbsp;
-          <a href="/book/index">书屋</a>&nbsp;&gt;&nbsp;
+          <a href="{:U(GROUP_NAME.'/Index/lists')}">文章</a>&nbsp;&gt;&nbsp;
+          <a href="{:U(GROUP_NAME.'/Index/lists',array('id'=>$blog_info['type']))}">{$blog_info['types']}</a>&nbsp;&gt;&nbsp;
         </h2>
-        <div class="news_title">《解忧杂货店》书评</div>
+        <div class="news_title">{$blog_info['title']}</div>
 	  	<div class="news_author">
 	  		<span class="au01">{$blog_info['addUser']}</span>
 	  		<span class="au02">{$blog_info['addTime']|date='Y-m-d',###}</span>
@@ -18,8 +18,12 @@
 	  	</div>
 		<!--nextpage-->
 		<div class="nextpage">
-				<p><b>上一篇:</b> <a href="/index/titleinfo/id/439">关于叶子书屋</a></p>
-				<p><b>下一篇:</b> <a href="/index/titleinfo/id/438">《中国少了一味药》书评</a></p>
+				<notempty name="blog_info['before']">
+				<p><b>上一篇:</b> <a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['before']['id']))}">{$blog_info['before'][title]}</a></p>
+				</notempty>
+				<notempty name="blog_info['after']">
+				<p><b>下一篇:</b> <a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['after']['id']))}">{$blog_info['after'][title]}</a></p>
+				</notempty>
 		</div>
 		<include file='Index:talk'/>
   </div>
@@ -34,33 +38,5 @@
   <!--r_box end --> 
 </article>
 <include file='Index:footer'/>
-<style>
-.did{
-display:none;
-}
-</style>
-<!-- <script>
-$(window).scroll(function(){
-	$("#tbox").css("height",'180px');
-	$("div[node-type='is-icp']").hide();
-	if($(window).scrollTop() > 50){
-		//$("tbox").css("height",'100px');
-		$("#gotop").fadeIn();
-	}else{
-		//$("tbox").css("height",'100px');
-		$("#gotop").fadeOut();
-	}
-});
-$(function(){
-	//alert('123');
-	//node-type=is-icp
-	//$("div#SOHUCS").firstChild.addClass('did');
-	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
-	
-});
-window.onload = function(){
-	//$("div[node-type='is-icp']").hide();
-} -->
-</script>
 </body>
 </html>

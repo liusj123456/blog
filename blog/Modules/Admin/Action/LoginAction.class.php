@@ -9,8 +9,6 @@ class LoginAction extends Action {
     }
 	public function checkLogin(){
 		//if(!IS_POST) halt('页面不存在');
-		echo md5(I('verify','','strtolower')).'<br>';
-		echo session('verify');//die;
 		$user = M('user')->where(array('username'=>I('username')))->find();
 		if(!user || ($user['password']!==I('password','','md5'))){
 			$this->error('账号或密码错误');
@@ -19,7 +17,15 @@ class LoginAction extends Action {
 			session('verify',null);
 			$this->error('验证码错误');
 		}
-		
+		if($user['status']==1){
+			$this->error('用户还在审核中不可登陆，请等待。。。');
+		}
+		$data = array(
+			'loginuser'=>$user['username'],
+			'logintime'=>time(),
+			'loginip'=>get_client_ip(),
+		);
+		M('loginlog')->add($data);
 		session('uid',$user['id']);
 		session('username',$user['username']);
 		$this->redirect('/Admin/Admin/index');
@@ -70,10 +76,12 @@ class LoginAction extends Action {
 			$this->error('验证码错误',U(GROUP_NAME.'/Login/login',array('rg'=>'1')));
 		}
 		$_POST['password'] = md5($_POST['password']);
-		$_POST['logintime'] = time();
-		$_POST['loginip'] = get_client_ip();
+		$_POST['addTime'] = time();
+		$_POST['addIp'] = get_client_ip();
 		unset($_POST['repassword']);
 		$data= $_POST;
+		$data['addUser']='reg';//添加方式为注册
+		$data['status']='1';//注册暂不可用
 		$info = $user->add($data);
 		if($info){
 			//echo "<script>alert('注册成功');</script>";

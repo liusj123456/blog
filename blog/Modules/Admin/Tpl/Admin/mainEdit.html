@@ -98,7 +98,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/Admin/mainEdit')}" method='post'>
+								<form class="form-horizontal" role="form" name='blogAdd' id='blogAdd' action="{:U(GROUP_NAME.'/Admin/mainEdit',array('id'=>$_GET['id']))}" method='post'>
 									<!-- #section:elements.form -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">首页logo： </label>
