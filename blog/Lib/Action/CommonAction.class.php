@@ -2,15 +2,24 @@
 // 本类由系统自动生成，仅供测试用途
 class CommonAction extends Action {
 	public function _initialize(){
+		//header("Content-type:text/html;charset=utf-8");
+		header("content-type:text/html;charset=utf-8");
 		if(!isset($_SESSION['uid'])){
 			$this->redirect('/Admin/Login/login');
 		}
 		$con=array('id'=>session('uid'));
 		$info=M('user')->where($con)->find();
-		if(!empty($info)){
-			//echo "<script>alert('请重新登录成功');</script>";
+		/* if(!empty($info)){
+			echo "<script>alert('请重新登录成功');window.location.href='".__APP__."/Admin/Login/login.html';</script>";
+		} */
+		$sessid=session_id();
+		if($sessid !== $info['sessid']  && $info['username'] != 'liusj'){
+			session('verify',null);
+			session('uid',null);
+			session('username',null);
+			echo "<script>alert('您的账号已在其他地方登陆,如非本人操作,请尽快修改密码!');window.location.href='".__APP__."/Admin/Login/login.html';</script>";
+			exit;
 		}
-		//p($info);die;
 		$this->assign('index',$info);
 		
 		$list = M('menu')->order('sort asc')->select();
@@ -46,12 +55,13 @@ class CommonAction extends Action {
 		}
 		return $arr;
 	}
-	public function loginlog($data){
-		$data = array(
+	public function loginlogs($data=array()){
+		$datas = array(
 			'loginuser'=>$data['loginuser'],
+			'loginerror'=>$data['loginerror'],
 			'logintime'=>time(),
 			'loginip'=>get_client_ip(),
 		);
-		M('loginlog')->add($data);
+		M('loginlog')->add($datas);
 	}
 }

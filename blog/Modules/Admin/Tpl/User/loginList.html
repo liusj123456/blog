@@ -28,6 +28,7 @@
 									</th>
 									<th>用户名</th>
 									<th>状态</th>
+									<th>desc</th>
 									<th>登录时间</th>
 									<th>登录ip</th>
 								</tr>
@@ -43,8 +44,8 @@
 										</label>
 									</td>
 									<td>{$vo.loginuser}</td>
-									<td></td>
-									
+									<td>{$vo.status}</td>
+									<td>{$vo.loginerror}</td>
 									<td>{$vo.logintime|date='Y-m-d H:i:s',###}</td>
 									<td>{$vo.loginip}</td>
 								</tr>

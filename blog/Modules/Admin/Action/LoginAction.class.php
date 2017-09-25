@@ -9,26 +9,86 @@ class LoginAction extends Action {
     }
 	public function checkLogin(){
 		//if(!IS_POST) halt('页面不存在');
-		$user = M('user')->where(array('username'=>I('username')))->find();
-		if(!user || ($user['password']!==I('password','','md5'))){
-			$this->error('账号或密码错误');
-		}
+		
+		$data['logintime']=time();
+		$data['loginip']=get_client_ip();
 		if(session('verify')!==md5(I('verify','','strtolower'))){
+			$data['loginuser']=I('username');
+			$data['status']="失败";
+			$data['loginerror']="验证码错误";
+			$this->loginlogs($data);
 			session('verify',null);
 			$this->error('验证码错误');
 		}
+		$user = M('user')->where(array('username'=>I('username'),'password'=>I('password','','md5')))->find();
+		/* if(!user || ($user['password']!==I('password','','md5'))){
+			$data['loginuser']=$user['username'];
+			$data['status']="失败";
+			$data['loginerror']="账号或密码错误";
+			$this->loginlogs($data);
+			$this->error('账号或密码错误');
+		} */
+		$sessid = session_id();
+		$wrong  = M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->find();
+		//echo $sessid;
+		//p($wrong);die;
+		if(!$user){
+			if(!empty($wrong)){				
+				if($wrong['times']>=4){
+					M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1,'expire'=>strtotime('+3 minute')));
+					$this->error('账号密码错误已过5次，请3分钟后重试');
+				}else{
+					M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1));
+					$this->error('账号密码错误，您还剩'.(5-($wrong['times']+1)).'次机会');
+				}
+			}else{
+				$info = array(
+					'username'=>I('username'),
+					'sessid'=>$sessid,
+					'times'=>1,
+				);
+				M('login_wrong')->add($info);
+				$this->error('账号密码错误，您还剩4次机会');
+			}
+		}else{
+			if(!empty($wrong) and $wrong['times']>=5 and time()<$wrong['times']){
+				M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1,'expire'=>strtotime('+30 minute')));
+				$this->error('账号密码错误已过5次，请'.($wrong['times']-time()).'分钟后重试');
+			}else{
+				if(!empty($wrong)){
+					M('login_wrong')->where(array('username'=>$user['username'],'sessid'=>$sessid))->delete();
+				}
+			}
+		}
 		if($user['status']==1){
+			$data['loginuser']=$user['username'];
+			$data['status']="失败";
+			$data['loginerror']="用户还在审核中不可登陆";
+			$this->loginlogs($data);
 			$this->error('用户还在审核中不可登陆，请等待。。。');
 		}
-		$data = array(
-			'loginuser'=>$user['username'],
-			'logintime'=>time(),
-			'loginip'=>get_client_ip(),
+		$data['loginuser']=$user['username'];
+		$data['status']="成功";
+		//$data['loginerror']="验证码错误";
+		$this->loginlogs($data);
+		$datas = array(
+			'id'=>$user['id'],
+			'sessid'=>session_id(),
 		);
-		M('loginlog')->add($data);
+		M('user')->save($datas);
 		session('uid',$user['id']);
 		session('username',$user['username']);
 		$this->redirect('/Admin/Admin/index');
+	}
+	public function loginlogs($data=array()){
+		$datas = array(
+			'loginuser'=>$data['loginuser'],
+			'status'=>$data['status'],
+			'loginerror'=>$data['loginerror'],
+			'logintime'=>time(),
+			'loginip'=>get_client_ip(),
+		);
+		M('loginlog')->add($datas);
 	}
 	public function verify(){
 		//import('ORG.Util.Image');

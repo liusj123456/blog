@@ -396,6 +396,7 @@
 									</th>
 									<th>用户名</th>
 									<th>状态</th>
+									<th>desc</th>
 									<th>登录时间</th>
 									<th>登录ip</th>
 								</tr>
@@ -410,8 +411,8 @@
 										</label>
 									</td>
 									<td><?php echo ($vo["loginuser"]); ?></td>
-									<td></td>
-									
+									<td><?php echo ($vo["status"]); ?></td>
+									<td><?php echo ($vo["loginerror"]); ?></td>
 									<td><?php echo (date('Y-m-d H:i:s',$vo["logintime"])); ?></td>
 									<td><?php echo ($vo["loginip"]); ?></td>
 								</tr><?php endforeach; endif; else: echo "" ;endif; ?>
