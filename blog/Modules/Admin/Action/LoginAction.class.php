@@ -29,30 +29,36 @@ class LoginAction extends Action {
 			$this->error('账号或密码错误');
 		} */
 		$sessid = session_id();
-		$wrong  = M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->find();
+		$wrongs  = M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->find();
+		if(!empty($wrongs) and $wrongs['times']>=5 and (time()>$wrongs['expire'])){			
+			M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->delete();
+		}
+		$wrong = M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->find();
 		//echo $sessid;
 		//p($wrong);die;
 		if(!$user){
-			if(!empty($wrong)){				
-				if($wrong['times']>=4){
-					M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1,'expire'=>strtotime('+3 minute')));
-					$this->error('账号密码错误已过5次，请3分钟后重试');
+				if(!empty($wrong)){
+					if($wrong['times']>=5){
+						$this->error('账号密码错误已过5次，请3分钟后重试');
+					}
+					if($wrong['times']>=4){
+						M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>5,'expire'=>strtotime('+3 minute')));
+						$this->error('账号密码错误已过5次，请3分钟后重试');
+					}else{
+						M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1));
+						$this->error('账号密码错误，您还剩'.(5-($wrong['times']+1)).'次机会');
+					}
 				}else{
-					M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1));
-					$this->error('账号密码错误，您还剩'.(5-($wrong['times']+1)).'次机会');
+					$info = array(
+						'username'=>I('username'),
+						'sessid'=>$sessid,
+						'times'=>1,
+					);
+					M('login_wrong')->add($info);
+					$this->error('账号密码错误，您还剩4次机会');
 				}
-			}else{
-				$info = array(
-					'username'=>I('username'),
-					'sessid'=>$sessid,
-					'times'=>1,
-				);
-				M('login_wrong')->add($info);
-				$this->error('账号密码错误，您还剩4次机会');
-			}
 		}else{
 			if(!empty($wrong) and $wrong['times']>=5 and time()<$wrong['times']){
-				M('login_wrong')->where(array('username'=>I('username'),'sessid'=>$sessid))->save(array('times'=>$wrong['times']+1,'expire'=>strtotime('+30 minute')));
 				$this->error('账号密码错误已过5次，请'.($wrong['times']-time()).'分钟后重试');
 			}else{
 				if(!empty($wrong)){
