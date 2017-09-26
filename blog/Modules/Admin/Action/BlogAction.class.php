@@ -1,7 +1,12 @@
 <?php
 class BlogAction extends CommonAction {
     public function blogList(){
-		$list = M('blogs')->order('id desc')->select();
+		
+		$count = M('blogs')->count();
+		$page = new page($count, 10);
+		$show = $page->myde_write();
+		$this->assign('page',$show);
+		$list = M('blogs')->order('id desc')->limit($page->limit,$page->myde_size)->select();
 		$types='';
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
@@ -44,6 +49,9 @@ class BlogAction extends CommonAction {
 				'intro'=>I('intro'),
 				'display'=>I('display'),
 				'adup'=>I('adup'),
+				'talks'=>I('talks'),
+				'views'=>I('views'),
+				'likes'=>I('likes'),
 				'content'=>I('content'),
 				'addUser'=>session('username'),
 				'addTime'=>time()
@@ -72,6 +80,9 @@ class BlogAction extends CommonAction {
 				'display'=>I('display'),
 				'type'=>I('type'),
 				'adup'=>I('adup'),
+				'talks'=>I('talks'),
+				'views'=>I('views'),
+				'likes'=>I('likes'),
 				'intro'=>I('intro'),
 				'content'=>I('content')
 			);
@@ -102,7 +113,11 @@ class BlogAction extends CommonAction {
     }
 	//文章类型
 	public function blogTypeList(){
-		$type = M('blogs_type')->order('id desc')->select();
+		$count = M('blogs_type')->count();
+		$page = new page($count, 10);
+		$show = $page->myde_write();
+		$this->assign('page',$show);
+		$type = M('blogs_type')->order('id desc')->limit($page->limit,$page->myde_size)->select();
 		$this->type = $this->unlimit($type);
 		//p($this->type);die;
 		$this->display();

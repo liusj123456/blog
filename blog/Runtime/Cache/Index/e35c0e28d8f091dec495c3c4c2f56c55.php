@@ -89,16 +89,19 @@
         <ul>
           <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["title"]); ?></a></h3>
           <p><?php echo (htmlspecialchars_decode($indexlist["intro"])); ?> ...<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
-          <p class="autor"><span class="lm f_l"><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["type"]); ?></a></span><span class="dtime f_l"><?php echo (date('Y-m-d',$indexlist["addTime"])); ?></span>
+          <p class="autor"><span class="lm f_l" style="margin: 0 10px 0 0;"><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["type"]); ?></a></span><span class="dtime f_l" style="margin-left: 10px;"><?php echo (date('Y-m-d',$indexlist["addTime"])); ?></span>
 		  <input class="zan_cookie" type="hidden" value="2">
 			<input class="zan_newsid" type="hidden" value="442">
-			<span class="label_bottom f_r" style="padding-left: 0;">
+			<span class="label_bottom f_r" style="padding-left: 0;margin-right: 10px;">
 				<a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">2</a>
 			</span>
-		  <span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+		  <span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>#talk"><span id = "sourceId::<?php echo ($indexlist["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
     </div>
+	
+	<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2">
+	</script>
   </div>
   <div class="r_box f_r">
     <div class="tit01">

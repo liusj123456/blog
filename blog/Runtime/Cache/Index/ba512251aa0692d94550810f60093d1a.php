@@ -37,27 +37,63 @@
     </ul>
   </nav> -->
 </header>
+<script>
+$(document).ready(function(){
+	$(".dianzan").click(function(){
+		var obj = $(this);
+		var newsid = parseInt(obj.parent().prevAll(".zan_newsid").val());
+		var Num = parseInt(obj.text());
+		//alert(Num);
+		obj.css({cursor:"default"});
+		var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
+		$.ajax({
+			type:"post",
+			url:url,
+			data:"num="+Num+"&id="+newsid,
+			dataType:"json",
+			error:function(){alert("点赞失败");}, 
+			success:function(data){
+				//alert(data.res);
+				if(data.info == 1){
+					obj.text(data.res);
+					obj.css({ backgroundPosition: "-47px -327px", color: "#406ca9", textDecoration: "none", cursor: "default"});
+					obj.after("<em>+1</em>");
+					obj.removeClass('dianzan');
+					$("em").fadeOut('slow');
+				}else{
+					obj.css({cursor:"default"});
+					obj.removeAttr('href');return false;
+				}
+			}
+
+		})
+	})
+});
+</script>
 <article>
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
     <div class="topnews">
-      <h2><span><?php if(is_array($type)): foreach($type as $key=>$type): ?><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']));?>"><?php echo ($type["name"]); ?></a><?php endforeach; endif; ?></span><b>文章</b>列表</h2>
+      <h2><span><?php if(is_array($type)): foreach($type as $key=>$type): ?><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']));?>"><?php echo ($type["name"]); ?></a><?php endforeach; endif; ?></span><a href='<?php echo U(GROUP_NAME."/Index/lists");?>'><b>文章</b>列表</a></h2>
       <?php if(is_array($blog_list)): foreach($blog_list as $key=>$blog): ?><div class="blogs">
         <figure><img src="<?php echo ($blog['pic']); ?>"></figure>
         <ul>
           <!-- <h3><a href="__URL__/Index/content/id/<?php echo ($blog['id']); ?>"><?php echo ($blog['title']); ?></a></h3> -->
 		  <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['title']); ?></a></h3>
           <p><?php echo (htmlspecialchars_decode($blog['intro'])); ?><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
-          <p class="autor"><span class="lm f_l"><a href="/"><?php echo ($blog['type']); ?></a></span><span class="dtime f_l"><?php echo (date('Y-m-d',$blog['addTime'])); ?></span>
+          <p class="autor">
+			<span class="lm f_l"><a href="/"><?php echo ($blog['type']); ?></a></span><span class="dtime f_l" style="margin-left:10px;"><?php echo (date('Y-m-d',$blog['addTime'])); ?></span>
 			<input class="zan_cookie" type="hidden" value="2">
-			<input class="zan_newsid" type="hidden" value="442">
-			<span class="label_bottom f_r" style="padding-left: 0;">
-				<a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">2</a>
-			</span><span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+			<input class="zan_newsid" type="hidden" value="<?php echo ($blog['id']); ?>">
+			<span class="label_bottom f_r" style="padding-left: 0;margin-left:10px;">
+				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan" style=""><?php echo ($blog['likes']); ?></a>
+			</span><span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>#talk"><span id = "sourceId::<?php echo ($blog["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
     </div>
   </div>
+  <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2">
+	</script>
   <div class="r_box f_r">
     <div class="tit01">
       <h3>关注我</h3>

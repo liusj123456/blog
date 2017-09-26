@@ -22,7 +22,9 @@
 		<script src="__PUBLIC__/assets/js/html5shiv.min.js"></script>
 		<script src="__PUBLIC__/assets/js/respond.min.js"></script>
 		<![endif]-->
-		<script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+		<!-- <script src="__PUBLIC__/assets/js/ace-extra.min.js"></script> -->
+		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
 
 	<body class="no-skin">
@@ -168,7 +170,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									欢迎您<br />
-									<?php echo ($info['username']); ?>
+									<?php echo ($index['username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -529,7 +531,22 @@
 											<input type="text" name='title' id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="<?php echo ($be['title']); ?>"/>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文章基本配置：</label>
 
+										<div class="col-sm-9">
+											<span style="float:left;text-align:center;line-height:34px;">评论次数</span>
+											<span style="float:left;text-align:center;line-height:34px;">
+											<input type="text" name='talks' id="form-field-1" style="width:75px;height:30px;line-height:30px;" class="col-xs-10 col-sm-5" value="<?php echo ($be['talks']); ?>"/></span>
+											<span style="float:left;text-align:center;line-height:34px;">浏览次数</span>
+											<span style="float:left;text-align:center;line-height:34px;">
+											<input type="text" name='views' id="form-field-1" style="width:75px;height:30px;line-height:30px;" class="col-xs-10 col-sm-5" value="<?php echo ($be['views']); ?>"/>
+											点赞次数</span>
+											<span style="float:left;text-align:center;line-height:34px;">
+											<input type="text" name='likes' id="form-field-1" style="width:75px;height:30px;line-height:30px;" class="col-xs-10 col-sm-5" value="<?php echo ($be['likes']); ?>"/>
+											</span>
+										</div>
+									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">文章类型： </label>
 

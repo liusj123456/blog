@@ -1,7 +1,11 @@
 <?php
 class UserAction extends CommonAction {
     public function userList(){
-		$list = M('user')->order('id desc')->select();
+		$list = M('user')->count();
+		$page = new page($count, 10);
+		$show = $page->myde_write();
+		$this->assign('page',$show);
+		$list = M('user')->order('id desc')->limit($page->limit,$page->myde_size)->select();
 		//p($list);die;
 		$this->assign('info',$list);
 		$this->display();
@@ -91,9 +95,14 @@ class UserAction extends CommonAction {
 		}
     }
 	public function loginList(){
-		$list = M('loginlog')->order('id desc')->select();
-		//p($list);die;
+		$count = M('loginlog')->count();
+		$page = new page($count, 10);
+		$show = $page->myde_write();
+		$this->assign('page',$show);
+		$list = M('loginlog')->order('id desc')->limit($page->limit,$page->myde_size)->select();
+		//echo M('loginlog')->getLastSql();die;
 		$this->assign('loginlog',$list);
+		
 		$this->display();
     }
 }

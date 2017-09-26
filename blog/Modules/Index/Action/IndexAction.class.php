@@ -17,6 +17,7 @@ class IndexAction extends Action {
 			$list[$key]['pic']=unserialize($val['pic']);
 			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
 			$list[$key]['type']=$types;
+			$list[$key]['talkId']=$val['id'];
 		}
 		$type = M('blogs_type')->where('pid=0 and display=0')->select();//标题类型
 		
@@ -45,9 +46,10 @@ class IndexAction extends Action {
 			$list[$key]['pic']=unserialize($val['pic']);
 			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
 			$list[$key]['type']=$types;
+			$list[$key]['talkId']=$val['id'];
 		}
 		$type = M('blogs_type')->where('pid=0 and display=0')->select();//标题类型
-		
+		$this->assign('talkId',$info['id']);
 		$this->assign('type',$type);
 		$this->assign('blog_list',$list);
 		$this->assign('action','Index/lists');
@@ -111,5 +113,27 @@ class IndexAction extends Action {
 	public function message(){
 		$this->assign('talkId','message');
 		$this->display();
+    }
+	public function views(){
+		$id=I('id');
+		M('blogs')->where(array('id'=>$id))->setInc('views');//浏览数加1
+		$info = M('blogs')->where(array('id'=>$id))->find();
+		exit(json_encode(array('info'=>'成功','res'=>$info['views'])));
+    }
+	public function likes(){
+		$id=I('id');
+		$res=M('blogs')->where(array('id'=>$id))->setInc('likes');
+		$info = M('blogs')->where(array('id'=>$id))->find();
+		if($info && $res){
+			if(empty($_COOKIE['id'])){
+				cookie('id',$id,3600);
+				exit(json_encode(array('info'=>'1','res'=>$info['likes'])));
+			}else{
+				exit(json_encode(array('info'=>'2','res'=>$info['likes'])));
+			}			
+		}else{
+			exit(json_encode(array('info'=>'2')));
+		}
+		
     }
 }

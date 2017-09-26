@@ -22,7 +22,9 @@
 		<script src="__PUBLIC__/assets/js/html5shiv.min.js"></script>
 		<script src="__PUBLIC__/assets/js/respond.min.js"></script>
 		<![endif]-->
-		<script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+		<!-- <script src="__PUBLIC__/assets/js/ace-extra.min.js"></script> -->
+		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
 
 	<body class="no-skin">
@@ -446,31 +448,7 @@
 
 						<div class="modal-footer no-margin-top">
 							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/menuAdd');?>";'>添加顶级菜单</button>
-							<ul class="pagination pull-right no-margin">
-								<li class="prev disabled">
-									<a href="#">
-										<i class="ace-icon fa fa-angle-double-left"></i>
-									</a>
-								</li>
-
-								<li class="active">
-									<a href="#">1</a>
-								</li>
-
-								<li>
-									<a href="#">2</a>
-								</li>
-
-								<li>
-									<a href="#">3</a>
-								</li>
-
-								<li class="next">
-									<a href="#">
-										<i class="ace-icon fa fa-angle-double-right"></i>
-									</a>
-								</li>
-							</ul>
+							<span style='float:right;'><?php echo ($page); ?></span>
 						</div>
 
 					</div>

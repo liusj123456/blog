@@ -37,6 +37,25 @@
     </ul>
   </nav> -->
 </header>
+<script>
+$(function(){
+	var ids='<?php echo ($blog_info[id]); ?>';
+	$.ajax({  
+		url:'<?php echo U(GROUP_NAME . "/Index/views",array("id"=>"$blog_info[id]"));?>',  
+		type:"get",  
+		async:true,  
+		//data:{'id':ids},
+		dataType : "json",
+		error:function(){alert("服务加载出错");},  
+		success:function(data){
+			if(data.info='成功'){
+				$('#views').html(data.res);
+			}
+		}
+	 });
+});
+ 
+</script>
 <article>
   <div class="l_box f_l">
     <!-- banner -->
@@ -49,13 +68,14 @@
 	  	<div class="news_author">
 	  		<span class="au01"><?php echo ($blog_info['addUser']); ?></span>
 	  		<span class="au02"><?php echo (date('Y-m-d',$blog_info['addTime'])); ?></span>
+			<span class="viewnum" id="views"><?php echo ($blog_info['views']); ?></span>
 	  	</div>
 		<!-- 内容 S -->
 		<div class="news_content">
 	  	   	<?php echo (htmlspecialchars_decode($blog_info['content'])); ?>
 	  	</div>
 		<!--nextpage-->
-		<div class="nextpage">
+		<div class="nextpage"><a name="talk" id="talk" >&nbsp;</a> 
 				<?php if(!empty($blog_info['before'])): ?><p><b>上一篇:</b> <a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['before']['id']));?>"><?php echo ($blog_info['before'][title]); ?></a></p><?php endif; ?>
 				<?php if(!empty($blog_info['after'])): ?><p><b>下一篇:</b> <a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['after']['id']));?>"><?php echo ($blog_info['after'][title]); ?></a></p><?php endif; ?>
 		</div>

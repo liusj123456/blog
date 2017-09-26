@@ -4,6 +4,7 @@ class CommonAction extends Action {
 	public function _initialize(){
 		//header("Content-type:text/html;charset=utf-8");
 		header("content-type:text/html;charset=utf-8");
+		import('Class.page',APP_PATH);
 		if(!isset($_SESSION['uid'])){
 			$this->redirect('/Admin/Login/login');
 		}
