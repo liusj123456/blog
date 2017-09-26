@@ -2,10 +2,12 @@
 <script>
 $(document).ready(function(){
 	$(".dianzan").click(function(){
+		
 		var obj = $(this);
 		var newsid = parseInt(obj.parent().prevAll(".zan_newsid").val());
 		var Num = parseInt(obj.text());
-		//alert(Num);
+		//var cookie = "{$Think.cookie.15}";
+		//alert(cookie);
 		obj.css({cursor:"default"});
 		var url = "{:U(GROUP_NAME.'/Index/likes')}"; 
 		$.ajax({
@@ -20,11 +22,13 @@ $(document).ready(function(){
 					obj.text(data.res);
 					obj.css({ backgroundPosition: "-47px -327px", color: "#406ca9", textDecoration: "none", cursor: "default"});
 					obj.after("<em>+1</em>");
-					obj.removeClass('dianzan');
+					//obj.removeClass('dianzan');
 					$("em").fadeOut('slow');
 				}else{
 					obj.css({cursor:"default"});
-					obj.removeAttr('href');return false;
+					obj.removeAttr('href');
+					alert(data.resinfo);
+					return false;
 				}
 			}
 
@@ -32,6 +36,7 @@ $(document).ready(function(){
 	})
 });
 </script>
+<css href='__STATIC__/css/pages.css'/>
 <article>
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
@@ -54,6 +59,7 @@ $(document).ready(function(){
         </ul>
       </div>
 	  </foreach>
+	  <div><span style='float:right'>{$page}</span></div>
     </div>
   </div>
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2">

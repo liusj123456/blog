@@ -31,6 +31,8 @@ class IndexAction extends Action {
 		$this->display();
     }
 	public function lists(){
+		//echo $_COOKIE['id'];die;
+		
 		$id = empty($_GET['id'])?'':$_GET['id'];
 		$adup = empty($_GET['adup'])?'':$_GET['adup'];
 		if(!empty($id)){
@@ -40,7 +42,12 @@ class IndexAction extends Action {
 			$condition['adup']=$adup;
 		}
 		$condition['display']=0;
-		$list = M('blogs')->where($condition)->order('id desc')->select();
+		import('Class.pages',APP_PATH);
+		$count = M('blogs')->where($condition)->count();
+		$page = new page($count,8,'1','?page={page}',3);
+		$show = $page->myde_write();
+		$this->assign('page',$show);
+		$list = M('blogs')->where($condition)->limit($page->limit,$page->myde_size)->order('id desc')->select();
 		$types='';
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
@@ -122,17 +129,21 @@ class IndexAction extends Action {
     }
 	public function likes(){
 		$id=I('id');
-		$res=M('blogs')->where(array('id'=>$id))->setInc('likes');
+		if(empty($_COOKIE[$id])){
+			$res=M('blogs')->where(array('id'=>$id))->setInc('likes');
+		}else{
+			exit(json_encode(array('info'=>'2','resinfo'=>'今天已经点赞过了，请明天再来')));
+		}
 		$info = M('blogs')->where(array('id'=>$id))->find();
 		if($info && $res){
 			if(empty($_COOKIE['id'])){
-				cookie('id',$id,3600);
+				cookie($id,'aaaaaaaaaaa',86400);
 				exit(json_encode(array('info'=>'1','res'=>$info['likes'])));
 			}else{
 				exit(json_encode(array('info'=>'2','res'=>$info['likes'])));
 			}			
 		}else{
-			exit(json_encode(array('info'=>'2')));
+			exit(json_encode(array('info'=>'2','resinfo'=>'今天已经点赞过了，请明天再来')));
 		}
 		
     }

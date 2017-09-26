@@ -40,10 +40,12 @@
 <script>
 $(document).ready(function(){
 	$(".dianzan").click(function(){
+		
 		var obj = $(this);
 		var newsid = parseInt(obj.parent().prevAll(".zan_newsid").val());
 		var Num = parseInt(obj.text());
-		//alert(Num);
+		//var cookie = "<?php echo (cookie('15')); ?>";
+		//alert(cookie);
 		obj.css({cursor:"default"});
 		var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
 		$.ajax({
@@ -58,11 +60,13 @@ $(document).ready(function(){
 					obj.text(data.res);
 					obj.css({ backgroundPosition: "-47px -327px", color: "#406ca9", textDecoration: "none", cursor: "default"});
 					obj.after("<em>+1</em>");
-					obj.removeClass('dianzan');
+					//obj.removeClass('dianzan');
 					$("em").fadeOut('slow');
 				}else{
 					obj.css({cursor:"default"});
-					obj.removeAttr('href');return false;
+					obj.removeAttr('href');
+					alert(data.resinfo);
+					return false;
 				}
 			}
 
@@ -70,6 +74,7 @@ $(document).ready(function(){
 	})
 });
 </script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 <article>
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
@@ -90,6 +95,7 @@ $(document).ready(function(){
 			</span><span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>#talk"><span id = "sourceId::<?php echo ($blog["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
+	  <div><span style='float:right'><?php echo ($page); ?></span></div>
     </div>
   </div>
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2">
