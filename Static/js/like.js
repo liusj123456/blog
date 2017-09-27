@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(function(){
 	
-	$(".yz_zan").bind('click',function(){		
+	$(".yz_zan").live('click',function(){		
 		var obj = $(this);
 		var newsid = parseInt(obj.parent().prevAll(".zan_newsid").val());
 		var Num = parseInt(obj.text());

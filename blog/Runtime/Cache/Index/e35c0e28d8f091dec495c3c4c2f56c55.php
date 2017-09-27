@@ -27,7 +27,7 @@
   <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>
   <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
     <ul>
-	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><a href="<?php echo U('Admin/Login/login');?>" target='_blank'>登录</a><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
+	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
     </ul>
     <script src="__STATIC__/js/nav.js"></script> 
   </nav>
@@ -40,6 +40,8 @@
 <script>
 var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
 </script>
+<script type="text/javascript" src="__STATIC__/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/like.js"></script>
 <article>
   <div class="l_box f_l">
     <div class="banner">
@@ -87,8 +89,7 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
     <!-- banner代码 结束 -->
     <div class="topnews">
       <h2><span><?php if(is_array($type)): foreach($type as $key=>$type): ?><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']));?>"><?php echo ($type["name"]); ?></a><?php endforeach; endif; ?></span><b>文章</b>推荐</h2>
-      <?php if(is_array($blog_list)): foreach($blog_list as $key=>$indexlist): echo $_COOKIE[$indexlist['id']]; ?>
-	  <div class="blogs">
+      <?php if(is_array($blog_list)): foreach($blog_list as $key=>$indexlist): ?><div class="blogs">
         <figure><img src="<?php echo ($indexlist["pic"]); ?>"></figure>
         <ul>
           <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["title"]); ?></a></h3>
@@ -108,7 +109,7 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
 			</a>
 		</div>
 	  </div>
-	  <script type="text/javascript" src="__STATIC__/js/like.js"></script>
+	 
 	 <script type="text/javascript">
 		var newPage = 1;
 		var click_page_flag = 1

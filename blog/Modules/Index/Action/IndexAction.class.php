@@ -42,7 +42,7 @@ class IndexAction extends Action {
 			$condition['adup']=$adup;
 		}
 		$condition['display']=0;
-		import('Class.pages',APP_PATH);
+		import('Class.page',APP_PATH);
 		$count = M('blogs')->where($condition)->count();
 		$page = new page($count,8,'1','?page={page}',3);
 		$show = $page->myde_write();
@@ -209,7 +209,7 @@ class IndexAction extends Action {
 		}
 		$html='';
 		foreach($list as $key=>$val){
-			$html.= $_COOKIE[$val[id]];
+			//$html.= $_COOKIE[$val[id]];
 		  $html.='<div class="blogs">
 					<figure><img src="'.$val[pic].'"></figure>
 					<ul>

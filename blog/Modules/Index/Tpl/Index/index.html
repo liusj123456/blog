@@ -2,6 +2,8 @@
 <script>
 var url = "{:U(GROUP_NAME.'/Index/likes')}"; 
 </script>
+<js href='__STATIC__/js/jquery-1.7.1.min.js'/>
+<js href='__STATIC__/js/like.js'/>
 <article>
   <div class="l_box f_l">
     <include file="Index:banner"/>
@@ -9,9 +11,6 @@ var url = "{:U(GROUP_NAME.'/Index/likes')}";
     <div class="topnews">
       <h2><span><foreach name='type' item='type'><a href="{:U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']))}">{$type.name}</a></foreach></span><b>文章</b>推荐</h2>
       <foreach name='blog_list' item='indexlist'>
-	  <php>
-		echo $_COOKIE[$indexlist['id']];
-	  </php>
 	  <div class="blogs">
         <figure><img src="{$indexlist.pic}"></figure>
         <ul>
@@ -33,7 +32,7 @@ var url = "{:U(GROUP_NAME.'/Index/likes')}";
 			</a>
 		</div>
 	  </div>
-	  <js href='__STATIC__/js/like.js'/>
+	 
 	 <script type="text/javascript">
 		var newPage = 1;
 		var click_page_flag = 1
