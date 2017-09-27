@@ -11,7 +11,7 @@ class IndexAction extends Action {
 		//echo "APP_PATH:".APP_PATH;
 		//echo dirname(APP_PATH);
 		//die;
-		$list = M('blogs')->where(array('display'=>0))->order('id desc')->limit('8')->select();
+		$list = M('blogs')->where(array('display'=>0))->order('id desc')->limit('6')->select();
 		
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
@@ -136,8 +136,8 @@ class IndexAction extends Action {
 		}
 		$info = M('blogs')->where(array('id'=>$id))->find();
 		if($info && $res){
-			if(empty($_COOKIE['id'])){
-				cookie($id,'aaaaaaaaaaa',86400);
+			if(empty($_COOKIE[$id])){
+				cookie($id,$id,86400);
 				exit(json_encode(array('info'=>'1','res'=>$info['likes'])));
 			}else{
 				exit(json_encode(array('info'=>'2','res'=>$info['likes'])));
@@ -146,5 +146,92 @@ class IndexAction extends Action {
 			exit(json_encode(array('info'=>'2','resinfo'=>'今天已经点赞过了，请明天再来')));
 		}
 		
+    }
+	public function indexList(){
+		$condition['display']=array('eq',0);
+		import('Class.pages',APP_PATH);
+		$count = M('blogs')->where($condition)->count();
+		$page = new page($count,8,$_POST['page'],'?page={page}');
+		$show = $page->myde_write();
+		$list = M('blogs')->where($condition)->limit($page->limit,$page->myde_size)->order('id desc')->select();
+		$types='';
+		$html='';
+		foreach($list as $key=>$val){
+			$list[$key]['pic']=unserialize($val['pic']);
+			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
+			$list[$key]['type']=$types;
+			$list[$key]['talkId']=$val['id'];
+		}
+		$html='';
+		foreach($list as $key=>$val){
+		  $html.='<div class="blogs">
+					<figure><img src="'.$val[pic].'"></figure>
+					<ul>
+						<h3><a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val[title].'</a></h3>
+						<p>'.htmlspecialchars_decode($val['intro']).'...<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
+						<p class="autor"><span class="lm f_l" style="margin: 0 10px 0 0;"><a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val[type].'</a></span><span class="dtime f_l" style="margin-left: 10px;">'.date('Y-m-d',$val[addTime]).'</span>
+						<input class="zan_newsid" type="hidden" value="'.$val[id].'">
+						<span class="label_bottom f_r" style="padding-left: 0;margin-right: 10px;">
+							<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan"';
+							if(!empty($_COOKIE[$val[id]])){
+								$html .=' style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"';
+							}
+							$html.='>'.$val[likes].'</a>
+						</span>
+						<span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val['views'].'</a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'#talk"><span id = "sourceId::'.$val[talkId].'" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
+						</ul>
+					</div> 
+				 ';
+		}
+		$html .='<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2"></script>';
+		$html .='<script src="/static/js/like.js"></script>';
+		exit(json_encode(array('html'=>$html,'count'=>ceil($count/8))));
+
+    }
+	public function indexList2(){
+		$condition['display']=array('eq',0);
+		$id = M('blogs')->field('id')->where($condition)->limit('6')->order('id desc')->select();
+		$id = array_pop($id);	
+		$condition['id']=array('lt',$id[id]);
+		import('Class.pages',APP_PATH);
+		$count = M('blogs')->where($condition)->count();
+		$page = new page($count,1,$_POST['page'],'?page={page}');
+		$show = $page->myde_write();
+		$list = M('blogs')->where($condition)->limit($page->limit,$page->myde_size)->order('id desc')->select();
+		//echo M('blogs')->getLastSql();
+		$types='';
+		$html='';
+		foreach($list as $key=>$val){
+			$list[$key]['pic']=unserialize($val['pic']);
+			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
+			$list[$key]['type']=$types;
+			$list[$key]['talkId']=$val['id'];
+		}
+		$html='';
+		foreach($list as $key=>$val){
+			$html.= $_COOKIE[$val[id]];
+		  $html.='<div class="blogs">
+					<figure><img src="'.$val[pic].'"></figure>
+					<ul>
+						<h3><a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val[title].'</a></h3>
+						<p>'.htmlspecialchars_decode($val['intro']).'...<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
+						<p class="autor"><span class="lm f_l" style="margin: 0 10px 0 0;"><a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val[type].'</a></span><span class="dtime f_l" style="margin-left: 10px;">'.date('Y-m-d',$val[addTime]).'</span>
+						<input class="zan_newsid" type="hidden" value="'.$val[id].'">
+						<span class="label_bottom f_r" style="padding-left: 0;margin-right: 10px;">
+							<a href="javascript:void(0)" onclick="return false;" class="yz_zan"';
+							if(!empty($_COOKIE[$val[id]])){
+								$html .=' style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"';
+							}
+							$html.='>'.$val[likes].'</a>
+						</span>
+						<span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val['views'].'</a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'#talk"><span id = "sourceId::'.$val[talkId].'" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
+						</ul>
+					</div> 
+				 ';
+		}
+		$html .='<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2"></script>';
+		//$html .='<script src="/static/js/like.js"></script>';
+		exit(json_encode(array('html'=>$html,'count'=>$count)));
+
     }
 }

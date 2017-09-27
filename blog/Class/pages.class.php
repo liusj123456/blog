@@ -33,7 +33,7 @@ class page {
         $this->myde_size = $this->numeric($myde_size);
         //$this->myde_page = $this->numeric($myde_page);
 		$this->varPage = C('VAR_PAGE') ? C('VAR_PAGE') : 'page';
-		$this->myde_page = !empty($_GET[$this->varPage])?intval($_GET[$this->varPage]):1;
+		$this->myde_page = !empty($myde_page)?intval($myde_page):1;
         $this->myde_page_count = ceil($this->myde_total / $this->myde_size);
         $this->myde_url = $myde_url;
         if ($this->myde_total < 0)

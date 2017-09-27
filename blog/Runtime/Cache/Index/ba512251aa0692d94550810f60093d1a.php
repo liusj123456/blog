@@ -13,8 +13,8 @@
 <script src="__STATIC__/js/modernizr.js"></script>
 <![endif]-->
 <!-- 返回顶部调用 begin -->
-<script type="text/javascript" src="__STATIC__/js/up/jquery.js"></script>
-<script type="text/javascript" src="__STATIC__/js/up/js.js"></script>
+<!-- <script type="text/javascript" src="__STATIC__/js/up/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/js/up/js.js"></script> -->
 <script type="text/javascript">
 	var action = "<?php echo ($action); ?>";		
 </script>
@@ -38,42 +38,9 @@
   </nav> -->
 </header>
 <script>
-$(document).ready(function(){
-	$(".dianzan").click(function(){
-		
-		var obj = $(this);
-		var newsid = parseInt(obj.parent().prevAll(".zan_newsid").val());
-		var Num = parseInt(obj.text());
-		//var cookie = "<?php echo (cookie('15')); ?>";
-		//alert(cookie);
-		obj.css({cursor:"default"});
-		var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
-		$.ajax({
-			type:"post",
-			url:url,
-			data:"num="+Num+"&id="+newsid,
-			dataType:"json",
-			error:function(){alert("点赞失败");}, 
-			success:function(data){
-				//alert(data.res);
-				if(data.info == 1){
-					obj.text(data.res);
-					obj.css({ backgroundPosition: "-47px -327px", color: "#406ca9", textDecoration: "none", cursor: "default"});
-					obj.after("<em>+1</em>");
-					//obj.removeClass('dianzan');
-					$("em").fadeOut('slow');
-				}else{
-					obj.css({cursor:"default"});
-					obj.removeAttr('href');
-					alert(data.resinfo);
-					return false;
-				}
-			}
-
-		})
-	})
-});
+var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
 </script>
+<script type="text/javascript" src="__STATIC__/js/like.js"></script>
 <link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 <article>
   <div class="l_box f_l">
@@ -88,16 +55,16 @@ $(document).ready(function(){
           <p><?php echo (htmlspecialchars_decode($blog['intro'])); ?><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
           <p class="autor">
 			<span class="lm f_l"><a href="/"><?php echo ($blog['type']); ?></a></span><span class="dtime f_l" style="margin-left:10px;"><?php echo (date('Y-m-d',$blog['addTime'])); ?></span>
-			<input class="zan_cookie" type="hidden" value="2">
 			<input class="zan_newsid" type="hidden" value="<?php echo ($blog['id']); ?>">
 			<span class="label_bottom f_r" style="padding-left: 0;margin-left:10px;">
-				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan" style=""><?php echo ($blog['likes']); ?></a>
+				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan" <?php if($_COOKIE[$blog['id']] != ''): ?>style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"<?php endif; ?>><?php echo ($blog['likes']); ?></a>
 			</span><span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>#talk"><span id = "sourceId::<?php echo ($blog["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
 	  <div><span style='float:right'><?php echo ($page); ?></span></div>
     </div>
   </div>
+ 
   <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2">
 	</script>
   <div class="r_box f_r">
@@ -210,16 +177,6 @@ $(window).scroll(function(){
 		$("#gotop").fadeOut();
 	}
 });
-$(function(){
-	//alert('123');
-	//node-type=is-icp
-	//$("div#SOHUCS").firstChild.addClass('did');
-	//$("div#SOHUCS").firstChild.getAttribute("class","did"); 
-	
-});
-window.onload = function(){
-	//$("div[node-type='is-icp']").hide();
-}
 </script>
 </body>
 </html>

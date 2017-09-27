@@ -13,8 +13,8 @@
 <script src="__STATIC__/js/modernizr.js"></script>
 <![endif]-->
 <!-- 返回顶部调用 begin -->
-<script type="text/javascript" src="__STATIC__/js/up/jquery.js"></script>
-<script type="text/javascript" src="__STATIC__/js/up/js.js"></script>
+<!-- <script type="text/javascript" src="__STATIC__/js/up/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/js/up/js.js"></script> -->
 <script type="text/javascript">
 	var action = "<?php echo ($action); ?>";		
 </script>
@@ -37,6 +37,9 @@
     </ul>
   </nav> -->
 </header>
+<script>
+var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
+</script>
 <article>
   <div class="l_box f_l">
     <div class="banner">
@@ -84,24 +87,66 @@
     <!-- banner代码 结束 -->
     <div class="topnews">
       <h2><span><?php if(is_array($type)): foreach($type as $key=>$type): ?><a href="<?php echo U(GROUP_NAME.'/Index/lists',array('id'=>$type['id']));?>"><?php echo ($type["name"]); ?></a><?php endforeach; endif; ?></span><b>文章</b>推荐</h2>
-      <?php if(is_array($blog_list)): foreach($blog_list as $key=>$indexlist): ?><div class="blogs">
+      <?php if(is_array($blog_list)): foreach($blog_list as $key=>$indexlist): echo $_COOKIE[$indexlist['id']]; ?>
+	  <div class="blogs">
         <figure><img src="<?php echo ($indexlist["pic"]); ?>"></figure>
         <ul>
           <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["title"]); ?></a></h3>
-          <p><?php echo (htmlspecialchars_decode($indexlist["intro"])); ?> ...<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
+          <p><?php echo (htmlspecialchars_decode($indexlist["intro"])); ?>...<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
           <p class="autor"><span class="lm f_l" style="margin: 0 10px 0 0;"><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist["type"]); ?></a></span><span class="dtime f_l" style="margin-left: 10px;"><?php echo (date('Y-m-d',$indexlist["addTime"])); ?></span>
-		  <input class="zan_cookie" type="hidden" value="2">
-			<input class="zan_newsid" type="hidden" value="442">
+			<input class="zan_newsid" type="hidden" value="<?php echo ($indexlist["id"]); ?>">
 			<span class="label_bottom f_r" style="padding-left: 0;margin-right: 10px;">
-				<a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">2</a>
+				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan" <?php if($_COOKIE[$indexlist['id']] != ''): ?>style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"<?php endif; ?>><?php echo ($indexlist["likes"]); ?></a>
 			</span>
 		  <span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>"><?php echo ($indexlist['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$indexlist['id']));?>#talk"><span id = "sourceId::<?php echo ($indexlist["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
-    </div>
-	
-	<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2">
+		<div class="blog_more"><a href="javascript:;" onclick="getShow(this)"><span>点击查看更多&gt;&gt;</span></a><i></i></div>
+		<div class="blog_more" id="alreadyread" style="display:none">
+			<a href="javascript:;" class="finish">
+				<span>所有文章已加载完</span>
+			</a>
+		</div>
+	  </div>
+	  <script type="text/javascript" src="__STATIC__/js/like.js"></script>
+	 <script type="text/javascript">
+		var newPage = 1;
+		var click_page_flag = 1
+		var pageTotal = 0;
+		function getShow(obj) {
+			var urls = '<?php echo U(GROUP_NAME."/Index/indexList2");?>';
+			var data = {page:newPage};
+			if (click_page_flag == 0) {return false;}
+			click_page_flag = 0;
+			$.ajax({
+				url : urls,
+				type: 'POST',
+				dataType:'json',
+				data :data,
+				success:function (msg) {
+					if (msg.html != '') {
+						//console.log(msg.html);
+						pageTotal++;
+						var getObj  = $(obj).parents('div.topnews').find('div.blogs');
+						var getNum  = parseInt(getObj.length)-1;
+						var target = getObj.eq(getNum);
+						target.after(msg.html);
+						if(newPage==msg.count){
+							$('#alreadyread').show();
+							$(obj).parent().hide();//隐藏加载更多
+						}
+					}else{
+						alert('空');
+						$(obj).parent().hide();//隐藏加载更多
+						$('#alreadyread').show();//显示加载完成
+					}
+					click_page_flag = 1;
+					newPage++;
+			  }});
+			  
+		};
 	</script>
+	<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2"></script>
   </div>
   <div class="r_box f_r">
     <div class="tit01">
