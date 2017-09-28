@@ -68,7 +68,7 @@
 														<span class="block input-icon input-icon-right">
 															<input type="text" class="form-control" name='verify' placeholder="验证码" style="width:180px;float:left;"/>
 															<!-- <i class="ace-icon fa fa-bell"></i> -->
-															<img src="<?php echo U(GROUP_NAME.'/Login/verify','','');?>" id='verify' onclick="change(this.src);" style="cursor:pointer;float:left;"/>
+															<img src="<?php echo U(GROUP_NAME.'/Login/verify','','html');?>" id='verify' onclick="change(this.src);" style="cursor:pointer;float:left;"/>
 														</span>
 													</label>
 													<div class="space"></div>
@@ -194,7 +194,7 @@
 														<span class="block input-icon input-icon-right">
 															<input type="text" class="form-control" name='verify' placeholder="验证码" style="width:180px;float:left;"/>
 															<!-- <i class="ace-icon fa fa-bell"></i> -->
-															<img src="<?php echo U(GROUP_NAME.'/Login/verify','','');?>" id='verify1' onclick="change1(this.src);" style="cursor:pointer;float:left;"/>
+															<img src="<?php echo U(GROUP_NAME.'/Login/verify','','html');?>" id='verify1' onclick="change1(this.src);" style="cursor:pointer;float:left;"/>
 														</span>
 													</label>
 													<label class="block">
@@ -271,13 +271,13 @@
 				document.forms['login'].submit();
 			});
 			window.onload=function(){
-				document.getElementById('verify').src='<?php echo U(GROUP_NAME.'/Login/verify','','');?>/'+Math.random();
+				document.getElementById('verify').src='<?php echo U(GROUP_NAME.'/Login/verify','','html');?>?'+Math.random();
 			}
 			function change(obj){
-					document.getElementById('verify').src=obj+'/'+Math.random();
+					document.getElementById('verify').src=obj+'?'+Math.random();
 				}
 			function change1(obj){
-					document.getElementById('verify1').src=obj+'/'+Math.random();
+					document.getElementById('verify1').src=obj+'?'+Math.random();
 				}
 		</script>
 	</body>

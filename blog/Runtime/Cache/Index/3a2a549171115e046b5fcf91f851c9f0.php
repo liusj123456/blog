@@ -19,7 +19,7 @@
 	var action = "<?php echo ($action); ?>";		
 </script>
 <!-- 返回顶部调用 end-->
-
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
 <body>
 <header>
@@ -37,6 +37,11 @@
     </ul>
   </nav> -->
 </header>
+<script>
+var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
+</script>
+<script type="text/javascript" src="__STATIC__/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/like.js"></script>
 <article>
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
@@ -48,14 +53,15 @@
           <!-- <h3><a href="__URL__/Index/content/id/<?php echo ($blog['id']); ?>"><?php echo ($blog['title']); ?></a></h3> -->
 		  <h3><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['title']); ?></a></h3>
           <p><?php echo (htmlspecialchars_decode($blog['intro'])); ?><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>" target="_blank" style="color: #759b08;padding-left:5px;">[详情]</a></p>
-          <p class="autor"><span class="lm f_l"><a href="/"><?php echo ($blog['type']); ?></a></span><span class="dtime f_l"><?php echo (date('Y-m-d',$blog['addTime'])); ?></span>
-			<input class="zan_cookie" type="hidden" value="2">
-			<input class="zan_newsid" type="hidden" value="442">
-			<span class="label_bottom f_r" style="padding-left: 0;">
-				<a href="javascript:void(0)" onclick="return false;" class="yz_zan" style="">2</a>
-			</span><span class="viewnum f_r">浏览（<a href="/">459</a>）</span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+          <p class="autor">
+			<span class="lm f_l"><a href="/"><?php echo ($blog['type']); ?></a></span><span class="dtime f_l" style="margin-left:10px;"><?php echo (date('Y-m-d',$blog['addTime'])); ?></span>
+			<input class="zan_newsid" type="hidden" value="<?php echo ($blog['id']); ?>">
+			<span class="label_bottom f_r" style="padding-left: 0;margin-left:10px;">
+				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan"><?php echo ($blog['likes']); ?></a>
+			</span><span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>#talk"><span id = "sourceId::<?php echo ($blog["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
+	  <div><span style='float:right'><?php echo ($page); ?></span></div>
     </div>
   </div>
   <div class="r_box f_r">
@@ -72,7 +78,7 @@
     </div>
     <!--tit01 end-->
 	<?php $gzad = M('banner')->order('id desc')->where('type="gzad" and display=0')->select(); foreach($gzad as $key=>$val){ $gzad[$key]['pic']=unserialize($val['pic']); } ?>  
-<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><img src="<?php echo ($gzad["pic"]); ?>"><?php endforeach; endif; ?></div>	
+<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><a href='<?php echo ($gzad["url"]); ?>'><img src="<?php echo ($gzad["pic"]); ?>"></a><?php endforeach; endif; ?></div>	
     <?php $clicks = M('blogs')->where('display=0')->limit('6')->select(); $news = M('blogs')->where('display=0')->order('id desc')->limit('6')->select(); $ups = M('blogs')->where('display=0 and adup=1')->order('id desc')->limit('6')->select(); ?>
 <div class="moreSelect" id="lp_right_select"> 
       <div class="ms-top">
@@ -85,17 +91,17 @@
       <div class="ms-main" id="ms-main">
         <div style="display: block;" class="bd bd-news" >
           <ul>
-		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$clicks['id']));?>" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div  class="bd bd-news">
           <ul>
-		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$news['id']));?>" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div class="bd bd-news">
           <ul>
-		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$ups['id']));?>" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
       </div>
@@ -130,7 +136,7 @@ $(function ()
     </div>
   </div>
   <!--高速版-->
-
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdKBBn2"></script>
   <!--r_box end --> 
 </article>
 <footer style=''>

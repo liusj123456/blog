@@ -13,8 +13,8 @@ foreach($upad as $key=>$val){
       <h3>图文推荐</h3>
       <ul>
 	  <foreach name='upad' item='adups'>
-        <li><a href="/"><img src="{$adups.pic}"><b><!-- {$adups.intro|htmlspecialchars_decode} --><php> echo mb_substr(htmlspecialchars_decode($adups['title']),0,10,'utf-8');</php>...</b></a>
-          <p><span class="tulanmu"><a href="/">{$adups.type}</a></span><span class="tutime">{$adups.addTime|date='Y-m-d',###}</span></p>
+        <li><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$adups['id']))}"><img src="{$adups.pic}"><b><!-- {$adups.intro|htmlspecialchars_decode} --><php> echo mb_substr(htmlspecialchars_decode($adups['title']),0,10,'utf-8');</php>...</b></a>
+          <p><span class="tulanmu"><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$adups['id']))}">{$adups.type}</a></span><span class="tutime">{$adups.addTime|date='Y-m-d',###}</span></p>
         </li>
 		</foreach>
       </ul>

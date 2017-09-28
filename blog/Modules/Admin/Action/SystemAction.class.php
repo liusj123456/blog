@@ -1,4 +1,10 @@
 <?php
+/**
+ * 一日小成
+ * @category Think
+ * @author   liusj 
+ * @version  2017-09-28
+ */
 class SystemAction extends CommonAction {
      public function menu(){
 		if(ACTION_NAME=='menu'){

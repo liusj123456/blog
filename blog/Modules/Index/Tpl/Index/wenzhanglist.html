@@ -15,21 +15,21 @@ $ups = M('blogs')->where('display=0 and adup=1')->order('id desc')->limit('6')->
         <div style="display: block;" class="bd bd-news" >
           <ul>
 		  <foreach name='clicks' item='clicks'>
-            <li><a href="/" target="_blank">{$clicks['title']}</a></li>
+            <li><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$clicks['id']))}" target="_blank">{$clicks['title']}</a></li>
 			</foreach>
           </ul>
         </div>
         <div  class="bd bd-news">
           <ul>
 		  <foreach name='news' item='news'>
-            <li><a href="/" target="_blank">{$news['title']}</a></li>
+            <li><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$news['id']))}" target="_blank">{$news['title']}</a></li>
 			</foreach>
           </ul>
         </div>
         <div class="bd bd-news">
           <ul>
 		  <foreach name='ups' item='ups'>
-            <li><a href="/" target="_blank">{$ups['title']}</a></li>
+            <li><a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$ups['id']))}" target="_blank">{$ups['title']}</a></li>
 			</foreach>
           </ul>
         </div>

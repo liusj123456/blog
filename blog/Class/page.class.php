@@ -1,13 +1,10 @@
 <?php
 
-/* * *********************************************
- * @类名:   page
- * @参数:   $myde_total - 总记录数
- *          $myde_size - 一页显示的记录数
- *          $myde_page - 当前页
- *          $myde_url - 获取当前的url
- * @功能:   分页实现
- * @作者:   宋海阁
+/**
+ * 一日小成
+ * @category Think
+ * @author   liusj 
+ * @version  2017-09-28
  */
 
 class page {

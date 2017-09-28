@@ -22,7 +22,7 @@ $(function(){
 				}else{
 					obj.css({cursor:"default"});
 					obj.removeAttr('href');
-					alert(data.resinfo);
+					//alert(data.resinfo);
 					return false;
 				}
 			}

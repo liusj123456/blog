@@ -1,4 +1,10 @@
 <?php
+/**
+ * 一日小成
+ * @category Think
+ * @author   liusj 
+ * @version  2017-09-28
+ */
 class IndexAction extends Action {
     public function index(){
 		//echo dirname($_SERVER['PHP_SELF']).'1';die;
@@ -30,9 +36,7 @@ class IndexAction extends Action {
 		//p($this->menus);die;
 		$this->display();
     }
-	public function lists(){
-		//echo $_COOKIE['id'];die;
-		
+	public function lists(){	
 		$id = empty($_GET['id'])?'':$_GET['id'];
 		$adup = empty($_GET['adup'])?'':$_GET['adup'];
 		if(!empty($id)){
@@ -45,8 +49,11 @@ class IndexAction extends Action {
 		import('Class.page',APP_PATH);
 		$count = M('blogs')->where($condition)->count();
 		$page = new page($count,8,'1','?page={page}',3);
-		$show = $page->myde_write();
-		$this->assign('page',$show);
+		$show = $page->myde_write();	
+		//p(S('blog_list')); die;
+		//S('blog_list',NULL);die;
+		//$blog_list = S('blog_list');
+		
 		$list = M('blogs')->where($condition)->limit($page->limit,$page->myde_size)->order('id desc')->select();
 		$types='';
 		foreach($list as $key=>$val){
@@ -55,7 +62,11 @@ class IndexAction extends Action {
 			$list[$key]['type']=$types;
 			$list[$key]['talkId']=$val['id'];
 		}
+		
+		//S('blog_list',$list,300);
+
 		$type = M('blogs_type')->where('pid=0 and display=0')->select();//标题类型
+		$this->assign('page',$show);
 		$this->assign('talkId',$info['id']);
 		$this->assign('type',$type);
 		$this->assign('blog_list',$list);
@@ -103,12 +114,18 @@ class IndexAction extends Action {
 			$condition['adup']=$adup;
 		}
 		$condition['display']=0;
-		$list = M('blogs')->where($condition)->order('id desc')->select();
+		import('Class.page',APP_PATH);
+		$count = M('blogs')->where($condition)->count();
+		$page = new page($count,8,'1','?page={page}',3);
+		$show = $page->myde_write();
+		$this->assign('page',$show);
+		$list = M('blogs')->where($condition)->limit($page->limit,$page->myde_size)->order('id desc')->select();
 		$types='';
 		foreach($list as $key=>$val){
 			$list[$key]['pic']=unserialize($val['pic']);
 			$types = M('blogs_type')->where("id = {$val['type']}")->getField('name');
 			$list[$key]['type']=$types;
+			$list[$key]['talkId']=$val['id'];
 		}
 		$type = M('blogs_type')->where('pid=0 and display=0')->select();//标题类型
 		
@@ -130,7 +147,15 @@ class IndexAction extends Action {
 	public function likes(){
 		$id=I('id');
 		if(empty($_COOKIE[$id])){
-			$res=M('blogs')->where(array('id'=>$id))->setInc('likes');
+			$res = M('blogs')->where(array('id'=>$id))->setInc('likes');
+			$ip  = '';//$this->ipname();
+			$data = array(
+				'likeblgId'=>$id,
+				'liketime'=>time(),
+				'likeip'=>get_client_ip(),
+				'ipname'=>$ip,
+			);
+			M('likes')->add($data);
 		}else{
 			exit(json_encode(array('info'=>'2','resinfo'=>'今天已经点赞过了，请明天再来')));
 		}
@@ -138,7 +163,7 @@ class IndexAction extends Action {
 		if($info && $res){
 			if(empty($_COOKIE[$id])){
 				cookie($id,$id,86400);
-				exit(json_encode(array('info'=>'1','res'=>$info['likes'])));
+				exit(json_encode(array('info'=>'1','res'=>$info['likes'],'likes'=>$ress)));
 			}else{
 				exit(json_encode(array('info'=>'2','res'=>$info['likes'])));
 			}			
@@ -172,11 +197,7 @@ class IndexAction extends Action {
 						<p class="autor"><span class="lm f_l" style="margin: 0 10px 0 0;"><a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val[type].'</a></span><span class="dtime f_l" style="margin-left: 10px;">'.date('Y-m-d',$val[addTime]).'</span>
 						<input class="zan_newsid" type="hidden" value="'.$val[id].'">
 						<span class="label_bottom f_r" style="padding-left: 0;margin-right: 10px;">
-							<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan"';
-							if(!empty($_COOKIE[$val[id]])){
-								$html .=' style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"';
-							}
-							$html.='>'.$val[likes].'</a>
+							<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan">'.$val[likes].'</a>
 						</span>
 						<span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val['views'].'</a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'#talk"><span id = "sourceId::'.$val[talkId].'" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
 						</ul>
@@ -198,7 +219,6 @@ class IndexAction extends Action {
 		$page = new page($count,1,$_POST['page'],'?page={page}');
 		$show = $page->myde_write();
 		$list = M('blogs')->where($condition)->limit($page->limit,$page->myde_size)->order('id desc')->select();
-		//echo M('blogs')->getLastSql();
 		$types='';
 		$html='';
 		foreach($list as $key=>$val){
@@ -209,7 +229,6 @@ class IndexAction extends Action {
 		}
 		$html='';
 		foreach($list as $key=>$val){
-			//$html.= $_COOKIE[$val[id]];
 		  $html.='<div class="blogs">
 					<figure><img src="'.$val[pic].'"></figure>
 					<ul>
@@ -218,11 +237,7 @@ class IndexAction extends Action {
 						<p class="autor"><span class="lm f_l" style="margin: 0 10px 0 0;"><a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val[type].'</a></span><span class="dtime f_l" style="margin-left: 10px;">'.date('Y-m-d',$val[addTime]).'</span>
 						<input class="zan_newsid" type="hidden" value="'.$val[id].'">
 						<span class="label_bottom f_r" style="padding-left: 0;margin-right: 10px;">
-							<a href="javascript:void(0)" onclick="return false;" class="yz_zan"';
-							if(!empty($_COOKIE[$val[id]])){
-								$html .=' style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"';
-							}
-							$html.='>'.$val[likes].'</a>
+							<a href="javascript:void(0)" onclick="return false;" class="yz_zan">'.$val[likes].'</a>
 						</span>
 						<span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'">'.$val['views'].'</a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="'.U(GROUP_NAME."/Index/content",array("id"=>$val['id'])).'#talk"><span id = "sourceId::'.$val[talkId].'" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
 						</ul>
@@ -233,5 +248,20 @@ class IndexAction extends Action {
 		//$html .='<script src="/static/js/like.js"></script>';
 		exit(json_encode(array('html'=>$html,'count'=>$count)));
 
+    }
+	public function ipname(){
+		$url = '<script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>';
+		echo $url;
+		//$res = file_get_contents($url);
+		p($res);
+		//$data = json_decode(json_encode("{'ip':'27.154.115.8','address':'福建省厦门市 电信'}"),true);
+		//$data = json_decode(json_encode($res),true);
+		//p($data); 
+		//return $res;
+		$ip = get_client_ip();
+		$datas = file_get_contents('http://ip.taobao.com/service/getIpInfo.php?ip='.$ip);
+		$info = json_decode($datas,true);
+		$info = $info['data']['country'].$info['data']['region'].$info['data']['city'];
+		return $info;
     }
 }

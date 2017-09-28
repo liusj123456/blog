@@ -1,4 +1,10 @@
 <?php
+/**
+ * 一日小成
+ * @category Think
+ * @author   liusj 
+ * @version  2017-09-28
+ */
 class BlogAction extends CommonAction {
     public function blogList(){
 		

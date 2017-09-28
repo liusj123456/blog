@@ -1,0 +1,5 @@
+<ifmodule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^(.*).html$ index.php/$1
+	#RewriteRule ^(.*).html$ index.php/Index/Index/$1
+</ifmodule>

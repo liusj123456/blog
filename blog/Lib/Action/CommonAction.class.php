@@ -1,5 +1,10 @@
 <?php
-// 本类由系统自动生成，仅供测试用途
+/**
+ * 一日小成
+ * @category Think
+ * @author   liusj 
+ * @version  2017-09-28
+ */
 class CommonAction extends Action {
 	public function _initialize(){
 		//header("Content-type:text/html;charset=utf-8");

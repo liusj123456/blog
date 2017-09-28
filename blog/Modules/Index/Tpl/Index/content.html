@@ -36,8 +36,21 @@ $(function(){
 		<div class="news_content">
 	  	   	{$blog_info['content']|htmlspecialchars_decode}
 	  	</div>
+		<!-- JiaThis Button BEGIN -->
+		<div class="jiathis_style" style="margin:30px 0px;">
+			<span class="jiathis_txt">分享到：</span>
+			<a class="jiathis_button_qzone"></a>
+			<a class="jiathis_button_tsina"></a>
+			<a class="jiathis_button_tqq"></a>
+			<a class="jiathis_button_weixin"></a>
+			<a class="jiathis_button_renren"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+			<a class="jiathis_counter_style"></a>
+		</div>
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->
 		<!--nextpage-->
-		<div class="nextpage"><a name="talk" id="talk" >&nbsp;</a> 
+		<div class="nextpage" style="margin:60px 0px;"><a name="talk" id="talk" >&nbsp;</a> 
 				<notempty name="blog_info['before']">
 				<p><b>上一篇:</b> <a href="{:U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['before']['id']))}">{$blog_info['before'][title]}</a></p>
 				</notempty>

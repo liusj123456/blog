@@ -1,4 +1,10 @@
 <?php
+/**
+ * 一日小成
+ * @category Think
+ * @author   liusj 
+ * @version  2017-09-28
+ */
 class UserAction extends CommonAction {
     public function userList(){
 		$list = M('user')->count();

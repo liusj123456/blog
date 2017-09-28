@@ -19,7 +19,7 @@
 	var action = "<?php echo ($action); ?>";		
 </script>
 <!-- 返回顶部调用 end-->
-
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
 <body>
 <header>
@@ -27,7 +27,7 @@
   <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>
   <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
     <ul>
-	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><a href="<?php echo U('Admin/Login/login');?>" target='_blank'>登录</a><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
+	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
     </ul>
     <script src="__STATIC__/js/nav.js"></script> 
   </nav>
@@ -74,8 +74,21 @@ $(function(){
 		<div class="news_content">
 	  	   	<?php echo (htmlspecialchars_decode($blog_info['content'])); ?>
 	  	</div>
+		<!-- JiaThis Button BEGIN -->
+		<div class="jiathis_style" style="margin:30px 0px;">
+			<span class="jiathis_txt">分享到：</span>
+			<a class="jiathis_button_qzone"></a>
+			<a class="jiathis_button_tsina"></a>
+			<a class="jiathis_button_tqq"></a>
+			<a class="jiathis_button_weixin"></a>
+			<a class="jiathis_button_renren"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+			<a class="jiathis_counter_style"></a>
+		</div>
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->
 		<!--nextpage-->
-		<div class="nextpage"><a name="talk" id="talk" >&nbsp;</a> 
+		<div class="nextpage" style="margin:60px 0px;"><a name="talk" id="talk" >&nbsp;</a> 
 				<?php if(!empty($blog_info['before'])): ?><p><b>上一篇:</b> <a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['before']['id']));?>"><?php echo ($blog_info['before'][title]); ?></a></p><?php endif; ?>
 				<?php if(!empty($blog_info['after'])): ?><p><b>下一篇:</b> <a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog_info['after']['id']));?>"><?php echo ($blog_info['after'][title]); ?></a></p><?php endif; ?>
 		</div>
@@ -103,17 +116,17 @@ conf: 'prod_90ade4411b1bf73ffde8e72219233576'
       <div class="ms-main" id="ms-main">
         <div style="display: block;" class="bd bd-news" >
           <ul>
-		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$clicks['id']));?>" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div  class="bd bd-news">
           <ul>
-		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$news['id']));?>" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div class="bd bd-news">
           <ul>
-		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$ups['id']));?>" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
       </div>

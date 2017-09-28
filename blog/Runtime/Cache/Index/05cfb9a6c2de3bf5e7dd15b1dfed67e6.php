@@ -19,7 +19,7 @@
 	var action = "<?php echo ($action); ?>";		
 </script>
 <!-- 返回顶部调用 end-->
-
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
 <body>
 <header>
@@ -68,17 +68,17 @@ conf: 'prod_90ade4411b1bf73ffde8e72219233576'
       <div class="ms-main" id="ms-main">
         <div style="display: block;" class="bd bd-news" >
           <ul>
-		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$clicks['id']));?>" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div  class="bd bd-news">
           <ul>
-		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$news['id']));?>" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div class="bd bd-news">
           <ul>
-		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$ups['id']));?>" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
       </div>

@@ -19,7 +19,7 @@
 	var action = "<?php echo ($action); ?>";		
 </script>
 <!-- 返回顶部调用 end-->
-
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
 <body>
 <header>
@@ -40,8 +40,8 @@
 <script>
 var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>"; 
 </script>
+<script type="text/javascript" src="__STATIC__/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="__STATIC__/js/like.js"></script>
-<link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 <article>
   <div class="l_box f_l">
     <!-- banner代码 结束 -->
@@ -57,7 +57,7 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
 			<span class="lm f_l"><a href="/"><?php echo ($blog['type']); ?></a></span><span class="dtime f_l" style="margin-left:10px;"><?php echo (date('Y-m-d',$blog['addTime'])); ?></span>
 			<input class="zan_newsid" type="hidden" value="<?php echo ($blog['id']); ?>">
 			<span class="label_bottom f_r" style="padding-left: 0;margin-left:10px;">
-				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan" <?php if($_COOKIE[$blog['id']] != ''): ?>style="cursor: default; color: rgb(64, 108, 169); text-decoration: none; background-position: -47px -327px;"<?php endif; ?>><?php echo ($blog['likes']); ?></a>
+				<a href="javascript:void(0)" onclick="return false;" class="yz_zan dianzan"><?php echo ($blog['likes']); ?></a>
 			</span><span class="viewnum f_r" style="margin-right: 10px;">浏览（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>"><?php echo ($blog['views']); ?></a>）</span><span class="pingl f_r" style="margin-right: 10px;">评论（<a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$blog['id']));?>#talk"><span id = "sourceId::<?php echo ($blog["talkId"]); ?>" class = "cy_cmt_count" style="padding: 0;"></span></a>）</span></p>
         </ul>
       </div><?php endforeach; endif; ?>
@@ -81,7 +81,7 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
     </div>
     <!--tit01 end-->
 	<?php $gzad = M('banner')->order('id desc')->where('type="gzad" and display=0')->select(); foreach($gzad as $key=>$val){ $gzad[$key]['pic']=unserialize($val['pic']); } ?>  
-<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><img src="<?php echo ($gzad["pic"]); ?>"><?php endforeach; endif; ?></div>	
+<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><a href='<?php echo ($gzad["url"]); ?>'><img src="<?php echo ($gzad["pic"]); ?>"></a><?php endforeach; endif; ?></div>	
     <?php $clicks = M('blogs')->where('display=0')->limit('6')->select(); $news = M('blogs')->where('display=0')->order('id desc')->limit('6')->select(); $ups = M('blogs')->where('display=0 and adup=1')->order('id desc')->limit('6')->select(); ?>
 <div class="moreSelect" id="lp_right_select"> 
       <div class="ms-top">
@@ -94,17 +94,17 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
       <div class="ms-main" id="ms-main">
         <div style="display: block;" class="bd bd-news" >
           <ul>
-		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$clicks['id']));?>" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div  class="bd bd-news">
           <ul>
-		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$news['id']));?>" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div class="bd bd-news">
           <ul>
-		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$ups['id']));?>" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
       </div>
