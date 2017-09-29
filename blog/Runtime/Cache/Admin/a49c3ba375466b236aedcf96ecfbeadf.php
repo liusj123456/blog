@@ -386,7 +386,7 @@
 					 
 
 					<div class="table-responsive">
-						
+					<form name='indexList' method='post' action='<?php echo U(GROUP_NAME."/System/indexSort");?>'>
 						<table id="sample-table-2" class="table table-striped table-bordered table-hover">
 							<thead>
 								<tr>
@@ -407,46 +407,47 @@
 								</tr>
 							</thead>
 							<tbody>
-							<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-									<td class="center">
-										<label class="position-relative">
-											<input type="checkbox" class="ace" />
-											<span class="lbl"></span>
-										</label>
-									</td>
+								<?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+										<td class="center">
+											<label class="position-relative">
+												<input type="checkbox" class="ace" />
+												<span class="lbl"></span>
+											</label>
+										</td>
 
-									<td><?php echo ($vo["html"]); echo ($vo["name"]); ?></td>
-									<td><?php echo ($vo["url"]); ?></td>
-									<td><?php echo ($vo["level"]); ?></td>
-									<td><?php if($vo["display"] == 1): ?>显示<?php else: ?>不显示<?php endif; ?></td>
-									<td><?php echo ($vo["sort"]); ?></td>
-									<td><?php echo ($vo["addUser"]); ?></td>
-									<td><?php echo (date('Y-m-d H:i:s',$vo["addTime"])); ?></td>
-									<td>
-										<div class="hidden-sm hidden-xs btn-group">
-<!-- 																<button class="btn btn-xs btn-success" title="查看">
-												<i class="ace-icon fa fa-search-plus bigger-120"></i>
-											</button>
--->
-											<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexEdit',array('id'=>$vo['id']));?>";'>
-												<i class="ace-icon fa fa-pencil bigger-120"></i>
-											</button>
+										<td><?php echo ($vo["html"]); echo ($vo["name"]); ?></td>
+										<td><?php echo ($vo["url"]); ?></td>
+										<td><?php echo ($vo["level"]); ?></td>
+										<td><?php if($vo["display"] == 1): ?>显示<?php else: ?>不显示<?php endif; ?></td>
+										<td><input name="sort['<?php echo ($vo["id"]); ?>']][]" value='<?php echo ($vo["sort"]); ?>' style="width:50px;text-align:center;"></td>
+										<td><?php echo ($vo["addUser"]); ?></td>
+										<td><?php echo (date('Y-m-d H:i:s',$vo["addTime"])); ?></td>
+										<td>
+											<div class="hidden-sm hidden-xs btn-group">
+	<!-- 																<button class="btn btn-xs btn-success" title="查看">
+													<i class="ace-icon fa fa-search-plus bigger-120"></i>
+												</button>
+	-->
+												<button class="btn btn-xs btn-info" title="修改" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexEdit',array('id'=>$vo['id']));?>";'>
+													<i class="ace-icon fa fa-pencil bigger-120"></i>
+												</button>
 
-											<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="<?php echo U(GROUP_NAME.'/System/indexDel',array('id'=>$vo['id']));?>";'>
-												<i class="ace-icon fa fa-trash-o bigger-120"></i>
-											</button>
+												<button class="btn btn-xs btn-danger" title="删除" onclick='javascript:if(confirm("确定删除吗？")) location.href="<?php echo U(GROUP_NAME.'/System/indexDel',array('id'=>$vo['id']));?>";'>
+													<i class="ace-icon fa fa-trash-o bigger-120"></i>
+												</button>
 
-											<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexAdd',array('id'=>$vo['id'],'level'=>$vo['level']));?>";'>
-												<i class="ace-icon fa fa-check bigger-120"></i>
-											</button>
-										</div>
-									</td>
-								</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-							</tbody>
-						</table>
-
+												<button class="btn btn-xs btn-success" title="添加子级" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexAdd',array('id'=>$vo['id'],'level'=>$vo['level']));?>";'>
+													<i class="ace-icon fa fa-check bigger-120"></i>
+												</button>
+											</div>
+										</td>
+									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+								</tbody>
+							</table>
+						</form>
 						<div class="modal-footer no-margin-top">
-							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexAdd');?>";'>添加顶级菜单</button>
+							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexAdd');?>";'>添加顶级菜单</button>&nbsp;&nbsp;&nbsp;
+							<button class="btn btn-grey" style="float:left;" onclick="javascript:document.forms['indexList'].submit();">提交修改排序</button>
 							<span style='float:right;'><?php echo ($page); ?></span>
 						</div>
 					</div>

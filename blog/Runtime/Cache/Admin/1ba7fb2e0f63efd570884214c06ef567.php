@@ -26,8 +26,8 @@
 		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
-
-	<body class="no-skin">
+	
+	<body class="no-skin" <?php echo (session('bg')); ?>>
 		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
@@ -541,7 +541,8 @@
 											<span style="float:left;text-align:center;line-height:34px;">浏览次数</span>
 											<span style="float:left;text-align:center;line-height:34px;">
 											<input type="text" name='views' id="form-field-1" style="width:75px;height:30px;line-height:30px;" class="col-xs-10 col-sm-5" value="<?php echo ($be['views']); ?>"/>
-											点赞次数</span>
+											</span>
+											<span style="float:left;text-align:center;line-height:34px;">点赞次数</span>
 											<span style="float:left;text-align:center;line-height:34px;">
 											<input type="text" name='likes' id="form-field-1" style="width:75px;height:30px;line-height:30px;" class="col-xs-10 col-sm-5" value="<?php echo ($be['likes']); ?>"/>
 											</span>

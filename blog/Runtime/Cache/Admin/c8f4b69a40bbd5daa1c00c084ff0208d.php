@@ -26,8 +26,8 @@
 		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
-
-	<body class="no-skin">
+	
+	<body class="no-skin" <?php echo (session('bg')); ?>>
 		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
@@ -394,7 +394,7 @@
 
 					<!-- /section:basics/content.searchbox -->
 				</div>
-
+				<style>.bg{background: #f5efe7;color:#080707}</style>
 				<div class="page-content">
 					<!-- /section:settings.box -->
 					<div class="page-content-area">
@@ -402,17 +402,23 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-block alert-info">
+								<div class="alert alert-block">
 									<button type="button" class="close" data-dismiss="alert">
 										<i class="ace-icon fa fa-times"></i>
 									</button>
 
 									<i class="ace-icon fa fa-check green"></i>
 
-									<strong class="green">基本信息：</strong>
+									<strong class="green">logo：</strong>
 									<span><img src="<?php echo ($logo['pic']); ?>" /></span>
 									<button class="btn btn-xs btn-info" title="首页logo变更" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/Admin/mainEdit',array('id'=>$logo['id']));?>";'>
 										<i class="ace-icon fa fa-pencil bigger-120">首页logo变更</i>
+									</button>
+									<br/>
+									<strong class="green">博客风格:</strong>
+									<span>当前风格为：<?php if(!empty($_SESSION['bg'])): ?>秋天<?php endif; if(empty($_SESSION['bg'])): ?>冬天<?php endif; ?></span>
+									<button class="btn btn-xs btn-info" title="" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/bgEdit');?>";'>
+										<i class="ace-icon fa fa-pencil bigger-120">点击变更</i>
 									</button>
 								</div>
 								<!-- PAGE CONTENT ENDS -->

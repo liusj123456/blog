@@ -198,6 +198,25 @@ class SystemAction extends CommonAction {
 		}
 		return $arr;
 	}
+	public function indexSort(){
+		//p($_POST['sort']);DIE;
+		$sort = $_POST['sort'];
+		$index = M('index');
+		$index->startTrans();
+		foreach($sort as $key=>$val){
+			if(!is_numeric($val)){
+				$index->rollback();
+				$this->error('修改'.$key.'失败');				
+			}
+			$list = $index->where("id = $key")->setField('sort',$val);
+			if($list===false){
+				$index->rollback();
+				$this->error('修改'.$key.'失败');				
+			}
+		}
+		$index->commit();
+		$this->error('修改成功');
+    } 
 	public function indexDel(){
 		$id = $_GET['id'];
 		if(M('index')->where("id = $id")->delete()){
@@ -490,5 +509,24 @@ class SystemAction extends CommonAction {
 			$this->assign('friend',$info);
 			$this->display();
 		}
+    }
+	public function bgEdit(){
+			$bg='style="background: #f5efe7;color:#080707"';
+			if(!empty($_SESSION['bg'])){
+				session('bg',null);
+				if(empty($_SESSION['bg'])){
+					$this->success('修改成功');
+				}else{
+					$this->error('修改失败');		
+				}
+			}else{
+				session('bg',$bg);
+				if($_SESSION['bg']){
+					$this->success('修改成功');
+				}else{
+					$this->error('修改失败');		
+				}
+				
+			}		
     }
 }

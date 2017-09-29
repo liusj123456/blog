@@ -21,7 +21,7 @@
 <!-- 返回顶部调用 end-->
 <link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
-<body>
+<body <?php echo (session('bg')); ?>>
 <header>
 <?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); $logo = M('logo')->order('id desc')->getField('pic'); $logo = unserialize($logo); ?>
   <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>

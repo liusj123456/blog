@@ -22,10 +22,12 @@
 		<script src="__PUBLIC__/assets/js/html5shiv.min.js"></script>
 		<script src="__PUBLIC__/assets/js/respond.min.js"></script>
 		<![endif]-->
-		<script src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+		<!-- <script src="__PUBLIC__/assets/js/ace-extra.min.js"></script> -->
+		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
-
-	<body class="no-skin">
+	
+	<body class="no-skin" <?php echo (session('bg')); ?>>
 		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
@@ -168,7 +170,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									欢迎您<br />
-									<?php echo ($info['username']); ?>
+									<?php echo ($index['username']); ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>

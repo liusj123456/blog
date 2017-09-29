@@ -21,7 +21,7 @@
 <!-- 返回顶部调用 end-->
 <link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
-<body>
+<body <?php echo (session('bg')); ?>>
 <header>
 <?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); $logo = M('logo')->order('id desc')->getField('pic'); $logo = unserialize($logo); ?>
   <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>
@@ -132,6 +132,35 @@ $(window).scroll(function(){
 	}
 });
 </script>
+<?php if(!empty($_SESSION['bg'])): ?><style>
+#page p {background: #f5efe7;color:#080707;color: #bbb;}
+#page a {background: #f5efe7;color:#080707;color: #808080;}
+<!-- #page p {
+    float: left;
+    padding: 2px 12px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #bbb;
+    border: 1px #ccc solid;
+    background: #f5efe7;
+    margin-right: 8px;
+}
+#page a {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    padding: 2px 12px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px #cccccc solid;
+    background: #f5efe7;
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+} -->
+</style><?php endif; ?>
+
 
 </body>
 </html>

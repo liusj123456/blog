@@ -1,5 +1,9 @@
 <ifmodule mod_rewrite.c>
-	RewriteEngine on
-	RewriteRule ^(.*).html$ index.php/$1
+	#RewriteEngine on
+	#RewriteRule ^(.*).html$ index.php/$1
 	#RewriteRule ^(.*).html$ index.php/Index/Index/$1
+	RewriteEngine on
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
 </ifmodule>

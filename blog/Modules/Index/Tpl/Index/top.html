@@ -21,7 +21,7 @@
 <!-- 返回顶部调用 end-->
 <css href='__STATIC__/css/pages.css'/>
 </head>
-<body>
+<body {$Think.session.bg}>
 <header>
 <php>
 $menus = M('index')->where(array('display'=>1))->order('sort asc')->select();
