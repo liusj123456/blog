@@ -26,8 +26,8 @@
 		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
-
-	<body class="no-skin">
+	
+	<body class="no-skin" <?php echo (session('bg')); ?>>
 		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
@@ -350,8 +350,8 @@
 <script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>	
 <link rel="stylesheet" type="text/css" href="__STATIC__/js/uploadify/uploadify.css">
 <script type="text/javascript" src="__STATIC__/js/uploadify/jquery.uploadify.min.js"></script>
-			<div class="main-content">
-				<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
+<div class="main-content">
+<div class="breadcrumbs" id="breadcrumbs" style="position:fixed;top:45px;height:45px;z-index:111;width:100%;">
 					<ul class="breadcrumb">
 						<li>
 							<i class="ace-icon fa fa-home home-icon"></i>
@@ -375,6 +375,26 @@
 						</form>
 					</div><!-- /.nav-search -->
 				</div>
+<style>
+.uploadify {
+position: relative;
+}
+.uploadify-button {
+border: none;
+}
+.prettyBtn:after {
+content: '上传图片';
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 30px;
+line-height: 30px;
+display: inline-block;
+background-color: #fff;
+color: #000;
+}
+</style>
 				<script type="text/javascript">
 					window.UEDITOR_HOME_URL = '__Ueditor__/';
 					/*window.onload = function(){
@@ -416,8 +436,9 @@
 							var Ifout=0;
 							$("#"+idx).uploadify({
 								'height'        : 30,
-								'width'         : 30, 
+								'width'         : 60, 
 								'buttonText'    : '上传',
+								'buttonClass'   : 'prettyBtn', // 给默认的"button"添加className
 								'swf'           : '__STATIC__/js/uploadify/uploadify.swf',
 								'uploader' 	 	: "<?php echo U('Admin/Login/upload_image');?>",
 								'auto'          : true,

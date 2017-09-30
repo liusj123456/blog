@@ -8,10 +8,12 @@
 class IndexAction extends Action {
     public function index(){
 		//echo dirname($_SERVER['PHP_SELF']).'1';die;
-		/* echo "__URL__:".__URL__;
+		echo "__APP__:".__APP__;
+		echo "<br>";
+		echo "__URL__:".__URL__;
 		echo "<br>";
 		echo "GROUP_NAME:".GROUP_NAME;
-		echo "<br>"; */
+		echo "<br>"; 
 		//$this->menus = M('index')->order('sort asc')->select();
 		//p($this->menus);die;
 		//echo "APP_PATH:".APP_PATH;
