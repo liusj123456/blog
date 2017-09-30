@@ -1,0 +1,100 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+					<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Novel/add">添加小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Novel/index">所有小说</a>
+						
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Caiji/index">采集小说</a>
+					</div>
+				</ul>
+				
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+						
+						
+						<!-- widget -->
+						<div class="well widget">
+							<!-- widget header -->
+							<div class="widget-header">
+								<h3 class="title"><B><{$novelinfo.novelname}></B>搜索内容列表</h3>
+							</div>
+							<!-- ./ widget header -->
+							
+							<!-- widget content -->
+							<div class="widget-content">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th><input type="checkbox" value="" class="fancy"  id="selectAll" onClick="selectAllCheckBox('product',this.checked)"/>内容 ID</th>
+											<th>内容标题</th>
+											<th>所属小说</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody id="product">
+									<volist name='contents' id='content'>
+										<tr>
+											<td><input type="checkbox"id="<{$content.id}>" class="fancy" /><{$content.id}></td>
+											<td><{$content.con_name}></td>
+											<td><{$content.novelname}></td>
+											<td> <a class="btn btn-small  btn-primary" href="__URL__/edit/novelid/<{$content.con_nid}>/id/<{$content.id}>">修改</a>  
+											<a class="btn btn-mini  btn-primary" href="__URL__/del/novelid/<{$content.con_nid}>/id/<{$content.id}>" onclick="return confirm('确定要删除章节<{$content.con_name}>吗？')">删除</a> </td>
+										</tr>
+									</volist>
+										
+									</tbody>
+								</table>
+							</div>
+							<!-- ./ widget content -->
+						</div>
+						<!-- ./ widget -->
+						
+						
+					</div>
+				</div>
+				
+				<div class="btn-toolbar2">
+						<a class="btn btn-inverse btn btn-large btn-primary"  onClick="delMany('product')">删除所选内容</a>
+						<div style="margin-right:20px;float:right"><{$pageshow}></div>
+					
+					</div>
+				
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	<script type="text/javascript" language="javascript">
+		function delMany(ParentID){
+			if(confirm('确定要删除所选章节吗？')){
+				var pID=document.getElementById(ParentID);
+				var cb=pID.getElementsByTagName('input');
+				var span=pID.getElementsByTagName('span');
+				get='';
+				for(var i=0;i<span.length;i++){
+					if(span[i].className == 'checked'){
+							get=get+cb[i].id+',';
+					}
+					window.location="__APP__/Chapter/delMore/id/"+get; 
+				}
+			}
+			//if(checkboxs[i].type='check')
+						//alert(checkboxs[i].id);
+		}
+		function selectAllCheckBox(ParentID,bool){
+			var pID=document.getElementById(ParentID);
+			var cb=pID.getElementsByTagName('span');
+			if(bool){
+				for(var i=0;i<cb.length;i++){
+					cb[i].className="checked";
+				}
+			}else{
+				for(var i=0;i<cb.length;i++){
+					cb[i].className="";
+				}
+			}
+		}
+		
+	</script>	
+<include file='Public:footer' />

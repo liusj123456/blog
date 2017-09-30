@@ -1,0 +1,26 @@
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.87
+
+
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+
+   RewriteBase /
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-l
+   
+   RewriteRule ^search/keyword/(.*) index.php/index/search/?key=$1 [L,NU]
+
+   RewriteRule ^([a-zA-Z0-9]+)/p/([0-9_-]+)$ index.php/index/cls/classname/$1/p/$2 [L]
+	
+   RewriteRule ^([a-zA-Z0-9]+)/$ index.php/index/cls/classname/$1/ [L]
+   RewriteRule ^([a-zA-Z0-9]+)$ index.php/index/cls/classname/$1/ [L]
+   
+   RewriteRule ^book/([a-zA-Z0-9]+)/([a-zA-Z0-9_-]+)/$ index.php/index/look/name/$1/id/$2 [L]
+   RewriteRule ^book/([a-zA-Z0-9]+)/([a-zA-Z0-9_-]+)$ index.php/index/look/name/$1/id/$2 [L]
+   
+   RewriteRule ^book/([a-zA-Z0-9]+)/$ index.php/index/look/name/$1 [L]
+   RewriteRule ^book/([a-zA-Z0-9]+)$ index.php/index/look/name/$1 [L]
+   
+</IfModule>

@@ -180,6 +180,35 @@ $(window).scroll(function(){
 	}
 });
 </script>
+<?php if(!empty($_SESSION['bg'])): ?><style>
+#page p {background: #f5efe7;color:#080707;color: #bbb;}
+#page a {background: #f5efe7;color:#080707;color: #808080;}
+<!-- #page p {
+    float: left;
+    padding: 2px 12px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #bbb;
+    border: 1px #ccc solid;
+    background: #f5efe7;
+    margin-right: 8px;
+}
+#page a {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    padding: 2px 12px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px #cccccc solid;
+    background: #f5efe7;
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+} -->
+</style><?php endif; ?>
+
 
 </body>
 </html>

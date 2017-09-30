@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title><{$novelinfo.novelname}> <{$coninfo.con_name}> - <{$siteinfo.site_name}></title>
+<meta name="keywords" content="<{$coninfo.con_name}>">
+<meta name="description" content="<{$coninfo.con_name}>">
+
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/css/base.css" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/css/list.css" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/css/style.css" media="all" />
+<link type="text/css" rel="stylesheet" href="__ROOT__/Public/css/read.css" />
+
+<script src="__ROOT__/Public/js/gg.js" type="text/javascript"></script>
+<script src="__ROOT__/Public/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="__ROOT__/Public/js/playclass.js" type="text/javascript"></script>
+<script src="__ROOT__/Public/js/reader.js" type="text/javascript"></script>
+</head>
+<body>
+
+<script type="text/javascript" language="javascript">
+	var preview_page = "<{$coninfo.prePage}>";
+	var next_page = "<{$coninfo.nextPage}>";
+	var index_page = "<{$novelinfo.bookurl}>";
+	var novelname = "<{$novelinfo.novelname}>";
+	var chaptername = "<{$coninfo.con_name}>";
+	var novelid= "<{$novelinfo.id}>";
+	function jumpPage() {
+		var event = document.all ? window.event: arguments[0];
+		if (event.keyCode == 37) 
+			document.location = preview_page;
+		if (event.keyCode == 39) 
+			document.location = next_page;
+		if (event.keyCode == 13) 
+			document.location = index_page;
+	}
+	document.onkeydown = jumpPage;
+
+	$(function(){
+        //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+        $(function () {
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>300){
+                    $("#back-to-top").fadeIn(1500);
+                }
+                else
+                {
+                    $("#back-to-top").fadeOut(1500);
+                }
+            });
+
+            //当点击跳转链接后，回到页面顶部位置
+
+            $("#back-to-top").click(function(){
+                $('body,html').animate({scrollTop:0},1000);
+                return false;
+            });
+        });
+    });
+	function postkey(){
+		document.getElementById('searform').submit();
+		var cb=document.getElementById('key').value;
+		
+		window.location="__ROOT__/search/keyword/"+cb; 
+	}
+	window.load=postkey();
+	
+
+	function addfavorite() { 
+		if (document.all){ 
+			window.external.addFavorite('',''); 
+		} 
+		else if (window.sidebar){ 
+			window.sidebar.addPanel('', '', ""); 
+		} 
+	} 
+
+</script>
+
+
+<div id="header">
+<div id="navbar">
+<div class="layout fn-clear">
+<ul id="nav" class="ui-nav">
+<li class="nav-item" id="nav-home">
+<a class="nav-link" target="_self" href="<{$siteinfo.site_url}>" title="<{$siteinfo.site_name}>"><i class="ui-icon home-nav"></i></a>
+</li>
+
+<foreach name='classes' item='class'>
+<li class="nav-item <eq name='class.id' value='$novelinfo.novel_cid'>current</eq>" id="nav-cartoon"><a class="nav-link" target="_self" href="<{$class.clsurl}>" title="<{$class.classname}>"><i class="ui-icon cartoon-nav"></i><{$class.classname}></a></li>
+</foreach>
+</ul>
+
+
+<ul id="sign" class="ui-nav"><li class="nav-item drop-down" id="nav-looked"><a class="nav-link drop-title" target="_self"><i class="ui-icon looked-nav"></i>阅读记录</a><div class="drop-box" style="display: none;"><div class="looked-list"><p><a class="close-his" target="_self" href="javascript:;">关闭</a><a href="javascript:;" id="emptybt" data="1" target="_self">你读的最近十个页面会显示在这里</a></p><ul class="highlight" id="playhistory"><li class="no-his"><p>暂无阅读历史列表...</p></li></ul><div class="his-todo" id="morelog" style="display: none;"></div><div class="his-todo" id="his-todo"><A href="<{$siteinfo.site_url}>" target="_blank"><{$siteinfo.site_name}></A>是你理想的阅读家园</div></div><script type="text/javascript">PlayHistoryObj.viewPlayHistory('playhistory');</script></div></li></ul>
+</div></div>
+<DIV class="clear"></DIV>
+</div>
+<DIV class="warpper div_part_index">
+<DIV class="div_breadcrumbs">
+<H2 class="breadcrumbs">
+<SMALL>
+如果觉得<A href="<{$siteinfo.site_url}>" target="_blank"><{$siteinfo.site_name}></A>不错，请加入收藏，或者分享给你的朋友！你的支持是我们最大的动力！ 
+</SMALL>
+</H2>
+<SMALL class="right">
+<A href="#" rel="nofollow" onclick="window.external.AddFavorite(location.href, document.title)">加入收藏</A> 
+</SMALL>
+</DIV>
+
+<DIV class="div_breadcrumbs" style="height:55px;">
+<form action="" method="get" id='searform' style="width:100%;padding-top:10px;padding-bottom:5px;">
+	<font color="#c00" size="2">小说搜索：</font><input type="text" placeholder="请输入小说名或者作者" id="key"/>
+	<input type="submit" value="提交" onclick="postkey();"/> 
+	<SMALL style="font-size:15px;font-weight :bold;"><font style="font-size:14px;padding-left:10px;"> 热词：</font>
+		<foreach name='hotnovels' item='hotnovel'>
+		 <A title="<{$hotnovel.keyword}>" href="<{$hotnovel.url}>"><font style="padding-left:12px;color:black;"><{$hotnovel.keyword}></font></A>
+		</foreach>
+	</SMALL>
+</form>
+</DIV>
+<DIV class="clear"></DIV>
+</DIV>
+<p id="back-to-top"><a href="#top" title="返回顶部"><span></span>返回顶部</a></p>
+
+
+<DIV class="warpper div_index_ad"><DIV class="warpper"><DIV class="ad_biger"><DIV class="ad_biger">
+<script>ad_top();</script>
+</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+</DIV>
+
+<div id="webhtml" >
+ <div class="content_read">
+<div class="box_con">
+
+	<div class="con_top"><a href="<{$siteinfo.site_url}>"><{$siteinfo.site_name}></a>&nbsp;&gt;&nbsp;<a href="<{$novelinfo.classurl}>"><{$novelinfo.classname}></a>&nbsp;&gt;&nbsp;<a href="<{$novelinfo.bookurl}>"><{$novelinfo.novelname}></a>&nbsp;&gt;&nbsp;<{$coninfo.con_name}> </div>
+	
+	
+
+	
+	 <div class="zhangjieming">
+			<h1><{$coninfo.con_name}></h1>
+		<div class="lm">&nbsp;随机推荐：
+			<foreach name='pagetuis' item='pagetui'>
+				<a href="<{$pagetui.tuiUrl}>" title="<{$pagetui.novelname}>" target="_blank"><{$pagetui.novelname}></a>、 
+			</foreach>
+			<br>
+		 <script>textselect();</script> 
+		</div>
+	 </div>
+
+	<div class="zhangjieTXT" id="content">
+		<!--go-->
+		<{$coninfo.con_text}>
+		<!--over-->
+		<div class="bdlikebutton" style="margin-top:5px;"></div>
+	 </div>
+
+	  <div class="bottem">
+		<div class="main-btn">
+		<a href="<{$coninfo.prePage}>" class="prevC">&larr;上一章</a>
+		<a href="<{$novelinfo.bookurl}>" id="viewList">章节目录 Enter</a>
+		<a href="<{$coninfo.nextPage}>" id="prev">下一章&rarr;</a>
+		</div>
+	  </div>
+
+<div id="msg">  
+	<div id="SOHUCS"></div>
+	<script>
+	  (function(){
+		var appid = 'cyrmeQ6jB',
+		conf = 'prod_dd47d91caada5d3dda12619a6fab549d';
+		var doc = document,
+		s = doc.createElement('script'),
+		h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+		s.type = 'text/javascript';
+		s.charset = 'utf-8';
+		s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+		h.insertBefore(s,h.firstChild);
+		window.SCS_NO_IFRAME = true;
+	  })()
+	</script>  
+</div>
+
+</div>
+</div>
+</div>
+
+<DIV class="warpper div_index_ad"><DIV class="warpper"><DIV class="ad_biger"><DIV class="ad_biger">
+<script>ad_bottom();</script>
+</DIV></DIV></DIV>
+<DIV class=clear></DIV>
+</DIV>
+
+
+
+
+
+<script language="javaScript" type="text/javascript">PlayHistoryObj.addPlayHistory(novelname + "|" + chaptername, window.location.href ,window.novelid);</script>
+<include file='Public:footer'/>

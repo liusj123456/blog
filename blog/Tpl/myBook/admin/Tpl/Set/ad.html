@@ -1,0 +1,53 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Novel/add">添加小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Novel/index">所有小说</a>
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">设置网站广告</h3>
+							</div><!--enctype="multipart/form-data" -->
+							<form class="form-horizontal" action="" method="POST">
+								
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">顶部广告</label>
+									<div class="controls">
+										<textarea style="width:980px;height:212px;" placeholder="请输入顶部广告" id="top" name="top"><{$ads.top}></textarea>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">底部广告</label>
+									<div class="controls">
+										<textarea style="width:980px;height:212px;" placeholder="请输入底部广告" id="bottom" name="bottom"><{$ads.bottom}></textarea>
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<div class="controls">
+									<button type="submit" class="btn btn-warning" name="sub">确认修改</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

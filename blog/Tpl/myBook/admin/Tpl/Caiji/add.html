@@ -1,0 +1,63 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/caiji/add">添加规则</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/caiji/index">所有规则</a>
+						
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">添加采集规则</h3>
+							</div>
+							<form class="form-horizontal" action="__URL__/addcaiji" method="POST"/>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说ID和分卷ID</label>
+									<div class="controls">
+										<input type="text" id="allid" name="allid" placeholder="小说ID:分卷ID" />
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">规则命名</label>
+									<div class="controls">
+										<input type="text" id="caijiname" name="caijiname" placeholder="请输入规则命名"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">对方小说URL</label>
+									<div class="controls">
+										<input type="text" id="caijiurl" name="caijiurl" placeholder="请输入对方小说URL"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<!--
+									<label class="checkbox">
+										<input type="checkbox" class="fancy" /> Remember me
+									</label>
+									-->
+									<button type="submit" class="btn btn-warning" name="sub">确认添加</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

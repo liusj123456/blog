@@ -1,0 +1,24 @@
+<!--版权-->
+<DIV class="div_copyright">
+<DIV class="warpper">
+
+<DIV class="div_aboutus">
+<P><{$siteinfo.site_copyright}></P>
+<P>Copyright &copy; 2014 by <a  href="<{$siteinfo.site_url}>" title="<{$siteinfo.site_name}>"><B><{$siteinfo.site_name}></B></a> | 版权所有. <{$siteinfo.site_count}></P>
+<P class="link_quick">
+<A href="<{$siteinfo.site_url}>"><{$siteinfo.site_name}></A> 
+
+	<foreach name='classes' item='class'>
+	 | <a  target="_self" href="<{$class.clsurl}>" title="<{$class.classname}>"><{$class.classname}></a>
+	</foreach>
+</P>
+
+</DIV>
+
+
+<DIV class="clear"></DIV>
+</DIV>
+</DIV>
+
+</body>
+</HTML>

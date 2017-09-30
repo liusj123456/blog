@@ -1,0 +1,61 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/User/add">添加用户</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/User/index">所有用户</a>
+						
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">修改用户名 <{$userinfo.username}> 的信息</h3>
+							</div>
+							<form class="form-horizontal" action="" method="POST"/>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">密码</label>
+									<div class="controls">
+										<input type="password" id="password" name="password" placeholder="请输入要修改的密码" />
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="inputPassword">重复密码</label>
+									<div class="controls">
+										<input type="password" id="repassword" name="repassword" placeholder="再次输入以确认" />
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">昵称</label>
+									<div class="controls">
+										<input type="text" id="nickname" name="nickname" placeholder="您的昵称" value="<{$userinfo.nickname}>"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<!--
+									<label class="checkbox">
+										<input type="checkbox" class="fancy" /> Remember me
+									</label>
+									-->
+									<button type="submit" class="btn btn-warning" name="sub">确认修改</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

@@ -1,0 +1,68 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Link/add">添加链接</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Link/index">所有链接</a>
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">修改链接 <{$linkInfo.linkname}> 的信息</h3>
+							</div>
+							<form class="form-horizontal" action="" method="POST"/>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">链接名称</label>
+									<div class="controls">
+										<input type="text" class="input-xlarge"  id="linkname" name="linkname" placeholder="请输入要修改成的链接名称" value="<{$linkInfo.linkname}>"/>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="inputPassword">链接地址</label>
+									<div class="controls">
+										<input type="text" class="input-xlarge" id="linkurl" name="linkurl" placeholder="请输入要修改成的链接地址"  value="<{$linkInfo.linkurl}>"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputPassword">链接权重</label>
+									<div class="controls">
+										<input type="text" id="linkweight" name="linkweight" placeholder="不填写则为0"  value="<{$linkInfo.linkweight}>"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">备注</label>
+									<div class="controls">
+										<textarea style="width:270px;" placeholder="您的备注信息，如对方的联系QQ" id="remarks" name="remarks"><{$linkInfo.remarks}></textarea>
+										
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<!--
+									<label class="checkbox">
+										<input type="checkbox" class="fancy" /> Remember me
+									</label>
+									-->
+									<button type="submit" class="btn btn-warning" name="sub">确认修改</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

@@ -1,0 +1,55 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Cls/add">添加分类</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Cls/index">所有分类</a>
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">添加小说分类</h3>
+							</div>
+							<form class="form-horizontal" action="__URL__/addclass" method="POST"/>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">分类名称</label>
+									<div class="controls">
+										<input type="text" class="input-xlarge"  id="classname" name="classname" placeholder="输入分类名称" />
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">拼音化</label>
+									<div class="controls">
+										<input type="text" class="input-xlarge"  id="classpy" name="classpy" placeholder="为空则自动拼音化" value="<{$userinfo.nickname}>"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<!--
+									<label class="checkbox">
+										<input type="checkbox" class="fancy" /> Remember me
+									</label>
+									-->
+									<button type="submit" class="btn btn-warning" name="sub">确认添加</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

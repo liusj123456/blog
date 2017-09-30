@@ -1,0 +1,18 @@
+<?php
+	$arr1=require './config.php';
+
+	$arr2=array(
+		'DEFAULT_THEME'=>'novel',//ÉèÖÃÄ¬ÈÏÄ£°åÖ÷Ìâ
+		'HTML_CACHE_ON'=>true,
+		'HTML_FILE_SUFFIX'  =>  '.html', // ÉèÖÃ¾²Ì¬»º´æºó×º
+		'HTML_CACHE_RULES'=>array(
+			'index:look'=>array('{:action}/{name}/{$_SERVER.REQUEST_URI|md5}',600),	//Ä¿Â¼ºÍÄÚÈÝÒ³»º´æ10·ÖÖÓ
+			'index:index'=>array('{:action}/{$_SERVER.REQUEST_URI|md5}',600),	//Ê×Ò³»º´æ10·ÖÖÓ{:module}/
+			'index:cls'=>array('{:action}/{$_SERVER.REQUEST_URI|md5}',1200),	//À¸Ä¿Ò³»º´æ20·ÖÖÓ
+			//'index:search'=>array('',false),	//ËÑË÷Ò³²»½øÐÐ»º´æ
+			//'*'=>array('{:action}/{$_SERVER.REQUEST_URI|md5}',600),	//»º´æ10·ÖÖÓ{:module}/
+		)
+	);
+	
+	return array_merge($arr1,$arr2);
+?>

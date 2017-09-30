@@ -1,0 +1,138 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Link/add">添加链接</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Link/index">所有链接</a>
+						
+						<div class="btn-group dropdown-darkBg custom">
+							<button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">按添加时间排序 <i class="micon-menu-3"></i></button>
+							<ul class="dropdown-menu">
+								<li><a href="__URL__/index/ordertime/near">由近到远</a></li>
+								<li><a href="__URL__/index/ordertime/far">由远到近</a></li>
+							</ul>
+						</div>
+						
+						<div class="btn-group dropdown-brownBg custom">
+							<button class="btn btn-bc dropdown-toggle" data-toggle="dropdown">按链接权重排序 <i class="micon-menu-3"></i></button>
+							<ul class="dropdown-menu">
+								<li><a href="__URL__/index/orderweight/max">由大到小</a></li>
+								<li><a href="__URL__/index/orderweight/min">由小到大</a></li>
+							</ul>
+						</div>
+						
+						<div class="btn-group dropdown-blueBg custom">
+							<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">按链接ID <i class="micon-menu-3"></i></button>
+							<ul class="dropdown-menu">
+								<li><a href="__URL__/index/orderid/max">由大到小</a></li>
+								<li><a href="__URL__/index/orderid/min">由小到大</a></li>
+							</ul>
+						</div>
+						
+						<form class="navbar-search pull-right hidden-phone" action="__APP__/Link/index/" method="get"/>
+							<input type="text" class="search-query span4" placeholder="输入链接名称或者链接地址...." name="key"/><button type="submit" class="btn btn-info" name='search' value="sub">搜索</button>
+						</form>
+								
+					
+
+					</div>
+				</ul>
+				
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+						
+						
+						<!-- widget -->
+						<div class="well widget">
+							<!-- widget header -->
+							<div class="widget-header">
+								<h3 class="title">友情链接列表</h3>
+							</div>
+							<!-- ./ widget header -->
+							
+							<!-- widget content -->
+							<div class="widget-content">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th><input type="checkbox" value="" class="fancy"  id="selectAll" onClick="selectAllCheckBox('product',this.checked)"/>ID</th>
+											<th>链接名称</th>
+											<th>链接地址</th>
+											<th>链接权重</th>
+											<th>添加时间</th>
+											<th>备注</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody id="product">
+									<volist name='links' id='link'>
+										<tr>
+											<td><input type="checkbox"id="<{$link.id}>" class="fancy" /><{$link.id}></td>
+											<td><{$link.linkname}></td>
+											<td><{$link.linkurl}></td>
+											<td><{$link.linkweight}></td>
+											<td><{$link.times|date='Y-m-d H:i:s',###}></td>
+											<td><{$link.remarks}></td>
+											<td> <a class="btn btn-small  btn-primary" href="__URL__/edit/id/<{$link.id}>">修改</a> 
+											<a class="btn btn-mini  btn-primary" href="__URL__/del/id/<{$link.id}>" onclick="return confirm('确定删除链接<{$link.linkname}>吗？')">删除</a> </td>
+										</tr>
+									</volist>
+										
+									</tbody>
+								</table>
+							</div>
+							<!-- ./ widget content -->
+						</div>
+						<!-- ./ widget -->
+						
+					</div>
+				</div>
+				
+					<div class="btn-toolbar2">
+						<a class="btn btn-inverse btn btn-large btn-primary"  onClick="delMany('product')">删除所选链接</a>
+						<div style="margin-right:20px;float:right"><{$pageshow}></div>
+					
+					</div>
+				
+				
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	<script type="text/javascript" language="javascript">
+		function delMany(ParentID){
+			if(confirm('确定要删除所选链接吗？')){
+				var pID=document.getElementById(ParentID);
+				var cb=pID.getElementsByTagName('input');
+				var span=pID.getElementsByTagName('span');
+				get='';
+				for(var i=0;i<span.length;i++){
+					if(span[i].className == 'checked'){
+							get=get+cb[i].id+',';
+					}
+					window.location="__APP__/Link/delMany/id/"+get; 
+				}
+			}
+			
+			//if(checkboxs[i].type='check')
+						//alert(checkboxs[i].id);
+		}
+		function selectAllCheckBox(ParentID,bool){
+			var pID=document.getElementById(ParentID);
+			var cb=pID.getElementsByTagName('span');
+			if(bool){
+				for(var i=0;i<cb.length;i++){
+					cb[i].className="checked";
+				}
+			}else{
+				for(var i=0;i<cb.length;i++){
+					cb[i].className="";
+				}
+			}
+		}
+		
+	</script>
+	
+	
+<include file='Public:footer' />

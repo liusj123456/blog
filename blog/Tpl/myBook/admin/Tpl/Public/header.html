@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+	<head>
+		<title><{$pagename}></title>
+		<meta name="description" content="" />
+
+		<!-- required styles -->
+		<link href="__ROOT__/admin/tpl/library/assets/css/bootstrap.css" rel="stylesheet" />
+		<link href="__ROOT__/admin/tpl/library/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+		<link href="__ROOT__/admin/tpl/library/css/styles.css" rel="stylesheet" />
+		
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<body>
+		
+		<!-- header -->
+		<div id="header" class="navbar">
+			<div class="navbar-inner">
+				<!-- company or app name -->
+				<a class="brand hidden-phone" href="__APP__/Admin/index">ck book 2.0 beta QQ:15865202</a>
+				
+				<!-- nav icons -->
+				<ul class="nav">
+				
+					<li>
+						<a href="__APP__/Caiji/index"><i class="icon-large icon-search"></i>采集管理
+						</a>
+					</li>
+					
+					<li>
+						<a href="__APP__/Novel/index" title="小说管理">
+							<i class="icon-large icon-book"></i>小说管理
+							
+						</a>
+					</li>
+					
+					<li>
+						<a href="__APP__/User/index" title="用户管理">
+							<i class="icon-large icon-user"></i>用户管理
+						</a>
+					</li>
+					
+					<li>
+						<a href="__APP__/Link/index" title="友情链接管理">
+							<i class="icon-large icon-link"></i>链接管理
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="#" title="留言管理">
+							<i class="icon-large icon-envelope"></i>留言管理
+						</a>
+					</li>
+					
+					<li>
+						<a href="__APP__/Set/index" title="网站设置">
+							<i class="icon-large icon-cog"></i>网站设置
+						</a>
+					</li>
+					
+				</ul>
+				
+				<ul class="nav pull-right">
+					
+					<!-- dropdown user account -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-large icon-user"></i>
+						</a>
+						
+						<ul class="dropdown-menu dropdown-user-account">
+						
+							<li class="account-img-container">
+								<img class="thumb account-img" src="__ROOT__/admin/tpl/library/images/100/2.gif" />
+							</li>
+							
+							<li class="account-info">
+								<h3>系统简介</h3>
+								<p>关联删除功能（例如删除了一本小说就应该删除其相关的章节分卷等等） </p>
+								
+							</li>
+							
+							<li class="account-footer">
+								<div class="row-fluid">
+								
+									<div class="span8">
+										<a class="btn btn-small btn-primary btn-flat" href="/" target="_blank">打开首页</a>
+									</div>
+									
+									<div class="span4 align-right">
+										<a class="btn btn-small btn-danger btn-flat" href="__APP__/Login/logout">退出</a>
+									</div>
+									
+								</div>									
+							</li>
+							
+						</ul>
+					</li>
+					<!-- ./ dropdown user account -->
+				</ul>
+				
+				<!-- search form -->
+				<form class="navbar-search pull-right hidden-phone" action="__APP__/Chapter/search/" method="get"/>
+					<input type="text" class="search-query span4" placeholder="请输入文章标题，按回车进行搜索..." name="keyword"/>
+					<input type="hidden" value="sub" name="search">
+				</form>
+				<!-- ./ search form -->
+			</div>
+		</div>
+		<!-- end header -->		
+		
+		<div id="left_layout">
+			<!-- main content -->
+			<div id="main_content" class="container-fluid">
+			
+				<!-- page heading -->
+				<div class="page-heading">
+				
+					<h2 class="page-title muted">
+						<i class="icon-dashboard"></i> <{$pagename}>
+					</h2>
+					
+					<div class="page-info hidden-phone">
+						<ul class="stats">
+							<li>
+								<span class="large text-warning"><{$NovelCount}></span>
+								<span class="mini muted">小说数量</span>
+							</li>
+							<li>
+								<span class="large text-info"><{$ConCount}></span>
+								<span class="mini muted">小说页面</span>
+							</li>
+							
+							<li>
+								<span class="large text-error"><{$ClickCountToday}></span>
+								<span class="mini muted">今日访问量</span>
+							</li>
+							
+							<li>
+								<span class="large text-error"><{$ClickCountMonth}></span>
+								<span class="mini muted">本月访问量</span>
+							</li>
+							
+							<li>
+								<span class="large text-error"><{$ClickCount}></span>
+								<span class="mini muted">总访问量</span>
+							</li>
+							
+							
+						</ul>
+					</div>
+				</div>
+				<!-- ./ page heading -->

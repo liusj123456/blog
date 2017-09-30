@@ -1,0 +1,126 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Novel/add">添加小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Novel/index">所有小说</a>
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">添加小说信息</h3>
+							</div><!--enctype="multipart/form-data" -->
+							<form class="form-horizontal" action="__URL__/addnovel" method="POST" enctype="multipart/form-data"/>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说名称</label>
+									<div class="controls">
+										<input type="text" id="novelname" name="novelname" placeholder="请输入小说名称" />
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说拼音化</label>
+									<div class="controls">
+										<input type="text" id="novelpy" name="novelpy" placeholder="为空自动拼音化" />
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说作者</label>
+									<div class="controls">
+										<input type="text" id="novelauthor" name="novelauthor" placeholder="请输入小说作者" />
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说简介</label>
+									<div class="controls">
+										<textarea style="width:360px;height:82px;"  placeholder="请输入小说简介" id="noveldes" name="noveldes"></textarea>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说分类</label>
+									<div class="controls">
+										<select class="span8" name="novel_cid" id="novel_cid">
+										<volist name='cls' id='c'>
+											<option value='<{$c.id}>'><{$c.classname}></option>
+										</volist>
+										</select>
+							
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说状态</label>
+									<div class="controls">
+									
+									<label class="checkbox inline">
+										<input type="radio" id="novelstate" name="novelstate" value="0" class="fancy" checked="checked"/> 连载中 
+									</label>
+									<label class="checkbox inline">
+										<input type="radio" id="novelstate" name="novelstate" value="1" class="fancy" /> 已完本
+									</label>
+
+										
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">今日点击</label>
+									<div class="controls">
+										<input type="text" id="clicktoday" name="clicktoday" placeholder="初始今日点击" />
+										
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">本月点击</label>
+									<div class="controls">
+										<input type="text" id="clickmonth" name="clickmonth" placeholder="初始本月点击" />
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">总点击</label>
+									<div class="controls">
+										<input type="text" id="clicksum" name="clicksum" placeholder="总共点击次数" />
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">上传封面</label>
+									<div class="controls">
+										<input type="file" name="novelimg" id="novelimg" />
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<!--
+									<label class="checkbox">
+										<input type="checkbox" class="fancy" /> Remember me
+									</label>
+									-->
+									<button type="submit" class="btn btn-warning" name="sub">确认添加</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

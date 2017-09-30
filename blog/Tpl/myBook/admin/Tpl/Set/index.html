@@ -1,0 +1,160 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Novel/add">添加小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Novel/index">所有小说</a>
+					</div>
+				</ul>
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">设置网站信息</h3>
+							</div><!--enctype="multipart/form-data" -->
+							<form class="form-horizontal" action="" method="POST">
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">网站名称</label>
+									<div class="controls">
+										<input type="text" class="input-xlarge" id="site_name" name="site_name" placeholder="请输入网站名称" value='<{$siteinfo.site_name}>'/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">网站标题</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge" id="site_title" name="site_title" placeholder="请输入网站标题" value='<{$siteinfo.site_title}>'/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">网站地址</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge" id="site_url" name="site_url" placeholder="请输入网站地址"  value='<{$siteinfo.site_url}>'/>
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">网站关键词</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge" id="site_keywords" name="site_keywords" placeholder="请输入网站关键词"  value='<{$siteinfo.site_keywords}>'/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">网站描述</label>
+									<div class="controls">
+										<textarea style="width:530px;height:82px;" placeholder="请输入网站描述" id="site_des" name="site_des"><{$siteinfo.site_des}></textarea>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">网站版权</label>
+									<div class="controls">
+										<textarea style="width:530px;height:82px;" placeholder="请输入底部描述" id="site_copyright" name="site_copyright"><{$siteinfo.site_copyright}></textarea>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">流量统计</label>
+									<div class="controls">
+										<textarea style="width:620px;height:81px;" placeholder="请输入流量统计代码" id="site_count" name="site_count"><{$siteinfo.site_count}></textarea>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">栏目链接规则</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge" id="urlrewrite_cls" name="urlrewrite_cls" placeholder="请输入栏目链接规则"  value='<{$siteinfo.urlrewrite_cls}>'/>
+							
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">小说链接规则</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge" id="urlrewrite_book" name="urlrewrite_book" placeholder="请输入小说链接规则"  value='<{$siteinfo.urlrewrite_book}>'/>
+							
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">内容链接规则</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge"  id="urlrewrite_con" name="urlrewrite_con" placeholder="请输入内容链接规则"  value='<{$siteinfo.urlrewrite_con}>'/>
+							
+									</div>
+								</div>
+								
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">说明</label>
+									<div class="controls">
+									%siteurl% 代表 网站地址 http://www.xk.cc/ </br>
+									%cls_id% 代表 栏目ID </br>
+									%cls_py% 代表 栏目栏目拼音 </br>
+									%book_id% 代表 小说的ID</br>
+									%book_py% 代表 小说的拼音</br>
+									%post_id% 代表 内容的ID</br>
+									%post_py% 代表 内容的拼音</br>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">开启随机热词功能</label>
+									<div class="controls">
+									<label class="checkbox inline">
+										<input type="radio" id="hotkeyopen" name="hotkeyopen" value="1" class="fancy" <if condition='$siteinfo.hotkeyopen eq 1'>checked="checked"</if>/>是 
+									</label>
+									<label class="checkbox inline">
+										<input type="radio" id="hotkeyopen" name="hotkeyopen" value="0" class="fancy" <if condition='$siteinfo.hotkeyopen eq 0'>checked="checked"</if>/> 否
+									</label>	
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">热词功能说明</label>
+									<div class="controls">
+									如果开启下面的 “<B>热词搜索</B>” 填写上也无效 </br>
+									系统会自己在数据库里随机小说或者作者组成热词搜索</br>
+									</div>
+								</div>
+
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">热词搜索</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge"  id="hotkey" name="hotkey" placeholder="请输入搜索热词"  value='<{$siteinfo.hotkey}>'/>
+							
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">搜索链接</label>
+									<div class="controls">
+										<input type="text" class="input-xxlarge"  id="searchurl" name="searchurl" placeholder="请输入搜索链接"  value='<{$siteinfo.searchurl}>'/>
+							
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<button type="submit" class="btn btn-warning" name="sub">确认修改</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

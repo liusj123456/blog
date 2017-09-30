@@ -1,0 +1,66 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/User/add">添加用户</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/User/index">所有用户</a>
+						
+					</div>
+				</ul>
+				
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+						
+						
+						<!-- widget -->
+						<div class="well widget">
+							<!-- widget header -->
+							<div class="widget-header">
+								<h3 class="title">用户列表</h3>
+							</div>
+							<!-- ./ widget header -->
+							
+							<!-- widget content -->
+							<div class="widget-content">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>用户名</th>
+											<th>昵称</th>
+											<th>最近登录</th>
+											<th>注册日期</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+									<volist name='users' id='user'>
+										<tr>
+											<td><{$user.id}></td>
+											<td><{$user.username}></td>
+											<td><{$user.nickname}></td>
+											<td><{$user.lastlogin|date='Y-m-d H:i:s',###}></td>
+											<td><{$user.regdate}></td>
+											<td> <a class="btn btn-small  btn-primary"  href="__URL__/edit/id/<{$user.id}>">修改</a> 
+											<a class="btn btn-mini   btn-primary"  href="__URL__/del/id/<{$user.id}>" onclick="return confirm('确定要删除用户<{$user.username}>吗？')">删除</a> </td>
+										</tr>
+									</volist>
+										
+									</tbody>
+								</table>
+							</div>
+							<!-- ./ widget content -->
+						</div>
+						<!-- ./ widget -->
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

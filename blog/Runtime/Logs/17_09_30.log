@@ -1,0 +1,1165 @@
+[ 2017-09-30T08:49:26+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001302s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.032823s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.001207s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.021339s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000483s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000447s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000420s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000431s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000444s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000494s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 19 行.
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.007159s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.007427s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000618s ]
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.027833s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( display=0 and type="banner" ) ORDER BY sort asc,id desc  [ RunTime:0.000907s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000978s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000753s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000914s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.038056s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000545s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY sort asc,id desc  [ RunTime:0.000776s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=5 ) LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000620s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000419s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.001458s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000402s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000418s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000408s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="tuwenad" and display=0 ) ORDER BY id desc  [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `blg_friends` [ RunTime:0.267592s ]
+SQL: SELECT * FROM `blg_friends` ORDER BY sort asc,id desc  [ RunTime:0.000717s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.464518s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.464711s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001148s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000911s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000717s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001038s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004213s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001123s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001259s ]
+
+[ 2017-09-30T08:49:35+08:00 ] 127.0.0.1 /Index/Index/about.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001371s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001551s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005499s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.039969s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.002244s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.012830s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000959s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000935s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000929s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000967s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000899s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000646s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000634s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000972s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000862s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.007206s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004933s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005140s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000578s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000614s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000745s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005120s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000632s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.095594s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095776s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001147s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000938s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000735s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004262s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001129s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001285s ]
+
+[ 2017-09-30T08:49:36+08:00 ] 127.0.0.1 /Index/Index/lists.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001879s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002130s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001517s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005661s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000544s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004799s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000433s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000414s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000444s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000393s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000379s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000429s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004921s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004794s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005152s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000520s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000514s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000477s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004811s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000519s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.071751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071903s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001021s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000809s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000619s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000914s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003730s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000979s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001111s ]
+
+[ 2017-09-30T08:49:39+08:00 ] 127.0.0.1 /Index/Index/about.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001149s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001323s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005954s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000491s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000798s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004948s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000489s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000455s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000452s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000471s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000523s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000469s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000416s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000363s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000435s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005304s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005529s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005441s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000579s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000598s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000577s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005068s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000605s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.070694s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070834s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000966s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000730s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000536s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003420s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000893s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001023s ]
+
+[ 2017-09-30T08:49:40+08:00 ] 127.0.0.1 /Index/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001232s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001422s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001494s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005779s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005709s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000457s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000405s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 19 行.
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005577s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004876s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000386s ]
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005857s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( display=0 and type="banner" ) ORDER BY sort asc,id desc  [ RunTime:0.000588s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000557s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000547s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000578s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005023s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000579s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY sort asc,id desc  [ RunTime:0.000683s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=5 ) LIMIT 1   [ RunTime:0.000487s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000431s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000432s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000433s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000446s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000441s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000429s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000461s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="tuwenad" and display=0 ) ORDER BY id desc  [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `blg_friends` [ RunTime:0.005031s ]
+SQL: SELECT * FROM `blg_friends` ORDER BY sort asc,id desc  [ RunTime:0.000517s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.106394s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.106540s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001054s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000801s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000605s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003907s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001016s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001161s ]
+
+[ 2017-09-30T08:49:40+08:00 ] 127.0.0.1 /Index/Index/about.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001060s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001219s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005752s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000549s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004796s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000494s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000327s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000361s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000397s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000395s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000451s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005435s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004691s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.004982s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000501s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000511s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000457s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005052s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000525s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.069151s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069287s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000919s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000707s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000515s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000801s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003312s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000868s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2017-09-30T08:49:41+08:00 ] 127.0.0.1 /Index/Index/lists.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001127s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001294s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001423s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005500s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000567s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.001026s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005711s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000441s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000370s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000650s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000426s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000390s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000380s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000433s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004982s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005115s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000467s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005051s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000572s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000538s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000497s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005170s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000509s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.069630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069812s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001068s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000722s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000538s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000824s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003551s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000956s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001130s ]
+
+[ 2017-09-30T08:49:43+08:00 ] 127.0.0.1 /Index/Index/message.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001154s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001319s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001341s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\05cfb9a6c2de3bf5e7dd15b1dfed67e6.php 第 19 行.
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005506s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005121s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000442s ]
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\05cfb9a6c2de3bf5e7dd15b1dfed67e6.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\05cfb9a6c2de3bf5e7dd15b1dfed67e6.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\05cfb9a6c2de3bf5e7dd15b1dfed67e6.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\05cfb9a6c2de3bf5e7dd15b1dfed67e6.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\05cfb9a6c2de3bf5e7dd15b1dfed67e6.php 第 30 行.
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005616s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000825s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000524s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `blg_friends` [ RunTime:0.005128s ]
+SQL: SELECT * FROM `blg_friends` ORDER BY sort asc,id desc  [ RunTime:0.000476s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.069543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069695s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000875s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000910s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000789s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004338s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001218s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001396s ]
+
+[ 2017-09-30T08:49:44+08:00 ] 127.0.0.1 /Index/Index/lists.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001299s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001515s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005586s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000539s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005059s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000406s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000410s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000337s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000337s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000420s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.006130s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005455s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000474s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.006048s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000768s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000756s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000634s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005561s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000772s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.078472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078657s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001339s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000943s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000756s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004745s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001441s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001670s ]
+
+[ 2017-09-30T08:49:46+08:00 ] 127.0.0.1 /Index/Index/about.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001166s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001349s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005882s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000528s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005623s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000478s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000334s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000394s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000413s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005174s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005463s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005174s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000509s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000606s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000492s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005750s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000587s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.072044s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.072184s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000916s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000704s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000560s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000866s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003422s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000885s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001014s ]
+
+[ 2017-09-30T08:49:47+08:00 ] 127.0.0.1 /Index/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001075s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001244s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001042s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005465s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005483s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000418s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000368s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000407s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 19 行.
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005420s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004805s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000440s ]
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005043s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( display=0 and type="banner" ) ORDER BY sort asc,id desc  [ RunTime:0.000535s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000497s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000517s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000516s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005031s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000530s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY sort asc,id desc  [ RunTime:0.000681s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=5 ) LIMIT 1   [ RunTime:0.000389s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000372s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000441s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000405s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000410s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="tuwenad" and display=0 ) ORDER BY id desc  [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `blg_friends` [ RunTime:0.005225s ]
+SQL: SELECT * FROM `blg_friends` ORDER BY sort asc,id desc  [ RunTime:0.000564s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.103797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.103941s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001016s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000752s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000558s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000850s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003561s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000923s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001055s ]
+
+[ 2017-09-30T08:49:51+08:00 ] 127.0.0.1 /Index/Index/indexList2.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001181s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001346s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001038s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005310s ]
+SQL: SELECT `id` FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000547s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 216 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) AND ( `id` < '13' ) LIMIT 1   [ RunTime:0.009858s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) AND ( `id` < '13' ) ORDER BY id desc LIMIT 0,1   [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005015s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000476s ]
+NOTIC: [8] Use of undefined constant pic - assumed 'pic' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 233 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 235 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 237 行.
+NOTIC: [8] Use of undefined constant addTime - assumed 'addTime' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 237 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 238 行.
+NOTIC: [8] Use of undefined constant likes - assumed 'likes' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 240 行.
+NOTIC: [8] Use of undefined constant talkId - assumed 'talkId' D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 242 行.
+
+[ 2017-09-30T08:49:53+08:00 ] 127.0.0.1 /Index/Index/likes.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001253s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001423s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001089s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005252s ]
+SQL: UPDATE `blg_blogs` SET `likes`=likes+1 WHERE ( `id` = 15 ) [ RunTime:0.154774s ]
+SQL: SHOW COLUMNS FROM `blg_likes` [ RunTime:0.019203s ]
+SQL: INSERT INTO `blg_likes` (`likeblgId`,`liketime`,`likeip`,`ipname`) VALUES (15,1506732593,'127.0.0.1','') [ RunTime:0.144115s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 15 ) LIMIT 1   [ RunTime:0.001562s ]
+NOTIC: [8] Undefined variable: ress D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 166 行.
+
+[ 2017-09-30T08:49:58+08:00 ] 127.0.0.1 /Index/Index/likes.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001191s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001350s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+
+[ 2017-09-30T08:49:59+08:00 ] 127.0.0.1 /Index/Index/likes.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001372s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001553s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000987s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001122s ]
+
+[ 2017-09-30T08:50:00+08:00 ] 127.0.0.1 /Index/Index/likes.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001044s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001199s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000952s ]
+
+[ 2017-09-30T08:50:01+08:00 ] 127.0.0.1 /Index/Index/likes.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001129s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001303s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005144s ]
+SQL: UPDATE `blg_blogs` SET `likes`=likes+1 WHERE ( `id` = 18 ) [ RunTime:0.106487s ]
+SQL: SHOW COLUMNS FROM `blg_likes` [ RunTime:0.009870s ]
+SQL: INSERT INTO `blg_likes` (`likeblgId`,`liketime`,`likeip`,`ipname`) VALUES (18,1506732601,'127.0.0.1','') [ RunTime:0.106556s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 18 ) LIMIT 1   [ RunTime:0.001646s ]
+NOTIC: [8] Undefined variable: ress D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 166 行.
+
+[ 2017-09-30T08:50:03+08:00 ] 127.0.0.1 /Index/Index/likes.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001153s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001336s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+
+[ 2017-09-30T08:50:17+08:00 ] 127.0.0.1 /Index/Index/content/id/16.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001079s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001241s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002147s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005893s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 16 ) LIMIT 1   [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004909s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000521s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( id < 16 and display=0 and type=5 ) ORDER BY sort asc,id desc LIMIT 1   [ RunTime:0.001050s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( id > 16 and display=0 and type=5 ) ORDER BY sort asc,id desc LIMIT 1   [ RunTime:0.000651s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005131s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004651s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000422s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\wamp\www\personal\blog\Runtime\Cache\Index\5d96c1952b6aadbf02520d6499e787f8.php 第 42 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\wamp\www\personal\blog\Runtime\Cache\Index\5d96c1952b6aadbf02520d6499e787f8.php 第 93 行.
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000724s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000549s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `blg_friends` [ RunTime:0.004999s ]
+SQL: SELECT * FROM `blg_friends` ORDER BY sort asc,id desc  [ RunTime:0.000470s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.078696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078838s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000858s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000700s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000519s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003277s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000875s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001004s ]
+
+[ 2017-09-30T08:50:17+08:00 ] 127.0.0.1 /Index/Index/views/id/16.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001066s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001225s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.007132s ]
+SQL: UPDATE `blg_blogs` SET `views`=views+1 WHERE ( `id` = 16 ) [ RunTime:0.193768s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `id` = 16 ) LIMIT 1   [ RunTime:0.003710s ]
+
+[ 2017-09-30T08:50:30+08:00 ] 127.0.0.1 /Index/Index/about.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001892s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002151s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001134s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001379s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005750s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000554s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004850s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000428s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000409s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000370s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000380s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000360s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000392s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004885s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004751s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000451s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005577s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000538s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000525s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000510s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004822s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000564s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.071648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071789s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001352s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000980s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000540s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000858s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004149s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000908s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001039s ]
+
+[ 2017-09-30T08:50:31+08:00 ] 127.0.0.1 /Index/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001237s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001424s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001097s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005277s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000868s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004763s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000384s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000374s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000465s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 19 行.
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005216s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004848s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000399s ]
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+NOTIC: [8] Undefined variable: action D:\wamp\www\personal\blog\Runtime\Cache\Index\e35c0e28d8f091dec495c3c4c2f56c55.php 第 30 行.
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.004827s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( display=0 and type="banner" ) ORDER BY sort asc,id desc  [ RunTime:0.000522s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000474s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000458s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000600s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004901s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000586s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY sort asc,id desc  [ RunTime:0.000733s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=5 ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000456s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=8 ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000452s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000447s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000364s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( display=0 and id=1 ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="tuwenad" and display=0 ) ORDER BY id desc  [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `blg_friends` [ RunTime:0.004893s ]
+SQL: SELECT * FROM `blg_friends` ORDER BY sort asc,id desc  [ RunTime:0.000544s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.103626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.103772s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001020s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000826s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000631s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000938s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003804s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000960s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2017-09-30T08:50:32+08:00 ] 127.0.0.1 /Index/Index/about.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001038s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001197s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005717s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `display` = 0 ) LIMIT 1   [ RunTime:0.000549s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005514s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000470s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000383s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000411s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000408s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000467s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000437s ]
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004895s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004588s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005022s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000539s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000544s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000515s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005105s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000656s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.070409s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070569s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000958s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000724s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000531s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000816s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003400s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000884s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001015s ]
+
+[ 2017-09-30T08:50:33+08:00 ] 127.0.0.1 /Index/Index/lists/id/8.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001088s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001251s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001368s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '8' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000581s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '8' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004687s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000473s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000462s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000426s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000512s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004911s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004735s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.004829s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000589s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000666s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000615s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004932s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000607s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.067377s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067520s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000933s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000785s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000607s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001058s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003776s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001687s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001828s ]
+
+[ 2017-09-30T08:50:34+08:00 ] 127.0.0.1 /Index/Index/lists/id/5.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001742s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001965s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001603s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005282s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '5' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000556s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '5' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005197s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000498s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000401s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000485s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005102s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.006157s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005634s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000571s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000648s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000545s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005425s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000586s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.071047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071187s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000884s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000727s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000583s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000887s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003464s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001053s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001239s ]
+
+[ 2017-09-30T08:50:35+08:00 ] 127.0.0.1 /Index/Index/lists/id/10.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001076s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001233s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005334s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '10' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000499s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '10' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005184s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000436s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000476s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005153s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005967s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005187s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000609s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000671s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000529s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004746s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000557s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.066248s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066389s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000851s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000801s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000526s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000795s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003350s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000900s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001033s ]
+
+[ 2017-09-30T08:50:36+08:00 ] 127.0.0.1 /Index/Index/lists/id/1.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001437s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001649s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005807s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '1' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000537s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '1' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.005364s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000437s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000372s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000361s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000415s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005305s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004797s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005333s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000538s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000578s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000563s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004765s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000541s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.070199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070359s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000950s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000981s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000552s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000873s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003740s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000903s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001038s ]
+
+[ 2017-09-30T08:50:36+08:00 ] 127.0.0.1 /Index/Index/lists/id/5.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001528s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001801s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002041s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '5' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000674s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '5' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.001301s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.010231s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000484s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000434s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000524s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005142s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005690s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005462s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000523s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000591s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000523s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004733s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000554s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.067940s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068080s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000898s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000690s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000519s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000804s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003288s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000936s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2017-09-30T08:50:36+08:00 ] 127.0.0.1 /Index/Index/lists/id/10.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001109s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001289s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001203s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.006196s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '10' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000538s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '10' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004977s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 10 ) LIMIT 1   [ RunTime:0.000523s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000575s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.006115s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005147s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005556s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000691s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000745s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000580s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005529s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000584s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.072697s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.072878s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000856s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000791s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000597s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000813s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003442s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001277s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001453s ]
+
+[ 2017-09-30T08:50:37+08:00 ] 127.0.0.1 /Index/Index/lists/id/8.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001587s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001776s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001259s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005174s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '8' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000529s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '8' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004838s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000441s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 8 ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004818s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.005014s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.004832s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000510s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000472s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000556s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005118s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000552s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.065956s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066094s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000905s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000705s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000510s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000841s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003353s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001269s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001409s ]
+
+[ 2017-09-30T08:50:38+08:00 ] 127.0.0.1 /Index/Index/lists/id/5.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001214s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001420s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.005351s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '5' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000537s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '5' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004961s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000413s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.000345s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.005296s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004959s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005649s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000870s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.001016s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000594s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.005411s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000600s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.069286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069439s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000965s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000826s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000626s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000914s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003720s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000984s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001116s ]
+
+[ 2017-09-30T08:50:38+08:00 ] 127.0.0.1 /Index/Index/lists/id/1.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001077s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `blg_blogs` [ RunTime:0.008222s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blg_blogs` WHERE ( `type` = '1' ) AND ( `display` = 0 ) LIMIT 1   [ RunTime:0.000660s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( `type` = '1' ) AND ( `display` = 0 ) ORDER BY id desc LIMIT 0,8   [ RunTime:0.001292s ]
+SQL: SHOW COLUMNS FROM `blg_blogs_type` [ RunTime:0.004966s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000465s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000397s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000393s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000432s ]
+SQL: SELECT `name` FROM `blg_blogs_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000379s ]
+SQL: SELECT * FROM `blg_blogs_type` WHERE ( pid=0 and display=0 )  [ RunTime:0.000433s ]
+NOTIC: [8] Undefined variable: info D:\wamp\www\personal\blog\Modules\Index\Action\IndexAction.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+SQL: SHOW COLUMNS FROM `blg_index` [ RunTime:0.004828s ]
+SQL: SELECT * FROM `blg_index` WHERE ( `display` = 1 ) ORDER BY sort asc  [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `blg_logo` [ RunTime:0.004778s ]
+SQL: SELECT `pic` FROM `blg_logo` ORDER BY id desc LIMIT 1   [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `blg_banner` [ RunTime:0.005009s ]
+SQL: SELECT * FROM `blg_banner` WHERE ( type="gzad" and display=0 ) ORDER BY id desc  [ RunTime:0.000619s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) LIMIT 6   [ RunTime:0.000581s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000561s ]
+SQL: SELECT * FROM `blg_blogs` WHERE ( display=0 and adup=1 ) ORDER BY id desc LIMIT 6   [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `blg_tags` [ RunTime:0.004874s ]
+SQL: SELECT * FROM `blg_tags` WHERE ( display=0 ) ORDER BY sort asc  [ RunTime:0.000558s ]
+INFO: ParseTemplate Behavior ::run [ RunTime:0.070396s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070541s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000926s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000706s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000507s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003306s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000999s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001131s ]
+

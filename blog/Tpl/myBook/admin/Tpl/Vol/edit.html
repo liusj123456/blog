@@ -1,0 +1,52 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Novel/add">添加小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Novel/index">所有小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Vol/index/id/<{$novelinfo.id}>">查看分卷</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Vol/add/id/<{$novelinfo.id}>">添加分卷</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Chapter/index/id/<{$novelinfo.id}>">查看内容</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Chapter/add/id/<{$novelinfo.id}>">添加内容</a>
+					</div>
+				</ul>
+				
+
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					<div class="well widget">
+							<div class="widget-header">
+								<h3 class="title">修改小说 "<{$novelinfo.novelname}>" 的分卷 "<{$volinfo.volname}>" 的信息</h3>
+							</div>
+							<form class="form-horizontal" enctype="multipart/form-data" action="" method="POST"/>
+								<div class="control-group">
+									<label class="control-label" for="inputEmail">分卷名称</label>
+									<div class="controls">
+										<input type="text" id="volname" name="volname" placeholder="请输入分卷名称" value="<{$volinfo.volname}>"/>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<div class="controls">
+									<!--
+									<label class="checkbox">
+										<input type="checkbox" class="fancy" /> Remember me
+									</label>
+									-->
+									<button type="submit" class="btn btn-warning" name="sub">确认修改</button>
+									</div>
+								</div>
+							</form>
+						</div>	
+						
+						
+						
+					</div>
+				</div>
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	
+<include file='Public:footer' />

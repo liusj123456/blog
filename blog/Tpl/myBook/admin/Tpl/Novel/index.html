@@ -1,0 +1,151 @@
+<include file='Public:header' />
+				
+				<ul class="breadcrumb breadcrumb-main">
+					
+					<div class="btn-toolbar">
+						<a class="btn btn-inverse btn btn-large btn-primary" href="__APP__/Novel/add">添加小说</a>
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Novel/index">所有小说</a>
+						
+						<a class="btn btn-cm btn btn-large btn-primary" href="__APP__/Caiji/index">采集小说</a>
+						<div class="btn-group dropdown-darkBg custom">
+							<button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">按更新时间排序 <i class="micon-menu-3"></i></button>
+							<ul class="dropdown-menu">
+								<li><a href="__APP__/Novel/index/ordertime/near">最近</a></li>
+								<li><a href="__APP__/Novel/index/ordertime/far">最远</a></li>
+								<li><a href="__APP__/Novel/index/ordertui/near">最近推荐</a></li>
+							</ul>
+						</div>
+						
+						<div class="btn-group dropdown-brownBg custom">
+							<button class="btn btn-bc dropdown-toggle" data-toggle="dropdown">按小说分类查看 <i class="micon-menu-3"></i></button>
+							<ul class="dropdown-menu">
+								<volist name='cls' id='vo'>
+									<li><a href="__APP__/Novel/index/ordercls/<{$vo.id}>"><{$vo.classname}></a></li>
+								</volist>
+							</ul>
+						</div>
+						
+						<div class="btn-group dropdown-blueBg custom">
+							<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">按小说状态查看 <i class="micon-menu-3"></i></button>
+							<ul class="dropdown-menu">
+								<li><a href="__APP__/Novel/index/orderstate/over">已完结</a></li>
+								<li><a href="__APP__/Novel/index/orderstate/ing">连载中</a></li>
+							</ul>
+						</div>
+						
+						<form class="navbar-search pull-right hidden-phone" action="__APP__/Novel/index/" method="get"/>
+							<input type="text" class="search-query span4" placeholder="输入小说名称或者小说作者...." name="key"/><button type="submit" class="btn btn-info" name='search' value="sub">搜索</button>
+						</form>
+					</div>
+				</ul>
+				
+				<!-- post wrapper -->				
+				<div class="row-fluid">
+					
+					<div class="span6">
+					
+						
+						
+						<!-- widget -->
+						<div class="well widget">
+							<!-- widget header -->
+							<div class="widget-header">
+								<h3 class="title">小说列表</h3>
+							</div>
+							<!-- ./ widget header -->
+							
+							<!-- widget content -->
+							<div class="widget-content">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th><input type="checkbox" value="" class="fancy"  id="selectAll" onClick="selectAllCheckBox('product',this.checked)"/>ID</th>
+											<th>小说名称</th>
+											<th>所属分类</th>
+											<th>小说作者</th>
+											<th>最后更新时间</th>
+											<th>小说状态</th>
+											<th>添加</th>
+											<th>查看</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody id="product">
+									<volist name='novels' id='novel'>
+										<tr>
+											<td><input type="checkbox" id="<{$novel.id}>" class="fancy" /><{$novel.id}></td>
+											<td><{$novel.novelname}></td>
+											<td><{$novel.classname}></td>
+											<td><{$novel.novelauthor}></td>
+											<td><{$novel.update_time|date='Y-m-d H:i:s',###}></td>
+											<td><if condition='$novel.novelstate eq 0'>连载中<else/>已完本</if></td>
+											
+											<td>
+											<a class="btn btn-small  btn-primary" href="__APP__/Vol/add/id/<{$novel.id}>">分卷</a>
+											 <a class="btn btn-mini   btn-primary" href="__APP__/Chapter/add/id/<{$novel.id}>">内容</a>
+											</td>
+											
+											<td><a class="btn btn-small  btn-primary"  href="__APP__/Vol/index/id/<{$novel.id}>">分卷</a> 
+											 <a class="btn btn-mini   btn-primary"  href="__APP__/Chapter/index/id/<{$novel.id}>">内容</a>
+											</td>
+											
+											<td> <a class="btn btn-small  btn-primary"  href="__URL__/edit/id/<{$novel.id}>">修改</a>  
+											<a class="btn btn-mini   btn-primary"  href="__URL__/del/id/<{$novel.id}>" onclick="return confirm('确定要删除小说<{$novel.novelname}>吗？')">删除</a> 
+											<a class="btn btn-mini btn-cm   btn-primary"  href="__URL__/tui/id/<{$novel.id}>">推荐</a> </td>
+											
+										</tr>
+									</volist>
+										
+									</tbody>
+								</table>
+							</div>
+							<!-- ./ widget content -->
+						</div>
+						<!-- ./ widget -->
+						
+						
+					</div>
+				</div>
+				
+				<div class="btn-toolbar2">
+						<a class="btn btn-inverse btn btn-large btn-primary"  onClick="delMany('product')">删除所选小说</a>
+						<div style="margin-right:20px;float:right"><{$pageshow}></div>
+					
+				</div>
+				
+				
+				<!-- ./ post wrapper -->
+			</div>
+			<!-- end main content -->	
+	<script type="text/javascript" language="javascript">
+		function delMany(ParentID){
+			if(confirm('确定要删除所选小说吗？')){
+				var pID=document.getElementById(ParentID);
+				var cb=pID.getElementsByTagName('input');
+				var span=pID.getElementsByTagName('span');
+				get='';
+				for(var i=0;i<span.length;i++){
+					if(span[i].className == 'checked'){
+							get=get+cb[i].id+',';
+					}
+					window.location="__APP__/Novel/delMany/id/"+get; 
+				}
+			}
+		}
+		function selectAllCheckBox(ParentID,bool){
+			var pID=document.getElementById(ParentID);
+			var cb=pID.getElementsByTagName('span');
+			if(bool){
+				for(var i=0;i<cb.length;i++){
+					cb[i].className="checked";
+				}
+			}else{
+				for(var i=0;i<cb.length;i++){
+					cb[i].className="";
+				}
+			}
+		}
+		
+	</script>
+	
+<include file='Public:footer' />

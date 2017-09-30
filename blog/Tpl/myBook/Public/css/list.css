@@ -1,0 +1,207 @@
+/* ¿ªÊ¼read.css */
+button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}
+textarea{overflow:auto;vertical-align:top}
+#list h2 {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 5px;
+	margin-top:5px;
+	padding-top:5px;
+	padding-bottom: 5px;
+	line-height:40px;
+	border-bottom: 1px dashed #CCCCCC;/*dashed */
+	display: block;
+}
+
+
+.box_con {
+	border:2px solid #88C6E5;
+	margin:10px auto;
+	line-height:100%;
+	width:1080px;
+	overflow:hidden;border-radius: 10px;
+	text-align:left;
+}
+.con_top {
+	background-color:#E1ECED;
+	height:40px;
+	border-bottom:1px solid #88C6E5;
+	width:100%;
+	padding-left:10px;
+	font-size:16px;
+	line-height: 40px;
+}
+.con_top #bdshare {
+	float:right;
+	text-align:right;
+	height:20px;
+	line-height:20px;
+	padding-right:20px;
+	padding-top:9px;
+}
+#sidebar {
+	float:right;
+	width:264px;
+	_width:270px;
+	border-left:1px dashed #88C6E5;
+}
+#sidebar .xian {
+	height:1px;
+	border-top:1px dashed #88C6E5;
+	overflow:hidden;
+	width:100%;
+}
+.sidebartitle {
+	font-weight:bold;
+	line-height:150%;
+	font-size:11pt;
+	padding-left:10px;
+	padding-top:2px;
+	width:100%;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	overflow:hidden;
+}
+.sidebarlist {
+	line-height:100%;
+	padding-left:20px;
+	margin-bottom:5px;
+	overflow:hidden;
+	_height:187px;height:200px;
+}
+.sidebarlist a {
+	float:left;
+	line-height:210%;
+	width:49.5%;
+	_width:49%;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	overflow:hidden;
+}
+#maininfo {
+	float:left;
+	width:1100px;	
+	max-height:430px;
+	
+}
+#fmimg {
+	
+	float:left;
+	padding:10px;	
+	width:150px;
+}
+#fmimg img {
+	height:180px;
+	margin:0px;
+	
+	padding:2px;
+	width:140px;border: 1px solid #dedede
+	
+}
+.zhanwei{
+	padding-left:140px;
+}
+#msg{
+	width:97%;
+}
+
+#info {	
+	font-size:15px;
+	height:210px;width:850px;
+	display: inline-block;
+	float:left;
+}
+#intro p{width:958px;margin: 0;padding:0;}
+
+#info h1 {
+	font-size:22px;
+	font-family:"Microsoft Yahei";
+	font-weight:bold;
+	height:44px;
+	line-height:44px;
+	padding:1px;
+	margin: 0;padding:0;
+	overflow:hidden;
+}
+#info p {
+	height:25px;
+	line-height:25px;
+	padding:0px;margin:0;
+	
+}
+#intro {padding: 10px; width: 958px; line-height: 23px; overflow: hidden; font-size: 13px; border-top-color: rgb(136, 198, 229); border-top-width: 1px; border-top-style: dashed;
+}
+#list {
+	padding:2px;
+}
+#list dl {
+	float:left;
+	margin:auto;
+	overflow:hidden;
+	padding-bottom:1px;
+	width: 100%;
+}
+#list dt {
+	background:#C3DFEA;
+	display:inline;
+	line-height:28px;
+	float:left;
+	margin:auto auto 5px auto;
+	width:98%;
+	*width:97.5%;
+	font-size:14px;
+	padding:5px 10px;
+	overflow:hidden;
+	text-align:center;
+	vertical-align:middle;
+}
+#list dd {
+	border-bottom:1px dashed #CCCCCC;
+	display:inline;
+	float:left;
+	height:25px;
+	line-height:200%;
+	margin-bottom:5px;
+	margin-top: 5px;
+	overflow:hidden;
+	text-align:left;
+	text-indent:10px;
+	vertical-align:middle;
+	width:33%;
+}
+
+
+#list dd A:link{
+	color:#444444;
+        font-size: 15px;
+	TEXT-DECORATION:none;
+}
+#list dd A:visited {
+	COLOR:#178102;
+	TEXT-DECORATION:none;
+	text-decoration:underline;
+}
+.introtxt {
+padding:0;marign:0
+}
+.introcm {
+    font-size: 15px;padding:0;marign:0
+    font-weight: bold;
+    color: #FF0000;
+}
+
+
+* {
+    font-family: ËÎÌå;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+#down_link{padding-top:10px}
+#down_link a{border-radius: 5px;background-color: #903;color: #FFF;padding: 2px 10px;text-decoration: none;margin-left:5px;}
+#down_link a:hover{ background-color: #F00; }
