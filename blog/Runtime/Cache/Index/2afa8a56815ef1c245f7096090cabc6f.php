@@ -21,13 +21,13 @@
 <!-- 返回顶部调用 end-->
 <link rel="stylesheet" type="text/css" href="__STATIC__/css/pages.css" />
 </head>
-<body>
+<body <?php echo (session('bg')); ?>>
 <header>
 <?php $menus = M('index')->where(array('display'=>1))->order('sort asc')->select(); $logo = M('logo')->order('id desc')->getField('pic'); $logo = unserialize($logo); ?>
   <div class="logo f_l"> <a href="/"><!-- <img src="__STATIC__/images/logo1.png"> --><img src="<?php echo ($logo); ?>"></a> </div>
   <nav id="topnav" class="f_r" style="width:60%;background: #424441;border-radius: 46px;margin-left: 0px;float:right;">
     <ul>
-	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo U(GROUP_NAME.'/'.$menu['url'].'');?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
+	<?php if(is_array($menus)): foreach($menus as $key=>$menu): ?><a href="<?php echo ($menu['url']); ?>" <?php if($menu['url'] == $action): ?>id="topnav_current"<?php endif; ?>><?php echo ($menu["name"]); ?></a><?php endforeach; endif; ?><!--  <a href="news.html" target="_blank">关于我</a> <a href="p.html" target="_blank">文章</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a> -->
     </ul>
     <script src="__STATIC__/js/nav.js"></script> 
   </nav>
@@ -163,7 +163,7 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
     </div>
     <!--tit01 end-->
 	<?php $gzad = M('banner')->order('id desc')->where('type="gzad" and display=0')->select(); foreach($gzad as $key=>$val){ $gzad[$key]['pic']=unserialize($val['pic']); } ?>  
-<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><img src="<?php echo ($gzad["pic"]); ?>"><?php endforeach; endif; ?></div>	
+<div class="ad300x100"><?php if(is_array($gzad)): foreach($gzad as $key=>$gzad): ?><a href='<?php echo ($gzad["url"]); ?>'><img src="<?php echo ($gzad["pic"]); ?>"></a><?php endforeach; endif; ?></div>	
     <?php $clicks = M('blogs')->where('display=0')->limit('6')->select(); $news = M('blogs')->where('display=0')->order('id desc')->limit('6')->select(); $ups = M('blogs')->where('display=0 and adup=1')->order('id desc')->limit('6')->select(); ?>
 <div class="moreSelect" id="lp_right_select"> 
       <div class="ms-top">
@@ -176,17 +176,17 @@ var url = "<?php echo U(GROUP_NAME.'/Index/likes');?>";
       <div class="ms-main" id="ms-main">
         <div style="display: block;" class="bd bd-news" >
           <ul>
-		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="/" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($clicks)): foreach($clicks as $key=>$clicks): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$clicks['id']));?>" target="_blank"><?php echo ($clicks['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div  class="bd bd-news">
           <ul>
-		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="/" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($news)): foreach($news as $key=>$news): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$news['id']));?>" target="_blank"><?php echo ($news['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
         <div class="bd bd-news">
           <ul>
-		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="/" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
+		  <?php if(is_array($ups)): foreach($ups as $key=>$ups): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$ups['id']));?>" target="_blank"><?php echo ($ups['title']); ?></a></li><?php endforeach; endif; ?>
           </ul>
         </div>
       </div>
@@ -223,8 +223,8 @@ $(function ()
 <div class="tuwen">
       <h3>图文推荐</h3>
       <ul>
-	  <?php if(is_array($upad)): foreach($upad as $key=>$adups): ?><li><a href="/"><img src="<?php echo ($adups["pic"]); ?>"><b><!-- <?php echo (htmlspecialchars_decode($adups["intro"])); ?> --><?php echo mb_substr(htmlspecialchars_decode($adups['title']),0,10,'utf-8'); ?>...</b></a>
-          <p><span class="tulanmu"><a href="/"><?php echo ($adups["type"]); ?></a></span><span class="tutime"><?php echo (date('Y-m-d',$adups["addTime"])); ?></span></p>
+	  <?php if(is_array($upad)): foreach($upad as $key=>$adups): ?><li><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$adups['id']));?>"><img src="<?php echo ($adups["pic"]); ?>"><b><!-- <?php echo (htmlspecialchars_decode($adups["intro"])); ?> --><?php echo mb_substr(htmlspecialchars_decode($adups['title']),0,10,'utf-8'); ?>...</b></a>
+          <p><span class="tulanmu"><a href="<?php echo U(GROUP_NAME.'/Index/content',array('id'=>$adups['id']));?>"><?php echo ($adups["type"]); ?></a></span><span class="tutime"><?php echo (date('Y-m-d',$adups["addTime"])); ?></span></p>
         </li><?php endforeach; endif; ?>
       </ul>
     </div>
@@ -300,6 +300,35 @@ $(window).scroll(function(){
 	}
 });
 </script>
+<?php if(!empty($_SESSION['bg'])): ?><style>
+#page p {background: #f5efe7;color:#080707;color: #bbb;}
+#page a {background: #f5efe7;color:#080707;color: #808080;}
+<!-- #page p {
+    float: left;
+    padding: 2px 12px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #bbb;
+    border: 1px #ccc solid;
+    background: #f5efe7;
+    margin-right: 8px;
+}
+#page a {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    padding: 2px 12px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px #cccccc solid;
+    background: #f5efe7;
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+} -->
+</style><?php endif; ?>
+
 
 </body>
 </html>

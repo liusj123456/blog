@@ -26,8 +26,8 @@
 		<script type="text/javascript" src="__PUBLIC__/assets/js/ace-extra.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="__STATIC__/css/page.css" />
 	</head>
-
-	<body class="no-skin">
+	
+	<body class="no-skin" <?php echo (session('bg')); ?>>
 		<div id="navbar" class="navbar navbar-default" style="position:fixed;top:0;left:0;width:100%;z-index:222;">
 			<div class="navbar-container" id="navbar-container">
 
@@ -386,7 +386,7 @@
 					 
 
 					<div class="table-responsive">
-					<form name='indexList' method='post' action='<?php echo U(GROUP_NAME."/System/indexSort");?>'>
+					<!-- <form name='indexList' method='post' action=''> -->
 						<table id="sample-table-2" class="table table-striped table-bordered table-hover">
 							<thead>
 								<tr>
@@ -444,7 +444,7 @@
 									</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 								</tbody>
 							</table>
-						</form>
+						<!-- </form> -->
 						<div class="modal-footer no-margin-top">
 							<button class="btn btn-grey" style="float:left;" onclick='javascript:location.href="<?php echo U(GROUP_NAME.'/System/indexAdd');?>";'>添加顶级菜单</button>&nbsp;&nbsp;&nbsp;
 							<button class="btn btn-grey" style="float:left;" onclick="javascript:document.forms['indexList'].submit();">提交修改排序</button>

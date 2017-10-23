@@ -208,14 +208,14 @@ class SystemAction extends CommonAction {
 				$index->rollback();
 				$this->error('修改'.$key.'失败');				
 			}
-			$list = $index->where("id = $key")->setField('sort',$val);
+			$list = $index->where("id = {$key}")->setField('sort',$val);
 			if($list===false){
 				$index->rollback();
 				$this->error('修改'.$key.'失败');				
 			}
 		}
 		$index->commit();
-		$this->error('修改成功');
+		$this->success('修改成功');
     } 
 	public function indexDel(){
 		$id = $_GET['id'];
@@ -227,6 +227,7 @@ class SystemAction extends CommonAction {
 	}
 	public function indexEdit(){
 		$id=$_GET['id'];
+		//echo '11';exit;
 		if(IS_POST){	
 			$data = array(
 				'id'=>I('id'),

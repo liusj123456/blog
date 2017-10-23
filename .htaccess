@@ -2,8 +2,10 @@
 	#RewriteEngine on
 	#RewriteRule ^(.*).html$ index.php/$1
 	#RewriteRule ^(.*).html$ index.php/Index/Index/$1
+	
 	RewriteEngine on
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+	#RewriteCond %{REQUEST_FILENAME} !-d
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	#RewriteRule ^(.*)$ index.php/Index/Index/$1 [QSA,PT,L]
+	RewriteRule  ^([a-zA-Z0-9]*).html$ index.php/Index/Index/$1 [QSA,PT,L]
 </ifmodule>
